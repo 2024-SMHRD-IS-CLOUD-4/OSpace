@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,7 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<%
+		request.setCharacterEncoding("utf-8");
+		int type = Integer.parseInt(request.getParameter("type"));
+	%>
 	<script type="text/javascript">
 		
 	</script>
@@ -13,7 +18,11 @@
 	<form action="JoinController">
 		<table>
 			<tr>
-				<td colspan="2"><h1>일반회원가입하기</h1></td>
+				<%if(type==1){%>
+					<td colspan="2"><h1>일반회원 가입하기</h1></td>
+				<%}else{%>
+					<td colspan="2"><h1>판매자회원 가입하기</h1></td>
+				<%} %>
 			</tr>
 			<tr>
 				<td colspan="2"><b>전부 입력해주셔야 회원가입이 가능합니다.</b></td>
@@ -21,7 +30,8 @@
 			<tr>
 				<td class="s">아이디</td>
 				<td class="s1"><input type="text" name="id"
-					placeholder="사용하실 아이디를 입력해주세요."></td>
+					placeholder="사용하실 아이디를 입력해주세요.">
+					<button type="button" id="idCheck">중복확인</button></td>
 			</tr>
 
 			<tr>
@@ -44,8 +54,7 @@
 			<input type="submit" value="가입하기">
 		</div>
 	</form>
-	<span><a href="#">로그인하기</a>|<a href="#">아이디찾기</a>|<a href="#">비밀번호
-			찾기</a></span>
+	<span><a href="JoinType.html"><button>회원가입</button></a> | <a href="IdFind"><button>아이디 찾기</button></a> | <a href="PwFind"><button>비밀번호 찾기</button></a></span>
 
 </body>
 </html>

@@ -7,9 +7,9 @@ public class User {
 	String name;
 	String tel;
 	String address;
-	boolean user_type;
+	int user_type;
 	
-	public User(String id, String pw, String name, String tel, String address, boolean user_type) {
+	public User(String id, String pw, String name, String tel, String address, int user_type) {
 		super();
 		this.id = id;
 		this.pw = pw;
@@ -17,6 +17,14 @@ public class User {
 		this.tel = tel;
 		this.address = address;
 		this.user_type = user_type;
+	}
+
+	public User(String id2, String pw2, String name2, String tel2, String address2) {
+		this.id = id2;
+		this.pw = pw2;
+		this.name = name2;
+		this.tel = tel2;
+		this.address = address2;
 	}
 
 	public String getId() {
@@ -39,7 +47,7 @@ public class User {
 		return address;
 	}
 
-	public boolean isUser_type() {
+	public int isUser_type() {
 		return user_type;
 	}
 	
