@@ -23,4 +23,8 @@ public class SqlSessionManger {
 			e.printStackTrace();
 		}
 	}
+	
+	public static SqlSessionFactory getSqlSessionFactory() {
+		return sqlSessionFactory;
+	}
 }
