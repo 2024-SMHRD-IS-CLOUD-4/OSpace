@@ -14,8 +14,6 @@ public class UserDAO {
 	
 	// 회원가입 메소드
 	public int join(User user) {
-		// openSession(true) -> auto-commit
-		// 1. 세션 꺼내오기
 		SqlSession session = factory.openSession(true);
 		int result = session.insert("Mapper.join",user);
 		session.close();

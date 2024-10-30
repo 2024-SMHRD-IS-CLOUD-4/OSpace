@@ -18,23 +18,22 @@ public class JoinController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		String name = request.getParameter("name");
+		String nick = request.getParameter("nick");
 		String address = request.getParameter("address");
 		String tel = request.getParameter("tel");
-
-		User user = new User(id, pw, name, tel, address);
+		int user_type= Integer.parseInt(request.getParameter("user_type"));
+		
+		User user = new User(id, pw, nick, tel, address,user_type);
+		
 		UserDAO dao = new UserDAO();
 		int result = dao.join(user);
 		if(result>0) {
-			RequestDispatcher rd = request.getRequestDispatcher(tel);
-			rd.forward(request, response);
+			response.sendRedirect("Login.html");
 		}else {
 			response.sendRedirect("JoinFail.html");
 		}
-		
 	}
-
 }
