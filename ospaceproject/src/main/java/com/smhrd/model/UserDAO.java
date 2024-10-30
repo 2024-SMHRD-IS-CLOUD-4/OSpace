@@ -19,7 +19,7 @@ public class UserDAO {
 		session.close();
 		return result;
 	}
-	public User userogin(User user) {
+	public User login(User user) {
 		SqlSession session = factory.openSession(true);
 		User result = session.selectOne("Mapper.login",user);
 		session.close();
@@ -48,9 +48,9 @@ public class UserDAO {
 	}
 	
 	// id 중복 체크 기능
-	public boolean idCheck(String id) {
+	public int idCheck(String id) {
 		SqlSession session = factory.openSession(true);
-		boolean result = session.selectOne("Mapper.idCheck",id);
+		int result = session.selectOne("Mapper.idCheck",id);
 		session.close();
 		return result;
 	}

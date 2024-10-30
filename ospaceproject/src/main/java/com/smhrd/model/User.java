@@ -4,18 +4,25 @@ public class User {
 
 	String id;
 	String pw;
-	String nick;
-	String tel;
-	String address;
-	int user_type;
-	public User(String id, String pw, String nick, String tel, String address, int user_type) {
+	String name;
+	String addr;
+	String phone;
+	String u_type;
+	String joined_at;
+	public User(String id, String pw, String name, String addr, String phone, String u_type, String joined_at) {
 		super();
 		this.id = id;
 		this.pw = pw;
-		this.nick = nick;
-		this.tel = tel;
-		this.address = address;
-		this.user_type = user_type;
+		this.name = name;
+		this.addr = addr;
+		this.phone = phone;
+		this.u_type = u_type;
+		this.joined_at = joined_at;
+	}
+	public User(String id, String pw) {
+		super();
+		this.id = id;
+		this.pw = pw;
 	}
 	public String getId() {
 		return id;
@@ -24,16 +31,19 @@ public class User {
 		return pw;
 	}
 	public String getName() {
-		return nick;
+		return name;
 	}
-	public String getTel() {
-		return tel;
+	public String getAddr() {
+		return addr;
 	}
-	public String getAddress() {
-		return address;
+	public String getPhone() {
+		return phone;
 	}
-	public int getUser_type() {
-		return user_type;
+	public String getU_type() {
+		return u_type;
 	}
-
+	public String getJoined_at() {
+		return joined_at;
+	}
+	
 }

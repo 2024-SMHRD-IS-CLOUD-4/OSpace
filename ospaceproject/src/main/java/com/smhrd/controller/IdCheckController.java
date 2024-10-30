@@ -17,10 +17,10 @@ public class IdCheckController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String input = request.getParameter("input");
-		System.out.println(input);
+		String id = request.getParameter("id");
+		System.out.println(id);
 		UserDAO dao = new UserDAO();
-		boolean result = dao.idCheck(input);
+		int result = dao.idCheck(id);
 		// result : 입력한 값이 db에 있으면 true => 사용 불가 아이디
 		// 없으면 false => 사용 가능 아이디
 		
