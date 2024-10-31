@@ -18,7 +18,7 @@ public class ProductsDAO {
 	public int insert(Products m) {
 		// 1. session 꺼내오기
 		SqlSession sqlSession = factory.openSession(true); // auto commit true
-		int result = sqlSession.insert("ProductsMapper.prod_insert", m);
+		int result = sqlSession.insert("Mapper.prod_insert", m);
 
 		// 세션 반납
 		sqlSession.close();
@@ -30,7 +30,7 @@ public class ProductsDAO {
 //상품 목록 가져오기 메서드
 	public List<Products> getAllProducts() {
 		try (SqlSession sqlSession = factory.openSession()) {
-			return sqlSession.selectList("ProductsMapper.getAllProducts");
+			return sqlSession.selectList("Mapper.getAllProducts");
 		}
 	}
 }
