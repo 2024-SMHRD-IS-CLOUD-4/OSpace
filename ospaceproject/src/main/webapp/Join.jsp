@@ -30,10 +30,9 @@
 					placeholder="비밀번호를 입력해주세요."></td>
 			</tr>
 			<tr>
-				<td class="s">비밀번호 재입력</td>
-				<td class="s1"><input type="password" id="pwCheck"
-					placeholder="비밀번호를 다시 한번 입력해주세요.">
-					<span id="pwCheckResult"></span></td>
+				<td class="s">비밀번호 재입력<span id="pwCheck"></span></td>
+				<td class="s1"><input type="password" name="pwCheck"
+					placeholder="비밀번호를 다시 한번 입력해주세요."></td>
 			</tr>
 			<tr>
 				<td class="s">닉네임 입력</td>
@@ -85,21 +84,10 @@
 				}
 			})
 		})
-		
-		$("#pwCheck").on('keyup',()=>{
-			let pw =$("[name='pw']").val();
-			let pwCheck=$("#pwCheck").val();
-			console.log(pw + "입력");
-			console.log(pwCheck + "재입력");
-			if(pw==pwCheck){
-				$("#pwCheckResult").text("비밀번호가 같습니다.")
-			}else{
-				$("#pwCheckResult").text("비밀번호가 다릅니다.")
-			}
-			
-				
-			})
-		
+		$()=>{
+			let pw =$('[name="pw"]').val();
+			let pwCheck
+		}
 		</script>
 
 
