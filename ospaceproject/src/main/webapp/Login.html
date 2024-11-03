@@ -11,7 +11,7 @@
 	<div>X</div>
 	<div>LOGO</div>
 	<form action="LoginController" method="post">
-	<div>ID |  
+	<div>ID |
 	<input type="text" name="id">
 	</div>
 	<div>PW |
@@ -20,34 +20,5 @@
 	<div> <input type="submit" name="submit" value="Login"> </div>
 	</form>
 	<span><a href="Join.html"><button>회원가입</button></a> | <a href="IdFind"><button>아이디 찾기</button></a> | <a href="PwFind"><button>비밀번호 찾기</button></a></span>
-	<script>
-		$("#submit").on("click",()=>{
-			let 
-		})
-		$("#submit").on("click", ()=>{
-					// 버튼이 클릭되면
-					// 사용자가 입력한 아이디 가져오기
-					let inputId = $("#id").val();
-					// 아이디가 DB 안에 있는지 => 서버통신(동기/비동기)
-					// 결과가 SPAN에 출력
-					$.ajax({
-						url : "users/exists", // 요청 경로 -> 상대 경로는 앞에 '/' 생략
-						type : "get", // 요청 방식 (get,post)
-						data : {"input":inputId}, // 요청 데이터 (json{key:value,~})
-						success : (data)=>{
-							console.log(data);
-							if(data==="true"){ // 사용 불가능 아이디
-								$("#idCheckResult").text("사용 불가 아이디");
-							}else{
-								$("#idCheckResult").text("사용 가능 아이디");
-							}
-						},
-						error : () => { // 통신 실패
-							alert("통신실패");
-						}
-					})
-					
-				})
-	</script>
 </body>
-</html> 
+</html>

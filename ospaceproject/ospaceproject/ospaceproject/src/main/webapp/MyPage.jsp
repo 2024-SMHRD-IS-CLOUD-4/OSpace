@@ -58,10 +58,9 @@
 </head>
 <body>
 	<%
-		User user = (User) session.getAttribute("user");
-		String name = user.getName();
-		String u_type = user.getU_type();
-		
+	User user = (User) session.getAttribute("user");
+	String name = user.getName();
+	String u_type = user.getU_type();
 	%>
 	<div class="user">
 		<h1><%=u_type%><br><%=name%>님 반갑습니다!

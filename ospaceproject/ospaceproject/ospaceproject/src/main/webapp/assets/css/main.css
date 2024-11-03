@@ -1,0 +1,111 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+		margin: 0px;
+		padding: 0px;
+        text-decoration : none;
+        color:#333333;
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+	}
+li{
+    float: left;
+    list-style: none;
+}
+body{
+	width:100%;
+    border:solid blue;
+}
+#header{
+	width: 1200px;
+	height: 150px;
+    margin: 0 auto;
+}
+#logo{
+    width: 114px;
+    height: 110px;
+    margin: 22px 33px 22px 0;
+    float: left;
+    text-align: center;
+}
+#logo a{
+    text-decoration-line: none;
+    text-decoration-color: #655A50;
+    color: #655A50;
+    font-size: 28px;
+    font-weight: 750;
+    
+}
+#logo a img{
+    width:73px;
+}
+#serch{
+    float: left;
+    height: 150px;
+    line-height: 150px;
+}
+.serch{
+    display: inline-block;
+    width:450px;
+    height: 47px;
+    padding: 0 8px 0 18px;
+    line-height: 47px;
+    border:solid 1px #655A50;
+    border-radius: 20px;
+}
+.btnImg{
+    width:21px;
+    height: 21px;
+    vertical-align: middle;
+    margin-right:8px;
+}
+#serch div{
+    width: 88px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border: solid 1px #655A50;
+    border-radius: 20px;
+    margin: 7px 0px 316px 0px;
+    font-size: 14px;
+    float: right;
+}
+#con{
+    width: 542px;
+    height: 150px;
+    line-height: 150px;
+    float: right;
+}
+#nav{
+    height: 150px;
+    display: inline-block;
+}
+#nav li{
+    padding: 0px 25px;
+}
+
+#login{ 
+    float: right;
+    font-size: 14px;
+}
+#body{
+    border-top: 1px solid #655A50;
+}
+#mainBanner{
+    display: inline-block;
+    width: 1920px;
+    height: 500px;
+    text-align: center;
+}
+#btnRight{
+    float:left;
+}
+#btnLeft{
+    float:right;
+}
+#btnChangePage{
+    
+}
+
