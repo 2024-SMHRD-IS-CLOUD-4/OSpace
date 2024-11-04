@@ -22,14 +22,14 @@ public class Used_ProductsDAO {
 
 	public List<Used_Products> getu_prod() {
 	    SqlSession session = factory.openSession(true);
-	    List<Used_Products> result = session.selectList("Mapper.getu_prod");
+	    List<Used_Products> result = session.selectList("ProductMapper.getu_prod");
 	    session.close();
 	    return result;
 	}
 
 	public Used_Products getu_prod(int used_id) {
 	    SqlSession session = factory.openSession(true);
-	    Used_Products result = session.selectOne("Mapper.get_single_prod", used_id);
+	    Used_Products result = session.selectOne("ProductMapper.get_single_prod", used_id);
 	    session.close();
 	    return result;
 	}
