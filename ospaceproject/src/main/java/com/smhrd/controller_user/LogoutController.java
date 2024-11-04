@@ -1,4 +1,4 @@
-package com.smhrd.controller;
+package com.smhrd.controller_user;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

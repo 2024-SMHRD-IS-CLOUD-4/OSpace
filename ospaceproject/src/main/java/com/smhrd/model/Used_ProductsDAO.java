@@ -12,10 +12,8 @@ public class Used_ProductsDAO {
 	SqlSessionFactory factory = SqlSessionManager.getSqlSessionFactory();
 
 	public int insert(Used_Products usedproduct) {
-
 		SqlSession sqlSession = factory.openSession(true);
-		int result = sqlSession.insert("Mapper.write", usedproduct);
-
+		int result = sqlSession.insert("ProductMapper.write", usedproduct);
 		sqlSession.close();
 		return result;
 	}
@@ -27,7 +25,7 @@ public class Used_ProductsDAO {
 	    return result;
 	}
 
-	public Used_Products getu_prod(int used_id) {
+	public Used_Products getu_single_prod(int used_id) {
 	    SqlSession session = factory.openSession(true);
 	    Used_Products result = session.selectOne("ProductMapper.get_single_prod", used_id);
 	    session.close();

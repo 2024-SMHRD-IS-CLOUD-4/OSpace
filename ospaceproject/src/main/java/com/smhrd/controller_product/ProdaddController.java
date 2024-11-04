@@ -1,4 +1,4 @@
-package com.smhrd.controller;
+package com.smhrd.controller_product;
 
 import java.io.IOException;
 
