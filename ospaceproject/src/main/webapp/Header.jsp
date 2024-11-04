@@ -38,10 +38,10 @@
 			<div id="nav">
 				<ul>
 					<li>
-                        <a href="http://localhost:8081/ospaceproject2/ItemSearch.jsp?title=category">카테고리</a>
+                        <a href="ItemSearchCartegory.jsp">카테고리</a>
                     </li>
 					<li>
-						<a href="http://localhost:8081/ospaceproject2/ItemSearch.jsp?asdf=1231">리뷰보기</a>
+						<a href="ItemSearchReview.jsp">리뷰보기</a>
 					</li>
 					<li>
 						<a href="http://localhost:8081/ospaceproject2/ItemSearch.jsp">중고거래</a>

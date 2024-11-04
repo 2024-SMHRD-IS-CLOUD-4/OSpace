@@ -9,47 +9,7 @@
     <title>O'Space</title>
     <link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
 <body>
-    <header id="header">
-        <div id="logo">
-            <div>
-                <a href="Main.html">
-                    <img src="https://drive.google.com/thumbnail?id=1BCKohuhG1uxkzJv36GL2I-cOYC_zLOoD">
-                    O'Space
-                </a>
-            </div>
-        </div>
-        <div id="serch">
-            <buttion type="buttion" class="serch">
-                <img class="btnImg" src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
-                |
-                <div>검색하기</div>
-            </buttion>
-        </div>
-        <div id="con">
-            <div id="nav">
-                <ul>
-                    <li>
-                        <a href="http://localhost:8081/ospaceproject2/ItemSearch.jsp?title=category">카테고리</a>
-                    </li>
-                    <li>
-                        <a href="http://localhost:8081/ospaceproject2/ItemSearch.jsp?asdf=1231">리뷰보기</a>
-                    </li>
-                    <li>
-                        <a href="http://localhost:8081/ospaceproject2/ItemSearch.jsp">중고거래</a>
-                    </li>
-                </ul>
-            </div>
-            <div id="login">
-            	<%if(session.getAttribute("user")==null){%>
-                <span><a href="Login.html">로그인</a></span>
-            	<%}else{ %>
-            		<span><a href="MyPage.jsp">마이페이지</a></span>
-            		<span><a href="LogoutController">로그아웃</a></span>
-            	<%}%>
-                <span><a href="#">고객센터</a></span>
-            </div>
-        </div>
-    </header>
+    <%@ include file = "Header.jsp" %>
     <div id="body">
         <div id="mainBanner">
             <div id="btnRight"><img src="image/btnRight.png"></div>
