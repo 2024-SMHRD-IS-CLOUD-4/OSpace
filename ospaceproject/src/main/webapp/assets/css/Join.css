@@ -70,6 +70,10 @@ button, input{
     font-size: 10px;
     margin-top: 4px;
 }
+#submitBox{
+	width:200px;
+    border:1px solid #ddd;
+}
 #submit{
     width:200px;
     height:60px;
@@ -78,7 +82,7 @@ button, input{
     font-size: 18px;
     background-color: #fff;
     border:1px solid #ddd;
-    margin: 100px 0px 80px 0px;
+    margin: 100px 0px 0px 0px;
 }
 #JoinIdPwButtonBox button{
     width: 120px;
