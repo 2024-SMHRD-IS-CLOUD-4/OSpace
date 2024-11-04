@@ -7,10 +7,13 @@
     <meta charset="UTF-8">
     <title>회원가입 실패 페이지</title>
     <link rel="stylesheet" href="assects/css/Join.css" type="text/css" />
+    <link rel="stylesheet" href="assects/css/Main.css" type="text/css" />
 </head>
 
 <body>
+	<%@ include file = "Header.jsp" %>
     <!-- 전체 div -->
+    <div id=body>
     <div id="joinFailBg">
         <div id="joinFail">
             <div><button class="closeBtn">X</button></div>
@@ -35,6 +38,8 @@
             </div>
         </div>
     </div>
+    </div>
+	<%@ include file = "Footer.jsp" %>
 </body>
 
 </html>

@@ -142,3 +142,13 @@ button, input{
     color:#333;
     background-color: #fff;
 }
+.joinSuccessText {
+    display: block;
+    top: 30%;
+    padding-top: 120px;
+}
+.joinSuccessText h2{
+    font-size: 24pt;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
