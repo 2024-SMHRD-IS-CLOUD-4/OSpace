@@ -58,47 +58,101 @@
         </div>
 
         <div id="right">
-            <p>내가 쓴 리뷰 모아보기</p>
-            <table>
-                <tr>
-                    <td><img></td>
-                    <td>#상품명1 #상품명2 #상품명3</td>
-                    <td>먹튀했어... 잡아바자ㅏㅏㅏ속상합니다</td>
-                </tr>
-
-                <tr>
-                    <td><img></td>
-                    <td>#상품명1 #상품명2 #상품명3</td>
-                    <td>잡아바자ㅏㅏㅏ속상합니다</td>
-                </tr>
-
-                <tr>
-                    <td><img></td>
-                    <td>#상품명1 #상품명2 #상품명3</td>
-                    <td>속상합니다</td>
-                </tr>
-            </table>
-
             <div>
-                <imput>1</imput>
-                <imput>2</imput>
-                <imput>3</imput>
-                <imput>4</imput>
-                <imput>5</imput>
-            </div>
+                <div>
+                    <div>
+                        <p>내가 쓴 리뷰 모아보기</p>
+                    </div>
+                    <table>
+                        <tr>
+                            <td>
+                                <a>
+                                    <img>
+                                </a>
+                            </td>
+                            <td>
+                                <div>
+                                    <a>#상품명1 #상품명2 #상품명3</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <a>먹튀했어... 잡아바자ㅏㅏㅏ속상합니다</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <div>
+                                        <p> 별점가져오기 </p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
 
-            <div>
-                <input type="submit" value="삭제하기">
-                <input type="submit" value="수정하기">
+                        <tr>
+                            <td>
+                                <a>
+                                    <img>
+                                </a>
+                            </td>
+                            <td>
+                                <div>
+                                    <a>#상품명1 #상품명2 #상품명3</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <a>먹튀했어... 잡아바자ㅏㅏㅏ속상합니다</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <div>
+                                        <p> 별점가져오기 </p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <a>
+                                    <img>
+                                </a>
+                            </td>
+                            <td>
+                                <div>
+                                    <a>#상품명1 #상품명2 #상품명3</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <a>먹튀했어... 잡아바자ㅏㅏㅏ속상합니다</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <div>
+                                        <p> 별점가져오기 </p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <input type="submit" value="삭제하기">
+                    <input type="submit" value="수정하기">
+                </div>
             </div>
         </div>
-    </div>
 
-    <div id="footer">
-        <div>
-            <a href="#">고객센터 문의글 작성하기</a>
+        <div id="footer">
+            <div>
+                <a href="#">고객센터 문의글 작성하기</a>
+            </div>
         </div>
-    </div>
 
 </body>
 
