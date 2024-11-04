@@ -9,16 +9,6 @@
     <title>O'Space</title>
     <link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
 <body>
-<%
-	request.getSession(false);
-	if(session.getAttribute("user")!=null){
-		User user = (User)request.getAttribute("user");
-		String userName = user.getName();
-		String userType = user.getU_type();
-	}else{
-		
-	};
-%>
     <header id="header">
         <div id="logo">
             <div>
