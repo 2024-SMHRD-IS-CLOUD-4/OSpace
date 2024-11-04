@@ -57,15 +57,23 @@
 </style>
 </head>
 <body>
-	<%
-		User user = (User) session.getAttribute("user");
-		String name = user.getName();
-		String u_type = user.getU_type();
+<%
+	request.getSession(false);
+	User user = (User)request.getAttribute("user");
+	String userName = "";
+	String userType = "";
+	if(user!=null){
+		System.out.print("123");
+		userName = user.getName();
+		userType = user.getU_type();
+	}else{
 		
-	%>
+	}
+%>
 	<div class="user">
-		<h1><%=u_type%><br><%=name%>님 반갑습니다!
-		</h1>
+	<% if(user!=null){%>
+		<h1><%=userType%><br><%=userName%>님 반갑습니다!</h1>
+	<%}%>
 	</div>
 	<!-- 리뷰 모음(일반회원) / 상품순위(판매자) 확인 구역 
 		
