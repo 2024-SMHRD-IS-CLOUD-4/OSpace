@@ -44,7 +44,7 @@
 						<a href="ItemSearchReview.jsp">리뷰보기</a>
 					</li>
 					<li>
-						<a href="http://localhost:8081/ospaceproject2/ItemSearch.jsp">중고거래</a>
+						<a href="ItemSearchUsedItem.jsp">중고거래</a>
 					</li>
 				</ul>
             </div>
