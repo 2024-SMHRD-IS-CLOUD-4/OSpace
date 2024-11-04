@@ -35,7 +35,7 @@ public class UsedController extends HttpServlet {
 		String used_title = multi.getParameter("used_title");
 		String used_content = multi.getParameter("used_content");
 		int used_price = Integer.parseInt(multi.getParameter("used_price"));
-		String used_location = request.getParameter("used_location");
+		String used_location = multi.getParameter("used_location");
 		String used_img = multi.getFilesystemName("used_img");
 		
 		Used_Products usedproduct = new Used_Products(id, used_title, used_content, used_price, used_location, used_img); 
