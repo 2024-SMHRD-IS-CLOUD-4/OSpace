@@ -1,1 +1,261 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+		margin: 0px;
+		padding: 0px;
+        text-decoration : none;
+        color:#333333;
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        box-sizing: border-box;
+	}
+li{
+    float: left;
+    list-style: none;
+}
+body{
+	width:100%;
+}
+#header{
+    position: relative;
+	width: 1200px;
+	height: 150px;
+    margin: 0 auto;
+}
+#logo{
+    position: relative;
+    left: 0px;
+    float: left;
+    width: 114px;
+    height: 110px;
+    margin: 22px 33px 22px 0;
+}
+#logo div{
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+}
+#logo a{
+    text-decoration-line: none;
+    text-decoration-color: #655A50;
+    color: #655A50;
+    font-size: 20pt;
+    font-weight: 800;
+}
+#logo img{
+    width:73px;
+}
+#serch{
+    position: relative;
+    left: 30px;
+    height: 150px;
+    line-height: 150px;
+    float: left;
+}
+.serch{
+    display: inline-block;
+    width:450px;
+    height: 47px;
+    padding: 0 8px 0 18px;
+    line-height: 47px;
+    border:solid 1px #655A50;
+    border-radius: 20px;
+}
+.btnImg{
+    width:21px;
+    height: 21px;
+    vertical-align: middle;
+    margin-right:8px;
+}
+#serch div{
+    width: 88px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border: solid 1px #655A50;
+    border-radius: 20px;
+    margin: 7px 0px 316px 0px;
+    font-size: 10pt;
+    float: right;
+}
+#con{
+    width: 542px;
+    height: 150px;
+    padding-top: 57px;
+    float: right;
+}
+#nav{
+    float: left;
+    width: 394px;
+    height: 40px;
+}
+#nav li{
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    font-size: 16pt; 
+}
+
+#login{
+    bottom: 0px;
+    font-size: 12pt;
+    float:right;
+    margin-top: 10px;
+}
+#body{
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    border-top: 1px solid #DFDFDF;
+    text-align: center;
+}
+#mainBanner{
+    display: inline-block;
+    overflow: hidden;
+    width: 1920px;
+    height: 500px;
+    line-height: 500px;
+    margin: 0px auto;
+}
+#btnRight{
+    float: right;
+}
+#btnLeft{
+    float: left;
+}
+#btnRight img{
+    width: 15px;
+    height: 30px;
+}
+#btnLeft img{
+    width: 15px;
+    height: 30px;
+}
+#btnChangePage{
+    width: 182px;
+    height: 15px;
+    margin: 460px auto 0px auto;
+    background-color: #dddddd;
+    border-radius: 20px;
+}
+
+#mainCategory{
+    display: block;
+    overflow: hidden;
+    width: 1920px;
+    height:196px;
+    margin: 0px auto;
+    background-color: #FBF8EF;
+}
+#mainCategoryCon{
+    width: 876px;
+    height: 129px;
+    margin: 0px auto;
+    margin-top: 45px;
+}
+#mainCategory li{
+    width: 146px;
+}
+#mainCategory a{
+    font-size: 12pt;
+    font-weight: normal;
+}
+.mainCategoryImg{
+    display: inline-block;
+    width:100px;
+    height: 100px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+}
+.mainCategoryImg img{
+    width: 58px;
+    height: 72px;
+    margin-top: 14px;
+}
+#mainItem01{
+    display: inline-block;
+    overflow: hidden;
+    width: 1920px;
+    height: 875px;
+}
+#mainItem02{
+    display: inline-block;
+    overflow: hidden;
+    width: 1920px;
+    height: 875px;
+    background-color: #FDFDFD;
+}
+.itemTitle{
+    width: 1100px;
+    margin: 67px auto 0px auto;
+    text-align: left;
+}
+.subItemTitle{
+    font-size: 20pt;
+    font-weight: normal;
+}
+.mainItemTitle{
+    font-size: 40pt;
+    font-weight: normal;
+}
+.itemBox{
+    width: 1100px;
+    height: 875px;
+    margin: 70px auto 0px auto;
+}
+.itemBox li{
+    width:267px;
+}
+.itemSmallBox{
+    display: block;
+    overflow: hidden;
+    width:200px;
+    height: 280px;
+    margin-bottom: 23px ;
+}
+.itemSmallBoxImg{
+    display:block;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    border:solid 1px #d9d9d9;
+}
+.itemSmallBoxImg img{
+    width: 200px;
+    height: 200px;
+}
+.itemSmallBoxText{
+    display: block;
+    overflow: hidden;
+    width: 160px;
+    height: 70px;
+    margin: 10px auto 0px auto;
+    text-align: left;
+}
+.itmSellerID{
+    font-size: 10pt;
+    font-weight: normal;
+}
+.itemName{
+    font-size: 14pt;
+    font-weight: bold;
+}
+.itemPrice{
+    text-align: right;
+    font-size: 14pt;
+    font-weight: bold;
+}
+#footer{
+    height: 84px;
+    line-height: 84px;
+    background-color: #f1f1f1;
+}
+#footer div{
+    width: 1200px;
+    margin: 0px auto;
+}
