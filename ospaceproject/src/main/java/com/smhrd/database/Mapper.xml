@@ -35,4 +35,20 @@
 	<select id="getAllProducts" resultType="com.smhrd.model.Products">
         SELECT * FROM PRODUCTS
     </select>
+    
+    <!-- 중고 상품 등록 기능 -->
+	<insert id="write" parameterType="com.smhrd.model.Used_Products">
+        INSERT INTO Used_Products (used_id, id, used_title, used_content, used_price, used_location, used_img)
+        VALUES (used_products_seq.nextval,#{id}, #{used_title}, #{used_content}, #{used_price}, #{used_location}, #{used_img})
+    </insert>
+
+	<!-- 중고 상품 전체 게시판 -->	
+	<select id="getu_prod" resultType="com.smhrd.model.Used_Products">
+    SELECT * FROM Used_Products
+	</select>
+	
+	<!-- 개별 상품 조회 -->
+	<select id="get_single_prod" parameterType="int" resultType="com.smhrd.model.Used_Products">
+    SELECT * FROM Used_Products WHERE used_id = #{used_id}
+	</select>
 </mapper>
