@@ -17,7 +17,7 @@
 		String userType = user.getU_type();
 	}else{
 		
-	}
+	};
 %>
     <header id="header">
         <div id="logo">
@@ -50,7 +50,7 @@
                 </ul>
             </div>
             <div id="login">
-            	<%if(userName==null){%>
+            	<%if(session.getAttribute("user")==null){%>
                 <span><a href="Login.html">로그인</a></span>
             	<%}else{ %>
             		<span><a href="MyPage.jsp">마이페이지</a></span>

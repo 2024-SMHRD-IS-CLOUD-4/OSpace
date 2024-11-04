@@ -25,7 +25,7 @@ public class JoinController extends HttpServlet {
 		String phone = request.getParameter("phone");
 		String u_type= request.getParameter("u_type");
 		
-		User user = new User(id, pw, name, addr, phone, u_type,null);
+		User user = new User(id, pw, name, addr, phone, u_type, null);
 		
 		UserDAO dao = new UserDAO();
 		int result = dao.join(user);
