@@ -86,7 +86,6 @@ button, input{
 }
 #JoinIdPwButtonBox{
     margin:0px auto;	
-	border:1px solid #ddd;
 }
 #JoinIdPwButtonBox button{
     width: 120px;
