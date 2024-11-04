@@ -13,7 +13,7 @@
 <body>
     <%@ include file = "Header.jsp" %>
     <div id="body">
-        <div class="itemBox">
+        <div class="contentBox">
             <div id="itemBoxT">
                 <div id="itemBoxImg">
                     <img src="#">
@@ -45,13 +45,13 @@
                         <div id="optionBoxScroll">
                             <ul>
                                 <li>
-                                    옵션 : 빨간색 <span><input type="text">개</span>
+                                    옵션 : 빨간색 <span><input type="text" value="1">개</span>
                                 </li>
                                 <li>
-                                    옵션 : 노란색 <span><input type="text">개</span>
+                                    옵션 : 노란색 <span><input type="text" value="1">개</span>
                                 </li>
                                 <li>
-                                    옵션 : 노란색 <span><input type="text">개</span>
+                                    옵션 : 노란색 <span><input type="text" value="1">개</span>
                                 </li>
                             </ul>
                         </div>
@@ -73,16 +73,33 @@
                 <h4>리뷰</h4>
                 <ul>
                     <li>
-                        <img src="#">
-                        <p><span>#상품명1</span><span>#상품명2</span><span>#상품명3</span></p>
-                        <div>리뷰 내용 블라블라</div>
-                        <div>
-                            <p>작성자 ID</p>
-                            <p>2024-10-24</p>
+                        <div class="itemBoxReviewleft">
+                            <img src="#">
+                        </div>
+                        <div class="itemBoxReviewRight">
+                            <p><span>#상품명1</span><span>#상품명2</span><span>#상품명3</span></p>
+                            <div>리뷰 내용 블라블라</div>
+                            <div class="itemBoxReviewRightR">
+                                <p>작성자 ID</p>
+                                <p>2024-10-24</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="itemBoxReviewleft">
+                            <img src="#">
+                        </div>
+                        <div class="itemBoxReviewRight">
+                            <p><span>#상품명1</span><span>#상품명2</span><span>#상품명3</span></p>
+                            <div>리뷰 내용 블라블라</div>
+                            <div class="itemBoxReviewRightR">
+                                <p>작성자 ID</p>
+                                <p>2024-10-24</p>
+                            </div>
                         </div>
                     </li>
                 </ul>
-                <div>1 2 3 4 ></div>
+                <div class="itemBoxReviewPageNum">1   2  3   4   > </div>
             </div>
         </div>
     </div>
