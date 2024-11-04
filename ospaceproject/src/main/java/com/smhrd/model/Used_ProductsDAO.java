@@ -33,5 +33,4 @@ public class Used_ProductsDAO {
 	    session.close();
 	    return result;
 	}
-	
 }
