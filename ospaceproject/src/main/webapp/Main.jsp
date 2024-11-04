@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>O'Space</title>
-    <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
 <body>
 <%
 	request.getSession(false);
