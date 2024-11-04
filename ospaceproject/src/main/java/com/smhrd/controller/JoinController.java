@@ -32,7 +32,7 @@ public class JoinController extends HttpServlet {
 		if(result>0) {
 			response.sendRedirect("Login.html");
 		}else {
-			response.sendRedirect("JoinFail.html");
+			response.sendRedirect("JoinFail.jsp");
 		}
 	}
 }
