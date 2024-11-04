@@ -2,20 +2,36 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="ProductMapper">
 	<!-- 상품 등록 기능 -->
-	<insert id="prod_insert" parameterType="com.smhrd.model.Products">
+	<insert id="prodInsert" parameterType="com.smhrd.model.Products">
         INSERT INTO PRODUCTS (PROD_ID, ID, CATEGORY_ID, PROD_NAME, PROD_IMG, PROD_PRICE, PROD_COLOR, PROD_OP, PROD_DESC)
         VALUES (#{prod_id}, #{id}, #{category_id}, #{prod_name}, #{prod_img}, #{prod_price}, #{prod_color}, #{prod_op}, #{prod_desc})
     </insert>
-
+	
 	<!-- 상품 전체 조회 -->
 	<select id="getAllProducts" resultType="com.smhrd.model.Products">
         SELECT * FROM PRODUCTS
     </select>
     
+    <!-- 상품 전체 조회 -->
+	<select id="getSingleProduct" resultType="com.smhrd.model.Products">
+        SELECT * FROM PRODUCTS where prod_id=#{id}
+    </select>
+    
+	<!-- 상품 업데이트 -->
+	<update id="updateProduct" parameterType="com.smhrd.model.Products">
+		update products set category_id=#{category_id},prod_name=#{prod_name},prod_img=#{prod_img},prod_price=#{prod_price},prod_color=#{prod_color},prod_desc=#{prod_desc} where prod_id=#{prod_id}
+	</update>
+	
+    <!-- 상품 전체 조회 -->
+    <delete id="deleteProduct">
+		delete from products where prod_id = #{prod_id}
+    </delete>
+	
+	
     <!-- 중고 상품 등록 기능 -->
 	<insert id="write" parameterType="com.smhrd.model.Used_Products">
-        INSERT INTO Used_Products (used_id, id, used_title, used_content, used_price, used_location, used_img)
-        VALUES (used_products_seq.nextval,#{id}, #{used_title}, #{used_content}, #{used_price}, #{used_location}, #{used_img})
+        INSERT INTO used_products (id, used_title, used_content, used_price,USED_LOCATION, used_img)
+        VALUES (#{id},#{used_title},#{used_content},#{used_price},#{used_location},#{used_img})
     </insert>
 
 	<!-- 중고 상품 전체 게시판 -->	
@@ -27,4 +43,5 @@
 	<select id="get_single_prod" parameterType="int" resultType="com.smhrd.model.Used_Products">
     SELECT * FROM Used_Products WHERE used_id = #{used_id}
 	</select>
+	
 </mapper>

@@ -1,14 +1,8 @@
 package com.smhrd.model;
 
-import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-
 import com.smhrd.database.SqlSessionManager;
-
-import java.io.IOException;
-import java.io.Reader;
 import java.util.List;
 
 public class ProductsDAO {
@@ -16,22 +10,33 @@ public class ProductsDAO {
 	SqlSessionFactory factory = SqlSessionManager.getSqlSessionFactory();
 
 	public int insert(Products m) {
-		// 1. session 꺼내오기
 		SqlSession sqlSession = factory.openSession(true); // auto commit true
-		int result = sqlSession.insert("ProductMapper.prod_insert", m);
-
-		// 세션 반납
+		int result = sqlSession.insert("ProductMapper.prodInsert", m);
 		sqlSession.close();
 		return result;
 	}
-
-
-
-//상품 목록 가져오기 메서드
 	public List<Products> getAllProducts() {
-		try (SqlSession sqlSession = factory.openSession()) {
-			return sqlSession.selectList("ProductMapper.getAllProducts");
-		}
+		SqlSession session = factory.openSession(true);
+		List<Products> result = session.selectList("ProductMapper.getAllProducts");
+		session.close();
+		return result;
+	}
+	public Products getSingleProduct(int prod_id) {
+		SqlSession session = factory.openSession(true);
+		Products result = session.selectOne("ProductMapper.getSingleProduct",prod_id);
+		session.close();
+		return result;
+	}
+	public int update(Products p) {
+		SqlSession session = factory.openSession(true);
+		int result = session.update("ProductMapper.updateProduct",p);
+		session.close();
+		return result;
+	}
+	public int deleteProduct(int id) {
+		SqlSession session = factory.openSession(true);
+		int result = session.delete("ProductMapper.deleteProduct",id);
+		session.close();
+		return result;
 	}
 }
-
