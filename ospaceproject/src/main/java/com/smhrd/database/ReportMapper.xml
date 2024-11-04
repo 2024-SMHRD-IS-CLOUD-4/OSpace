@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ReportMapper">
+
+	<!-- 신고 등록 -->
+	<insert id="insertReport"
+		parameterType="com.smhrd.model.Reports">
+		INSERT INTO REPORTS (REPORT_ID, PROD_ID, ID, REPORT_TITLE, REPORT_STATUS,
+		CREATED_AT, REPORT_CONTENT)
+		VALUES (reports_seq.nextval, #{prod_id}, #{id, jdbcType=VARCHAR}, #{r_title,
+		jdbcType=VARCHAR}, '신고', SYSDATE, #{r_content, jdbcType=VARCHAR})
+	</insert>
+
+	<!-- 모든 신고 조회 -->
+	<select id="getAllReports" resultType="com.smhrd.model.Reports">
+		SELECT *
+		FROM REPORTS
+	</select>
+</mapper>
