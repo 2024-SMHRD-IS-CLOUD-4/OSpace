@@ -1,4 +1,4 @@
-<%@page import="com.smhrd.model.User"%>
+<%@ page import="com.smhrd.model.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O'Space</title>
-    <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
 </head>
 <body>
 	<% 
