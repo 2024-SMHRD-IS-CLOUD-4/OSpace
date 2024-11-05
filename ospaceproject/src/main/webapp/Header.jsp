@@ -60,11 +60,5 @@
             </div>
         </div>
     </header>
-    <script>
-        const mdOpen=()=>{
-            document.getElementById("loginMD").style.display="block";
-        }
-        document.getElementById("headLoginBtn").addEventListener("click",mdOpen)
-    </script>
 </body>
 </html>
