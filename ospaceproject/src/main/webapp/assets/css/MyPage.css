@@ -1,0 +1,100 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+#MyPageBox{
+    position: relative;
+    width: 1200px;
+    margin: 0px auto;
+}
+#myPageLeft{
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 840px;
+    border-right: 1px solid #ddd;
+}
+.myPageLeftUser{
+    margin-top: 100px;
+    padding-left: 20px;
+    text-align: left;
+}
+.myPageLeftUser h2{
+    font-weight: bold;
+    font-size: 16pt;
+    color: #000;
+}
+.myPageLeftNav{
+    margin-top: 50px;
+}
+.myPageLeftNav ul li{
+    display: block;
+    float: left;
+    width: 194px;
+    height: 42px;
+    line-height: 42px;
+    padding-left: 20px;
+    text-align: left;
+}
+.myPageLeftNav ul li:hover{
+    background-color: #F8F8F8;
+    cursor: pointer;
+}
+#myPageRight{
+    float: right;
+    position: relative;
+    width: 1000px;
+    height: 840px;
+    text-align: left;
+    padding-left: 60px;
+    padding-top: 60px;
+}
+#myPageRight h1{
+    font-weight: lighter;
+    font-size: 26pt;
+}
+.line{
+   width:60px;
+   height: 3px;
+   background-color: #000; 
+   margin: 60px 0px 40px 0px ;
+}
+#myPageRightContents{
+    display: inline-block;
+    position: relative;
+    width: 1000px;
+    height: 530px;
+}
+#myPageRightContents .seller{
+    display: block;
+
+}
+#myPageRightContents .member{
+    display: none;
+
+}
+#myPageRightContents .manager{
+    display: none;
+}
+.contentsLeft{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 530px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+.contentsLeft li{
+    width: 234px;
+    height: 116px;
+    border-bottom: 1px solid #ddd;
+}
+.contentsRight{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 700px;
+    height: 530px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
