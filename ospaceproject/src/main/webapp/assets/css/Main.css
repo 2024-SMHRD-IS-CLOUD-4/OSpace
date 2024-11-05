@@ -269,3 +269,11 @@ body{
     width: 1200px;
     margin: 0px auto;
 }
+#headerNavBar{
+    position: fixed;
+    top: -150px;    
+    width: 100%;  
+    height: 100px;  
+    background-color: #ddd;
+    transition: top 0.5s;
+}

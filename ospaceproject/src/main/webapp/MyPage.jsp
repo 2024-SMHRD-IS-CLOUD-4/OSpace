@@ -1,60 +1,60 @@
-<%@page import="com.smhrd.model.User"%>
+<%@ page import="com.smhrd.model.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style type="text/css">
-.a {
-	position: absolute;
-	width: 280px;
-	height: 530px;
-	top: 394px;
-	left: 579px;
-	gap: 0px;
-	border: 1px 0px 0px 0px;
-	opacity: 0px;
-}
-
-.b {
-	position: absolute;
-	width: 700px;
-	height: 530px;
-	top: 394px;
-	left: 879px;
-	gap: 0px;
-	border-radius: 10px 0px 0px 0px;
-	border: 1px 0px 0px 0px;
-	opacity: 0px;
-}
-
-.user {
-	position: absolute;
-	width: 300px;
-	height: 36px;
-	top: 202px;
-	left: 579px;
-	border: 1px;
-}
-
-.order {
-	width: 609px;
-	height: 80px;
-	top: 477px;
-	left: 909px;
-}
-
-.review {
-	width: 204px;
-	height: 56px;
-	top: 433px;
-	left: 617px;
-	gap: 0px;
-	opacity: 0px;
-}
-</style>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		.a {
+			position: absolute;
+			width: 280px;
+			height: 530px;
+			top: 394px;
+			left: 579px;
+			gap: 0px;
+			border: 1px 0px 0px 0px;
+			opacity: 0px;
+		}
+		
+		.b {
+			position: absolute;
+			width: 700px;
+			height: 530px;
+			top: 394px;
+			left: 879px;
+			gap: 0px;
+			border-radius: 10px 0px 0px 0px;
+			border: 1px 0px 0px 0px;
+			opacity: 0px;
+		}
+		
+		.user {
+			position: absolute;
+			width: 300px;
+			height: 36px;
+			top: 202px;
+			left: 579px;
+			border: 1px;
+		}
+		
+		.order {
+			width: 609px;
+			height: 80px;
+			top: 477px;
+			left: 909px;
+		}
+		
+		.review {
+			width: 204px;
+			height: 56px;
+			top: 433px;
+			left: 617px;
+			gap: 0px;
+			opacity: 0px;
+		}
+	</style>
 </head>
 <body>
 <%
@@ -99,5 +99,6 @@
 			<li class="order"></li>
 		</ul>
 	</div>
+	
 </body>
 </html>

@@ -13,6 +13,9 @@
 <body>
     <%@ include file = "Header.jsp" %>
     <div id="body">
+    	<div id="headerNavBar">
+      		O'Space
+    	</div>
         <div id="mainBanner">
             <div id="btnRight"><img src="image/btnRight.png"></div>
             <div id="btnLeft"><img src="image/btnLeft.png"></div>
@@ -320,7 +323,7 @@
     <%@ include file = "Footer.jsp" %>
     <nav id="loginMD">
         <%@ include file = "Login.jsp" %>
-       </nav>
+    </nav>
     <script>
         const mdOpen = () => {
             document.getElementById("loginMD").style.display = "block";
@@ -332,6 +335,16 @@
        	
         document.getElementById("headLoginBtn").addEventListener("click", mdOpen);
         document.getElementById("closeBtn").addEventListener("click", mdClose);
+        
+        window.addEventListener("scroll", function(){
+            let scrollPosition = window.scrollY;
+
+            if(scrollPosition >= 10){
+                menuTop.style.top="0px";
+            }else{
+                menuTop.style.top="-150px";
+            }
+        })
     </script>
 </body>
 
