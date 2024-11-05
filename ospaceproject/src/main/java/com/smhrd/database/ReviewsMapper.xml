@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ReviewMapper">
+
+	<!-- 리뷰 추가 -->
+	<insert id="review_insert" parameterType="com.smhrd.model.Reviews">
+    INSERT INTO REVIEWS (REVIEW_ID, ID, PROD_ID, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_IMG, RATINGS, REVIEW_TAG, CREATED_AT)
+    VALUES (reviews_seq.nextval, #{id, jdbcType=VARCHAR}, #{prod_id, jdbcType=NUMERIC}, 
+            #{review_title, jdbcType=VARCHAR}, #{review_content, jdbcType=VARCHAR}, 
+            #{review_img, jdbcType=VARCHAR}, #{ratings, jdbcType=NUMERIC}, 
+            #{review_tag, jdbcType=VARCHAR}, SYSDATE)
+</insert>
+
+	<!-- 모든 리뷰 조회 -->
+	<select id="get_reviews" resultType="com.smhrd.model.Reviews">
+		SELECT * FROM REVIEWS
+	</select>
+
+</mapper>
