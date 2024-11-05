@@ -1,4 +1,4 @@
-package com.smhrd.controller;
+package com.smhrd.controller_user;
 
 import java.io.IOException;
 
@@ -25,7 +25,7 @@ public class UsedController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		ServletContext context = request.getServletContext();
-		String uploadpath = context.getRealPath("used");
+		String uploadpath = context.getRealPath("upload");
 		
 		int maxSize = 5*1024*1024;
 		
@@ -37,13 +37,10 @@ public class UsedController extends HttpServlet {
 		int used_price = Integer.parseInt(multi.getParameter("used_price"));
 		String used_location = multi.getParameter("used_location");
 		String used_img = multi.getFilesystemName("used_img");
-		
-		Used_Products usedproduct = new Used_Products(id, used_title, used_content, used_price, used_location, used_img); 
-		
+		Used_Products usedproduct = new Used_Products(0,id,used_title,used_price,used_location,0,used_img,null,'n',used_content);
 		Used_ProductsDAO dao = new Used_ProductsDAO();
 		int result = dao.insert(usedproduct);
-		
-		 if(result >0) {
+		if(result >0) {
 		    	response.sendRedirect("Used_ProductsList.jsp");
 		    }else {
 		    	response.sendRedirect("UsedAdd.jsp");

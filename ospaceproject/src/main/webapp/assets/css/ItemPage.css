@@ -1,0 +1,199 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.contentBox{
+    width: 1100px;
+    margin: 70px auto 0px auto;
+}
+#itemBoxImg{
+   margin-bottom: 25px;
+   float: left;
+   border: 1px solid #ddd;
+}
+#itemBoxT{
+    display: inline-block;
+    width: 100%;
+}
+#itemBoxImg img{
+    width: 420px;
+    height: 420px;
+}
+#itemBoxTitle{
+    width: 650px;
+    float: right;
+}
+.itemBoxCartegory{
+    text-align: right;
+}
+#itemBoxTitle h1{
+    font-size: 30pt;
+    font-weight: 500;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.itemBoxTitlePrise{
+    font-size: 30pt;
+    font-weight: 500;
+    text-align: right;
+    margin: 30px 0px 40px 0px;
+}
+.itemBoxSubTitle{
+    position: relative;
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 14pt;
+    
+}
+.itemT{
+    display: inline-block;
+    width:100px;
+    font-size: 16pt;
+    margin-right: 25px;
+}
+.itemBoxSubTitle select{
+    appearance: none;
+    width: 510px;
+    height:30px;
+    padding-left:10px;
+    border: 1px solid #ddd;
+    color:#A3A3A3;
+    
+}
+#itemBoxPrice{
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.itemBoxPrice{
+    float: right;
+    width: 540px;
+    text-align: left;
+
+}
+#optionBox{
+    display: inline-block;
+    position: relative;
+    font-size: 16pt;
+    padding-top: 10px;
+}
+#optionBoxScroll{
+    position: relative;
+    float: right;
+    width:420px;
+}
+#optionBox ul{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height:80px;
+    margin-left:30px;
+}
+#optionBox li{
+    position: relative;
+    width: 400px;
+    height: 30px;
+    padding-top: 5px;
+    font-size: 12pt;
+    display: inline-block;
+}
+#optionBox li span{
+    position: absolute;
+    right:40px;
+    width: 60px;
+}
+#optionBox li input{
+    right:0px;
+    width: 20px;
+    height: 22px;
+    margin-right: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+#priceBox{
+    display: inline-block;
+    position: relative;
+    width: 540px;
+    font-size: 16pt;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 140px;
+}
+#priceBox span{
+    font-size: 20pt;
+    font-weight: 600;
+    position: absolute;
+    right:0px;
+}
+#priceBoxSelect{
+    position: absolute;
+    right:0;
+    bottom: 20px;
+}
+#priceBoxSelect button{
+    appearance: none;
+    width: 168px;
+    height:50px;
+    border: 1px solid #999;
+    border-radius: 10px;
+    font-size: 14pt;
+    background-color: #fff;
+    margin-left: 20px;
+}
+#itemBoxContant{
+    display: block;
+    padding: 40px 0px;
+    margin: 60px 0px;
+    background-color: #ddd;
+}
+#itemBoxReview{
+    position: relative;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    padding-top: 25px;
+
+}
+#itemBoxReview h4{
+    text-align: left;
+    font-size: 16pt;
+    color: #555;
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+#itemBoxReview ul{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+#itemBoxReview li{
+    width: 100%;
+    height: 120px;
+}
+.itemBoxReviewleft{
+    width: 120px;
+    float:left;
+}
+.itemBoxReviewleft img{
+    width: 120px;
+    height: 120px;
+}
+.itemBoxReviewRight{
+    width: 940px;
+    height: 120px;
+    float: right;
+    text-align: left;
+    padding: 20px 0px;
+}
+.itemBoxReviewRight p{
+    margin-bottom: 10px;
+}
+.itemBoxReviewRightR{
+    float: right;
+    font-size: 10pt;
+    color: #555;
+}
+.itemBoxReviewPageNum{
+    width: 100%;
+    margin-top: 60px;
+}

@@ -1,4 +1,4 @@
-package com.smhrd.controller;
+package com.smhrd.controller_user;
 
 import java.io.IOException;
 
@@ -7,32 +7,36 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.smhrd.model.User;
 import com.smhrd.model.UserDAO;
 
-@WebServlet("/JoinController")
-public class JoinController extends HttpServlet {
+@WebServlet("/LoginController")
+public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+
+		request.setCharacterEncoding("utf-8");
+
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		String name = request.getParameter("name");
-		String addr = request.getParameter("addr");
-		String phone = request.getParameter("phone");
-		String u_type= request.getParameter("u_type");
-		
-		User user = new User(id, pw, name, addr, phone, u_type, null);
-		
+
+		User loginUser = new User(id, pw);
+
 		UserDAO dao = new UserDAO();
-		int result = dao.join(user);
-		if(result>0) {
-			response.sendRedirect("Login.html");
-		}else {
-			response.sendRedirect("JoinFail.html");
+
+		User result = dao.login(loginUser);
+
+		if (result == null) {
+			response.sendRedirect("LoginFail.html");
+		} else {
+			HttpSession session = request.getSession();
+			session.setAttribute("user", result);
+			response.sendRedirect("Main.jsp");
+			
 		}
 	}
 }

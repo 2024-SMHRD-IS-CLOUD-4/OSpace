@@ -94,3 +94,61 @@ button, input{
     border: none;
     background-color: #fff;
 }
+#joinFailBg{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#joinFail{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 700px;
+    text-align: center;
+    padding: 20px;
+    background: #ffffff;
+}
+#joinFail .closeBtn{
+    float: right;
+    font-size: 18pt;
+    border: none;
+    background-color: #fff;
+}
+.joinFailText{
+    display: block;
+    top: 30%;
+}
+.joinFailText h2{
+    font-size: 30pt;
+    margin-top: 160px;
+    margin-bottom: 60px;
+}
+.joinFailBtn{
+    margin-top: 160px;
+}
+.joinFailBtn button{
+    width: 150px;
+    height: 60px;
+    margin: 0px 10px;
+    border: solid 1px #655A50;
+    border-radius: 10px;
+    font-size: 12pt;
+    color:#333;
+    background-color: #fff;
+}
+.joinSuccessText {
+    display: block;
+    top: 30%;
+    padding-top: 120px;
+}
+.joinSuccessText h2{
+    font-size: 24pt;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}

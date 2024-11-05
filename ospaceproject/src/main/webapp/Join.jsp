@@ -77,8 +77,30 @@
 		</div>
 		
 	</div>
-	
 	<%@ include file = "Footer.jsp" %>
+	<!-- 회원가입 실패 시 모달창 -->
+	<!--  <div id="joinFailBg">
+        <div id="joinFail">
+            <div><button class="closeBtn">X</button></div>
+            <div class="joinFailText">
+                <h2> 회원가입에 <br> 실패하셨습니다 </h2>
+
+                <p> 
+                    작성하지 않은 내용이 있거나 <br> 
+                    올바르지 않는 내용이 있을 경우 <br>
+                    회원가입이 어렵습니다.
+                </p>
+            </div>
+            <div class="joinFailBtn">
+                <span>
+                    <button>다시 작성하기 </button>
+                    <a href="Main.html">
+                        <button>홈으로 돌아가기</button>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>-->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>

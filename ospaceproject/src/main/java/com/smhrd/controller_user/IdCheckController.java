@@ -1,4 +1,4 @@
-package com.smhrd.controller;
+package com.smhrd.controller_user;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,7 +18,6 @@ public class IdCheckController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String id = request.getParameter("id");
-		System.out.println(id);
 		UserDAO dao = new UserDAO();
 		int result = dao.idCheck(id);
 		// result : 입력한 값이 db에 있으면 true => 사용 불가 아이디
