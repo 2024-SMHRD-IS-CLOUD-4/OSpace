@@ -43,18 +43,8 @@
         </div>
     </div>
 
-    <div id="body">
-        <div id="left">
-            <p>일반회원</p>
-            <ul>
-                <li>회원정보수정</li>
-                <li>리뷰</li>
-                <li>중고거래</li>
-                <li>장바구니</li>
-                <li>주문내역</li>
-            </ul>
-        </div>
-    </div>
+    <div id="container"> 
+    	<jsp:include page="Myleft.jsp" />
 
     <div id="right">
         <p>회원정보수정</p>
@@ -93,18 +83,17 @@
                 </td>
             </tr>
         </table>
-
+	</div>
         <div>
             <input type="submit" value="저장하기">
             <input type="submit" value="회원탈퇴">
         </div>
     </div>
 
-    <div id="footer">
-        <div>
-            <a href="#">고객센터 문의글 작성하기</a>
-        </div>
-    </div>
+	<div>
+		<jsp:include page="Footer.jsp" />
+	</div>
+	
 </body>
 
 </html>
