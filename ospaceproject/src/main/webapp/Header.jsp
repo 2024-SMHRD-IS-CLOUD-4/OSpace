@@ -12,10 +12,12 @@
 <%
 	
 	request.getSession(false);
-	if(session.getAttribute("user")!=null){
-		User user = (User)request.getAttribute("user");
-		String userName = user.getName();
-		String userType = user.getU_type();
+	String userName =null;
+	String userType =null;
+	User user = (User)request.getAttribute("user");
+	if(user!=null){
+		userName = user.getName();
+		userType = user.getU_type();
 	}else{
 		
 	};
