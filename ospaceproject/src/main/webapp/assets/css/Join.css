@@ -110,6 +110,7 @@ button, input{
     transform: translate(-50%, -50%);
     width: 500px;
     height: 700px;
+    overflow: hidden;
     text-align: center;
     padding: 20px;
     background: #ffffff;
@@ -119,6 +120,12 @@ button, input{
     font-size: 18pt;
     border: none;
     background-color: #fff;
+}
+.loginBoxOnOff{
+	display:block;
+}
+.loginBoxFale{
+	display:none;
 }
 .joinFailText{
     display: block;
@@ -195,4 +202,14 @@ button, input{
     height: 30px;
     border: none;
     border-bottom: 1px solid #655A50;
+}
+.loginBoxFaleText{
+	width:100%;
+}
+.loginBoxFaleText h1{
+	margin-top:200px;
+	margin-bottom: 60px;
+}
+.loginBoxFaleText p{
+	margin-bottom:140px;
 }
