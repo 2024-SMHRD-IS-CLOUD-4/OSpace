@@ -49,7 +49,7 @@ public class ProdaddController extends HttpServlet {
 	    String prod_op = multi.getParameter("prod_op");
 	    String prod_desc = multi.getParameter("prod_desc");
 	    
-	    Products m = new Products(1, id, category_id, prod_name, prod_img, prod_price, prod_color, prod_op,prod_desc);
+	    Products m = new Products(1, id, category_id, prod_name, prod_img, prod_price, prod_color,0,null, prod_op,prod_desc);
 	    ProductsDAO dao = new ProductsDAO();
 	    int result = dao.insert(m);
 	    

@@ -11,11 +11,11 @@ public class Used_Products {
 	String used_location;
 	String used_img;
 	int used_views;
-	String created_at;
+	Date created_at;
 	char is_sold;
 
 
-	public Used_Products(int used_id, String id, String used_title, int used_price, String used_location, int used_views, String used_img, String created_at, char is_sold, String used_content) {
+	public Used_Products(int used_id, String id, String used_title, int used_price, String used_location, int used_views, String used_img, Date created_at, char is_sold, String used_content) {
 		super();
 		this.used_id = used_id;
 		this.id = id;
@@ -69,7 +69,7 @@ public class Used_Products {
 	}
 
 
-	public String getCreated_at() {
+	public Date getCreated_at() {
 		return created_at;
 	}
 

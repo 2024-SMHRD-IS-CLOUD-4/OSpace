@@ -26,7 +26,7 @@ public class ProductUpdateController extends HttpServlet {
 		int price = Integer.parseInt(request.getParameter("price"));
 		String color = request.getParameter("color");
 		String content = request.getParameter("content");
-		Products p = new Products(prod_id, null, category, name, img, price, color, null, content);
+		Products p = new Products(prod_id, null, category, name, img, price, color,0,null, null, content);
 		ProductsDAO dao = new ProductsDAO();
 		int result = dao.update(p);
 		if (result > 0) {

@@ -15,18 +15,13 @@ public class ReviewsDAO {
 		
 		SqlSession sqlSession = factory.openSession(true);
 		int result = sqlSession.insert("ReviewMapper.review_insert", review);
-		
 		sqlSession.close();
 		return result;
 	}
-	
 	public List<Reviews> getreview(){
 		SqlSession session = factory.openSession(true);
 		List<Reviews> result = session.selectList("ReviewMapper.get_reviews");
 		session.close();
-	    return result;	
+	    return result;
 	}
-	
-	
-	
 }
