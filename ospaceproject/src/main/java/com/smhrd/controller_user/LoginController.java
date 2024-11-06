@@ -29,7 +29,7 @@ public class LoginController extends HttpServlet {
 		UserDAO dao = new UserDAO();
 
 		User result = dao.login(loginUser);
-
+		
 		if (result == null) {
 			response.sendRedirect("LoginFail.html");
 		} else {
