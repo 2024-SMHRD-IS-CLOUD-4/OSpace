@@ -60,6 +60,7 @@
                         총 금액<span>00,000원</span>
                     </div>
                     <div id="priceBoxSelect">
+                        <button id="checkBox"><div class="checkBox"></div>찜하기</button>
                         <button>장바구니 담기</button>
                         <button>구매하기</button>
                     </div>
