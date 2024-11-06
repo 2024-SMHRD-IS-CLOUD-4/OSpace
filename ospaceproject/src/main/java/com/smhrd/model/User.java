@@ -45,5 +45,4 @@ public class User {
 	public String getJoined_at() {
 		return joined_at;
 	}
-	
 }
