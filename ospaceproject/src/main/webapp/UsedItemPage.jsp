@@ -87,6 +87,19 @@
             </div>
         </div>
     </div>
-        <%@ include file = "Footer.jsp" %>
+	<%@ include file = "Footer.jsp" %>
+	<nav id="loginMD">
+		<%@ include file="Login.jsp"%>
+</nav>
+<script>
+        const mdOpen = () => {
+            document.getElementById("loginMD").style.display = "block";
+        }
+       	const mdClose = () => {
+       		document.getElementById("loginMD").style.display = "none";
+       	}
+        document.getElementById("headLoginBtn").addEventListener("click", mdOpen);
+        document.getElementById("closeBtn").addEventListener("click", mdClose);
+</script>
 </body>
 </html>

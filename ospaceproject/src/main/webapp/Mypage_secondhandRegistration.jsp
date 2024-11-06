@@ -9,26 +9,7 @@
 </head>
 
 <body>
-    <div id="header">
-        <div id="logo">
-            <a href="mypage.html">
-                <img src="https://drive.google.com/thumbnail?id=1BCKohuhG1uxkzJv36GL2I-cOYC_zLOoD">
-                O'Space
-            </a>
-        </div>
-        <div>
-            <buttion type="buttion">
-                <img src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
-                |
-                <div>검색하기</div>
-            </buttion>
-
-            <div id="information">
-                <span>Name님</span>
-                <span><a href="#">고객센터</a></span>
-            </div>
-        </div>
-    </div>
+    <%@ include file="Header.jsp"%>
 
     <div id="Category">
         <div id="nava">
@@ -47,7 +28,8 @@
                 <li>회원정보수정</li>
                 <li>리뷰</li>
                 <li>
-                    <ul>중고거래
+                    <ul>
+                    	<li>중고거래</li>
                         <li>중고상품 등록하기</li>
                         <li>등록상품 리스트</li>
                         <li>신고 리스트 보기</li>
@@ -105,11 +87,7 @@
         </div>
     </div>
 
-    <div id="footer">
-        <div>
-            <a href="#">고객센터 문의글 작성하기</a>
-        </div>
-    </div>
+    	<%@ include file="Footer.jsp"%>
 </body>
 
 </html>
