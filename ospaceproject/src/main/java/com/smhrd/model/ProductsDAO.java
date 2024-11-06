@@ -69,13 +69,16 @@ public class ProductsDAO {
 		session.close();
 		return result;
 	}
-	
+	public List<Products> orderByDate(){
+		SqlSession session = factory.openSession(true);
+		List<Products> result = session.selectList("ProductMapper.orderByDate");
+		session.close();
+		return result;
+	}
 	public int incrementViews(int prod_id) {
 	    SqlSession session = factory.openSession(true);
 	    int result = session.update("ProductMapper.incrementViews", prod_id);
 	    session.close();
 	    return result;
 	}
-	
-	
 }

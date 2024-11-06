@@ -20,22 +20,20 @@ public class LoginController extends HttpServlet {
 			throws ServletException, IOException {
 
 		request.setCharacterEncoding("utf-8");
-
+		String referer = request.getHeader("Referer");
+		
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 
 		User loginUser = new User(id, pw);
-
 		UserDAO dao = new UserDAO();
-
 		User result = dao.login(loginUser);
-		
 		if (result == null) {
 			response.sendRedirect("LoginFail.html");
 		} else {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", result);
-			response.sendRedirect("Main.jsp");
+			response.sendRedirect(referer);
 		}
 	}
 }

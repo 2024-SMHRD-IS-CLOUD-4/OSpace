@@ -16,7 +16,6 @@ public class LogoutController extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		session.invalidate();
-		String prePage = request.getHeader("Referer");
-		response.sendRedirect(prePage);
+		response.sendRedirect("Main.jsp");
 	}
 }

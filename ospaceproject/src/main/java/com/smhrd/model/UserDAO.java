@@ -42,11 +42,10 @@ public class UserDAO {
 	
 	public int delete(String id) {
 		SqlSession session = factory.openSession(true);
-		int result = session.delete("Mapper.deleteone",id);
+		int result = session.delete("UserMapper.deleteone",id);
 		session.close();
 		return result;
 	}
-	
 	// id 중복 체크 기능
 	public int idCheck(String id) {
 		SqlSession session = factory.openSession(true);
@@ -60,12 +59,10 @@ public class UserDAO {
 		session.close();
 		return result;
 	}
-	
 	public String idFind(User user) {
 		SqlSession session = factory.openSession(true);
 		String result = session.selectOne("UserMapper.idFind",user);
 		session.close();
 		return result;
 	}
-	
 }

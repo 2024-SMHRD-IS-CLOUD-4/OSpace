@@ -13,15 +13,13 @@
 	request.getSession(false);
 	String userName =null;
 	String userType =null;
-	User user = (User)request.getAttribute("user");
+	User user = (User)session.getAttribute("user");
 	if(user!=null){
 		userName = user.getName();
 		userType = user.getU_type();
 	}else{
 		
 	};
-	
-
 %>
 	<header id="header">
 		<div id="logo">
@@ -54,7 +52,7 @@
 				</ul>
             </div>
             <div id="login">
-            	<%if(session.getAttribute("user") == null){%>
+            	<%if(user == null){%>
                 <button type="button" id="headLoginBtn" class="headerLoginBtn">로그인</button>
             	<%}else{ %>
             		<span><a href="MyPage.jsp">마이페이지</a></span>
@@ -66,4 +64,3 @@
     </header>
 </body>
 </html>
-

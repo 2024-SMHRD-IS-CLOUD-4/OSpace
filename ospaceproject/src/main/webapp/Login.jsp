@@ -14,14 +14,14 @@
                 <div class="loginBoxLogo">
                     <img src="https://drive.google.com/thumbnail?id=1BCKohuhG1uxkzJv36GL2I-cOYC_zLOoD">
                 </div>
-                <form action="LoginController" method="post">
+                <form action="LoginController" method="post" id="form1">
                     <div class="loginBox">
                         <div class="loginBoxRow">
                             <div class="loginBoxIdPw">
                                 ID
                             </div>
                             <div class="loginBoxInput">
-                                <input type="text" name="id" placeholder="아이디를 입력해주세요.">
+                                <input type="text" id="id" name="id" placeholder="아이디를 입력해주세요.">
                             </div>
                         </div>
                         <div class="loginBoxRow">
@@ -29,7 +29,7 @@
                                 PW
                             </div>
                             <div class="loginBoxInput">
-                                <input type="password" name="pw" placeholder="비밀번호를 입력해주세요.">
+                                <input type="password" id="pw" name="pw" placeholder="비밀번호를 입력해주세요.">
                             </div>
                         </div>
                     </div>
@@ -51,31 +51,30 @@
                 </div>
             </div>
         </div>
+    <script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
     <script>
-		$("#submit").on("click", ()=>{
-					// 버튼이 클릭되면
-					// 사용자가 입력한 아이디 가져오기
-					let inputId = $("#id").val();
-					// 아이디가 DB 안에 있는지 => 서버통신(동기/비동기)
-					// 결과가 SPAN에 출력
-					$.ajax({
-						url : "users/exists", // 요청 경로 -> 상대 경로는 앞에 '/' 생략
-						type : "get", // 요청 방식 (get,post)
-						data : {"input":inputId}, // 요청 데이터 (json{key:value,~})
-						success : (data)=>{
-							console.log(data);
-							if(data==="true"){ // 사용 불가능 아이디
-								$("#idCheckResult").text("사용 불가 아이디");
-							}else{
-								$("#idCheckResult").text("사용 가능 아이디");
-							}
-						},
-						error : () => { // 통신 실패
-							alert("통신실패");
-						}
-					})
-					
-				})
+    $(document).ready(()=>{
+		$('#form1').submit((event)=>{
+			let id = $('#id').val();
+			let pw = $('#pw').val();
+			console.log(id);
+			console.log(pw);
+			if(id===''){
+				alert('아이디 입력!')
+				event.preventDefault();
+				return false;
+			}
+			if(pw===''){
+				alert('비밀번호 입력!')
+				event.preventDefault();
+				return false;
+			}
+		})
+	})
 	</script>
 </body>
 </html> 

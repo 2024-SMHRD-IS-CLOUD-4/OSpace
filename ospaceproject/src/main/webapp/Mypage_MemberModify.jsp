@@ -40,7 +40,6 @@
                                 </div>
 =======
 <body>
-<%@ include file = "Header.jsp" %>
 	<div id="body">
         <div id="MY PageBox">
         	<div id="myPageLeft">
