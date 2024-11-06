@@ -13,7 +13,7 @@
 	<div id="body">
 		<div class="itemBox">
 			<div class="joinTitle">
-				<h1 class="mainItemTitle">회원가입</h1>
+				<h1 class="mainItemTitle">회원가입</h1>  
 			</div>
 			<form action="JoinController">
 				<table  class="joinBox">
