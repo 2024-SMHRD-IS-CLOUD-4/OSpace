@@ -31,8 +31,8 @@
 			</div>
 		</div>
 		<div id="serch">
-			<button type="button" class="serch">
-			<img class="btnImg" src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
+			<button type="button" class="serchBtn">
+				<img class="btnImg" src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
 				|
 				<div>검색하기</div>
 			</button>

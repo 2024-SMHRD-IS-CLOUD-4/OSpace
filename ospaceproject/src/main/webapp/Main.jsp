@@ -26,7 +26,6 @@
 		String[] category = {"의자", "책상", "침대", "수납장", "커튼", "벽지"};
 	%>
 	<div id="body">
-		<div id="headerNavBar">O'Space</div>
 		<div id="mainBanner">
 			<div id="btnRight">
 				<img src="image/btnRight.png">
