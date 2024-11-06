@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O'Space</title>
-    <link rel="stylesheet" href="assects/css/Main.css" type="text/css" />
-    <link rel="stylesheet" href="assects/css/Item.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/Item.css" type="text/css" />
 </head>
 <body>
 	<%@ include file = "Header.jsp" %>

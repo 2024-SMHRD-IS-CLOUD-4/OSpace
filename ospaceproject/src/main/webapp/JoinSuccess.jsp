@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>O'Space</title>
-<link rel="stylesheet" href="assects/css/Join.css" type="text/css" />
-<link rel="stylesheet" href="assects/css/Main.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
 </head>
 <body>
     <!-- 전체 div -->
