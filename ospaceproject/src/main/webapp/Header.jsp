@@ -10,7 +10,6 @@
 </head>
 <body>
 <%
-	
 	request.getSession(false);
 	String userName =null;
 	String userType =null;
@@ -42,19 +41,19 @@
 			<div id="nav">
 				<ul>
 					<li>
-                        <a href="ItemSearchCartegory.jsp">카테고리</a>
+                        <a href="ItemSearch.jsp?title=카테고리">카테고리</a>
                     </li>
 					<li>
-						<a href="ItemSearchReview.jsp">리뷰보기</a>
+						<a href="ItemSearch.jsp?title=리뷰보기">리뷰보기</a>
 					</li>
 					<li>
-						<a href="ItemSearchUsedItem.jsp">중고거래</a>
+						<a href="ItemSearch.jsp?title=중고거래">중고거래</a>
 					</li>
 				</ul>
             </div>
             <div id="login">
-            	<%if(session.getAttribute("user")==null){%>
-                <button type="button" id="headLoginBtn" class="headerLoginBtn">로그인</button>
+            	<%if(userName==null){%>
+                <a href="Login.html"><button type="button" id="headLoginBtn" class="headerLoginBtn">로그인</button></a>
             	<%}else{ %>
             		<span><a href="MyPage.jsp">마이페이지</a></span>
             		<span><a href="LogoutController.jsp">로그아웃</a></span>

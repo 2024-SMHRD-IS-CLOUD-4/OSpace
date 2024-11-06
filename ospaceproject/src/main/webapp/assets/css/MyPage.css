@@ -79,11 +79,11 @@
 }
 
 .member{
-    display: none;
+    display: block;
 
 }
 .manager{
-    display: block;
+    display: none;
 }
 .contentsLeft h4{
     font-size: 16pt;

@@ -30,9 +30,33 @@ public class Boards {
 		this.id = id;
 		this.b_content = b_content;
 	}
-	
-	
-	
+
+	public int getB_id() {
+		return b_id;
+	}
+
+	public String getB_title() {
+		return b_title;
+	}
+
+	public String getB_file() {
+		return b_file;
+	}
+
+	public Date getCreated_at() {
+		return created_at;
+	}
+
+	public int getB_views() {
+		return b_views;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public String getB_content() {
+		return b_content;
+	}
 	
 }
-	
