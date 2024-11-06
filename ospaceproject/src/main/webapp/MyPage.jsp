@@ -11,19 +11,7 @@
     <link rel="stylesheet" href="assects/css/MyPage.css" type="text/css" />
 </head>
 <body>
-<%
-	request.getSession(false);
-	User user = (User)request.getAttribute("user");
-	String userName = "";
-	String userType = "";
-	if(user!=null){
-		System.out.print("123");
-		userName = user.getName();
-		userType = user.getU_type();
-	}else{
-		
-	}
-%>
+
 <%@ include file = "Header.jsp" %>
 	<div id="body">
         <div id="headerNavBar">
