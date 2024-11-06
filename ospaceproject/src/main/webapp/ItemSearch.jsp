@@ -71,7 +71,7 @@
         중고거래를 클릭하면 중고거래가 나오게-->
 		<div id="mainItem01">
 			<div class="itemTitle">
-				<h1 calss="mainItemTitle">
+				<h1 class="mainItemTitle">
 					<span id="title"></span>
 				</h1>
 			</div>
@@ -113,8 +113,7 @@
 						<div class="itemSmallBox">
 							<a href="ProductDetail.jsp?prod_id=<%=p.getProd_id()%>">
 								<div class="itemSmallBoxImg">
-									<img
-										src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
+									<img src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
 								</div>
 								<div class="itemSmallBoxText">
 									<p class="itmSellerID"><%=p.getId()%></p>

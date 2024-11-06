@@ -32,11 +32,11 @@
             </div>
         </div>
         <div id="serch">
-            <buttion type="buttion" class="serch">
+            <button type="button" class="serch">
                 <img class="btnImg" src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
                 |
                 <div>검색하기</div>
-            </buttion>
+            </button>
         </div>
         <div id="con">
             <div id="nav">
@@ -71,7 +71,7 @@
         중고거래를 클릭하면 중고거래가 나오게-->
         <div id="mainItem01">
             <div class="itemTitle">
-                <h1 calss="mainItemTitle"><%= title+">"+subTitle %> </h1>             </div>
+                <h1 class="mainItemTitle"><%= title+">"+subTitle %> </h1>             </div>
             <div class="itemBox">
                 <ul>
                     <li>
