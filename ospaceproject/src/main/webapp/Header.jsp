@@ -20,6 +20,8 @@
 	}else{
 		
 	};
+	
+
 %>
 	<header id="header">
 		<div id="logo">
@@ -52,11 +54,11 @@
 				</ul>
             </div>
             <div id="login">
-            	<%if(userName==null){%>
-                <button type="button" id="headLoginBtn" class="headerLoginBtn">로그인</button>
+            	<%if(session.getAttribute("user") == null){%>
+                <a href="Login.html"><button type="button" id="headLoginBtn" class="headerLoginBtn">로그인</button></a>
             	<%}else{ %>
             		<span><a href="MyPage.jsp">마이페이지</a></span>
-            		<span><a href="LogoutController.jsp">로그아웃</a></span>
+            		<span><a href="LogoutController">로그아웃</a></span>
             	<%}%>
                 <span><a href="#">고객센터</a></span>
             </div>
