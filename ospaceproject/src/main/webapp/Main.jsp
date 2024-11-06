@@ -11,16 +11,18 @@
     <meta charset="UTF-8">
     <title>O'Space</title>
     <link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
+</head>
 <body>
     <%@ include file = "Header.jsp" %>
     <%
-		ProductsDAO dao = new ProductsDAO();
-		List<Products>lst = dao.orderByViews();
-	%>
+      ProductsDAO dao = new ProductsDAO();
+      List<Products>lst = dao.orderByViews();
+   %>
     <div id="body">
-    	<div id="headerNavBar">
-      		O'Space
-    	</div>
+       <div id="headerNavBar">
+            O'Space
+       </div>
         <div id="mainBanner">
             <div id="btnRight"><img src="image/btnRight.png"></div>
             <div id="btnLeft"><img src="image/btnLeft.png"></div>
@@ -237,13 +239,11 @@
         const mdOpen = () => {
             document.getElementById("loginMD").style.display = "block";
         }
-       	const mdClose = () => {
-       		document.getElementById("loginMD").style.display = "none";
-       	}
-       	
+          const mdClose = () => {
+             document.getElementById("loginMD").style.display = "none";
+          }
         document.getElementById("headLoginBtn").addEventListener("click", mdOpen);
         document.getElementById("closeBtn").addEventListener("click", mdClose);
     </script>
 </body>
-
 </html>
