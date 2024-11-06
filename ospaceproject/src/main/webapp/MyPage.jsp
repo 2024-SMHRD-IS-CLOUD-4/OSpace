@@ -41,11 +41,12 @@
             </div>
             </div>
             <div id="myPageRight">
-            	<% if(user!=null){%>
+            	
                 <h1>
                 	<span class="seller">판매자회원</span>
                     <span class="member">일반회원</span>
                     <span class="manager">관리자</span>
+                    <% if(user!=null){%>
                 	<%=userName%> 님 반갑습니다!<%}%>
                 </h1>
                 
