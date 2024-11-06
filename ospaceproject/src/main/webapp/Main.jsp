@@ -332,19 +332,8 @@
        		document.getElementById("loginMD").style.display = "none";
        	}
        	
-       	
         document.getElementById("headLoginBtn").addEventListener("click", mdOpen);
         document.getElementById("closeBtn").addEventListener("click", mdClose);
-        
-        window.addEventListener("scroll", function(){
-            let scrollPosition = window.scrollY;
-
-            if(scrollPosition >= 10){
-                menuTop.style.top="0px";
-            }else{
-                menuTop.style.top="-150px";
-            }
-        })
     </script>
 </body>
 

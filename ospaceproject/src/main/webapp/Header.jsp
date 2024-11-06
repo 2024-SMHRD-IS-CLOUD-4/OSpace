@@ -10,6 +10,7 @@
 </head>
 <body>
 <%
+	
 	request.getSession(false);
 	if(session.getAttribute("user")!=null){
 		User user = (User)request.getAttribute("user");
