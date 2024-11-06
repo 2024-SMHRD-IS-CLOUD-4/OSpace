@@ -64,7 +64,7 @@
 					</tr>
 				</table>
 				<div id="submitBox">
-					<input type="submit" id="submit" class="submit" value="가입하기">
+					<input type="submit" id="submit" value="가입하기">
 				</div>
 			</form>
 			<div id="JoinIdPwButtonBox">

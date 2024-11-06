@@ -69,5 +69,3 @@
 </body>
 </html>
 
-git fetch origin master
-
