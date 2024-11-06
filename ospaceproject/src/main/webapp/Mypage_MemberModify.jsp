@@ -153,6 +153,7 @@
     </script>
 
 
+git pull origin master
 
 
 
