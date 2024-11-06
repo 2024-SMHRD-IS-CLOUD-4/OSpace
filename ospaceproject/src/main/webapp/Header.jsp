@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 	<title>O'Space</title>
 	<link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
+	
 </head>
 <body>
 <%
@@ -50,7 +51,7 @@
             </div>
             <div id="login">
             	<%if(session.getAttribute("user")==null){%>
-                <span><a href="Login.html">로그인</a></span>
+                <button type="button" id="headLoginBtn">로그인</button>
             	<%}else{ %>
             		<span><a href="MyPage.jsp">마이페이지</a></span>
             		<span><a href="LogoutController">로그아웃</a></span>
@@ -59,5 +60,14 @@
             </div>
         </div>
     </header>
+    <script>
+        const mdOpen=()=>{
+            document.getElementById("loginMD").style.display="block";
+        }
+        document.getElementById("headLoginBtn").addEventListener("click",mdOpen)
+    </script>
 </body>
 </html>
+
+git fetch origin master
+
