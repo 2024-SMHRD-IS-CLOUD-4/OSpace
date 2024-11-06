@@ -17,10 +17,9 @@
   </environments>
   <mappers>
  
-    <mapper resource="com/smhrd/database/UserMapper.xml"/>
     <mapper resource="com/smhrd/database/ProductMapper.xml"/>
+    <mapper resource="com/smhrd/database/UserMapper.xml"/>
+    <mapper resource="com/smhrd/database/ReviewMapper.xml"/>
     <mapper resource="com/smhrd/database/ReportMapper.xml"/>
-    <mapper resource="com/smhrd/database/ReviewsMapper.xml"/>
-    <mapper resource="com/smhrd/database/BoardMapper.xml"/>
   </mappers>
 </configuration>

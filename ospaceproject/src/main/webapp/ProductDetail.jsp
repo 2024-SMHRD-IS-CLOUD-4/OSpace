@@ -12,6 +12,8 @@
 <% 
 	int prod_id = Integer.parseInt(request.getParameter("prod_id"));  
 	ProductsDAO dao = new ProductsDAO();
+
+	dao.incrementViews(prod_id);
 	Products p = dao.getSingleProduct(prod_id);
 %>
 	<h1>상세 정보</h1>

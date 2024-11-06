@@ -69,4 +69,13 @@ public class ProductsDAO {
 		session.close();
 		return result;
 	}
+	
+	public int incrementViews(int prod_id) {
+	    SqlSession session = factory.openSession(true);
+	    int result = session.update("ProductMapper.incrementViews", prod_id);
+	    session.close();
+	    return result;
+	}
+	
+	
 }

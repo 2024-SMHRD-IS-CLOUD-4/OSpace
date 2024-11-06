@@ -1,92 +1,77 @@
-<%@page import="com.smhrd.model.Products"%>
-<%@page import="java.util.List"%>
-<%@page import="com.smhrd.model.ProductsDAO"%>
-<%@page import="com.smhrd.model.User"%>
+<%@ page import="com.smhrd.model.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-
+<html lang="kr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O'Space</title>
     <link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
 </head>
 <body>
-    <%@ include file = "Header.jsp" %>
-    <%
-      ProductsDAO dao = new ProductsDAO();
-      List<Products>lst = dao.orderByViews();
-   %>
-    <div id="body">
-       <div id="headerNavBar">
-            O'Space
-       </div>
-        <div id="mainBanner">
-            <div id="btnRight"><img src="image/btnRight.png"></div>
-            <div id="btnLeft"><img src="image/btnLeft.png"></div>
-            <div id="btnChangePage"></div>
+	<% 
+//	String categoryName = session.getAttribute(name); 
+	String categoryName = "가구";
+//	String userName = session.getAttribute(name);
+	String userName = "asd";
+	
+	%>
+<script type="text/javascript">
+	const urlParams = new URLSearchParams(window.location.search);
+	const title = urlParams.get('title');
+	console.log(title);
+</script>
+    <header id="header">
+        <div id="logo">
+            <div>
+                <a href="Main.html">
+                    <img src="https://drive.google.com/thumbnail?id=1BCKohuhG1uxkzJv36GL2I-cOYC_zLOoD">
+                    O'Space
+                </a>
+            </div>
         </div>
-        <div id="mainCategory">
-            <div id="mainCategoryCon">
+        <div id="serch">
+            <buttion type="buttion" class="serch">
+                <img class="btnImg" src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
+                |
+                <div>검색하기</div>
+            </buttion>
+        </div>
+        <div id="con">
+            <div id="nav">
                 <ul>
                     <li>
-                        <a href="ItemSearch.jsp?title=카테고리&subTitle=의자">
-                            <div class="mainCategoryImg">
-                                <img src="image/cartegoryImg.png">
-                            </div>
-                            <p>의자</p>
-                        </a>
+                        <a href="ItemResult.html">카테고리</a>
                     </li>
                     <li>
-                        <a href="ItemSearch.jsp?title=카테고리&subTitle=책상">
-                            <div class="mainCategoryImg">
-                                <img src="image/cartegoryImg.png">
-                            </div>
-                            <p>책상</p>
-                        </a>
+                        <a href="ItemResult.html">리뷰보기</a>
                     </li>
                     <li>
-                        <a href="ItemSearch.jsp?title=카테고리&subTitle=침대">
-                            <div class="mainCategoryImg">
-                                <img src="image/cartegoryImg.png">
-                            </div>
-                            <p>침대</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="ItemSearch.jsp?title=카테고리&subTitle=수납장">
-                            <div class="mainCategoryImg">
-                                <img src="image/cartegoryImg.png">
-                            </div>
-                            <p>수납장</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="ItemSearch.jsp?title=카테고리&subTitle=커튼">
-                            <div class="mainCategoryImg">
-                                <img src="image/cartegoryImg.png">
-                            </div>
-                            <p>커튼</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="ItemSearch.jsp?title=카테고리&subTitle=벽지">
-                            <div class="mainCategoryImg">
-                                <img src="image/cartegoryImg.png">
-                            </div>
-                            <p>벽지</p>
-                        </a>
+                        <a href="ItemResult.html">중고거래</a>
                     </li>
                 </ul>
             </div>
+            <div id="login">
+                <span>로그인</span>
+                <span><a href="#">고객센터</a></span>
+            </div>
         </div>
+    </header>
+    <div id="body">
+    <%
+//    	String title = session.getAttribute(title);
+    		String title = "카테고리";
+// 		String subTitle = session.getAttribute(subTitle);
+    		String subTitle = "의자";
+    		String Color = "";
+    %>
+        <!--리뷰를 클릭하면 리뷰가 나오게, 
+        카테고리를 클릭하면 첫 카테고리가 나오게, 
+        중고거래를 클릭하면 중고거래가 나오게-->
         <div id="mainItem01">
             <div class="itemTitle">
-                <h5 class="subItemTitle">new</h5>
-                <h1 calss="mainItemTitle">최다 별점!</h1>
-            </div>
+                <h1 calss="mainItemTitle"><%= title+">"+subTitle %> </h1>             </div>
             <div class="itemBox">
                 <ul>
                     <li>
@@ -201,49 +186,14 @@
                             </a>
                         </div>
                     </li>
-                </ul>
-            </div>
-        </div>
-        <div id="mainItem02">
-            <div class="itemTitle">
-                <h5 class="subItemTitle">중고거래</h5>
-                <h1 calss="mainItemTitle">HOT! 조회수</h1>
-            </div>
-            <div class="itemBox">
-                <ul>
-                <%for(Products p :lst){ %>
-                    <li>
-                        <div class="itemSmallBox">
-                            <a href="#">
-                                <div class="itemSmallBoxImg">
-                                    <img src="#">
-                                </div>
-                                <div class="itemSmallBoxText">
-                                    <p class="itmSellerID"><%=p.getId() %></p>
-                                    <p class="itemName"><%=p.getProd_name() %></p>
-                                    <p class="itemPrice"><%=p.getProd_price() %></p>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <%} %>
                 </ul>
             </div>
         </div>
     </div>
-    <%@ include file = "Footer.jsp" %>
-    <nav id="loginMD">
-        <%@ include file = "Login.jsp" %>
-    </nav>
-    <script>
-        const mdOpen = () => {
-            document.getElementById("loginMD").style.display = "block";
-        }
-          const mdClose = () => {
-             document.getElementById("loginMD").style.display = "none";
-          }
-        document.getElementById("headLoginBtn").addEventListener("click", mdOpen);
-        document.getElementById("closeBtn").addEventListener("click", mdClose);
-    </script>
+    <footer id="footer">
+        <div>
+            <a href="#">고객센터 문의글작성하기</a>
+        </div>
+    </footer>
 </body>
 </html>
