@@ -11,22 +11,25 @@
 <body>
     <div id="header">
         <div id="logo">
-            <a href="Mypage.html">
+            <a href="MyMypage.html">
                 <img src="https://drive.google.com/thumbnail?id=1BCKohuhG1uxkzJv36GL2I-cOYC_zLOoD">
                 O'Space
             </a>
         </div>
-        <div>
-            <buttion type="buttion">
-                <img src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
+        <div id="serch">
+            <buttion type="buttion" class="serch">
+                <img class="btnImg" src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
                 |
                 <div>검색하기</div>
             </buttion>
-
-            <div id="information">
-                <span>Name님</span>
-                <span><a href="#">고객센터</a></span>
-            </div>
+        </div>
+        <div id="login">
+            <span>로그인</span>
+            <span><a href="#">고객센터</a></span>
+        </div>
+        <div id="information">
+            <span>Name님</span>
+            <span><a href="#">고객센터</a></span>
         </div>
     </div>
 
@@ -40,23 +43,9 @@
         </div>
     </div>
 
-    <div id="body">
-        <div id="left">
-            <p>일반회원</p>
-            <ul>
-                <li>회원정보수정</li>
-                <li>
-                    <ul>리뷰
-                        <li>리뷰작성하기</li>
-                        <li>내가 쓴 리뷰 모아보기</li>
-                    </ul>
-                </li>
-                <li>중고거래</li>
-                <li>장바구니</li>
-                <li>주문내역</li>
-            </ul>
-        </div>
-
+    <div id="container"> 
+    	<jsp:include page="Myleft.jsp" />
+        
         <div id="right">
             <div>
                 <p>리뷰 작성하기</p>
