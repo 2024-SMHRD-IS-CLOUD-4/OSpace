@@ -17,11 +17,11 @@
             </a>
         </div>
         <div>
-            <buttion type="buttion">
+            <button type="button">
                 <img src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
                 |
                 <div>검색하기</div>
-            </buttion>
+            </button>
 
             <div id="information">
                 <span>Name님</span>
@@ -45,8 +45,8 @@
             <p>일반회원</p>
             <ul>
                 <li>회원정보수정</li>
-                <li>
-                    <ul>리뷰
+                <li>리뷰
+                    <ul>
                         <li>리뷰작성하기</li>
                         <li>내가 쓴 리뷰 모아보기</li>
                     </ul>
@@ -146,6 +146,7 @@
                     <input type="submit" value="수정하기">
                 </div>
             </div>
+        </div>
         </div>
 
         <div id="footer">

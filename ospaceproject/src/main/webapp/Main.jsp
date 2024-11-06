@@ -38,25 +38,23 @@
 		<div id="mainCategory">
 			<div id="mainCategoryCon">
 				<ul>
-					<%
-					for (String c : category) {
-					%>
-					<li><a href="ItemSearch.jsp?title=카테고리&subTitle=<%=c%>">
+					<% for (String c : category) { %>
+					<li>
+						<a href="ItemSearch.jsp?title=카테고리&subTitle=<%=c%>">
 							<div class="mainCategoryImg">
 								<img src="image/cartegoryImg.png">
 							</div>
 							<p><%=c%></p>
-					</a></li>
-					<%
-					}
-					%>
+						</a>
+					</li>
+					<% } %>
 				</ul>
 			</div>
 		</div>
 		<div id="mainItem01">
 			<div class="itemTitle">
 				<h5 class="subItemTitle">new</h5>
-				<h1 calss="mainItemTitle">최근 등록 순</h1>
+				<h1 class="mainItemTitle">최근 등록 순</h1>
 			</div>
 			<div class="itemBox">
 				<ul>
@@ -86,7 +84,7 @@
 		<div id="mainItem02">
 			<div class="itemTitle">
 				<h5 class="subItemTitle">중고거래</h5>
-				<h1 calss="mainItemTitle">최근 등록 순</h1>
+				<h1 class="mainItemTitle">최근 등록 순</h1>
 			</div>
 			<div class="itemBox">
 				<ul>

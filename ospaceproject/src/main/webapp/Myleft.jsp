@@ -18,33 +18,23 @@
                 <li>리뷰
                     <ul>
                         <li>
-                            <a href="#">
-                                <div>리뷰작성하기</div>
-                            </a>
+                            <a href="#"> 리뷰작성하기</a>
                         </li>
                         <li>
-                            <a href="#">
-                                <div>내가 쓴 리뷰 모아보기</div>
-                            </a>
+                            <a href="#">내가 쓴 리뷰 모아보기</a>
                         </li>
                     </ul>
                 </li>
                 <li>중고거래
                     <ul>
                         <li>
-                            <a href="#">
-                                <div>중고상품 등록하기</div>
-                            </a>
+                            <a href="#">중고상품 등록하기</a>
                         </li>
                         <li>
-                            <a href="#">
-                                <div>등록상품 리스트</div>
-                            </a>
+                            <a href="#">등록상품 리스트</a>
                         </li>
                         <li>
-                            <a href="#">
-                                <div>신고 리스트</div>
-                            </a>
+                            <a href="#">신고 리스트</a>
                         </li>
                     </ul>
                 </li>

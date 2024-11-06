@@ -17,11 +17,11 @@
             </a>
         </div>
         <div>
-            <buttion type="buttion">
+            <button type="button">
                 <img src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
                 |
                 <div>검색하기</div>
-            </buttion>
+            </button>
 
             <div id="information">
                 <span>Name님</span>
@@ -76,23 +76,19 @@
                     <tr>
                         <td>
                             <a>
-                                <div>
-                                    <img>
-                                </div>
+								<img>
                             </a>
                         </td>
                         <td>
                             <div>
                                 <a>
-                                    <div>00001</div>
-                                    <div>가나다라마바사아</div>
+                                    <span>00001</span>
+                                    <span>가나다라마바사아</span>
                                 </a>
                             </div>
                         </td>
                         <td>
-                            <p>
-                            <div>50,000</div>
-                            </p>
+                            <p>50,000</p>
                         </td>
                         <td>
                             <p>2024.11.01</p>
@@ -107,24 +103,18 @@
 
                     <tr>
                         <td>
-                            <a>
-                                <div>
-                                    <img>
-                                </div>
-                            </a>
+                            <a><img src=#></a>
                         </td>
                         <td>
                             <div>
                                 <a>
-                                    <div>00001</div>
-                                    <div>가나다라마바사아</div>
+                                    <span>00001</span>
+                                    <span>가나다라마바사아</span>
                                 </a>
                             </div>
                         </td>
                         <td>
-                            <p>
-                            <div>50,000</div>
-                            </p>
+                            <p>50,000</p>
                         </td>
                         <td>
                             <p>2024.11.01</p>
@@ -139,24 +129,18 @@
 
                     <tr>
                         <td>
-                            <a>
-                                <div>
-                                    <img>
-                                </div>
-                            </a>
+                            <a><img src=#></a>
                         </td>
                         <td>
                             <div>
                                 <a>
-                                    <div>00001</div>
-                                    <div>가나다라마바사아</div>
+                                    <span>00001</span>
+                                    <span>가나다라마바사아</span>
                                 </a>
                             </div>
                         </td>
                         <td>
-                            <p>
-                            <div>50,000</div>
-                            </p>
+                            <p>50,000</p>
                         </td>
                         <td>
                             <p>2024.11.01</p>
@@ -171,24 +155,19 @@
 
                     <tr>
                         <td>
-                            <a>
-                                <div>
-                                    <img>
-                                </div>
-                            </a>
+                            <a><img src=#></a>
                         </td>
                         <td>
                             <div>
                                 <a>
-                                    <div>00001</div>
-                                    <div>가나다라마바사아</div>
+                                    <span>00001</span>
+                                    <span>가나다라마바사아</span>
                                 </a>
                             </div>
                         </td>
                         <td>
-                            <p>
-                            <div>50,000</div>
-                            </p>
+                            <p>50,000</p>
+                            
                         </td>
                         <td>
                             <p>2024.11.01</p>
@@ -203,11 +182,11 @@
                 </table>
 
                 <div>
-                    <imput>1</imput>
-                    <imput>2</imput>
-                    <imput>3</imput>
-                    <imput>4</imput>
-                    <imput>5</imput>
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
                 </div>
 
                 <div>
