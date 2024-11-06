@@ -37,6 +37,16 @@
     text-align: right;
     margin: 30px 0px 40px 0px;
 }
+.itemBoxStar{
+    text-align: left;
+    height: 250px;
+    overflow-y: scroll;
+    border: none;
+}
+.starCheck{
+    float: right;
+    margin-right:20px;
+}
 .itemBoxSubTitle{
     position: relative;
     text-align: left;
@@ -49,6 +59,14 @@
     width:100px;
     font-size: 16pt;
     margin-right: 25px;
+}
+.itemC{
+    float: right;
+    width: 491px;
+    margin-top: 5px;
+}
+.itemC p{
+    height: 30px;
 }
 .itemBoxSubTitle select{
     appearance: none;
