@@ -10,11 +10,14 @@
 </head>
 <body>
 <%
+	
 	request.getSession(false);
-	if(session.getAttribute("user")!=null){
-		User user = (User)request.getAttribute("user");
-		String userName = user.getName();
-		String userType = user.getU_type();
+	String userName =null;
+	String userType =null;
+	User user = (User)request.getAttribute("user");
+	if(user!=null){
+		userName = user.getName();
+		userType = user.getU_type();
 	}else{
 		
 	};
@@ -51,21 +54,15 @@
             </div>
             <div id="login">
             	<%if(session.getAttribute("user")==null){%>
-                <button type="button" id="headLoginBtn">로그인</button>
+                <button type="button" id="headLoginBtn" class="headerLoginBtn">로그인</button>
             	<%}else{ %>
             		<span><a href="MyPage.jsp">마이페이지</a></span>
-            		<span><a href="LogoutController">로그아웃</a></span>
+            		<span><a href="LogoutController.jsp">로그아웃</a></span>
             	<%}%>
                 <span><a href="#">고객센터</a></span>
             </div>
         </div>
     </header>
-    <script>
-        const mdOpen=()=>{
-            document.getElementById("loginMD").style.display="block";
-        }
-        document.getElementById("headLoginBtn").addEventListener("click",mdOpen)
-    </script>
 </body>
 </html>
 

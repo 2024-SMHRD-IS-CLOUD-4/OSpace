@@ -11,6 +11,9 @@
 <body>
     <%@ include file = "Header.jsp" %>
     <div id="body">
+    	<div id="headerNavBar">
+      		O'Space
+    	</div>
         <div id="mainBanner">
             <div id="btnRight"><img src="image/btnRight.png"></div>
             <div id="btnLeft"><img src="image/btnLeft.png"></div>
@@ -315,11 +318,29 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     <footer id="footer">
         <div>
             <a href="#">고객센터 문의글작성하기</a>
         </div>
     </footer>
+=======
+    <%@ include file = "Footer.jsp" %>
+    <nav id="loginMD">
+        <%@ include file = "Login.jsp" %>
+    </nav>
+    <script>
+        const mdOpen = () => {
+            document.getElementById("loginMD").style.display = "block";
+        }
+       	const mdClose = () => {
+       		document.getElementById("loginMD").style.display = "none";
+       	}
+       	
+        document.getElementById("headLoginBtn").addEventListener("click", mdOpen);
+        document.getElementById("closeBtn").addEventListener("click", mdClose);
+    </script>
+>>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-CLOUD-4/OSpace
 </body>
 
 </html>
