@@ -74,7 +74,7 @@ button, input{
 	width:200px;
     margin:0px auto;
 }
-#submit{
+.submit{
     width:200px;
     height:60px;
     border: none;
@@ -94,7 +94,7 @@ button, input{
     border: none;
     background-color: #fff;
 }
-#joinFailBg{
+#mdBg{
     position: absolute;
     top:0;
     left:0;
@@ -103,7 +103,7 @@ button, input{
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.5);
 }
-#joinFail{
+#mdBox{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -114,7 +114,7 @@ button, input{
     padding: 20px;
     background: #ffffff;
 }
-#joinFail .closeBtn{
+#closeBtn{
     float: right;
     font-size: 18pt;
     border: none;
@@ -132,10 +132,9 @@ button, input{
 .joinFailBtn{
     margin-top: 160px;
 }
-.joinFailBtn button{
+.AllBtn{
     width: 150px;
     height: 60px;
-    margin: 0px 10px;
     border: solid 1px #655A50;
     border-radius: 10px;
     font-size: 12pt;
@@ -151,4 +150,49 @@ button, input{
     font-size: 24pt;
     margin-top: 40px;
     margin-bottom: 60px;
+}
+#loginMD{
+    display: none;
+}
+.loginBoxLogo{
+    margin-top:120px;
+    margin-bottom: 60px;
+}
+.loginBtn{
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+.loginBox{
+    display: block;
+    width: 350px;
+    margin:0px auto;
+    color:#655A50;
+}
+.loginBoxRow{
+    position: relative;
+    width: 340px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #655A50;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+.loginBoxIdPw{
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    height: 30px;
+    width: 40px;
+    font-size: 15pt;
+}
+.loginBoxInput{
+    position: absolute;
+    top: 25%;
+    left: 20%; 
+}
+.loginBoxInput input{
+    width: 240px;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid #655A50;
 }

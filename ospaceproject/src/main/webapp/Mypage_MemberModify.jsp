@@ -16,9 +16,6 @@
 <body>
 <%@ include file = "Header.jsp" %>
 	<div id="body">
-    	<div id="headerNavBar">
-        	O'Space
-		</div>
         <div id="MY PageBox">
         	<div id="myPageLeft">
         		<div id="myPageLeft">
@@ -45,17 +42,7 @@
         	</div>
         
         <div id="myPageRight">
-       	 
-                <h1>
-                	<span class="seller">판매자회원</span>
-                    <span class="member">일반회원</span>
-                    <span class="manager">관리자</span>
-                    <% if(user!=null){%>
-                	<%=userName%> 님 반갑습니다!<%}%>
-                </h1>
-        
-        		<div class="line"></div>        
-     			
+			<h2>회원정보수정</h2>
      			<div class="table-container">
      			<table class="table">
         <tr class="tr">
@@ -90,9 +77,9 @@
         </tr>
     </table>
     </div>
-    
-    <div class="line"></div>        
-    </div>\
+    </div>
+    </div>
+    </div>
 	
 	<%@ include file = "Footer.jsp" %>	
 <nav id="loginMD">
@@ -151,9 +138,6 @@
         document.getElementById("headLoginBtn").addEventListener("click", mdOpen);
         document.getElementById("closeBtn").addEventListener("click", mdClose);
     </script>
-
-
-git pull origin master
 
 
 
