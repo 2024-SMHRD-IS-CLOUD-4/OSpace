@@ -71,4 +71,10 @@ public class UserDAO {
 		session.close();
 		return result;
 	}
+	public User getUser(String id) {
+		SqlSession session = factory.openSession(true);
+		User result = session.selectOne("UserMapper.getUser",id);
+		session.close();
+		return result;
+	}
 }
