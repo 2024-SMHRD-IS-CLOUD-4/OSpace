@@ -37,4 +37,10 @@ public class Used_ProductsDAO {
 	    session.close();
 	    return result;
 	}
+	public int incrementViews(int used_id) {
+	    SqlSession session = factory.openSession(true);
+	    int result = session.update("UsedProductMapper.incrementViews", used_id);
+	    session.close();
+	    return result;
+	}
 }
