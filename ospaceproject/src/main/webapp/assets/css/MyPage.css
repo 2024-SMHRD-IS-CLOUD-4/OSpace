@@ -48,7 +48,7 @@
     float: right;
     position: relative;
     width: 1000px;
-    height: 840px;
+    height: fit-content;
     text-align: left;
     padding-left: 60px;
     padding-top: 60px;
@@ -260,13 +260,15 @@
  }
  
  .Memtableinputno{
- 	background-color: #f2f2f2;  /* 비활성화된 입력 필드 배경 */
+ 	background-color: #F1F1F1;  /* 비활성화된 입력 필드 배경 */
     color: #999;                /* 텍스트 색상 */
-    border: 1px solid #ddd;
+    border: none;
  }
  .Memtableinput{
+ 	background-color: #F1F1F1;
  	width: 300px;
  	padding: 5px;
+ 	border: none;
  }
  #Category {
     background-color: #f8f9fa; /* 배경색 설정 */
@@ -340,7 +342,7 @@
 	border-spacing: 10px 5px;
 }
 .reviewTable td{
-	width:30px;
+	width:100px;
 	padding: 15px;
 }
 .fileinputReview {
@@ -350,7 +352,7 @@
     display: none;
 }
  .reviewtableColumns{
- 	width: 100px;
+ 	width: auto;
  }        
 /* 커스터마이즈된 버튼 스타일 */
 .fileLabel {
@@ -401,7 +403,18 @@
 
 .buttonContainer{
 	text-align: center;
+	margin-bottom: 60px;
 }
 .buttonContainer > button:not(:last-child){
     margin-right: 20px;
+}
+
+.reviewTextbox{
+	width: 800px;
+	height: 200px;
+	font-size: 20px;
+}
+
+.gpa{
+	width: 50px;
 }
