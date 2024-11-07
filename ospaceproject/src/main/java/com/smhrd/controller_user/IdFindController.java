@@ -25,9 +25,9 @@ public class IdFindController extends HttpServlet {
 		User user = new User(null,null,name,null,phone,null,null);
 		
 		UserDAO dao = new UserDAO();
-		String result = dao.idFind(user);
+//		String result = dao.idFind(user);
 		PrintWriter out = response.getWriter();
-		out.println(result);
+//		out.println(result);
 		
 	}
 

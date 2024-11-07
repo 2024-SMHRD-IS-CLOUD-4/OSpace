@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.model.Reviews"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.ReviewsDAO"%>
 <%@ page import="com.smhrd.model.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -66,7 +69,11 @@
 					<%=userName%>님 반갑습니다!
 					<%}%>
 				</h1>
-
+				<%
+						ReviewsDAO r_dao = new ReviewsDAO();
+						List<Reviews> r_lst = r_dao.getMyReview(user.getId());
+						System.out.println(r_lst.size());
+				%>
 				<div class="line"></div>
 				<div id="myPageRightContents">
 					<div class="contentsLeft">
@@ -111,6 +118,22 @@
 						<div class="member">
 							<h4>내 리뷰 보기</h4>
 							<ul>
+								<%
+								for (int i = 0; i < 4; i++) {
+									if (r_lst.size()>=i+1) {
+								%>
+								<li class="ContentsBox">
+									<div class="ContentsImg">
+										<img src="<%=r_lst.get(i).getReview_img()%>">
+									</div>
+									<div class="ContentsText">
+										<p><%=r_lst.get(i).getReview_title()%></p>
+										<p><%=r_lst.get(i).getReview_tag()%></p>
+									</div>
+								</li>
+								<%
+								} else {
+								%>
 								<li class="ContentsBox">
 									<div class="ContentsImg">
 										<img src="image/camera_icon.png">
@@ -119,30 +142,10 @@
 										<p>첫 리뷰를 작성하고 나만의 멋진 인테리어를 공유해보세요!</p>
 									</div>
 								</li>
-								<li class="ContentsBox">
-									<div class="ContentsImg">
-										<img src="image/camera_icon.png">
-									</div>
-									<div class="ContentsText">
-										<p>첫 리뷰를 작성하고 나만의 멋진 인테리어를 공유해보세요!</p>
-									</div>
-								</li>
-								<li class="ContentsBox">
-									<div class="ContentsImg">
-										<img src="image/camera_icon.png">
-									</div>
-									<div class="ContentsText">
-										<p>첫 리뷰를 작성하고 나만의 멋진 인테리어를 공유해보세요!</p>
-									</div>
-								</li>
-								<li class="ContentsBox">
-									<div class="ContentsImg">
-										<img src="image/camera_icon.png">
-									</div>
-									<div class="ContentsText">
-										<p>첫 리뷰를 작성하고 나만의 멋진 인테리어를 공유해보세요!</p>
-									</div>
-								</li>
+								<%
+								}
+								}
+								%>
 							</ul>
 						</div>
 						<div class="manager">

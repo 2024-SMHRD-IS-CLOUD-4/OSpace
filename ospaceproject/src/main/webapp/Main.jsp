@@ -88,9 +88,9 @@
 			</div>
 			<div class="itemBox">
 				<ul>
-					<%
+				<%
 					for (Used_Products u : u_lst) {
-					%>
+				%>
 					<li>
 						<div class="itemSmallBox">
 							<a href="#">
@@ -119,5 +119,6 @@
 	<nav id="serchMD">
 		<%@ include file="MdSerch.jsp"%>
 	</nav>
+	
 </body>
 </html>

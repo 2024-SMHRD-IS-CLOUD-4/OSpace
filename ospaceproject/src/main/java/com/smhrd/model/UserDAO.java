@@ -59,9 +59,15 @@ public class UserDAO {
 		session.close();
 		return result;
 	}
-	public String idFind(User user) {
+	public String nameCheck(String name) {
 		SqlSession session = factory.openSession(true);
-		String result = session.selectOne("UserMapper.idFind",user);
+		String result = session.selectOne("UserMapper.idFind",name);
+		session.close();
+		return result;
+	}
+	public String phoneCheck(String phone) {
+		SqlSession session = factory.openSession(true);
+		String result = session.selectOne("UserMapper.idFind",phone);
 		session.close();
 		return result;
 	}

@@ -3,6 +3,7 @@ package com.smhrd.model;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import com.smhrd.database.SqlSessionManager;
+
 import java.util.List;
 
 public class ProductsDAO {
@@ -80,5 +81,11 @@ public class ProductsDAO {
 	    int result = session.update("ProductMapper.incrementViews", prod_id);
 	    session.close();
 	    return result;
+	}
+	public List<Products> getMyProducts(String id){
+		SqlSession session = factory.openSession(true);
+		List<Products> result = session.selectList("ProductMapper.getMyProducts");
+		session.close();
+		return result;
 	}
 }
