@@ -148,6 +148,10 @@ button, input{
     color:#333;
     background-color: #fff;
 }
+.AllBtn:hover{
+	background-color: #007bff;
+	color: #fff;
+}
 .joinSuccessText {
     display: block;
     top: 30%;

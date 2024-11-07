@@ -233,36 +233,40 @@
 }
 
 /* 테이블 스타일 */
-.table-container{
+.Membertable-container{
 	width:100%;
 	margin: 20px 0;
 	overflow-x: hidden;
 }
-.table{
+.Member-table{
 	width: 1000px;
 	border-collapse: separate;
 	border-spacing: 40px;
 }
 
-.table td{
-	width: 20px;
+.Member-table td{
+	width: 30px;
 }
-.table tr{
+.Member-table tr{
 	padding: 10px 15px;
 }
 .lin{
-    border-top: 2px solid black;
+	  border-top: 1px solid black;
  }
  
- .tablecolumns{
+ .Memtable-columns{
  	width: 100px;
 	background-color: #F1F1F1;
  }
  
- .tableinputno{
+ .Memtableinputno{
  	background-color: #f2f2f2;  /* 비활성화된 입력 필드 배경 */
     color: #999;                /* 텍스트 색상 */
     border: 1px solid #ddd;
+ }
+ .Memtableinput{
+ 	width: 300px;
+ 	padding: 5px;
  }
  #Category {
     background-color: #f8f9fa; /* 배경색 설정 */
@@ -320,4 +324,52 @@
 #right {
             width: 400px; /* 오른쪽 영역의 너비 설정 */
             margin-left: 80px; /* 왼쪽 여백 설정 */
-        }
+}
+.button-container{
+	display: flex;
+	justify-content: center;
+	
+}
+
+.reviewtable-container{
+	width:100%;
+	margin: 20px 0;
+	overflow-x: hidden;
+}
+.review-table{
+	width: 100%;
+}
+.review-table tr{
+	border-collapse: separate;
+	border-spacing: 10px 5px;
+}
+.review-table td{
+	width:30px;
+	padding: 15px;
+}
+.fileinput-review {
+    display: none;
+}
+.fileinput-img {
+    display: none;
+}
+ .reviewtable-columns{
+ 	width: 100px;
+ }        
+/* 커스터마이즈된 버튼 스타일 */
+.file-label {
+    display: inline-block;
+    background-color: #3E1F1A;
+    color: white;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* 선택한 상품 이름을 표시할 영역 */
+.filename {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
