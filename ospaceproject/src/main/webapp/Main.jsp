@@ -23,6 +23,7 @@
 		
 		Used_ProductsDAO u_dao = new Used_ProductsDAO();
 		List<Used_Products> u_lst = u_dao.orderByDate();
+		
 		String[] category = {"의자", "책상", "침대", "수납장", "커튼", "벽지"};
 	%>
 	<div id="body">
@@ -59,26 +60,23 @@
 			<div class="itemBox">
 				<ul>
 					<%
-					int cnt1 = 0;
 					for (Products p : p_lst) {
 					%>
 					<li>
 						<div class="itemSmallBox">
-							<a href="itemPage.jsp?prod_id=<%=p.getProd_id()%>">
+							<a href="#">
 								<div class="itemSmallBoxImg">
-									<img src="<%=p.getProd_img()%>">
+									<img src="#">
 								</div>
 								<div class="itemSmallBoxText">
 									<p class="itmSellerID"><%=p.getId()%></p>
 									<p class="itemName"><%=p.getProd_name()%></p>
-									<p class="itemPrice"><%=p.getProd_price()%>원</p>
+									<p class="itemPrice"><%=p.getProd_price()%></p>
 								</div>
 							</a>
 						</div>
 					</li>
 					<%
-					cnt1++;
-					if(cnt1==8) break;
 					}
 					%>
 				</ul>
@@ -91,10 +89,9 @@
 			</div>
 			<div class="itemBox">
 				<ul>
-				<%
-					int cnt2=0;
+					<%
 					for (Used_Products u : u_lst) {
-				%>
+					%>
 					<li>
 						<div class="itemSmallBox">
 							<a href="#">
@@ -110,8 +107,6 @@
 						</div>
 					</li>
 					<%
-					cnt2++;
-					if(cnt2==8) break;
 					}
 					%>
 				</ul>
@@ -125,6 +120,6 @@
 	<nav id="serchMD">
 		<%@ include file="MdSerch.jsp"%>
 	</nav>
-	
+	<%@ include file="HeaderSub.jsp"%>
 </body>
 </html>

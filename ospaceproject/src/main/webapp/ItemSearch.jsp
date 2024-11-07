@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
 </head>
 <body>
-	<%@ include file="Header.jsp"%>
+	<%@ include file="Header.jsp"%>	
 	<%
 	ProductsDAO p_dao = new ProductsDAO();
 	ReviewsDAO r_dao = new ReviewsDAO();

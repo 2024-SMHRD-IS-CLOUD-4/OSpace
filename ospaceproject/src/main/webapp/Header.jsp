@@ -41,7 +41,7 @@
 			<div id="nav">
 				<ul>
 					<li>
-                        <a href="ItemSearch.jsp?title=카테고리">카테고리</a>
+                        <a href="ItemSearch.jsp?title=카테고리" id="HeaderCartegory">카테고리</a>
                     </li>
 					<li>
 						<a href="ItemSearch.jsp?title=리뷰보기">리뷰보기</a>
