@@ -6,11 +6,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
+	<link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
 </head>
 <body>
-
+	<%@ include file="Header.jsp"%>
 		<%
         ReviewsDAO dao = new ReviewsDAO();
         List<Reviews> ReviewstList = dao.getreview();
@@ -43,6 +45,6 @@
         	}
 		%>
     </table>
-</body>
+
 </body>
 </html>
