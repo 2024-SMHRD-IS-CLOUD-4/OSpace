@@ -111,19 +111,19 @@
 			let id = $('[name="id"]').val();
 			
 			$.ajax({
-				url : "IdCheckController", // 요청 경로 -> 상대 경로는 앞에 '/' 생략
-				type : "get", // 요청 방식 (get,post)
-				data : {"id":id}, // 요청 데이터 (json{key:value,~})
+				url : "IdCheckController", 
+				type : "get", 
+				data : {"id":id},
 				success : (data)=>{
 					console.log(data);
 					
-					if(data==0){ // 사용 불가능 아이디
+					if(data==0){
 						$("#idCheckResult").text("사용 가능 아이디");
 					}else{
 						$("#idCheckResult").text("사용 불가 아이디");
 					}
 				},
-				error : () => { // 통신 실패
+				error : () => {
 					alert("통신실패");
 				}
 			})

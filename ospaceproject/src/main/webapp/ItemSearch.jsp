@@ -46,7 +46,7 @@
 							<a href="ReviewPage.jsp?prod_id=<%=r.getProd_id()%>">
 								<div class="itemSmallBoxImg">
 									<img
-										src="<%=request.getContextPath()%>/upload/<%=r.getReview_img()%>">
+										src="<%=r.getReview_img()%>">
 								</div>
 								<div class="itemSmallBoxText">
 									<p class="itmSellerID"><%=r.getId()%></p>
@@ -71,7 +71,7 @@
 						<div class="itemSmallBox">
 							<a href="itemPage.jsp?prod_id=<%=p.getProd_id()%>">
 								<div class="itemSmallBoxImg">
-									<img src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
+									<img src="<%=p.getProd_img()%>">
 								</div>
 								<div class="itemSmallBoxText">
 									<p class="itmSellerID"><%=p.getId()%></p>
@@ -93,7 +93,7 @@
 							<a href="UsedItemPage.jsp?prod_id=<%=u.getUsed_id()%>">
 								<div class="itemSmallBoxImg">
 									<img
-										src="<%=request.getContextPath()%>/upload/<%=u.getUsed_img()%>">
+										src="<%=u.getUsed_img()%>">
 								</div>
 								<div class="itemSmallBoxText">
 									<p class="itmSellerID"><%=u.getId()%></p>

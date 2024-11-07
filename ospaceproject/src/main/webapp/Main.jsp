@@ -59,23 +59,26 @@
 			<div class="itemBox">
 				<ul>
 					<%
+					int cnt1 = 0;
 					for (Products p : p_lst) {
 					%>
 					<li>
 						<div class="itemSmallBox">
-							<a href="#">
+							<a href="itemPage.jsp?prod_id=<%=p.getProd_id()%>">
 								<div class="itemSmallBoxImg">
-									<img src="#">
+									<img src="<%=p.getProd_img()%>">
 								</div>
 								<div class="itemSmallBoxText">
 									<p class="itmSellerID"><%=p.getId()%></p>
 									<p class="itemName"><%=p.getProd_name()%></p>
-									<p class="itemPrice"><%=p.getProd_price()%></p>
+									<p class="itemPrice"><%=p.getProd_price()%>원</p>
 								</div>
 							</a>
 						</div>
 					</li>
 					<%
+					cnt1++;
+					if(cnt1==8) break;
 					}
 					%>
 				</ul>
@@ -89,6 +92,7 @@
 			<div class="itemBox">
 				<ul>
 				<%
+					int cnt2=0;
 					for (Used_Products u : u_lst) {
 				%>
 					<li>
@@ -106,6 +110,8 @@
 						</div>
 					</li>
 					<%
+					cnt2++;
+					if(cnt2==8) break;
 					}
 					%>
 				</ul>
