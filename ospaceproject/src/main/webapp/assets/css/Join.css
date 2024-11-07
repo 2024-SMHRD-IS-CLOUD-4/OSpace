@@ -122,7 +122,7 @@ button, input{
     background-color: #fff;
 }
 .loginBoxOnOff{
-	display:block;
+	display:none;
 }
 .loginBoxFale{
 	display:none;
