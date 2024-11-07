@@ -196,10 +196,14 @@
             </div>
         </div>
     </div>
-        <%@ include file = "Footer.jsp" %>
-    	<nav id="loginMD">
-			<%@ include file="MdLogin.jsp"%>
-		</nav>
+        <%@ include file="Footer.jsp"%>
+	<nav id="loginMD">
+		<%@ include file="MdLogin.jsp"%>
+	</nav>
+	<nav id="serchMD">
+		<%@ include file="MdSerch.jsp"%>
+	</nav>
+	<%@ include file="HeaderSub.jsp"%>
 	
 </body>
 </html>

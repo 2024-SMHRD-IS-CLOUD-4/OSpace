@@ -77,7 +77,14 @@
 		</div>
 		
 	</div>
-	<%@ include file = "Footer.jsp" %>
+	<%@ include file="Footer.jsp"%>
+	<nav id="loginMD">
+		<%@ include file="MdLogin.jsp"%>
+	</nav>
+	<nav id="serchMD">
+		<%@ include file="MdSerch.jsp"%>
+	</nav>
+	<%@ include file="HeaderSub.jsp"%>
 	<!-- 회원가입 실패 시 모달창 -->
 	<!--  <div id="joinFailBg">
         <div id="joinFail">

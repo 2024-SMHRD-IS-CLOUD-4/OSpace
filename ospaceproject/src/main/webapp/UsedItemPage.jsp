@@ -97,10 +97,14 @@
             </div>
         </div>
     </div>
-	<%@ include file = "Footer.jsp" %>
+	<%@ include file="Footer.jsp"%>
 	<nav id="loginMD">
 		<%@ include file="MdLogin.jsp"%>
-</nav>
+	</nav>
+	<nav id="serchMD">
+		<%@ include file="MdSerch.jsp"%>
+	</nav>
+	<%@ include file="HeaderSub.jsp"%>
 <script>
         const mdOpen = () => {
             document.getElementById("loginMD").style.display = "block";

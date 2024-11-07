@@ -114,11 +114,14 @@
         </div>
     </div>
 
-    <div id="footer">
-        <div>
-            <a href="#">고객센터 문의글 작성하기</a>
-        </div>
-    </div>
+    <%@ include file="Footer.jsp"%>
+	<nav id="loginMD">
+		<%@ include file="MdLogin.jsp"%>
+	</nav>
+	<nav id="serchMD">
+		<%@ include file="MdSerch.jsp"%>
+	</nav>
+	<%@ include file="HeaderSub.jsp"%>
     <script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>

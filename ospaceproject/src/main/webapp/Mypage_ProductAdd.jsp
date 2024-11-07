@@ -152,6 +152,7 @@
 	<nav id="serchMD">
 		<%@ include file="MdSerch.jsp"%>
 	</nav>
+	<%@ include file="HeaderSub.jsp"%>
 	<%
 		String u_type = user.getU_type();
 	%>

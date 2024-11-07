@@ -111,11 +111,14 @@
 			</div>
 		</div>
 	</div>
-	<footer id="footer">
-		<div>
-			<a href="#">고객센터 문의글작성하기</a>
-		</div>
-	</footer>
+	<%@ include file="Footer.jsp"%>
+	<nav id="loginMD">
+		<%@ include file="MdLogin.jsp"%>
+	</nav>
+	<nav id="serchMD">
+		<%@ include file="MdSerch.jsp"%>
+	</nav>
+	<%@ include file="HeaderSub.jsp"%>
 	<script type="text/javascript">
 		const urlParams = new URLSearchParams(window.location.search);
 		const title = urlParams.get('title');
