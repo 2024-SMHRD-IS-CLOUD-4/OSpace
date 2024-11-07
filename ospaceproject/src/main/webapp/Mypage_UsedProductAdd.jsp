@@ -20,42 +20,32 @@
             <%@ include file="MyPageLeft.jsp"%>
             <div id="myPageRight">
                 <h2>
-                    상품등록하기
+                    중고상품등록하기
                 </h2>
                 <div id="myPageContainer">
-                    <form action="ProdaddController" method="post" enctype="multipart/form-data">
+                    <form action="UsedController" method="post" enctype="multipart/form-data">
                         <table class="productAdd">
                             <tr>
-                                <th>상품 ID</th>
-                                <td>상품 ID는 등록 완료 시 자동 부여됩니다.</td>
+                                <th>중고상품 ID</th>
+                                <td>중고상품 ID는 등록 완료 시 자동 부여됩니다.</td>
                             </tr>
                             <tr>
-                                <th>판매자</th>
+                                <th>판매자 ID</th>
                                 <td>
                                     <%=userName%>
                                 </td>
                             </tr>
                             <tr>
-                                <th>카테고리</th>
-                                <td><select id="category_id" name="category_id" required>
-                                        <option value="">카테고리를 선택하세요</option>
-                                        <option value="1">카테고리 1</option>
-                                        <option value="2">카테고리 2</option>
-                                        <!-- 추가 카테고리 옵션 필요 시 여기에 추가 -->
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
                                 <th>상품명</th>
                                 <td>
-                                    <input type="text" id="prod_name" name="prod_name" placeholder="상품명을 입력하세요."
+                                    <input type="text" id="used_title" name="used_title" placeholder="상품명을 입력하세요."
                                         required>
                                 </td>
                             </tr>
                             <tr>
                                 <th rowspan="2">대표이미지</th>
                                 <td>
-                                    <input type="file" id="prod_img" name="prod_img" required>
+                                    <input type="file" id="used_img" name="used_img" required>
                                 </td>
                             </tr>
                             <tr>
@@ -66,61 +56,29 @@
                             <tr>
                                 <th>가격</th>
                                 <td>
-                                    <input type="text" id="prod_price" name="prod_price" placeholder="상품 가격을 입력하세요."
+                                    <input type="text" id="used_price" name="used_price" placeholder="상품 가격을 입력하세요."
                                         required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th rowspan="2">사이즈옵션</th>
-                                <td>
-                                    <select name="prod_op" id="prod_op">
-                                        <option value="s"> S</option>
-                                        <option value="m"> M</option>
-                                        <option value="l"> L</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <ul>
-                                        <li>선택한 사이즈를 표기하기 <span>X</span></li>
-                                        <li>선택한 사이즈를 표기하기 <span>X</span></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th rowspan="2">색상옵션</th>
-                                <td>
-                                    <select name="prod_color" id="prod_color">
-                                        <option value="Red">빨간색</option>
-                                        <option value="lite-woody">밝은 우디</option>
-                                        <option value="yellow">노란색</option>
-                                        <option value="black">검은색</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <ul>
-                                        <li>선택한 사이즈를 표기하기 <span>X</span></li>
-                                        <li>선택한 사이즈를 표기하기 <span>X</span></li>
-                                    </ul>
                                 </td>
                             </tr>
                             <tr>
                                 <th>내용</th>
                                 <td>
-                                    <textarea id="prod_desc" name="prod_desc" placeholder="상품 설명을 입력하세요."required></textarea>
+                                    <textarea id="used_location" name="used_content" placeholder="상품 설명을 입력하세요."
+                                        required></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>지역</th>
+                                <td>
+                                    <input type="text" id="used_location" name="used_location" placeholder="거래 지역을 입력해주세요.(ex. 광주광역시 동구 00동)"
+                                        required>
                                 </td>
                             </tr>
                         </table>
                     </form>
                 </div>
                 <div class="buttonContainer">
-                    <button class="AllBtn" type="submit">등록하기</button>
-                    <a href="#">
-                        <button class="AllBtn" type="submit">상품리스트보기</button>
-                    </a>
+                    <button class="AllBtn" type="submit">저장하기</button>
                 </div>
             </div>
         </div>

@@ -44,6 +44,21 @@
     background-color: #F8F8F8;
     cursor: pointer;
 }
+.myPageLeftNav > ul > li:hover > .subNav{
+    height: 40px;
+    transition: height ease-out 0.3s 0s;
+}
+.subNav{
+	width:128px;
+    height: 0px;
+    overflow: hidden;
+    margin-left:20px;
+    font-size: 10pt;
+}
+.subNav:hover{
+	border-bottom: 1px solid #333;
+    box-sizing: border-box;
+}
 #myPageRight{
     float: right;
     position: relative;
