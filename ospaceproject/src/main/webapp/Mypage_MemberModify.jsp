@@ -11,7 +11,6 @@
             <link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
             <link rel="stylesheet" href="assets/css/MyPage.css" type="text/css" />
         </head>
-
         <body>
             <%@ include file="Header.jsp" %>
                 <div id="body">

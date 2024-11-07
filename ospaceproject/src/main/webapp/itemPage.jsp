@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.Products"%>
+<%@page import="com.smhrd.model.ProductsDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,18 +14,24 @@
 
 <body>
     <%@ include file = "Header.jsp" %>
+    <% 
+	int prod_id = Integer.parseInt(request.getParameter("prod_id"));  
+	ProductsDAO dao = new ProductsDAO();
+	dao.incrementViews(prod_id);
+	Products p = dao.getSingleProduct(prod_id);
+ %>
     <div id="body">
         <div class="contentBox">
             <div id="itemBoxT">
                 <div id="itemBoxImg">
-                    <img src="#">
+                    <img id="img" src="<%= request.getContextPath() %>/upload/<%= p.getProd_img() %>">
                 </div>
                 <div id="itemBoxTitle">
                     <p class="itemBoxCartegory">카테고리 > 의자</p>
-                    <h1>상품명 블라블라</h1>
-                    <p class="itemBoxTitlePrise">00,000원</p>
+                    <h1 id="prod_name" ><%= p.getProd_name()%></h1>
+                    <p id="prod_price" class="itemBoxTitlePrise">원</p>
                     <p class="itemBoxSubTitle">
-                        <span class="itemT">상품번호</span><span>chare-0001</span>
+                        <span class="itemT"><%=p.getProd_id()%></span><span>chare-0001</span>
                     </p>
                     <p class="itemBoxSubTitle">
                         <span class="itemT">판매자</span><span>chare-0001</span>
@@ -60,8 +68,12 @@
                         총 금액<span>00,000원</span>
                     </div>
                     <div id="priceBoxSelect">
-                        <button id="checkBox"><div class="checkBox"></div>찜하기</button>
-                        <button>장바구니 담기</button>
+                    	<form action="ReservedController" method="post">
+                        	<button id="checkBox" name="prod_id" value="<%=p.getProd_id()%>"><div class="checkBox"></div>찜하기</button>
+                        </form>
+                        <form action="BasketController" method="post">
+                        	<button>장바구니 담기</button>
+                        </form>
                         <button>구매하기</button>
                     </div>
                 </div>

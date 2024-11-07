@@ -21,12 +21,12 @@
 	<p id="prod_price"></p>
 	
 	<form action="BasketController" method="post">
-	<input type="hidden" name="prod_id" value="<%=p.getProd_id()%>">
-	<input type="submit" value="장바구니 담기">
+		<input type="hidden" name="prod_id" value="<%=p.getProd_id()%>">
+		<input type="submit" value="장바구니 담기">
 	</form>
 	<form action="ReservedController" method="post">
-	<input type="hidden" name="prod_id" value="<%=p.getProd_id()%>">
-	<input type="submit" value="찜하기">
+		<input type="hidden" name="prod_id" value="<%=p.getProd_id()%>">
+		<input type="submit" value="찜하기">
 	</form>
 	
 </body>
