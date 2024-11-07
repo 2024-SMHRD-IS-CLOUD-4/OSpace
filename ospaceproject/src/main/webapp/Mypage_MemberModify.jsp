@@ -1,52 +1,22 @@
 <%@ page import="com.smhrd.model.User" %>
-    <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-        <!DOCTYPE html>
-        <html>
-
-        <head>
-            <meta charset="UTF-8">
-            <title>Insert title here</title>
-            <title>O'Space</title>
-            <link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
-            <link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
-            <link rel="stylesheet" href="assets/css/MyPage.css" type="text/css" />
-        </head>
-
-        <body>
-            <%@ include file="Header.jsp" %>
-                <div id="body">
-                    <div id="MyPageBox">
-                        <div id="myPageLeft">
-                            <div id="myPageLeft">
-                                <div class="myPageLeftUser">
-                                    <h2 class="seller">판매자회원</h2>
-                                    <h2 class="member">일반회원</h2>
-                                    <h2 class="manager">관리자</h2>
-                                </div>
-                                <div class="myPageLeftNav">
-                                    <ul>
-                                        <li class="seller">등록상품관리</li>
-                                        <li class="member">주문관리</li>
-                                        <li class="member">회원정보수정</li>
-                                        <li class="member">리뷰</li>
-                                        <li class="member">찜 목록</li>
-                                        <li class="member">중고거래</li>
-                                        <li class="member">장바구니</li>
-                                        <li class="member">주문내역</li>
-                                        <li class="manager">카테고리관리</li>
-                                        <li class="manager">신고관리</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div id="myPageRight">
-                            <h2>
-                                회원정보수정
-                            </h2>
-
-                            <div id="myPageContainer">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>O'Space</title>
+	<link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
+	<link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
+	<link rel="stylesheet" href="assets/css/MyPage.css" type="text/css" />
+</head>
+<body>
+	<%@ include file="Header.jsp" %>
+	<div id="body">
+		<div id="MyPageBox">
+			<%@ include file="MyPageLeft.jsp"%>
+			<div id="myPageRight">
+				<h2>회원정보수정</h2>
+				<div id="myPageContainer">
                                 <div>
                                     <p>변경할 정보가 있으시면 작성 후 하단에 있는 “저장”버튼을 눌러주세요.
                                         <br>단 아이디는 변경하실 수 없습니다
