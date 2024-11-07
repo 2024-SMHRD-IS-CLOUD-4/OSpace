@@ -28,4 +28,8 @@
 	<select id="idFind" resultType = "String">
 		select id from users where name=#{name}, phone=#{phone} 
 	</select>
+	<select id="getUser" parameterType = "String"
+						resultType = "com.smhrd.model.User">
+		select * from users where id=#{id}
+	</select>
 </mapper>
