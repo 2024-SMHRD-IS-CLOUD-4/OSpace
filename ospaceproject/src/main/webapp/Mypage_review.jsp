@@ -47,8 +47,8 @@
            
 
             <div>
-            	<div class="reviewtable-container">
-                	<table class="review-table">
+            	<div class="reviewtableContainer">
+                	<table class="reviewTable">
                     	<tr class="tr">
                        		 <td class="td">리뷰번호</td>
                        		 <td class="#">저장 후 자동으로 번호 생성</td>
@@ -56,31 +56,31 @@
 
                     <tr class="tr">
                         <td class="td">작성자</td>
-                        <td class="reviewtable-columns">작성자 닉네임</td>
+                        <td class="reviewtableColumns">작성자 닉네임</td>
                     </tr>
 
                     <tr class="tr">
                         <td class="td">리뷰상품</td>
-                        <td class="reviewtable-columns">
-                        <label class="file-label" for="fileinput-review">상품찾기</label>
-                        <input type="file" id="fileinput-review" class="fileinput-review" onchange="displayFileName()"></td>
+                        <td class="reviewtableColumns">
+                        <label class="fileLabel" for="fileinputReview">상품찾기</label>
+                        <input type="file" id="fileinputReview" class="fileinputReview" onchange="displayFileName()"></td>
 					</tr>
 
                     <tr class="tr">
                         <td class="td">이미지</td>
-                        <td class="reviewtable-columns">
-                        <label class="file-label" for="fileinput-img">파일찾기</label>
-                        <input type="file" id="fileinput-img" class="fileinput-img" onchange="displayFileName()"></td>
+                        <td class="reviewtableColumns">
+                        <label class="fileLabel" for="fileinputImg">파일찾기</label>
+                        <input type="file" id="fileinputImg" class="fileinputImg" onchange="displayFileName()"></td>
 					</tr>
 
                     <tr class="tr">
                         <td class="td">리뷰내용</td>
-                        <td class="reviewtable-columns"><textarea id="textBox"></textarea></td>
+                        <td class="reviewtableColumns"><textarea id="textBox"></textarea></td>
                     </tr>
 
                     <tr class="tr">
                         <td class="td">상품평점</td>
-                        <td class="reviewtable-columns">
+                        <td class="reviewtableColumns">
                             <select onchange="updateStars()">
                                 <option>1</option>
                                 <option>2</option>
@@ -101,7 +101,7 @@
 
                     <tr  class="tr">
                         <td class="td">작성일자</td>
-                        <td class="reviewtable-columns">
+                        <td class="reviewtableColumns">
                             <input type="date">
                         </td>
                     </tr>
