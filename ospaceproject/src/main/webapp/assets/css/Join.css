@@ -46,7 +46,6 @@ button, input{
     font-size: 12pt;
     margin: 0px 50px 0px 10px;
 }
-
 .joinBoxContents [type="radio"]{
     vertical-align: middle;
     appearance: none;
@@ -149,7 +148,7 @@ button, input{
     background-color: #fff;
 }
 .AllBtn:hover{
-	font-weight: 800;
+   font-weight: 800;
     border: solid 2px #655A50;
     background-color: #f8f8f8;
 }

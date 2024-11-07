@@ -48,7 +48,7 @@
     float: right;
     position: relative;
     width: 1000px;
-    height: 840px;
+    height: fit-content;
     text-align: left;
     padding-left: 60px;
     padding-top: 60px;
@@ -233,40 +233,42 @@
 }
 
 /* 테이블 스타일 */
-.Membertable-container{
+.MembertableContainer{
 	width:100%;
 	margin: 20px 0;
 	overflow-x: hidden;
 }
-.Member-table{
+.MemberTable{
 	width: 1000px;
 	border-collapse: separate;
 	border-spacing: 40px;
 }
 
-.Member-table td{
+.MemberTable td{
 	width: 30px;
 }
-.Member-table tr{
+.MemberTable tr{
 	padding: 10px 15px;
 }
 .lin{
 	  border-top: 1px solid black;
  }
  
- .Memtable-columns{
+ .MemtableColumns{
  	width: 100px;
 	background-color: #F1F1F1;
  }
  
  .Memtableinputno{
- 	background-color: #f2f2f2;  /* 비활성화된 입력 필드 배경 */
+ 	background-color: #F1F1F1;  /* 비활성화된 입력 필드 배경 */
     color: #999;                /* 텍스트 색상 */
-    border: 1px solid #ddd;
+    border: none;
  }
  .Memtableinput{
+ 	background-color: #F1F1F1;
  	width: 300px;
  	padding: 5px;
+ 	border: none;
  }
  #Category {
     background-color: #f8f9fa; /* 배경색 설정 */
@@ -317,41 +319,41 @@
 #Myleft li{
 	margin-bottom:10px;
 }
-.member-title{
+.memberTitle{
 	font-weight:bold;
 	font-size : 16pt;
 }
 #right {
-            width: 400px; /* 오른쪽 영역의 너비 설정 */
-            margin-left: 80px; /* 왼쪽 여백 설정 */
+	width: 400px; /* 오른쪽 영역의 너비 설정 */
+	margin-left: 80px; /* 왼쪽 여백 설정 */
 }
-.reviewtable-container{
+.reviewtableContainer{
 	width:100%;
 	margin: 20px 0;
 	overflow-x: hidden;
 }
-.review-table{
+.reviewTable{
 	width: 100%;
 }
-.review-table tr{
+.reviewTable tr{
 	border-collapse: separate;
 	border-spacing: 10px 5px;
 }
-.review-table td{
-	width:30px;
+.reviewTable td{
+	width:100px;
 	padding: 15px;
 }
-.fileinput-review {
+.fileinputReview {
     display: none;
 }
-.fileinput-img {
+.fileinputImg {
     display: none;
 }
- .reviewtable-columns{
- 	width: 100px;
+ .reviewtableColumns{
+ 	width: auto;
  }        
 /* 커스터마이즈된 버튼 스타일 */
-.file-label {
+.fileLabel {
     display: inline-block;
     background-color: #3E1F1A;
     color: white;
@@ -367,12 +369,29 @@
     font-size: 14px;
     color: #555;
 }
+ .previewContainer {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        .previewContainer img {
+            width: 100%;
+            height: auto;
+            display: none; /* 기본적으로 숨김 */
+        }
 
 /*각 페이지별 기본 템플릿*/
 #myPageContainer{
     display: inline-block;
     position: relative;
-    width: 1000px;
+    width: 900px;
     border-top: 1px solid #555;
     border-bottom: 1px solid #555;
     padding: 20px ;
@@ -382,7 +401,80 @@
 
 .buttonContainer{
 	text-align: center;
+    margin-bottom: 60px;
 }
 .buttonContainer > button:not(:last-child){
     margin-right: 20px;
+}
+/*리뷰페이지?*/
+.reviewTextbox{
+	width: 800px;
+	height: 200px;
+	font-size: 20px;
+}
+
+.gpa{
+	width: 50px;
+}
+
+/*상품등록*/
+
+.productAdd{
+    border-collapse: separate;
+    border-spacing: 0 40px;
+}
+.productAdd tr{
+    width: 600px;
+}
+#myPageContainer th{
+    vertical-align: top;
+    width: 160px;
+}
+.productAdd td{
+    display: inline-block;
+    width: 700px;
+    padding: 0px 10px;
+}
+.productAdd input{
+    appearance: none;
+    width:100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #F8F8F8;
+    border:none;
+}
+.productAdd input::placeholder{
+    padding-left:10px;
+}
+.productAdd select{
+    width:100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #F8F8F8;
+    border:none;
+}
+.productAdd textarea{
+    width:100%;
+    height: 100px;
+    overflow-y: scroll;
+    background-color: #F8F8F8;
+    border:none;
+}
+.productAdd ul{
+    display: flex;
+    align-content:flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+.productAdd li{
+    display: block;
+    width: 100%;
+}
+.productAdd li span{
+    float: right;
+    margin-right: 20px;
+}
+.productAdd option{
+    padding-left: 20px;
 }

@@ -11,6 +11,7 @@
             <link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
             <link rel="stylesheet" href="assets/css/MyPage.css" type="text/css" />
         </head>
+
         <body>
             <%@ include file="Header.jsp" %>
                 <div id="body">
@@ -39,52 +40,62 @@
                             </div>
                         </div>
 
+
                         <div id="myPageRight">
-                            <h2> 회원정보수정 </h2><br>
-                            <%@ include file="line.jsp" %> <br>
-                            <p>변경할 정보가 있으시면 작성 후 하단에 있는 “저장”버튼을 눌러주세요.
-                                <br>단 아이디는 변경하실 수 없습니다</p><br><br>
-                            <div class="Membertable-container">
-                                <table class="Member-table">
-                                    <tr class="tr">
-                                        <td class="td">아이디</td>
-                                        <td class="Memtable-columns"><input class="Memtableinputno"
-                                                placeholder="로그인된 ID 노출(변경불가)"></td>
-                                    </tr>
+                            <h2>
+                                회원정보수정
+                            </h2>
 
-                                    <tr class="tr">
-                                        <td class="td">비밀번호</td>
-                                        <td class="Memtable-columns"><input class="Memtableinput"
-                                                placeholder="로그인한 사용자의 비밀번호 입력되어있음"></td>
-                                    </tr>
+                            <div id="myPageContainer">
+                                <div>
+                                    <p>변경할 정보가 있으시면 작성 후 하단에 있는 “저장”버튼을 눌러주세요.
+                                        <br>단 아이디는 변경하실 수 없습니다
+                                    </p><br><br>
+                                    <div class="MembertableContainer">
+                                        <table class="MemberTable">
+                                            <tr class="tr">
+                                                <td class="td">아이디</td>
+                                                <td class="MemtableColumns"><input class="Memtableinputno"
+                                                        placeholder="로그인된 ID 노출(변경불가)"></td>
+                                            </tr>
 
-                                    <tr class="tr">
-                                        <td class="td">이름</td>
-                                        <td class="Memtable-columns"><input class="Memtableinput" placeholder="로그인한 사용자 이름 입력">
-                                        </td>
-                                    </tr>
+                                            <tr class="tr">
+                                                <td class="td">비밀번호</td>
+                                                <td class="MemtableColumns"><input class="Memtableinput"
+                                                        placeholder="로그인한 사용자의 비밀번호 입력되어있음"></td>
+                                            </tr>
 
-                                    <tr class="tr">
-                                        <td class="td">주소</td>
-                                        <td class="Memtable-columns"><input class="Memtableinput"
-                                                placeholder="로그인한 사용자의 주소 자동 입력되었음"></td>
-                                    </tr>
+                                            <tr class="tr">
+                                                <td class="td">이름</td>
+                                                <td class="MemtableColumns"><input class="Memtableinput"
+                                                        placeholder="로그인한 사용자 이름 입력">
+                                                </td>
+                                            </tr>
 
-                                    <tr class="tr">
-                                        <td class="td">연락처</td>
-                                        <td class="Memtable-columns"><input class="Memtableinput"
-                                                placeholder="로그인한 사용자의 연락처 자동 입력되었음"></td>
-                                    </tr>
+                                            <tr class="tr">
+                                                <td class="td">주소</td>
+                                                <td class="MemtableColumns"><input class="Memtableinput"
+                                                        placeholder="로그인한 사용자의 주소 자동 입력되었음"></td>
+                                            </tr>
 
-                                </table>
-                            	<%@ include file="line.jsp" %> 
+                                            <tr class="tr">
+                                                <td class="td">연락처</td>
+                                                <td class="MemtableColumns"><input class="Memtableinput"
+                                                        placeholder="로그인한 사용자의 연락처 자동 입력되었음"></td>
+                                            </tr>
+
+                                        </table>
+
+                                    </div>
+                                </div>
                             </div>
-                            <br><br>
-                            <div class="button-container">
-                                <input class="AllBtn" type="submit" value="저장하기">
-                                <input class="AllBtn" type="submit" value="회원탈퇴">
+                            <div class="buttonContainer">
+                                <button class="AllBtn" type="submit">저장하기</button>
+                                <button class="AllBtn" type="submit">회원탈퇴</button>
                             </div>
-                  </div>
+                        </div>
+
+                    </div>
                 </div>
                 <%@ include file="Footer.jsp" %>
                     <nav id="loginMD">
