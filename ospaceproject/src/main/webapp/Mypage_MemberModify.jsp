@@ -50,81 +50,27 @@
 
                                             <tr class="tr">
                                                 <td class="td">연락처</td>
-                                                <td class="MemtableColumns"><input class="Memtableinput"
-                                                        placeholder="로그인한 사용자의 연락처 자동 입력되었음"></td>
-                                            </tr>
-
-                                        </table>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="buttonContainer">
-                                <button class="AllBtn" type="submit">저장하기</button>
-                                <button class="AllBtn" type="submit">회원탈퇴</button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <%@ include file="Footer.jsp" %>
-                    <nav id="loginMD">
-                        <div id="mdBg">
-                            <div id="mdBox">
-                                <div><button id="closeBtn">X</button></div>
-                                <div class="loginBoxLogo">
-                                    <img src="https://drive.google.com/thumbnail?id=1BCKohuhG1uxkzJv36GL2I-cOYC_zLOoD">
-                                </div>
-                                <form action="LoginController" method="post">
-                                    <div class="loginBox">
-                                        <div class="loginBoxRow">
-                                            <div class="loginBoxIdPw">
-                                                ID
-                                            </div>
-                                            <div class="loginBoxInput">
-                                                <input type="text" name="id" placeholder="아이디를 입력해주세요.">
-                                            </div>
-                                        </div>
-                                        <div class="loginBoxRow">
-                                            <div class="loginBoxIdPw">
-                                                PW
-                                            </div>
-                                            <div class="loginBoxInput">
-                                                <input type="password" name="pw" placeholder="비밀번호를 입력해주세요.">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="loginBtn">
-                                        <span>
-                                            <a href="Login.html">
-                                                <button type="submit" class="AllBtn">Login </button>
-                                            </a>
-                                        </span>
-                                    </div>
-                                </form>
-
-                                <div id="JoinIdPwButtonBox">
-                                    <span>
-                                        <a href="Join.jsp"><button>회원가입</button></a> |
-                                        <a href="IdFind.html"><button>아이디 찾기</button></a> |
-                                        <a href="PwFind.html"><button>비밀번호 찾기</button></a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-
-                    <script>
-                        const mdOpen = () => {
-                            document.getElementById("loginMD").style.display = "block";
-                        }
-                        const mdClose = () => {
-                            document.getElementById("loginMD").style.display = "none";
-                        }
-                        document.getElementById("headLoginBtn").addEventListener("click", mdOpen);
-                        document.getElementById("closeBtn").addEventListener("click", mdClose);
-                    </script>
-
-
-                    <<<<<<< HEAD git pull origin master=======>>>>>>> branch 'master' of
-                        https://github.com/2024-SMHRD-IS-CLOUD-4/OSpace
+									<td class="MemtableColumns">
+										<input class="Memtableinput" placeholder="로그인한 사용자의 연락처 자동 입력되었음">
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="buttonContainer">
+					<button class="AllBtn" type="submit">저장하기</button>
+					<button class="AllBtn" type="submit">회원탈퇴</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<%@ include file="Footer.jsp"%>
+	<nav id="loginMD">
+		<%@ include file="MdLogin.jsp"%>
+	</nav>
+	<nav id="serchMD">
+		<%@ include file="MdSerch.jsp"%>
+	</nav>
+</body>
+</html>

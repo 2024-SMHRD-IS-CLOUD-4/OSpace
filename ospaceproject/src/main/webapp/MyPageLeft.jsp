@@ -30,7 +30,7 @@
 							</ul>
 						</li>
 						<li class="member">주문관리</li>
-						<li class="member"><a href="Mypage_Modify.jsp">회원정보수정</a></li>
+						<li class="member"><a href="Mypage_MemberModify.jsp">회원정보수정</a></li>
 						<li class="member">리뷰</li>
 						<li class="member">찜 목록</li>
 						<li class="member">중고거래</li>
