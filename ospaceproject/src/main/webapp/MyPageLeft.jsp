@@ -26,7 +26,7 @@
 							상품관리
 							<ul>
 								<li>상품리스트보기</li>
-								<li><a href="ProductAdd.jsp">상품등록하기</a></li>
+								<li><a href="Mypage_ProductAdd.jsp">상품등록하기</a></li>
 							</ul>
 						</li>
 						<li class="member">주문관리</li>
