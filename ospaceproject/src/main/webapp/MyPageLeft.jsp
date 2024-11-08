@@ -31,7 +31,7 @@
                         <li class="seller"><a href="Mypage_MemberModify.jsp">회원정보수정</a></li>
                         <li class="member"><a href="Mypage_MemberModify.jsp">회원정보수정</a></li>
                         <li class="member">리뷰</li>
-                        <li class="member">찜 목록</li>
+                        <li class="member"><a href="Mypage_Reserved.jsp">찜 목록</a></li>
                         <li class="member">
                             중고거래
                                 <p class="subNav"><a href="#">중고상품 리스트보기</a></p>
