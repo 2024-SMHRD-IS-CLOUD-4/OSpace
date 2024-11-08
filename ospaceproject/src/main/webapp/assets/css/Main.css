@@ -315,27 +315,41 @@ body{
     background: #ffffff;
 }
 #serchBoxMain{
-    display: none;
+    display: block;
 }
 #serchBoxSub{
-    display: block;
+    display: none;
 }
 .serchBox{
     width: 80%;
     max-width: 850;
     height: 40px;
     line-height: 40px;
-    border: 1px solid #655A50;
+    border: 1px solid #ddd;
     border-radius: 20px;
     background-color: #fdfdfd;
     margin: 140px auto 0 auto;
 }
-.serchBox input{
-    width:85%;
-    max-width: 760px;
+#serchText{
+    width:70%;
+    max-width: 900px;
     height:36px;
     font-size: 12pt;
     border: none;
+}
+#serchSubmit{
+    float: right;
+    width: 80px;
+    height:30px;
+    line-height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: #fff;
+    margin-top: 4px;
+    margin-right: 10px;
+}
+#serchSubmit:hover{
+    background-color: #ddd;
 }
 .serchBox input:focus{
     outline: none;

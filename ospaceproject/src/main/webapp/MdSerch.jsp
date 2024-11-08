@@ -19,6 +19,7 @@
                             src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
                         |
                         <input id="serchText" type="text" onkeyup="enterkey()" placeholder="검색어를 입력해주세요">
+                        <input id="serchSubmit" type="submit" value="검색하기">
                     </div>
 
                     <p>또는</p>
