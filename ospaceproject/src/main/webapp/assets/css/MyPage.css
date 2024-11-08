@@ -423,9 +423,13 @@
 }
 /*리뷰페이지?*/
 .reviewTextbox{
-	width: 800px;
+	width: 700px;
 	height: 200px;
 	font-size: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space:nowrap;
+	resize:none;
 }
 
 .gpa{
