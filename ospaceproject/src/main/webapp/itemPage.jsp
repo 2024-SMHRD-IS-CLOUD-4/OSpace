@@ -57,7 +57,7 @@
                     <h1 id="prod_name" ><%= p.getProd_name()%></h1>
                     <p id="prod_price" class="itemBoxTitlePrise"><%=p.getProd_price()%>원</p>
                     <p class="itemBoxSubTitle">
-                        <span class="itemT"><%=p.getProd_id()%></span><span>chare-0001</span>
+                        <span class="itemT"><%=p.getProd_id()%></span><span><%=p.getProd_name()%></span>
                     </p>
                     <p class="itemBoxSubTitle">
                         <span class="itemT">판매자</span><span><%=u.getName() %></span>
@@ -112,8 +112,7 @@
 		$('#form10').submit((event)=>{
 			
 		    let user_exist = '<%= session.getAttribute("user") %>';
-			console.log(user_exist);
-			if(user_exist==null){
+			if(user_exist==='null'){
 				mdOpen();
 				return false;
 			}
@@ -122,7 +121,7 @@
 	})
 	 $(document).ready(()=>{
 		$('#form11').submit((event)=>{
-			if(user_exist==null){
+			if(user_exist==='null'){
 				mdOpen();
 				return false;
 			}
