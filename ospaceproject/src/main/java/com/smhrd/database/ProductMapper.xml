@@ -55,7 +55,7 @@
 	
 	<!-- 상품 별점 정렬 -->
 	<select id="orderByDate" resultType="com.smhrd.model.Products">
-    SELECT * FROM PRODUCTS ORDER BY CREATED_AT 
+    SELECT * FROM PRODUCTS ORDER BY CREATED_AT DESC
 	</select>
 	
 	<!-- 조회수 증가 쿼리 -->

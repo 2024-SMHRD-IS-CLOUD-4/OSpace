@@ -16,4 +16,19 @@
 		SELECT * FROM REVIEWS
 	</select>
 
+	<!-- 사용자별 전체 리뷰 조회 -->
+	<select id="getMyReview" resultType="com.smhrd.model.Reviews">
+		SELECT * FROM REVIEWS WHERE id=#{id}
+	</select>
+	
+	<!-- 제품별 전체 리뷰 조회 -->
+	<select id="getProductReviews" resultType="com.smhrd.model.Reviews">
+		SELECT * FROM REVIEWS WHERE prod_id1 = #{prod_id} OR prod_id2 = #{prod_id}
+	</select>
+	
+	<!-- 개별 리뷰 조회 -->
+	<select id="getProductReview" resultType="com.smhrd.model.Reviews">
+		SELECT * FROM REVIEWS WHERE prod_id1 = #{prod_id} OR prod_id2 = #{prod_id}
+	</select>
+	
 </mapper>

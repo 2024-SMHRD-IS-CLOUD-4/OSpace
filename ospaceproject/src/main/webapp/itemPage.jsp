@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.model.Reviews"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.ReviewsDAO"%>
 <%@page import="com.smhrd.model.UserDAO"%>
 <%@page import="com.smhrd.model.Products"%>
 <%@page import="com.smhrd.model.ProductsDAO"%>
@@ -25,6 +28,8 @@
 	Products p = d_dao.getSingleProduct(prod_id);
 	UserDAO user_dao = new UserDAO();
 	User u = user_dao.getUser(p.getId());
+	ReviewsDAO r_dao = new ReviewsDAO();
+	List<Reviews> r_lst = r_dao.getProductReviews(p.getProd_id());
 	String category = "";
 	switch(p.getCategory_id()){
 	case 1: category = "의자";
@@ -89,14 +94,13 @@
                         총 금액<span></span>
                     </div>
                     <div id="priceBoxSelect">
-                    	<form action="ReservedController" method="post" id="form2">
+                    	<form action="ReservedController" method="post" id="form10">
                         	<button id="checkBox" name="prod_id" value="<%=p.getProd_id()%>"><div class="checkBox"></div>찜하기</button>
                         </form>
-                        <form action="BasketController" method="post" id="form3">
+                        <form action="BasketController" method="post" id="form11">
                         	<input type="hidden" name="prod_id" value="<%=p.getProd_id()%>">
                         	<input type="submit" id="submit" value="장바구니 담기">
                         </form>
-                        
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -105,7 +109,7 @@
     <script type="text/javascript">
 	let user_exist = '<%= session.getAttribute("user") %>';
     $(document).ready(()=>{
-		$('#form2').submit((event)=>{
+		$('#form10').submit((event)=>{
 			
 		    let user_exist = '<%= session.getAttribute("user") %>';
 			console.log(user_exist);
@@ -117,7 +121,7 @@
 		})
 	})
 	 $(document).ready(()=>{
-		$('#form3').submit((event)=>{
+		$('#form11').submit((event)=>{
 			if(user_exist==null){
 				mdOpen();
 				return false;
@@ -165,45 +169,37 @@
             <div id="itemBoxReview">
                 <h4>리뷰</h4>
                 <ul>
-                    <li>
+                <% 
+                	for(Reviews r : r_lst){ 
+                	String [] tags = r.getReview_tag().split(",");
+                %>
+                    <a href="ReviewPage.jsp?prod_id=<%=p.getProd_id()%>"><li>
                         <div class="itemBoxReviewleft">
                             <img src="#">
                         </div>
                         <div class="itemBoxReviewRight">
-                            <p><span>#상품명1</span><span>#상품명2</span><span>#상품명3</span></p>
-                            <div>리뷰 내용 블라블라</div>
+                            <p>
+                            <%for(String tag : tags){ %>
+                            <span>#<%=tag%></span>
+                            <%} %>
+                            </p>
+                            <div><%=r.getReview_content()%></div>
                             <div class="itemBoxReviewRightR">
-                                <p>작성자 ID</p>
-                                <p>2024-10-24</p>
+                                <p><%=r.getId() %></p>
+                                <p><%=r.getCreated_at() %></p>
                             </div>
                         </div>
-                    </li>
-                    <li>
-                        <div class="itemBoxReviewleft">
-                            <img src="#">
-                        </div>
-                        <div class="itemBoxReviewRight">
-                            <p><span>#상품명1</span><span>#상품명2</span><span>#상품명3</span></p>
-                            <div>리뷰 내용 블라블라</div>
-                            <div class="itemBoxReviewRightR">
-                                <p>작성자 ID</p>
-                                <p>2024-10-24</p>
-                            </div>
-                        </div>
-                    </li>
+                    </li></a>
+                    <%} %>
                 </ul>
                 <div class="itemBoxReviewPageNum">1   2  3   4   > </div>
             </div>
         </div>
     </div>
-        <%@ include file="Footer.jsp"%>
-	<nav id="loginMD">
-		<%@ include file="MdLogin.jsp"%>
-	</nav>
-	<nav id="serchMD">
-		<%@ include file="MdSerch.jsp"%>
-	</nav>
-	<%@ include file="HeaderSub.jsp"%>
+        <%@ include file = "Footer.jsp" %>
+    	<nav id="loginMD">
+			<%@ include file="MdLogin.jsp"%>
+		</nav>
 	
 </body>
 </html>
