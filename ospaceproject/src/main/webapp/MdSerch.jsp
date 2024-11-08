@@ -10,14 +10,16 @@
 </head>
 	
 <body>
+<%
 
+%>
         <div id="mdBg">
             <div id="serchBox">
                 <div><button id="serchcloseBtn">X</button></div>
                 <div class="serchBox">
                     <img class="btnImg" src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
                     |
-                    <input type="text" placeholder="검색어를 입력해주세요">
+                    <input id="serchText" type="text" onkeyup="enterkey()" placeholder="검색어를 입력해주세요">
                 </div>
 
                 <p>또는</p>
@@ -43,6 +45,14 @@
 
         document.getElementById("serch").addEventListener("click", serchOpen)
         document.getElementById("serchcloseBtn").addEventListener("click", serchClose)
+        
+        function enterkey() {
+        if (window.event.keyCode == 13) {
+ 
+             // 엔터키가 눌렸을 때 실행할 내용
+             login();
+        };
+}
     </script>
 </body>
 </html>
