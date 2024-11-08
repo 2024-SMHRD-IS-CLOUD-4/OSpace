@@ -11,6 +11,7 @@
 	
 <body>
 <div id="mdBg">
+
             <div id="serchBox">
                 <div><button id="serchcloseBtn">X</button></div>
                 <div id="serchBoxMain">
@@ -18,31 +19,34 @@
                     <div class="serchBox">
                         <img class="btnImg"
                             src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
-                        |
+                        
                         <input id="serchText" type="text" onkeyup="enterkey()" placeholder="검색어를 입력해주세요">
                         <input id="serchSubmit" type="submit" value="검색하기">
                     </div>
 
-                    <p>또는</p>
-                    <p>이미지 파일을 등록해 원하는 색상으로 검색해 보세요!</p>
 
                     <div id="imgSerchBox">
-                        <img src="">
-                        <label for="imgFileUplode">
-                            <div class="imgFileUplode">이미지 등록하기</div>
-                        </label>
-                        <input type="file" accept=".png,.jpg,.jpeg,.gif " id="imgFileUplode">
-                    </div>
+                    <canvas id="canvas"></canvas>
+                    <label for="fileInput">
+                        <div class="imgFileUplode">이미지 등록하기</div>
+                    </label>
+                    <input type="file" accept="image/*" id="fileInput">
+                </div>
                 </div>
                 <!-- 이미지 삽입 후 나오는 페이지 -->
                 <div id="serchBoxSub">
                     <div id="serchBoxSubChoise">
-                        <p>원하는 색상의 부분을 드래그하여 선택해주세요.</p>
-                        <img src="" alt="등록한 이미지 보여주기">
+
                         <div class="serchBoxSubChoiseRight">
                             <p>추출한 색상</p>
-                            <div id="imgColor"></div>
-                            <p>추출한 색상 RGB 결과값</p>
+                            <div id="imgColor">
+								<canvas id="canvas" width="70" height="70" style="max-width: 70px; max-height: 70px;"></canvas>
+							    <div id="colorOutput">
+							        <span id="colorText"></span>
+							        <div id="colorPreview"></div>
+							    </div>
+                            </div>
+                            <p id="colorText">추출한 색상 RGB 결과값</p>
                         </div>
                     </div>
                     <!--<div id="serchBoxSubCheck">
@@ -60,6 +64,7 @@
             </div>
         </div>
     <script>
+    	
         const serchOpen = () => {
             document.getElementById("serchMD").style.display = "block";
         }
@@ -79,5 +84,144 @@
         };
 }
     </script>
+    <script>
+    let r = 0, g = 0, b = 0;
+</script>
+<script>
+
+        const fileInput = document.getElementById('fileInput');
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const colorText = document.getElementById('colorText');
+        const colorPreview = document.getElementById('colorPreview');
+        const MAX_WIDTH = 330;
+        const MAX_HEIGHT = 330;
+        let isDragging = false;
+        let startX = 0;
+        let startY = 0;
+        let img = null; // 초기값 설정
+
+        // 이미지 업로드 이벤트 처리
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    img = new Image();
+                    img.onload = () => {
+                        let width = img.width;
+                        let height = img.height;
+
+                        // 비율을 유지하면서 최대 크기를 조정
+                        if (width > MAX_WIDTH) {
+                            height = height * (MAX_WIDTH / width);
+                            width = MAX_WIDTH;
+                        }
+                        if (height > MAX_HEIGHT) {
+                            width = width * (MAX_HEIGHT / height);
+                            height = MAX_HEIGHT;
+                        }
+
+                        // canvas 크기 설정
+                        canvas.width = width;
+                        canvas.height = height;
+
+                        // 이미지 그리기
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        ctx.drawImage(img, 0, 0, width, height);
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                console.error("파일이 선택되지 않았습니다.");
+            }
+        });
+
+        // 드래그 이벤트 방지 및 처리 코드 추가
+        canvas.addEventListener('dragstart', (e) => {
+            e.preventDefault();
+        });
+
+        canvas.addEventListener('dragover', (e) => {
+            e.preventDefault();
+        });
+
+        canvas.addEventListener('drop', (e) => {
+            e.preventDefault();
+            console.warn("드래그 앤 드롭 이벤트는 canvas에서 처리되지 않습니다.");
+        });
+
+        // 드래그 시작 이벤트
+        canvas.addEventListener('mousedown', (e) => {
+            if (img) { // 이미지가 로드된 경우에만 드래그 가능
+                isDragging = true;
+                startX = e.offsetX;
+                startY = e.offsetY;
+            }
+        });
+
+        // 드래그 중 이벤트 (사각형 그리기)
+        canvas.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height); // 원본 이미지를 다시 그림
+                ctx.strokeStyle = 'red';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(startX, startY, e.offsetX - startX, e.offsetY - startY);
+            }
+        });
+
+        // 드래그 종료 이벤트
+        canvas.addEventListener('mouseup', (e) => {
+            if (isDragging) {
+                isDragging = false;
+
+                // 드래그 끝 좌표와 크기 계산
+                let width = e.offsetX - startX;
+                let height = e.offsetY - startY;
+
+                // 음수 너비/높이 처리 (왼쪽/위로 드래그할 때)
+                if (width < 0) {
+                    startX = startX + width;
+                    width = Math.abs(width);
+                }
+                if (height < 0) {
+                    startY = startY + height;
+                    height = Math.abs(height);
+                }
+
+                // canvas 경계 내에서만 처리
+                if (startX + width <= canvas.width && startY + height <= canvas.height) {
+                    const imageData = ctx.getImageData(startX, startY, width, height);
+                    const data = imageData.data;
+                    const numPixels = data.length / 4;
+
+                    for (let i = 0; i < data.length; i += 4) {
+                        r += data[i];     // Red
+                        g += data[i + 1]; // Green
+                        b += data[i + 2]; // Blue
+                    }
+
+                    r = Math.floor(r / numPixels);
+                    g = Math.floor(g / numPixels);
+                    b = Math.floor(b / numPixels);
+
+                    colorText.innerText = `Average Color (RGB): (${r}, ${g}, ${b})`;
+                    colorPreview.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+                    console.log(r);
+                    console.log(g);
+                    console.log(b);
+                } else {
+                    console.warn("선택한 영역이 canvas 경계를 초과했습니다.");
+                }
+            }
+        });
+        
+       
+
+    </script>
+    
 </body>
 </html>
