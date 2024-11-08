@@ -320,6 +320,9 @@ body{
 #serchBoxSub{
     display: none;
 }
+.cartegoryChoise{
+	margin:0px;
+}
 .serchBox{
     width: 80%;
     max-width: 850;
@@ -328,7 +331,7 @@ body{
     border: 1px solid #ddd;
     border-radius: 20px;
     background-color: #fdfdfd;
-    margin: 140px auto 0 auto;
+    margin: 0px auto 0px auto;
 }
 #serchText{
     width:70%;
@@ -355,7 +358,7 @@ body{
     outline: none;
 }
 #serchBox p{
-    margin-top:65px;
+    margin-top:50px;
     font-size: 14pt;
     font-weight: 500;
 }

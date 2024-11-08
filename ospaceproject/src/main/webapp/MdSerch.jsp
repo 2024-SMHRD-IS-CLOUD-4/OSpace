@@ -14,6 +14,7 @@
             <div id="serchBox">
                 <div><button id="serchcloseBtn">X</button></div>
                 <div id="serchBoxMain">
+                	<p class="cartegoryChoise"><span><input type="radio" name="cartegoryChoise">일반상품</span><span><input type="radio"  name="cartegoryChoise">중고상품</span><span><input type="radio"  name="cartegoryChoise">리뷰</span></p>
                     <div class="serchBox">
                         <img class="btnImg"
                             src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
@@ -33,6 +34,7 @@
                         <input type="file" accept=".png,.jpg,.jpeg,.gif " id="imgFileUplode">
                     </div>
                 </div>
+                <!-- 이미지 삽입 후 나오는 페이지 -->
                 <div id="serchBoxSub">
                     <div id="serchBoxSubChoise">
                         <p>원하는 색상의 부분을 드래그하여 선택해주세요.</p>
@@ -42,20 +44,9 @@
                             <div id="imgColor"></div>
                             <p>추출한 색상 RGB 결과값</p>
                         </div>
-                        <div>
-                            <label for="imgFileUplode">
-                                <div class="imgFileUplode">다른 이미지 등록하기</div>
-                            </label>
-                            <input type="file" accept=".png,.jpg,.jpeg,.gif " id="imgFileUplode">
-                        </div>
                     </div>
-                    <div id="serchBoxSubCheck">
-                        <p>
-                            <span>세부 색상 선택 : </span>
-                            <input type="radio" name="">빨간색
-                            <input type="radio" name="">노란색
-                        </p>
-                        <p>
+                    <!--<div id="serchBoxSubCheck">
+                         <p>
                             <span>카테고리 선택 : </span>
                             <select name="" id="">
                                 <option value="">카테고리 전체</option>
@@ -63,7 +54,7 @@
                                 <option value="커튼">커튼</option>
                             </select>
                         </p>
-                    </div>
+                    </div>-->
                     <button type="submit" class="AllBtn">검색하기</button>
                 </div>
             </div>
