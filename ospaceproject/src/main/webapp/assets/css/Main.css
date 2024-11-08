@@ -297,3 +297,86 @@ body{
     font-weight: 800;
     cursor: pointer;
 }
+/*검색 모달창*/
+#serchMD{
+    display: none;
+}
+#serchBox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:80%;
+    max-width: 1200px;
+    height: 650px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    background: #ffffff;
+}
+.serchBox{
+    width: 80%;
+    max-width: 850;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #655A50;
+    border-radius: 20px;
+    background-color: #fdfdfd;
+    margin: 140px auto 0 auto;
+}
+.serchBox input{
+    width:85%;
+    max-width: 760px;
+    height:36px;
+    font-size: 12pt;
+    border: none;
+}
+.serchBox input:focus{
+    outline: none;
+}
+#serchBox p{
+    margin-top:65px;
+    font-size: 14pt;
+    font-weight: 500;
+}
+#imgSerchBox{
+    display: inline-block;
+    width: 330px;
+    height: fit-content;
+    vertical-align: middle;
+    margin-top: 80px;
+}
+#imgSerchBox img{
+    float: left;
+    width:80px;
+    height: 75px;
+    border: 1px solid #ddd;
+    margin-right: 50px;
+}
+.imgFileUplode {
+    width: 195px;
+    height: 60px;
+    margin-top:8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        font-weight: 800;
+        border: 2px solid #655A50;
+    }
+  }
+  
+  #imgFileUplode {
+    display: none;
+  }
+  #serchcloseBtn{
+    float: right;
+    font-size: 18pt;
+    border: none;
+    background-color: #fff;
+}
