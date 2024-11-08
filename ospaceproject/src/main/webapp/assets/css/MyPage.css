@@ -32,15 +32,14 @@
     background-color: #000; 
     margin: 60px 0px 40px 0px ;
  }
-.myPageLeftNav ul li{
-    float: left;
+.myPageLeftNav > ul > .seller,.member,.manager{
+    position: relative;
     width: 194px;
-    height: 42px;
     line-height: 42px;
     padding-left: 20px;
     text-align: left;
 }
-.myPageLeftNav ul li:hover{
+.myPageLeftNav > ul > li:hover{
     background-color: #F8F8F8;
     cursor: pointer;
 }
