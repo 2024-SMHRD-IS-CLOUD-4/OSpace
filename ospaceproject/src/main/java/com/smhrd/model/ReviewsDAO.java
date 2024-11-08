@@ -26,8 +26,22 @@ public class ReviewsDAO {
 	}
 	public List<Reviews> getMyReview(String id){
 		SqlSession session = factory.openSession(true);
-		List<Reviews> result = session.selectList("ReviewMapper.get_reviews",id);
+		List<Reviews> result = session.selectList("ReviewMapper.getMyReview",id);
 		session.close();
 	    return result;
 	}
+	public List<Reviews> getProductReviews(int prod_id){
+		SqlSession session = factory.openSession(true);
+		List<Reviews> result = session.selectList("ReviewMapper.getProductReviews",prod_id);
+		session.close();
+	    return result;
+	}
+	
+	public Reviews getProductReview(int prod_id){
+		SqlSession session = factory.openSession(true);
+		Reviews result = session.selectOne("ReviewMapper.getProductReviews",prod_id);
+		session.close();
+	    return result;
+	}
+	
 }
