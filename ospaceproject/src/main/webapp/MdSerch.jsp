@@ -10,27 +10,60 @@
 </head>
 	
 <body>
-<%
-
-%>
-        <div id="mdBg">
+<div id="mdBg">
             <div id="serchBox">
                 <div><button id="serchcloseBtn">X</button></div>
-                <div class="serchBox">
-                    <img class="btnImg" src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
-                    |
-                    <input id="serchText" type="text" onkeyup="enterkey()" placeholder="검색어를 입력해주세요">
+                <div id="serchBoxMain">
+                    <div class="serchBox">
+                        <img class="btnImg"
+                            src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
+                        |
+                        <input id="serchText" type="text" onkeyup="enterkey()" placeholder="검색어를 입력해주세요">
+                    </div>
+
+                    <p>또는</p>
+                    <p>이미지 파일을 등록해 원하는 색상으로 검색해 보세요!</p>
+
+                    <div id="imgSerchBox">
+                        <img src="">
+                        <label for="imgFileUplode">
+                            <div class="imgFileUplode">이미지 등록하기</div>
+                        </label>
+                        <input type="file" accept=".png,.jpg,.jpeg,.gif " id="imgFileUplode">
+                    </div>
                 </div>
-
-                <p>또는</p>
-                <p>이미지 파일을 등록해 원하는 색상으로 검색해 보세요!</p>
-
-                <div id="imgSerchBox">
-                    <img src="">
-                    <label for="imgFileUplode">
-                        <div class="imgFileUplode">이미지 등록하기</div>
-                    </label>
-                    <input type="file" accept=".png,.jpg,.jpeg,.gif " id="imgFileUplode">
+                <div id="serchBoxSub">
+                    <div id="serchBoxSubChoise">
+                        <p>원하는 색상의 부분을 드래그하여 선택해주세요.</p>
+                        <img src="" alt="등록한 이미지 보여주기">
+                        <div class="serchBoxSubChoiseRight">
+                            <p>추출한 색상</p>
+                            <div id="imgColor"></div>
+                            <p>추출한 색상 RGB 결과값</p>
+                        </div>
+                        <div>
+                            <label for="imgFileUplode">
+                                <div class="imgFileUplode">다른 이미지 등록하기</div>
+                            </label>
+                            <input type="file" accept=".png,.jpg,.jpeg,.gif " id="imgFileUplode">
+                        </div>
+                    </div>
+                    <div id="serchBoxSubCheck">
+                        <p>
+                            <span>세부 색상 선택 : </span>
+                            <input type="radio" name="">빨간색
+                            <input type="radio" name="">노란색
+                        </p>
+                        <p>
+                            <span>카테고리 선택 : </span>
+                            <select name="" id="">
+                                <option value="">카테고리 전체</option>
+                                <option value="의자">의자</option>
+                                <option value="커튼">커튼</option>
+                            </select>
+                        </p>
+                    </div>
+                    <button type="submit" class="AllBtn">검색하기</button>
                 </div>
             </div>
         </div>

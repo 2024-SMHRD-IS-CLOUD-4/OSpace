@@ -314,6 +314,12 @@ body{
     padding: 20px;
     background: #ffffff;
 }
+#serchBoxMain{
+    display: none;
+}
+#serchBoxSub{
+    display: block;
+}
 .serchBox{
     width: 80%;
     max-width: 850;
@@ -379,4 +385,43 @@ body{
     font-size: 18pt;
     border: none;
     background-color: #fff;
+}
+/*이미지 등록 후 모달창*/
+#serchBoxSubChoise{
+    display: inline-block;
+    position: relative;
+    width: 80%;
+    max-width: 850px;
+    height: fit-content;
+    vertical-align: middle;
+}
+#serchBoxSubChoise img{
+    float: left;
+    width:300px;
+    height: 300px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+#serchBoxSubChoise > div{
+    display: inline-block;
+    text-align: left;
+}
+#serchBoxSubChoise > div >p{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+#imgColor{
+    width: 200px;
+    height: 100px;
+    border:1px solid #ddd;
+}
+#serchBoxSubCheck{
+    margin-bottom: 20px;
+}
+#serchBoxSubCheck >p{
+    margin-top: 20px;
+}
+.colorChoise{
+    width:10px;
+    height: 10px;
 }
