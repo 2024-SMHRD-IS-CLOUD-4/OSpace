@@ -20,7 +20,6 @@
 	<%
 		ProductsDAO p_dao = new ProductsDAO();
 		List<Products> p_lst = p_dao.orderByDate();
-		
 		Used_ProductsDAO u_dao = new Used_ProductsDAO();
 		List<Used_Products> u_lst = u_dao.orderByDate();
 		String[] category = {"의자", "책상", "침대", "수납장", "커튼", "벽지"};

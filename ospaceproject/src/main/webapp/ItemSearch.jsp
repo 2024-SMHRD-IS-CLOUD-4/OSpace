@@ -24,6 +24,7 @@
 	ReviewsDAO r_dao = new ReviewsDAO();
 	Used_ProductsDAO u_dao = new Used_ProductsDAO();
 	String title = request.getParameter("title");
+	String subTitle = request.getParameter("subTitle");
 	String text = request.getParameter("text");
 	String searchType = request.getParameter("searchType");
 	SearchDAO s_dao = new SearchDAO();
@@ -146,7 +147,7 @@
 					<%
 					}
 					} else if (title.equals("카테고리")) {
-					List<Products> p_lst = p_dao.getAllProducts();
+						List<Products> p_lst = p_dao.getCategoryProducts(subTitle);
 					for (Products p : p_lst) {
 					%>
 					<li>

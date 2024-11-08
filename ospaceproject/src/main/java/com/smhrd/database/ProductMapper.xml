@@ -58,6 +58,11 @@
     SELECT * FROM PRODUCTS ORDER BY CREATED_AT DESC
 	</select>
 	
+	<!-- 카테고리별 상품 조회 -->
+	<select id="getCategoryProducts" resultType="com.smhrd.model.Products">
+    SELECT * FROM PRODUCTS WHERE CATEGORY_ID=#{category_id}
+	</select>
+	
 	<!-- 조회수 증가 쿼리 -->
 	<update id="incrementViews">
 		UPDATE PRODUCTS SET prod_views = prod_views + 1 WHERE prod_id = #{prod_id}
