@@ -37,9 +37,7 @@ public class ReviewController extends HttpServlet {
 		String review_img = multi.getFilesystemName("review_img");
 		int ratings = Integer.parseInt(multi.getParameter("ratings"));
 		String review_tag = multi.getParameter("review_tag");
-		
 		Reviews review = new Reviews(0, id, prod_id, review_title, review_content, review_img, ratings, review_tag, null);
-		
 		ReviewsDAO dao = new ReviewsDAO();
 		int result = dao.insert(review);
 		

@@ -84,11 +84,9 @@
         };
 }
     </script>
-    <script>
-    let r = 0, g = 0, b = 0;
-</script>
+    
 <script>
-
+		let r = 0, g = 0, b = 0;
         const fileInput = document.getElementById('fileInput');
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');

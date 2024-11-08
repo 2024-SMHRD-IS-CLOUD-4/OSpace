@@ -66,7 +66,7 @@
 						<div class="itemSmallBox">
 							<a href="itemPage.jsp?prod_id=<%=p.getProd_id()%>">
 								<div class="itemSmallBoxImg">
-									<img src="<%=p.getProd_img()%>">
+									<img src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
 								</div>
 								<div class="itemSmallBoxText">
 									<p class="itmSellerID"><%=p.getId()%></p>
@@ -99,7 +99,7 @@
 						<div class="itemSmallBox">
 							<a href="#">
 								<div class="itemSmallBoxImg">
-									<img src="#">
+									<img src="<%=request.getContextPath()%>/upload/<%=u.getUsed_img()%>">
 								</div>
 								<div class="itemSmallBoxText">
 									<p class="itmSellerID"><%=u.getId()%></p>
@@ -125,6 +125,6 @@
 	<nav id="serchMD">
 		<%@ include file="MdSerch.jsp"%>
 	</nav>
-	
+	<%@ include file="HeaderSub.jsp"%>
 </body>
 </html>

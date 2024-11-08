@@ -99,6 +99,7 @@
 	<nav id="loginMD">
 		<%@ include file="MdLogin.jsp"%>
 	</nav>
+	<%@ include file="HeaderSub.jsp"%>
 	<script>
 		document.getElementById("recomment").addEventListener("click",()=>{
 			
