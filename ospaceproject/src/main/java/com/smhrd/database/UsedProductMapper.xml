@@ -22,4 +22,15 @@
 	<select id="orderByDate" resultType="com.smhrd.model.Used_Products">
     SELECT * FROM Used_Products ORDER BY CREATED_AT DESC
 	</select>
+	
+	<!-- 댓글 불러오기 -->
+	<select id="getAllComments" resultType="com.smhrd.model.UsedComment">
+    SELECT * FROM USED_COMMENTS WHERE used_id=#{used_id}
+	</select>
+	
+	<!-- 대댓글 불러오기 -->
+	<select id="getAllRecomments" resultType="com.smhrd.model.UsedComment">
+    SELECT * FROM USED_COMMENTS WHERE super_used_cmt_id=#{used_cmt_id}
+	</select>
+	
 </mapper>
