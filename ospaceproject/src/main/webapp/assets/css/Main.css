@@ -216,9 +216,9 @@ body{
     font-weight: normal;
 }
 .itemBox{
+	display:inline-block;
     width: 1100px;
-    height: 875px;
-    margin: 70px auto 0px auto;
+    margin: 70px auto 60px auto;
 }
 .itemBox li{
     width:267px;

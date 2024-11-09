@@ -19,8 +19,8 @@
 				<table  class="joinBox">
 					<tr>
 						<td class="joinBoxTitle">가입유형</td>
-						<td class="joinBoxContents" style=" border:none;">
-							<input type="radio" name="u_type" value="일반회원"><span>일반회원</span>
+						<td class="joinBoxContents">
+							<input type="radio" name="u_type" value="일반회원" checked="checked"><span>일반회원</span>
 							<input type="radio" name="u_type" value="판매자회원"><span>판매자회원</span>
 						</td>
 					</tr>
@@ -30,6 +30,10 @@
 							<input type="text" name="id" placeholder="아이디를 입력해주세요.">
 							<button type="button" id="idCheckBtn">중복확인</button>
 						</td>
+						
+					</tr>
+					<tr>
+						<td class="joinBoxTitle"></td>
 						<td><span id="idCheckResult"></span></td>
 					</tr>
 					<tr>
@@ -42,11 +46,14 @@
 						<td class="joinBoxTitle">비밀번호 재입력<span id="pwCheck"></span></td>
 						<td class="joinBoxContents">
 							<input type="password" name="pwCheck" placeholder="비밀번호를 다시 한번 입력해주세요."></td>
-							<td><span id="pwCheckResult"></span></td>
+					</tr>
+					<tr>
+						<td class="joinBoxTitle"></td>
+						<td><span id="pwCheckResult"></span></td>
 					</tr>
 					<tr>
 						<td class="joinBoxTitle">닉네임 입력</td>
-						<td class="joinBoxContents">
+						<td colspan="2" class="joinBoxContents">
 							<input type="text" name="name" placeholder="닉네임을 입력해주세요.">
 						</td>
 					</tr>
@@ -64,7 +71,7 @@
 					</tr>
 				</table>
 				<div id="submitBox">
-					<input type="submit" id="submit" value="가입하기">
+					<button type="submit" id="submit" class="AllBtn">가입하기</button>
 				</div>
 			</form>
 			<div id="JoinIdPwButtonBox">
