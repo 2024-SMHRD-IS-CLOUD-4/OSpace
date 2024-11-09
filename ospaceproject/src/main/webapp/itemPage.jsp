@@ -95,11 +95,13 @@
                     </div>
                     <div id="priceBoxSelect">
                     	<form action="ReservedController" method="post" id="form10">
-                        	<button id="checkBox" name="prod_id" value="<%=p.getProd_id()%>"><div class="checkBox"></div>찜하기</button>
+                        	<button id="checkBox" name="prod_id" value="<%=p.getProd_id()%>">
+                        		<div class="checkBox"></div>찜하기
+                        	</button>
                         </form>
                         <form action="BasketController" method="post" id="form11">
                         	<input type="hidden" name="prod_id" value="<%=p.getProd_id()%>">
-                        	<input type="submit" id="submit" value="장바구니 담기">
+                        	<button type="submit" id="submit">장바구니 담기</button>
                         </form>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>

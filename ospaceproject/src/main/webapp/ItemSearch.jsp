@@ -56,7 +56,7 @@
 						List<Products> p_lst = s_dao.searchProducts(text);
 						for(Products p : p_lst){
 					%>
-						<li>
+						<li><!-- 카테고리 클릭 시 상품들 나오는 곳 -->
 						<div class="itemSmallBox">
 							<a href="itemPage.jsp?prod_id=<%=p.getProd_id()%>">
 								<div class="itemSmallBoxImg">
@@ -75,7 +75,7 @@
 						List<Used_Products> u_lst = s_dao.searchUsedProducts(text);
 						for(Used_Products u : u_lst){
 						%>
-						<li>
+						<li><!--  중고거래 클릭 시 상품들 나오는 곳 -->
 						<div class="itemSmallBox">
 							<a href="UsedItemPage.jsp?prod_id=<%=u.getUsed_id()%>">
 								<div class="itemSmallBoxImg">
@@ -95,12 +95,11 @@
 						List<Reviews> r_lst = s_dao.searchReviews(text);
 						for(Reviews r : r_lst){
 							String tags[] = r.getReview_tag().split(",");%>
-					<li>
+					<li><!-- 리뷰 클릭 시 나온느 곳 -->
 						<div class="itemSmallBox">
 							<a href="ReviewPage.jsp?prod_id=<%=r.getProd_id()%>">
 								<div class="itemSmallBoxImg">
-									<img
-										src="<%=request.getContextPath()%>/upload/<%=r.getReview_img()%>">
+									<img src="<%=request.getContextPath()%>/upload/<%=r.getReview_img()%>">
 								</div>
 								<div class="itemSmallBoxText">
 									<p class="itmSellerID"><%=r.getId()%></p>

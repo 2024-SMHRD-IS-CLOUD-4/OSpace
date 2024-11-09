@@ -149,6 +149,9 @@
     right:0;
     bottom: 20px;
 }
+#priceBoxSelect form{
+	display:inline-block;
+}
 #priceBoxSelect button{
     appearance: none;
     width: 168px;
