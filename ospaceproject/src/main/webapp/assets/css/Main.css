@@ -192,6 +192,7 @@ body{
     display: inline-block;
     overflow: hidden;
     width: 1920px;
+    min-height:860px;
 }
 #mainItem02{
     display: inline-block;
