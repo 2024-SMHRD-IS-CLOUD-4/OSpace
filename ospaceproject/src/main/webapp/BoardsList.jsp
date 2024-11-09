@@ -33,7 +33,7 @@
                             <th class="boardName">작성자</th>
                             <th class="boardDate">작성일</th>
                             <th class="boardView">조회</th>
-                            <th class="boardContent"></th>
+                            <th class="boardContentArrow"></th>
                         </tr>
                         <%
         					for(Boards board : BoardsList){ // 변수명 수정
@@ -45,7 +45,10 @@
                             <td class="boardName"><%= board.getId() %></td>
                             <td class="boardDate"><%= board.getCreated_at() %></td>
                             <td class="boardView"><%= board.getB_views() %></td>
-                            <td class="boardContent"></td>
+                            <td class="boardContentArrow">▽</td>
+                        </tr>
+                        <tr>
+                            <td colspan="7" class="boardContent"><%= board.getB_content() %></td>
                         </tr>
                         <%
 				        	}
@@ -65,5 +68,10 @@
 		<%@ include file="MdSerch.jsp"%>
 	</nav>
 	<%@ include file="HeaderSub.jsp"%>
+	<script>
+		const clickOpen = () =>{
+			
+		}
+	</script>
 </body>
 </html>
