@@ -91,7 +91,7 @@
                         </div>
                     </div>
                     <div id="priceBox">
-                        총 금액<span></span>
+                        총 금액<span>0</span>
                     </div>
                     <div id="priceBoxSelect">
                     	<form action="ReservedController" method="post" id="form10">
@@ -135,7 +135,7 @@
                         
 	<button id="paymentButton">결제하기</button>
     <script src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
-    <script>
+    <script>/*결제 API 구현*/
         // IMP 객체 초기화
         IMP.init('imp16585716'); // 본인의 "고객사 식별코드"로 변경
 
@@ -165,7 +165,7 @@
             </div>
             <div id="itemBoxContant">
                 <!--상품 상세페이지 출력되는 부분-->
-                <h1>상세페이지</h1>
+                <%= p.getProd_desc()%>
             </div>
             <div id="itemBoxReview">
                 <h4>리뷰</h4>
