@@ -29,7 +29,9 @@
                         <li class="seller"><a href="Mypage_MemberModify.jsp">회원정보수정</a></li>
                         <li class="member"><a href="Mypage_MemberModify.jsp">회원정보수정</a></li>
                         <li class="member">리뷰</li>
-                        <li class="member"><a href="Mypage_Reserved.jsp">찜 목록</a></li>
+                        <li class="member">
+                        	<a href="Mypage_Reserved.jsp">찜 목록</a>
+                        </li>
                         <li class="member">
                             중고거래
                                 <p class="subNav"><a href="#">중고상품 리스트보기</a></p>
@@ -44,44 +46,44 @@
     
 	</div>
 	<%
-		String u_type = user.getU_type();
+		User user1= (User)session.getAttribute("user");
 	%>
-	<script> /*일반회원, 판매자회원, 관리자회원 구분*/
-		let userType = "<%=userType%>";
-		const sellers = document.getElementsByClassName("seller");
-		const members = document.getElementsByClassName("member");
-		const managers = document.getElementsByClassName("manager");
-		if(userType==="일반회원"){
-			for(let i = 0;i<sellers.length;i++){
-				sellers[i].style.display="none"
-			}
-			for(let i = 0;i<members.length;i++){
-				members[i].style.display="block"
-			}
-			for(let i = 0;i<managers.length;i++){
-				managers[i].style.display="none"
-			}
-		}else if(userType==="판매자회원"){
-			for(let i = 0;i<sellers.length;i++){
-				sellers[i].style.display="block"
-			}
-			for(let i = 0;i<members.length;i++){
-				members[i].style.display="none"
-			}
-			for(let i = 0;i<managers.length;i++){
-				managers[i].style.display="none"
-			}
-		}else{
-			for(let i = 0;i<sellers.length;i++){
-				sellers[i].style.display="none"
-			}
-			for(let i = 0;i<members.length;i++){
-				members[i].style.display="none"
-			}
-			for(let i = 0;i<managers.length;i++){
-				managers[i].style.display="block"
-			}
-		}
-	</script>
+	<script>
+    	let userType = "<%=user1.getU_type()%>";
+    	const sellers = document.getElementsByClassName("seller");
+    	const members = document.getElementsByClassName("member");
+    	const managers = document.getElementsByClassName("manager");
+    	if(userType==="일반회원"){
+    		for(let i = 0;i<sellers.length;i++){
+    			sellers[i].style.display="none"
+    		}
+    		for(let i = 0;i<members.length;i++){
+    			members[i].style.display="block"
+    		}
+    		for(let i = 0;i<managers.length;i++){
+    			managers[i].style.display="none"
+    		}
+    	}else if(userType==="판매자회원"){
+    		for(let i = 0;i<sellers.length;i++){
+    			sellers[i].style.display="block"
+    		}
+    		for(let i = 0;i<members.length;i++){
+    			members[i].style.display="none"
+    		}
+    		for(let i = 0;i<managers.length;i++){
+    			managers[i].style.display="none"
+    		}
+    	}else{
+    		for(let i = 0;i<sellers.length;i++){
+    			sellers[i].style.display="none"
+    		}
+    		for(let i = 0;i<members.length;i++){
+    			members[i].style.display="none"
+    		}
+    		for(let i = 0;i<managers.length;i++){
+    			managers[i].style.display="block"
+    		}
+    	}
+    </script>
 </body>
 </html>
