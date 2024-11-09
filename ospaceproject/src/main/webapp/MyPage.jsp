@@ -1,9 +1,9 @@
-<%@page import="com.smhrd.model.Reviews"%>
-<%@page import="java.util.List"%>
-<%@page import="com.smhrd.model.ReviewsDAO"%>
+<%@ page import="com.smhrd.model.Reviews"%>
+<%@ page import="java.util.List"%>
+<%@ page import="com.smhrd.model.ReviewsDAO"%>
 <%@ page import="com.smhrd.model.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,9 +51,8 @@
 				%>
 				<div class="line"></div>
 				<div id="myPageRightContents">
-					<div class="contentsLeft">
-						<!-- 리뷰 모음(일반회원) / 상품순위(판매자) 확인 구역 -->
-						<div class="seller">
+					<div class="contentsLeft"><!-- 판매자 : 상품순위, 일반: 내 리뷰보기, 관리자 : 카테고리 등록 순위-->
+						<div class="seller"><!-- 판매자 : 찜상품순위 -->
 							<h4>내상품 찜 순위</h4>
 							<ul>
 								<li class="ContentsBox">
@@ -90,7 +89,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="member">
+						<div class="member"> <!-- 일반회원 내 리뷰보기 -->
 							<h4>내 리뷰 보기</h4>
 							<ul>
 								<%
@@ -123,7 +122,7 @@
 								%>
 							</ul>
 						</div>
-						<div class="manager">
+						<div class="manager"><!-- 관리자 : 카테고리 등록 순위 -->
 							<h4>카테고리 등록 순위</h4>
 							<ul>
 								<li class="ContentsBox"><span class="ContentsRank">1</span>
@@ -167,7 +166,7 @@
 
 					<!-- 주문 내역 확인 구역 상품 이미지, 등록일자, 상품명, 색상, 개수, 가격, 주문 상태-->
 					<div class="contentsRight">
-						<div class="seller">
+						<div class="seller"><!-- 새 주문내역 -->
 							<h4>새 주문내역</h4>
 							<span>상세보기 > </span>
 							<ul>
@@ -261,7 +260,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="member">
+						<div class="member"><!-- 내 주문내역 -->
 							<h4>주문내역</h4>
 							<span>상세보기 > </span>
 							<ul>
@@ -355,7 +354,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="manager">
+						<div class="manager"><!--  -->
 							<h4>새 신고내역</h4>
 							<span>상세보기 > </span>
 							<ul>
@@ -414,9 +413,8 @@
 		<%@ include file="MdSerch.jsp"%>
 	</nav>
 	<%@ include file="HeaderSub.jsp"%>
-
 	<%
-	String u_type = user.getU_type();
+		String u_type = user.getU_type();
 	%>
 	<script>
     	let userType = "<%=userType%>";

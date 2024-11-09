@@ -1,5 +1,7 @@
+<%@ page import="java.util.List"%>
+<%@ page import="com.smhrd.model.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +9,6 @@
 <title>O'Space</title>
 <link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/MyPage.css" type="text/css" />
-<style type="text/css">
-
-</style>
 </head>
 
 <body>
@@ -42,6 +41,47 @@
                         <li class="manager">신고관리</li>
                     </ul>
                 </div>
+    
 	</div>
+	<%
+		String u_type = user.getU_type();
+	%>
+	<script> /*일반회원, 판매자회원, 관리자회원 구분*/
+		let userType = "<%=userType%>";
+		const sellers = document.getElementsByClassName("seller");
+		const members = document.getElementsByClassName("member");
+		const managers = document.getElementsByClassName("manager");
+		if(userType==="일반회원"){
+			for(let i = 0;i<sellers.length;i++){
+				sellers[i].style.display="none"
+			}
+			for(let i = 0;i<members.length;i++){
+				members[i].style.display="block"
+			}
+			for(let i = 0;i<managers.length;i++){
+				managers[i].style.display="none"
+			}
+		}else if(userType==="판매자회원"){
+			for(let i = 0;i<sellers.length;i++){
+				sellers[i].style.display="block"
+			}
+			for(let i = 0;i<members.length;i++){
+				members[i].style.display="none"
+			}
+			for(let i = 0;i<managers.length;i++){
+				managers[i].style.display="none"
+			}
+		}else{
+			for(let i = 0;i<sellers.length;i++){
+				sellers[i].style.display="none"
+			}
+			for(let i = 0;i<members.length;i++){
+				members[i].style.display="none"
+			}
+			for(let i = 0;i<managers.length;i++){
+				managers[i].style.display="block"
+			}
+		}
+	</script>
 </body>
 </html>
