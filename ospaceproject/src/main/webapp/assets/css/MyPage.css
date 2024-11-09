@@ -514,6 +514,7 @@
 }
 .reviewSetupTable td{
 	padding: 5px;
+    border-bottom: 1px solid #F1F1F1;
 }
 .reviewNameTextBox{
 	width:100%;
@@ -535,4 +536,17 @@
 }
 .reviewDate{
 	width:100px;
+}
+.mypageProductNum{
+    width:100px;
+}
+.mypageProductimg{
+    width: 100px;
+}
+.mypageProductimg img{
+    width: 100px;
+    height: 100px;
+}
+.boardDate:not(:first-child){
+    font-size:10px;
 }

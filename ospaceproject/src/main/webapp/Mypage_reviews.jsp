@@ -5,7 +5,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>Insert title here</title>
+        <title>O'Space</title>
         <link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
         <link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
         <link rel="stylesheet" href="assets/css/MyPage.css" type="text/css" />
