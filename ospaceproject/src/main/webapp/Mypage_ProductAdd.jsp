@@ -92,13 +92,10 @@
                                 <th rowspan="2">색상옵션</th>
                                 <td>
                                     <select name="prod_color" id="prod_color">
-                                        <option name="prod_color_option" value="102,153,204">블루</option>
-                                        <option name="prod_color_option" value="176,141,87">브라운</option>
-                                        <option name="prod_color_option" value="255,192,203">핑크</option>
-                                        <option name="prod_color_option" value="211,211,211">그레이</option>
-                                        <option name="prod_color_option" value="245,234,214">베이지색</option>
-                                        <option name="prod_color_option" value="255,255,255">흰색</option>
-                                        <option name="prod_color_option" value="0,0,0">검정</option>
+                                        <option value="Red">빨간색</option>
+                                        <option value="lite-woody">밝은 우디</option>
+                                        <option value="yellow">노란색</option>
+                                        <option value="black">검은색</option>
                                     </select>
                                 </td>
                             </tr>
@@ -136,5 +133,6 @@
 		<%@ include file="MdSerch.jsp"%>
 	</nav>
 	<%@ include file="HeaderSub.jsp"%>
+	
 </body>
 </html>

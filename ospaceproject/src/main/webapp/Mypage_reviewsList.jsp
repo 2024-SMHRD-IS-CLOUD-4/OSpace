@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.Reviews"%>
+<%@page import="com.smhrd.model.ReviewsDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <!DOCTYPE html>
 <html>
@@ -10,8 +12,12 @@
 	<link rel="stylesheet" href="assets/css/MyPage.css" type="text/css" />
 </head>
 
-<body>
 	<%@ include file="Header.jsp" %>
+<body>
+<%
+	ReviewsDAO r_dao = new ReviewsDAO();
+	List<Reviews> r_lst = r_dao.getMyReview(user.getId());
+%>
 	<div id="body">
 		<div id="MyPageBox">
 			<%@ include file="MyPageLeft.jsp" %>
@@ -20,9 +26,10 @@
 					<div id="myPageContainer">
 						<div>
 							<table class="reviewSetupTable">
+							<% for(Reviews r : r_lst){ %>
 								<tr class="tr">
 									<td rowspan="2">
-										<input class="reviewCheckBox" type="checkbox" />
+										<input class="reviewCheckBox" name="check" type="checkbox" value="<%=r.getReview_id() %>" />
 									</td>
 									<td rowspan="2">
 										<p>
@@ -30,7 +37,12 @@
 										</p>
 									</td>
 									<td>
-										<p class="reviewName">#상품명1 #상품명2</p>
+										<p class="reviewName">
+										<% String tags[] = r.getReview_tag().split(","); 
+										for(String tag : tags){%>
+											<%=tag %>
+										<%} %>
+										</p>
 									</td>
 									<td>
 										<p class="reviewStar">
@@ -40,18 +52,26 @@
 								</tr>
 								<tr>
 									<td>
-										<p class="reviewText">먹튀했어... 잡아바자ㅏㅏㅏ속상합니다</p>
+										<p class="reviewText"><%=r.getReview_content() %></p>
 									</td>
 									<td class="reviewDate">
-										<p> 2024-10-31</p>
+										<p><%=r.getCreated_at() %></p>
 									</td>
 								</tr>
+								<%} %>
 							</table>
                                 </div>
                             </div>
                             <div class="buttonContainer">
-                                    <button class="AllBtn" type="submit">수정하기</button>
+                           	<a href="Mypage_reviews.jsp"><button class="AllBtn" type="submit">작성하기</button></a>
+                            <form action="DeleteReviewController">
+                            		<input type="hidden" id="result1" name="result" value="">
+                                   	<button class="AllBtn" type="submit">수정하기</button>
+                            </form>
+                            <form action="DeleteReviewController">
+                            		<input type="hidden" id="result2" name="result" value="">
                                     <button class="AllBtn" type="submit">삭제하기</button>
+                            </form>
                                 </div>
                         </div>
                 </div>
@@ -64,7 +84,15 @@
 					<%@ include file="MdSerch.jsp"%>
 				</nav>
 				<%@ include file="HeaderSub.jsp"%>
-
+	<script type="text/javascript">
+		  const checks = document.getElementsByName("check");
+		  for(let i = 0;i<checks.length;i++){
+			  	checks[i].addEventListener("click",()=>{
+				document.getElementById("result1").value += (checks[i].value+",");
+				document.getElementById("result2").value += (checks[i].value+",");
+			  	console.log(document.getElementById("result1").value);
+			  })
+		  }
+	</script>
     </body>
-
     </html>

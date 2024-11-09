@@ -32,32 +32,33 @@
                                             <tr class="tr">
                                                 <td class="td">비밀번호</td>
                                                 <td class="MemtableColumns"><input type="password" class="Memtableinput"
-                                                       name="pw" placeholder="<%=user.getPw()%>"></td>
+                                                       name="pw" value="<%=user.getPw()%>"></td>
                                             </tr>
                                             
 											<tr class="tr">
                                                 <td class="td">비밀번호 확인</td>
                                                 <td class="MemtableColumns"><input type="password" class="Memtableinput"
-                                                       id="pwCheck" placeholder="<%=user.getPw()%>"></td>
+                                                       id="pwCheck" placeholder="비밀번호 확인"></td>
+                                                <td><span id="pwCheckResult"></span></td>
                                             </tr>
                                             
                                             <tr class="tr">
                                                 <td class="td">이름</td>
                                                 <td class="MemtableColumns"><input type="text" class="Memtableinput"
-                                                       name="name" placeholder="<%=user.getName()%>">
+                                                       name="name" value="<%=user.getName()%>">
                                                 </td>
                                             </tr>
 
                                             <tr class="tr">
                                                 <td class="td">주소</td>
                                                 <td class="MemtableColumns"><input type="text" class="Memtableinput"
-                                                        name="addr" placeholder="<%=user.getAddr()%>"></td>
+                                                        name="addr" value="<%=user.getAddr()%>"></td>
                                             </tr>
 
                                             <tr class="tr">
                                                 <td class="td">연락처</td>
 									<td class="MemtableColumns">
-										<input class="Memtableinput" type="tel" name="phone" placeholder="<%=user.getPhone()%>">
+										<input class="Memtableinput" type="text" name="phone" value="<%=user.getPhone()%>">
 									</td>
 								</tr>
 							</table>
@@ -65,11 +66,12 @@
 					</div>
 				</div>
 				<div class="buttonContainer">
-						<input class="AllBtn" type="submit" value="저장하기">
+					<input type="hidden" name="id" value=<%=user.getId() %>>
+					<input class="AllBtn" type="submit" value="저장하기">
 					</form>
-					<form action="DeleteController" class="fromBlock">
-						<input type="hidden" name="id" value=<%=user.getId() %>>
-						<input class="AllBtn" type="submit" value="회원탈퇴">
+					<form action="DeleteController">
+					<input type="hidden" name="id" value=<%=user.getId() %>>
+					<input class="AllBtn" type="submit" value="회원탈퇴">
 				  	</form>
 				</div>
 			</div>
@@ -89,7 +91,7 @@
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
     <script type="text/javascript">
-    let pwCheckResult = false;
+    let pwCheckResult = true;
     $("#pwCheck").on('keyup',()=>{
 		let pw =$("[name='pw']").val();
 		let pwCheck=$("#pwCheck").val();

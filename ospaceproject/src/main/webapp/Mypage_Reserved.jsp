@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.Products"%>
+<%@page import="com.smhrd.model.ReservedDAO"%>
 <%@page import="com.smhrd.model.Reserved"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.ProductsDAO"%>
@@ -15,8 +17,9 @@
 <body>
 	<%@ include file="Header.jsp" %>
 	<%
-		ProductsDAO dao = new ProductsDAO();
-		List<Reserved> lst = dao.getReserved();
+		ProductsDAO p_dao = new ProductsDAO();
+		ReservedDAO rs_dao = new ReservedDAO();
+		List<Reserved> rs_lst = rs_dao.getMyReserved(user.getId());
 	%>
 	<div id="body">
 		<div id="MyPageBox">
@@ -25,24 +28,30 @@
 				<h2>찜 리스트</h2>
 				<div id="myPageContainer">
 					<table class="reviewSetupTable">
-					<%for(Reserved r : lst){ %>
+					<% for(Reserved rs : rs_lst){ 
+						Products p = p_dao.getSingleProduct(rs.getProd_id());
+					%>
 						<tr >
-							<td class="reviewCheckBox">
-								<input type="checkbox" />
-							</td>
-							<td class="reviewImg">
-								<img src="#">
-							</td>
-							<td class="reviewNameTextBox">
-								<p class="reviewName">상품명<%= r.getProd_id() %></p>
-								<p class="reviewText">0,000 원&emsp;</p>
+							<td>
+								<input class="reviewCheckBox" type="checkbox" />
 							</td>
 							<td>
-								<p class="reviewDate"><%= r.getCreatedAt() %></p>
+								<p>
+									<img class="reviewImg" src="#">
+								</p>
+							</td>
+							<td >
+								<p class="reviewName"><%=p.getProd_name() %></p>
+								<p class="reviewText"><%=p.getProd_price() %></p>
+							</td>
+							<td>
+								<p class="reviewDate"><%=p.getCategory_id() %></p>
 							</td>
 						</tr>
 						<%} %>
 					</table>
+				
+				
 				</div>
 			</div>
 		</div>

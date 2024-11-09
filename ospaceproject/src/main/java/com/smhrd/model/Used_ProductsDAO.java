@@ -13,7 +13,7 @@ public class Used_ProductsDAO {
 
 	public int insert(Used_Products usedproduct) {
 		SqlSession sqlSession = factory.openSession(true);
-		int result = sqlSession.insert("ProductMapper.write", usedproduct);
+		int result = sqlSession.insert("UsedProductMapper.write", usedproduct);
 		sqlSession.close();
 		return result;
 	}

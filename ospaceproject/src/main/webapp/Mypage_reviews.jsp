@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.ReviewsDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <!DOCTYPE html>
     <html>
@@ -15,17 +16,25 @@
             <div id="body">
                 <div id="MyPageBox">
                     <%@ include file="MyPageLeft.jsp" %>
-
+					<%	
+						int review_id =0;
+						if(request.getParameter("result")!=null){
+							review_id = Integer.parseInt(request.getParameter("result"));
+						}
+						ReviewsDAO r_dao = new ReviewsDAO();
+						r_dao.getProductReview(review_id);					
+					%>
                         <div id="myPageRight">
                             <h2>리뷰작성하기</h2>
                             <div id="myPageContainer">
                                 <div>
                                     <div class="reviewtableContainer">
+                                    <form action="">
                                         <table class="reviewTable">
 
                                             <tr class="tr">
                                                 <td class="td">작성자</td>
-                                                <td class="reviewtableColumns">작성자 닉네임</td>
+                                                <td class="reviewtableColumns"><%=user.getName() %></td>
                                             </tr>
 
                                             <tr class="tr">
@@ -55,7 +64,6 @@
                                                         placeholder="리뷰 내용을 입력하세요..."></textarea>
                                                 </td>
                                             </tr>
-
                                             <tr class="tr">
                                                 <td class="td">상품평점</td>
                                                 <td class="reviewtableColumns">
@@ -86,6 +94,7 @@
                                                 </td>
                                             </tr>
                                         </table>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

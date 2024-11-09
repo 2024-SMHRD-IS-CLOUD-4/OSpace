@@ -24,7 +24,7 @@ public class UsedController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		ServletContext context = request.getServletContext();
-		String uploadpath = context.getRealPath("used");
+		String uploadpath = context.getRealPath("upload");
 
 		int maxSize = 5 * 1024 * 1024;
 

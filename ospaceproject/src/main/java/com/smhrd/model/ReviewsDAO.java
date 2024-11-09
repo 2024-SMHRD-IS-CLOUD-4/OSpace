@@ -12,10 +12,15 @@ public class ReviewsDAO {
 	SqlSessionFactory factory = SqlSessionManager.getSqlSessionFactory();
 	
 	public int insert(Reviews review) {
-		
 		SqlSession sqlSession = factory.openSession(true);
 		int result = sqlSession.insert("ReviewMapper.review_insert", review);
 		sqlSession.close();
+		return result;
+	}
+	public int deleteReview(int review_id) {
+		SqlSession session = factory.openSession(true);
+		int result = session.delete("ReviewMapper.deleteReview",review_id);
+		session.close();
 		return result;
 	}
 	public List<Reviews> getreview(){
@@ -43,5 +48,10 @@ public class ReviewsDAO {
 		session.close();
 	    return result;
 	}
-	
+	public int updateReview(Reviews r) {
+		SqlSession session = factory.openSession(true);
+		int result = session.update("ReviewMapper.updateReview",r);
+		session.close();
+		return result;
+	}
 }
