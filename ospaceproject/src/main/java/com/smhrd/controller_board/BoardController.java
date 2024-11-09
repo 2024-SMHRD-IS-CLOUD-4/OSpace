@@ -35,7 +35,7 @@ public class BoardController extends HttpServlet {
 		String id = multi.getParameter("id");
 		String b_content = multi.getParameter("b_content");
 		
-		Boards board = new Boards(b_title, b_file, b_views, id, b_content);
+		Boards board = new Boards(0, b_title, b_file, null, b_views, id, b_content);
 		
 		BoardsDAO dao = new BoardsDAO();
 		int result = dao.insert(board);

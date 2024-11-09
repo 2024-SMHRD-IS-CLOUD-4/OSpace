@@ -6,14 +6,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>O'Space</title>
-	<link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
-	<link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
-	<link rel="stylesheet" href="assets/css/Board.css" type="text/css" />
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="Header.jsp"%>
+
 	<%
 		BoardsDAO dao = new BoardsDAO();
 		List<Boards> BoardsList = dao.getAllBoard();
@@ -59,7 +56,6 @@
             </div>
         </div>
     </div>
-	
 	<%@ include file="Footer.jsp"%>
 	<nav id="loginMD">
 		<%@ include file="MdLogin.jsp"%>
