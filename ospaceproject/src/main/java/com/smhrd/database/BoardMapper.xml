@@ -9,8 +9,8 @@
     </insert>
 
     <!-- 게시글 목록 조회 -->
-    <select id="get_boards" resultType="com.smhrd.model.Boards">
-        SELECT B_ID, B_TITLE, B_FILE, CREATED_AT, B_VIEWS, ID, B_CONTENT
+    <select id="getAllBoard" resultType="com.smhrd.model.Boards">
+        SELECT *
         FROM BOARDS
         ORDER BY CREATED_AT DESC
     </select>

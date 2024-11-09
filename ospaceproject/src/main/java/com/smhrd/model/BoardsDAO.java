@@ -20,11 +20,10 @@ public class BoardsDAO {
 		return result;
 	}
 	
-	public List<Boards> getboard(){
+	public List<Boards> getAllBoard(){
 		SqlSession session = factory.openSession(true);
-		List<Boards> result = session.selectList("BoardMapper.get_boards");
+		List<Boards> result = session.selectList("BoardMapper.getAllBoard");
 		session.close();
 		return result;
 	}
-	
 }
