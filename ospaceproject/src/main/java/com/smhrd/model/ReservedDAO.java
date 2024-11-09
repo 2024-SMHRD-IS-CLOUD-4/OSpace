@@ -18,4 +18,11 @@ public class ReservedDAO {
         return result;
 	}
 	
+	public List<Reserved> getMyReserved(String id) {
+		SqlSession sqlSession = factory.openSession(true);
+        List<Reserved> result = sqlSession.selectList("ReservedMapper.getMyReserved",id);
+        sqlSession.close();
+        return result;
+	}
+	
 }

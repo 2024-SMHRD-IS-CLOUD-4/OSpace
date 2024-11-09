@@ -33,20 +33,13 @@
         INSERT INTO BASKETS VALUES (default, #{prod_id}, #{id}, default)
     </insert>
     
-    <!-- 찜하기 -->
-	<insert id="insertReserved" parameterType="com.smhrd.model.Products">
-        INSERT INTO RESERVEDS VALUES (default, #{prod_id}, #{id}, default)
-    </insert>
+    
     
     <!-- 장바구니 조회 -->
 	<select id="getBasket" resultType="com.smhrd.model.Basket">
         SELECT * FROM baskets
     </select>
 	
-	<!-- 찜 조회 -->
-	<select id="getReserved" resultType="com.smhrd.model.Reserved">
-        SELECT * FROM reserveds
-    </select>
 	
 	<!-- 상품 조회수 정렬 -->
 	<select id="orderByViews" resultType="com.smhrd.model.Products">

@@ -7,4 +7,14 @@
 		SELECT * FROM RESERVEDS
 	</select>
 	
+	<!-- 찜하기 -->
+	<insert id="insertReserved" parameterType="com.smhrd.model.Products">
+        INSERT INTO RESERVEDS VALUES (default, #{prod_id}, #{id}, default)
+    </insert>
+	
+	<!-- 찜 조회 -->
+	<select id="getMyReserved" resultType="com.smhrd.model.Reserved">
+        SELECT * FROM RESERVEDS WHERE ID = #{id}
+    </select>
+	
 </mapper>
