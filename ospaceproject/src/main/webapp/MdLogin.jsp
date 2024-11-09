@@ -101,9 +101,11 @@
 	<script>
         const mdOpen = () => {
             document.getElementById("loginMD").style.display = "block";
+            document.body.style.overflow = 'hidden';
         }
        	const mdClose = () => {
        		document.getElementById("loginMD").style.display = "none";
+       		document.body.style.removeProperty('overflow');
        	}
         document.getElementById("headLoginBtn").addEventListener("click", mdOpen);
         document.getElementById("closeBtn").addEventListener("click", mdClose);
