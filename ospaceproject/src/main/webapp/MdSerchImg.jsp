@@ -48,6 +48,7 @@
 				</p>
 			</div>
 			<button type="submit" class="AllBtn">검색하기</button>
+		</div>
 	</div>
 	<%@ include file="Footer.jsp"%>
 	<nav id="loginMD">

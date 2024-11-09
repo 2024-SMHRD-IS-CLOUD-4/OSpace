@@ -147,7 +147,12 @@
 					<%
 					}
 					} else if (title.equals("카테고리")) {
-						List<Products> p_lst = p_dao.getCategoryProducts(subTitle);
+						List<Products>p_lst = null;
+						if(subTitle!=null){
+							p_lst = p_dao.getCategoryProducts(subTitle);
+						}else{
+							p_lst = p_dao.getAllProducts();
+						}
 					for (Products p : p_lst) {
 					%>
 					<li>
