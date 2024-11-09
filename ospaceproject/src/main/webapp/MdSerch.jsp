@@ -69,9 +69,11 @@
 		
 	    const serchOpen = () => {
 	        document.getElementById("serchMD").style.display = "block";
+	        document.body.style.overflow = 'hidden';
 	    }
 	    const serchClose = () => {
 	        document.getElementById("serchMD").style.display = "none";
+	        document.body.style.removeProperty('overflow');
 	        
 	    }
 	

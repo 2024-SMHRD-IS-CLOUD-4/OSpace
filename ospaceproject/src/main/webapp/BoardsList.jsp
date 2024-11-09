@@ -25,35 +25,34 @@
             </div>
             <div class="itemBox">
                 <div id="boardBox">
-                    <table>
-                        <tr>
-                            <th class="boardCheckbox"></th>
-                            <th class="boardNum">no</th>
-                            <th class="boardTitle">제목</th>
-                            <th class="boardName">작성자</th>
-                            <th class="boardDate">작성일</th>
-                            <th class="boardView">조회</th>
-                            <th class="boardContentArrow"></th>
-                        </tr>
+                    <ul>
+                        <li>
+                            <p class="boardCheckbox"></p>
+                            <p class="boardNum">no</p>
+                            <p class="boardTitle">제목</p>
+                            <p class="boardName">작성자</p>
+                            <p class="boardDate">작성일</p>
+                            <p class="boardView">조회</p>
+                            <p class="boardContentArrow"></p>
+                            <p class="boardContentA"></p>
+                        </li>
                         <%
         					for(Boards board : BoardsList){ // 변수명 수정
         				%>
-                        <tr>
-                            <td class="boardCheckbox"><input type="checkbox"></td>
-                            <td class="boardNum"><%= board.getB_id() %></td>
-                            <td class="boardTitle"><%= board.getB_title() %></td>
-                            <td class="boardName"><%= board.getId() %></td>
-                            <td class="boardDate"><%= board.getCreated_at() %></td>
-                            <td class="boardView"><%= board.getB_views() %></td>
-                            <td class="boardContentArrow">▽</td>
-                        </tr>
-                        <tr>
-                            <td colspan="7" class="boardContent"><%= board.getB_content() %></td>
-                        </tr>
+        				<li>
+                            <p class="boardCheckbox"><input type="checkbox"></p>
+                            <p class="boardNum"><%= board.getB_id() %></p>
+                            <p class="boardTitle"><%= board.getB_title() %></p>
+                            <p class="boardName"><%= board.getId() %></p>
+                            <p class="boardDate"><%= board.getCreated_at() %></p>
+                            <p class="boardView"><%= board.getB_views() %></p>
+                            <p class="boardContentArrow">▽</p>
+                            <p class="boardContent"><%= board.getB_content() %></p>
+                        </li>
                         <%
 				        	}
 						%>
-                    </table>
+                    </ul>
                 </div>
                 <a href="Boardsform.jsp"><button type="button" class="AllBtn">게시글 작성하기</button></a>
             </div>
@@ -67,10 +66,5 @@
 		<%@ include file="MdSerch.jsp"%>
 	</nav>
 	<%@ include file="HeaderSub.jsp"%>
-	<script>
-		const clickOpen = () =>{
-			document.
-		}
-	</script>
 </body>
 </html>
