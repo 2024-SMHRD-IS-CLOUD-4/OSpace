@@ -16,12 +16,12 @@
 	<%@ include file="Header.jsp"%>
 	<%
 		BoardsDAO dao = new BoardsDAO();
-		List<Boards> BoardsList = dao.getboard();
+		List<Boards> BoardsList = dao.getAllBoard();
 	%>
 	<div id="body">
         <div id="mainItem01">
             <div class="itemTitle">
-                <h1 calss="mainItemTitle">고객센터(게시글)</h1>
+                <h1 class="mainItemTitle">고객센터(게시글)</h1>
             </div>
             <div class="itemBox">
                 <div id="boardBox">
@@ -70,7 +70,7 @@
 	<%@ include file="HeaderSub.jsp"%>
 	<script>
 		const clickOpen = () =>{
-			
+			d
 		}
 	</script>
 </body>
