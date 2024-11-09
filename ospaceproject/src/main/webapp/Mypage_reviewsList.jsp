@@ -65,7 +65,7 @@
                             <div class="buttonContainer">
                            	<a href="Mypage_reviews.jsp"><button class="AllBtn" type="submit">작성하기</button></a>
                             
-                            <form action="DeleteReviewController">
+                            <form action="DeleteReviewController" class="fromBlock">
                             		<input type="hidden" id="result2" name="result" value="">
                                     <button class="AllBtn" type="submit">삭제하기</button>
                             </form>

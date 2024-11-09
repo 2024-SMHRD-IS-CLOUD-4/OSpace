@@ -305,6 +305,9 @@ body{
 #serchMD{
     display: none;
 }
+#basketMD{
+    display: none;	
+}
 #serchBox{
     position: absolute;
     top: 50%;

@@ -77,11 +77,12 @@
                                 </td>
                             </tr>
                         </table>
+                
+                </div>
                 <div class="buttonContainer">
                     <button class="AllBtn" type="submit">저장하기</button>
                 </div>
                     </form>
-                </div>
             </div>
         </div>
     </div>

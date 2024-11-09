@@ -199,6 +199,8 @@
 #itemBoxReview ul{
     position: relative;
     display: inline-block;
+    max-height:300px;
+    overflow-y: scroll;
     width: 100%;
 }
 #itemBoxReview li{

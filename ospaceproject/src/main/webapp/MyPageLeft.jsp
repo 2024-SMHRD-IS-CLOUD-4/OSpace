@@ -41,7 +41,7 @@
                                 <p class="subNav"><a href="#">중고상품 리스트보기</a></p>
                                 <p class="subNav"><a href="Mypage_UsedProductAdd.jsp">중고상품등록하기</a></p>
                         </li>
-                        <li class="member">장바구니</li>
+                        <li class="member"><a href="Mypage_Basket.jsp">장바구니</a></li>
                         <li class="member">주문내역</li>
                         <li class="manager">카테고리관리</li>
                         <li class="manager">신고관리</li>
