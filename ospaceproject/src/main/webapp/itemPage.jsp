@@ -163,8 +163,7 @@
                     </div>
                 </div>
             </div>
-            <div id="itemBoxContant">
-                <!--상품 상세페이지 출력되는 부분-->
+            <div id="itemBoxContant"><!--상품 상세페이지 출력되는 부분-->
                 <%= p.getProd_desc()%>
             </div>
             <div id="itemBoxReview">

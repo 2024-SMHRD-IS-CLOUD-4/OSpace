@@ -15,7 +15,7 @@
                 <div><button id="serchcloseBtn">X</button></div>
                 <div id="serchBoxMain">
 					<form action="TextSeachController">
-	                	<p class="cartegoryChoise"><span><input type="radio" name="type" value="common">일반상품</span><span><input type="radio" name="type" value="used">중고상품</span><span><input type="radio" name="type" value="review">리뷰</span></p>
+	                	<p class="cartegoryChoise"><span><input type="radio" name="type" value="common" checked="checked">일반상품</span><span><input type="radio" name="type" value="used">중고상품</span><span><input type="radio" name="type" value="review">리뷰</span></p>
 	                    <div class="serchBox">
 	                        <img class="btnImg"
 	                            src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
