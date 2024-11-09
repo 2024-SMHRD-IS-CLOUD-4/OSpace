@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
 </head>
 <body>
-
-           <div id="serchBox">
-                <div><button id="serchcloseBtn">X</button></div>
+        <%@ include file="Header.jsp" %>
+           <div id="body">
                 <div id="serchBoxMain">
 	
 	                <div id="imgSerchBox">
@@ -37,7 +36,7 @@
                             <p id="colorText">추출한 색상 RGB 결과값</p>
                         </div>
                     </div>
-                    <div id="serchBoxSubCheck">
+                    <!--<div id="serchBoxSubCheck">
                          <p>
                             <span>카테고리 선택 : </span>
                             <select name="" id="">
@@ -47,10 +46,19 @@
                             </select>
                         </p>
                     </div>
+					-->
                     <button type="submit" class="AllBtn">검색하기</button>
                 </div>
                 
             </div>
+            <%@ include file="Footer.jsp" %>
+                <nav id="loginMD">
+                    <%@ include file="MdLogin.jsp" %>
+                </nav>
+                <nav id="serchMD">
+                    <%@ include file="MdSerch.jsp" %>
+                </nav>
+                <%@ include file="HeaderSub.jsp" %>
 <script>
     let r = 0, g = 0, b = 0;
 </script>

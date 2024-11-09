@@ -8,10 +8,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/Board.css" type="text/css" />
 </head>
 <body>
-
+	<%@ include file="Header.jsp"%>
 	<%
 		BoardsDAO dao = new BoardsDAO();
 		List<Boards> BoardsList = dao.getAllBoard();
@@ -67,7 +69,7 @@
 	<%@ include file="HeaderSub.jsp"%>
 	<script>
 		const clickOpen = () =>{
-			
+			document.
 		}
 	</script>
 </body>
