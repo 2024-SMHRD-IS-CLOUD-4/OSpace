@@ -13,7 +13,7 @@
 
 	<%
 		BoardsDAO dao = new BoardsDAO();
-		List<Boards> b_lst = dao.getAllBoard();
+		List<Boards> BoardsList = dao.getAllBoard();
 	%>
 	
 	<h2>게시글 리스트</h2>
@@ -28,7 +28,7 @@
             <th>등록 날짜</th>
         </tr>
         <%
-        	for(Boards board : b_lst){ // 변수명 수정
+        	for(Boards board : BoardsList){ // 변수명 수정
         %>
             <tr>
             	<td><img src="<%=request.getContextPath()%>/upload/<%=board.getB_file()%>" alt="상품 이미지" width="100"></td>

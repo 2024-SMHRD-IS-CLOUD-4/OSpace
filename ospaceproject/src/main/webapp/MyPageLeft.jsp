@@ -29,7 +29,7 @@
                         <li class="seller"><a href="Mypage_MemberModify.jsp">회원정보수정</a></li>
                         <li class="member"><a href="Mypage_MemberModify.jsp">회원정보수정</a></li>
                         <li class="member">
-                        	리뷰
+                        	<a href="Mypage_reviewsList.jsp">내가 쓴 리뷰 보기</a>
                         	<p class="subNav"><a href="Mypage_reviewsList.jsp">내가 쓴 리뷰 보기</a></p>
                         	<p class="subNav"><a href="Mypage_reviews.jsp">리뷰등록하기</a></p>
                         </li>
@@ -37,7 +37,7 @@
                         	<a href="Mypage_Reserved.jsp">찜 목록</a>
                         </li>
                         <li class="member">
-                            중고거래
+                            <a href="#">중고상품</a>
                                 <p class="subNav"><a href="#">중고상품 리스트보기</a></p>
                                 <p class="subNav"><a href="Mypage_UsedProductAdd.jsp">중고상품등록하기</a></p>
                         </li>
