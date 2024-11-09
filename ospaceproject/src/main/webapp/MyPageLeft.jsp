@@ -28,7 +28,11 @@
                         <li class="seller">주문관리</li>
                         <li class="seller"><a href="Mypage_MemberModify.jsp">회원정보수정</a></li>
                         <li class="member"><a href="Mypage_MemberModify.jsp">회원정보수정</a></li>
-                        <li class="member">리뷰</li>
+                        <li class="member">
+                        	리뷰
+                        	<p class="subNav"><a href="Mypage_reviewsList.jsp">내가 쓴 리뷰 보기</a></p>
+                        	<p class="subNav"><a href="Mypage_reviews.jsp">리뷰등록하기</a></p>
+                        </li>
                         <li class="member">
                         	<a href="Mypage_Reserved.jsp">찜 목록</a>
                         </li>
