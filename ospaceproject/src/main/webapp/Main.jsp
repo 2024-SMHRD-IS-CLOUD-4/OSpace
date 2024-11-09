@@ -114,8 +114,8 @@
 					}
 					%>
 				</ul>
-			</div>
-		</div>
+			</div> 
+		</div> 
 	</div>
 	<%@ include file="Footer.jsp"%>
 	<nav id="loginMD">
