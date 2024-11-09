@@ -286,15 +286,6 @@
  	padding: 5px;
  	border: none;
  }
- #Category {
-    background-color: #f8f9fa; /* 배경색 설정 */
-    padding: 5px 5px; /* 패딩 추가 */
-    border: 1px solid #e0e0e0; /* 테두리 추가 */
-    border-radius: 5px; /* 모서리 둥글게 설정 */
-    margin: 20px 0; /* 위아래 마진 추가 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
-}
-
 #nava ul {
     list-style: none; /* 기본 리스트 스타일 제거 */
     padding: 0; /* 패딩 제거 */
@@ -408,6 +399,8 @@
     display: inline-block;
     position: relative;
     width: 900px;
+    height:590px;
+    overflow-y:scroll;
     border-top: 1px solid #555;
     border-bottom: 1px solid #555;
     padding: 20px ;
@@ -418,6 +411,9 @@
 .buttonContainer{
 	text-align: center;
     margin-bottom: 60px;
+}
+.fromBlock{
+	display:inline-block;
 }
 .buttonContainer > button:not(:last-child){
     margin-right: 20px;
@@ -502,29 +498,35 @@
 /* 마이페이지 리뷰리스트 CSS */
 .reviewCheckBox{
 	width: 50px;
-	transform: scale(2);
+}
+.reviewCheckBox > input{
 	margin-bottom:100px;
 }
 .reviewImg{
 	width: 130px;
-	height: 130px;
-	border: 1px solid #ddd;
+}
+.reviewImg > img{
+	width: 130px;
+	height:130px;
 }
 .reviewSetupTable{
 	width: 100%;
 }
 .reviewSetupTable td{
 	padding: 5px;
-	border:1px solid #ddd;
+}
+.reviewNameTextBox{
+	width:100%;
 }
 .reviewName{
 	font-weight: bold;
     font-size: 25px;
+    margin-bottom: 50px;
 }
 .reviewText {
 	font-weight:600;
     font-size: 15px;
-    vertical-align: top; /* 상단 정렬 */
+    text-align:right;
 }
 .reviewStar {
     font-size: 30px;

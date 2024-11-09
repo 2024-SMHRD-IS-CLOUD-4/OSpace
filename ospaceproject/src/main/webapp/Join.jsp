@@ -75,10 +75,9 @@
 				</div>
 			</form>
 			<div id="JoinIdPwButtonBox">
-				<span>
-					<a href="Join.html"><button>회원가입</button></a> | 
-					<a href="IdFind"><button>아이디 찾기</button></a> | 
-					<a href="PwFind"><button>비밀번호 찾기</button></a>
+				<span> 
+					<a href="IdFind.html"><button>아이디 찾기</button></a> | 
+					<a href="PwFind.html"><button>비밀번호 찾기</button></a>
 				</span>
 			</div>
 		</div>

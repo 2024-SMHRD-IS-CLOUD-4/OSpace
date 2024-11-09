@@ -65,11 +65,11 @@
 					</div>
 				</div>
 				<div class="buttonContainer">
-					<input class="AllBtn" type="submit" value="저장하기">
+						<input class="AllBtn" type="submit" value="저장하기">
 					</form>
-					<form action="DeleteController">
-					<input type="hidden" name="id" value=<%=user.getId() %>>
-					<input class="AllBtn" type="submit" value="회원탈퇴">
+					<form action="DeleteController" class="fromBlock">
+						<input type="hidden" name="id" value=<%=user.getId() %>>
+						<input class="AllBtn" type="submit" value="회원탈퇴">
 				  	</form>
 				</div>
 			</div>

@@ -25,30 +25,24 @@
 				<h2>찜 리스트</h2>
 				<div id="myPageContainer">
 					<table class="reviewSetupTable">
+					<%for(Reserved r : lst){ %>
 						<tr >
-							<td>
-								<input class="reviewCheckBox" type="checkbox" />
+							<td class="reviewCheckBox">
+								<input type="checkbox" />
+							</td>
+							<td class="reviewImg">
+								<img src="#">
+							</td>
+							<td class="reviewNameTextBox">
+								<p class="reviewName">상품명<%= r.getProd_id() %></p>
+								<p class="reviewText">0,000 원&emsp;</p>
 							</td>
 							<td>
-								<p>
-									<img class="reviewImg" src="#">
-								</p>
-							</td>
-							<td >
-								<p class="reviewName">상품명</p>
-								<p class="reviewText">가격</p>
-							</td>
-							<td>
-								<p class="reviewDate">2024-10-31</p>
+								<p class="reviewDate"><%= r.getCreatedAt() %></p>
 							</td>
 						</tr>
+						<%} %>
 					</table>
-				
-				<%for(Reserved r : lst){ %>
-				<%= r.getProd_id() %>
-				<%= r.getId() %>
-				<%= r.getReserved_id() %><br>
-				<%} %>
 				</div>
 			</div>
 		</div>
