@@ -16,11 +16,12 @@
     </environment>
   </environments>
   <mappers>
- 
     <mapper resource="com/smhrd/database/Mapper.xml"/>
     <mapper resource="com/smhrd/database/ProductMapper.xml"/>
     <mapper resource="com/smhrd/database/UserMapper.xml"/>
     <mapper resource="com/smhrd/database/ReviewMapper.xml"/>
     <mapper resource="com/smhrd/database/UsedProductMapper.xml"/>
+    <mapper resource="com/smhrd/database/CategoryMapper.xml"/>
+    <mapper resource="com/smhrd/database/ReservedMapper.xml"/>
   </mappers>
 </configuration>

@@ -101,7 +101,7 @@ public class ProductsDAO {
 		case "침대":
 			category_id = 3;
 			break;
-		case "수납장":
+		case "수남장":
 			category_id = 4;
 			break;
 		case "커튼":

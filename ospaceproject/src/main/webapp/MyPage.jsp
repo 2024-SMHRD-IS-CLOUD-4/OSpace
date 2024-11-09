@@ -1,3 +1,11 @@
+<%@page import="com.smhrd.model.ProductsDAO"%>
+<%@page import="com.smhrd.model.Products"%>
+<%@page import="com.smhrd.model.OrdersDAO"%>
+<%@page import="com.smhrd.model.Order"%>
+<%@page import="com.smhrd.model.Category"%>
+<%@page import="com.smhrd.model.CategoryDAO"%>
+<%@page import="com.smhrd.model.ReservedDAO"%>
+<%@page import="com.smhrd.model.Reserved"%>
 <%@page import="com.smhrd.model.Reviews"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.ReviewsDAO"%>
@@ -21,8 +29,32 @@
 	<%@ include file="Header.jsp"%>
 	<div id="body">
 		<div id="MyPageBox">
-			<%@ include file="MyPageLeft.jsp"%>
+			<div id="myPageLeft">
+				<div id="myPageLeft">
+					<div class="myPageLeftUser">
+
+						<h2 class="seller">판매자회원</h2>
+						<h2 class="member">일반회원</h2>
+						<h2 class="manager">관리자</h2>
+					</div>
+					<div class="myPageLeftNav">
+						<ul>
+							<li class="seller">등록상품관리</li>
+							<li class="member">주문관리</li>
+							<li class="member"><a href="Mypage_MemberModify.jsp">회원정보수정</a></li>
+							<li class="member">리뷰</li>
+							<li class="member">찜 목록</li>
+							<li class="member">중고거래</li>
+							<li class="member">장바구니</li>
+							<li class="member">주문내역</li>
+							<li class="manager">카테고리관리</li>
+							<li class="manager">신고관리</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 			<div id="myPageRight">
+
 				<h1>
 					<%
 					if (userType.equals("일반회원")) {
@@ -46,8 +78,13 @@
 					<%}%>
 				</h1>
 				<%
+						ProductsDAO p_dao = new ProductsDAO();
 						ReviewsDAO r_dao = new ReviewsDAO();
 						List<Reviews> r_lst = r_dao.getMyReview(user.getId());
+						ReservedDAO rs_dao = new ReservedDAO();
+						List<Reserved> rs_lst = rs_dao.getAllReserveds();
+						CategoryDAO cat_dao = new CategoryDAO();
+						List<Category> cat_lst = cat_dao.getAllCategory();
 				%>
 				<div class="line"></div>
 				<div id="myPageRightContents">
@@ -56,6 +93,21 @@
 						<div class="seller">
 							<h4>내상품 찜 순위</h4>
 							<ul>
+							<% for(int i = 0; i < 4; i++){ 
+								if(rs_lst.size()>=i+1){
+									Products p = p_dao.getSingleProduct(rs_lst.get(i).getProd_id());							
+							%>
+								<a href="itemPage.jsp?prod_id=<%=p.getProd_id()%>"><li class="ContentsBox">
+									<div class="ContentsImg">
+										<img src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
+									</div>
+									<div class="ContentsText">
+										<%=p.getProd_name() %><br>
+										<%=p.getProd_color()%><br>
+										<%=p.getProd_price()%><br>
+									</div>
+								</li></a>
+									<%}else{ %>
 								<li class="ContentsBox">
 									<div class="ContentsImg">
 										<img src="image/camera_icon.png">
@@ -64,30 +116,8 @@
 										<p>첫 상품 등록하고 찜 개수를 늘려보세요!</p>
 									</div>
 								</li>
-								<li class="ContentsBox">
-									<div class="ContentsImg">
-										<img src="image/camera_icon.png">
-									</div>
-									<div class="ContentsText">
-										<p>첫 상품 등록하고 찜 개수를 늘려보세요!</p>
-									</div>
-								</li>
-								<li class="ContentsBox">
-									<div class="ContentsImg">
-										<img src="image/camera_icon.png">
-									</div>
-									<div class="ContentsText">
-										<p>첫 상품 등록하고 찜 개수를 늘려보세요!</p>
-									</div>
-								</li>
-								<li class="ContentsBox">
-									<div class="ContentsImg">
-										<img src="image/camera_icon.png">
-									</div>
-									<div class="ContentsText">
-										<p>첫 상품 등록하고 찜 개수를 늘려보세요!</p>
-									</div>
-								</li>
+									<%}
+								} %>
 							</ul>
 						</div>
 						<div class="member">
@@ -97,7 +127,7 @@
 								for (int i = 0; i < 4; i++) {
 									if (r_lst.size()>=i+1) {
 								%>
-								<li class="ContentsBox">
+								<a><li class="ContentsBox">
 									<div class="ContentsImg">
 										<img src="<%=r_lst.get(i).getReview_img()%>">
 									</div>
@@ -105,10 +135,11 @@
 										<p><%=r_lst.get(i).getReview_title()%></p>
 										<p><%=r_lst.get(i).getReview_tag()%></p>
 									</div>
-								</li>
+								</li></a>
 								<%
 								} else {
 								%>
+								<a href="ReviewPage.jsp">
 								<li class="ContentsBox">
 									<div class="ContentsImg">
 										<img src="image/camera_icon.png">
@@ -116,7 +147,9 @@
 									<div class="ContentsText">
 										<p>첫 리뷰를 작성하고 나만의 멋진 인테리어를 공유해보세요!</p>
 									</div>
+									
 								</li>
+								</a>
 								<%
 								}
 								}
@@ -126,41 +159,21 @@
 						<div class="manager">
 							<h4>카테고리 등록 순위</h4>
 							<ul>
-								<li class="ContentsBox"><span class="ContentsRank">1</span>
+							<% int c_cnt=0; 
+							for(Category cat : cat_lst){ 
+								int num = cat_dao.categoryCount(cat.getCategory_id());
+								c_cnt++;
+							%>
+								<li class="ContentsBox"><span class="ContentsRank"><%=c_cnt %></span>
 									<div class="ContentsImg">
 										<img src="image/camera_icon.png">
 									</div>
 									<div class="ContentsText">
-										<p>카테고리명</p>
-										<p class="ContentsTextLeft">00개</p>
+										<p><%=cat.getCategory_name()%></p>
+										<p class="ContentsTextLeft"><%=num %>개</p>
 									</div></li>
-								<li class="ContentsBox"><span class="ContentsRank">2</span>
-									<div class="ContentsImg">
-
-										<img src="image/camera_icon.png">
-									</div>
-									<div class="ContentsText">
-										<p>카테고리명</p>
-										<p class="ContentsTextLeft">00개</p>
-									</div></li>
-								<li class="ContentsBox"><span class="ContentsRank">3</span>
-									<div class="ContentsImg">
-
-										<img src="image/camera_icon.png">
-									</div>
-									<div class="ContentsText">
-										<p>카테고리명</p>
-										<p class="ContentsTextLeft">00개</p>
-									</div></li>
-								<li class="ContentsBox"><span class="ContentsRank">4</span>
-									<div class="ContentsImg">
-
-										<img src="image/camera_icon.png">
-									</div>
-									<div class="ContentsText">
-										<p>카테고리명</p>
-										<p class="ContentsTextLeft">00개</p>
-									</div></li>
+							<%	 if(c_cnt==4){break;}
+							} %>
 							</ul>
 						</div>
 					</div>
@@ -171,72 +184,6 @@
 							<h4>새 주문내역</h4>
 							<span>상세보기 > </span>
 							<ul>
-								<li class="contentsRightList">
-									<div class="listImgBox">
-										<img src="">
-									</div>
-									<div class="listTextBox">
-										<p class="listTextBoxDate">2024-10-29</p>
-										<p class="listTextBoxItemName">상품명상품명상품명</p>
-										<div class="listTextBoxItemOption">
-											옵션 :
-											<div class="listTextBoxItemOptionColor"></div>
-											빨간색
-										</div>
-										<div class="ItemOptionDetails">
-											<p>1개</p>
-											<p>50,000원</p>
-										</div>
-									</div>
-									<div class="listOrderCheck">
-										<p class="orderGreen">주문</p>
-										<p class="orderRed">발송</p>
-									</div>
-								</li>
-								<li class="contentsRightList">
-									<div class="listImgBox">
-										<img src="">
-									</div>
-									<div class="listTextBox">
-										<p class="listTextBoxDate">2024-10-29</p>
-										<p class="listTextBoxItemName">상품명상품명상품명</p>
-										<div class="listTextBoxItemOption">
-											옵션 :
-											<div class="listTextBoxItemOptionColor"></div>
-											빨간색
-										</div>
-										<div class="ItemOptionDetails">
-											<p>1개</p>
-											<p>50,000원</p>
-										</div>
-									</div>
-									<div class="listOrderCheck">
-										<p class="orderGreen">주문</p>
-										<p class="orderRed">발송</p>
-									</div>
-								</li>
-								<li class="contentsRightList">
-									<div class="listImgBox">
-										<img src="">
-									</div>
-									<div class="listTextBox">
-										<p class="listTextBoxDate">2024-10-29</p>
-										<p class="listTextBoxItemName">상품명상품명상품명</p>
-										<div class="listTextBoxItemOption">
-											옵션 :
-											<div class="listTextBoxItemOptionColor"></div>
-											빨간색
-										</div>
-										<div class="ItemOptionDetails">
-											<p>1개</p>
-											<p>50,000원</p>
-										</div>
-									</div>
-									<div class="listOrderCheck">
-										<p class="orderGreen">주문</p>
-										<p class="orderRed">발송</p>
-									</div>
-								</li>
 								<li class="contentsRightList">
 									<div class="listImgBox">
 										<img src="">
@@ -287,108 +234,12 @@
 										<p class="orderRed">발송</p>
 									</div>
 								</li>
-								<li class="contentsRightList">
-									<div class="listImgBox">
-										<img src="">
-									</div>
-									<div class="listTextBox">
-										<p class="listTextBoxDate">2024-10-29</p>
-										<p class="listTextBoxItemName">상품명상품명상품명</p>
-										<div class="listTextBoxItemOption">
-											옵션 :
-											<div class="listTextBoxItemOptionColor"></div>
-											빨간색
-										</div>
-										<div class="ItemOptionDetails">
-											<p>1개</p>
-											<p>50,000원</p>
-										</div>
-									</div>
-									<div class="listOrderCheck">
-										<p class="orderGreen">주문</p>
-										<p class="orderRed">발송</p>
-									</div>
-								</li>
-								<li class="contentsRightList">
-									<div class="listImgBox">
-										<img src="">
-									</div>
-									<div class="listTextBox">
-										<p class="listTextBoxDate">2024-10-29</p>
-										<p class="listTextBoxItemName">상품명상품명상품명</p>
-										<div class="listTextBoxItemOption">
-											옵션 :
-											<div class="listTextBoxItemOptionColor"></div>
-											빨간색
-										</div>
-										<div class="ItemOptionDetails">
-											<p>1개</p>
-											<p>50,000원</p>
-										</div>
-									</div>
-									<div class="listOrderCheck">
-										<p class="orderGreen">주문</p>
-										<p class="orderRed">발송</p>
-									</div>
-								</li>
-								<li class="contentsRightList">
-									<div class="listImgBox">
-										<img src="">
-									</div>
-									<div class="listTextBox">
-										<p class="listTextBoxDate">2024-10-29</p>
-										<p class="listTextBoxItemName">상품명상품명상품명</p>
-										<div class="listTextBoxItemOption">
-											옵션 :
-											<div class="listTextBoxItemOptionColor"></div>
-											빨간색
-										</div>
-										<div class="ItemOptionDetails">
-											<p>1개</p>
-											<p>50,000원</p>
-										</div>
-									</div>
-									<div class="listOrderCheck">
-										<p class="orderGreen">주문</p>
-										<p class="orderRed">발송</p>
-									</div>
-								</li>
 							</ul>
 						</div>
 						<div class="manager">
 							<h4>새 신고내역</h4>
 							<span>상세보기 > </span>
 							<ul>
-								<li class="contentsRightList">
-									<div class="listTextBox">
-										<p class="listTextBoxDate">2024-10-29</p>
-										<p class="listTextBoxItemName">제목</p>
-									</div>
-									<div class="listOrderCheck">
-										<p class="orderRed">신고</p>
-										<p class="orderGreen">해결</p>
-									</div>
-								</li>
-								<li class="contentsRightList">
-									<div class="listTextBox">
-										<p class="listTextBoxDate">2024-10-29</p>
-										<p class="listTextBoxItemName">제목</p>
-									</div>
-									<div class="listOrderCheck">
-										<p class="orderRed">신고</p>
-										<p class="orderGreen">해결</p>
-									</div>
-								</li>
-								<li class="contentsRightList">
-									<div class="listTextBox">
-										<p class="listTextBoxDate">2024-10-29</p>
-										<p class="listTextBoxItemName">제목</p>
-									</div>
-									<div class="listOrderCheck">
-										<p class="orderRed">신고</p>
-										<p class="orderGreen">해결</p>
-									</div>
-								</li>
 								<li class="contentsRightList">
 									<div class="listTextBox">
 										<p class="listTextBoxDate">2024-10-29</p>
@@ -413,7 +264,6 @@
 	<nav id="serchMD">
 		<%@ include file="MdSerch.jsp"%>
 	</nav>
-	<%@ include file="HeaderSub.jsp"%>
 
 	<%
 	String u_type = user.getU_type();

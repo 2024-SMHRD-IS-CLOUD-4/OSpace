@@ -59,7 +59,7 @@
 	</select>
 	
 	<!-- 카테고리별 상품 조회 -->
-	<select id="getCategoryProducts" resultType="com.smhrd.model.Products">
+	<select id="getCategoryProducts" parameterType="int" resultType="com.smhrd.model.Products">
     SELECT * FROM PRODUCTS WHERE CATEGORY_ID=#{category_id}
 	</select>
 	

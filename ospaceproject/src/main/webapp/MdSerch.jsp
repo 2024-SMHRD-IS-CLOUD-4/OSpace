@@ -12,17 +12,19 @@
 <body>
 <div id="mdBg">
 
-            <div id="serchBox">
+           <div id="serchBox">
                 <div><button id="serchcloseBtn">X</button></div>
                 <div id="serchBoxMain">
-                	<p class="cartegoryChoise"><span><input type="radio" name="cartegoryChoise">일반상품</span><span><input type="radio"  name="cartegoryChoise">중고상품</span><span><input type="radio"  name="cartegoryChoise">리뷰</span></p>
+				<form action="TextSeachController">
+                	<p class="cartegoryChoise"><span><input type="radio" name="type" value="common">일반상품</span><span><input type="radio" name="type" value="used">중고상품</span><span><input type="radio" name="type" value="review">리뷰</span></p>
                     <div class="serchBox">
                         <img class="btnImg"
                             src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
-                        
-                        <input id="serchText" type="text" onkeyup="enterkey()" placeholder="검색어를 입력해주세요">
+                        |
+                        <input id="serchText" name="searchText" type="text" onkeyup="enterkey()" placeholder="검색어를 입력해주세요">
                         <input id="serchSubmit" type="submit" value="검색하기">
                     </div>
+                    </form>
 
 
                     <div id="imgSerchBox">
