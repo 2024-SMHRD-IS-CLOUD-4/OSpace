@@ -21,35 +21,29 @@
 						<div>
 							<table class="reviewSetupTable">
 								<tr class="tr">
-									<td class="td" rowspan="2">
+									<td rowspan="2">
 										<input class="reviewCheckBox" type="checkbox" />
 									</td>
-									<td class="td" rowspan="2">
+									<td rowspan="2">
 										<p>
-											<img class="reviewImg">
+											<img class="reviewImg" src="#">
 										</p>
 									</td>
-									<td class="td">
-										<p class="reviewName">#상품명1 #상품명2 #상품명3</p>
+									<td>
+										<p class="reviewName">#상품명1 #상품명2</p>
 									</td>
-									<td class="td">
+									<td>
 										<p class="reviewStar">
-											<div class="reviewStar">
-												<span class="star" data-value="1">&#9733;</span>
-												<span class="star" data-value="2">&#9733;</span>
-												<span class="star" data-value="3">&#9733;</span>
-												<span class="star" data-value="4">&#9733;</span>
-												<span class="star" data-value="5">&#9733;</span>
-											</div>
+												&#9733;&#9733;&#9733;&#9733;&#9733;
 										</p>
 									</td>
 								</tr>
 								<tr>
-									<td class="td">
+									<td>
 										<p class="reviewText">먹튀했어... 잡아바자ㅏㅏㅏ속상합니다</p>
 									</td>
-									<td class="td">
-										<p class="reviewDate"> 날짜</p>
+									<td class="reviewDate">
+										<p> 2024-10-31</p>
 									</td>
 								</tr>
 							</table>

@@ -25,28 +25,21 @@
 				<h2>찜 리스트</h2>
 				<div id="myPageContainer">
 					<table class="reviewSetupTable">
-						<tr class="tr">
-							<td class="td" rowspan="2">
+						<tr >
+							<td>
 								<input class="reviewCheckBox" type="checkbox" />
 							</td>
-							<td class="td" rowspan="2">
+							<td>
 								<p>
-									<img class="reviewImg">
+									<img class="reviewImg" src="#">
 								</p>
 							</td>
-							<td class="td">
+							<td >
 								<p class="reviewName">상품명</p>
-							</td>
-							<td class="td">
-
-							</td>
-						</tr>
-						<tr>
-							<td class="td">
 								<p class="reviewText">가격</p>
 							</td>
-							<td class="td">
-								<p class="reviewDate"> 날짜</p>
+							<td>
+								<p class="reviewDate">2024-10-31</p>
 							</td>
 						</tr>
 					</table>

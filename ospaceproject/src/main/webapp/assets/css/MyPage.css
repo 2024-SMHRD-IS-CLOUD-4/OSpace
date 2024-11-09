@@ -501,55 +501,34 @@
 .reviewCheckBox{
 	width: 50px;
 	transform: scale(2);
-	position: relative;
-	margin-bottom: 100px;
+	margin-bottom:100px;
 }
 .reviewImg{
 	width: 130px;
 	height: 130px;
-	background-color : #fff;
-	background-image: url('default-image.png');
-	background-position: center;
-	border: 1px solid #dddd;
+	border: 1px solid #ddd;
 }
 .reviewSetupTable{
 	width: 100%;
 }
 .reviewSetupTable td{
 	padding: 5px;
+	border:1px solid #ddd;
 }
 .reviewName{
-	  font-weight: bold;
+	font-weight: bold;
     font-size: 25px;
-    margin: 0; /* 상하좌우 여백 없애기 */
-    padding: 0; /* 상하좌우 여백 없애기 */
-    vertical-align: top; /* td 내에서 위로 정렬 */
-    display: inline-block; /* 인라인 블록으로 설정 */
 }
 .reviewText {
 	font-weight:600;
     font-size: 15px;
-    padding-bottom: 0px;
-    margin-bottom: 30px;
-    display: inline-block; /* 인라인 블록으로 설정 */
     vertical-align: top; /* 상단 정렬 */
 }
 .reviewStar {
     font-size: 30px;
-    cursor: pointer;
     display: flex;
 	justify-content: center;
 }
-
-.star {
-    color: #ccc; /* 기본 색상 */
-}
-
-.star:hover,
-.star.selected {
-    color: gold; /* 선택된 별 색상 */
-}
 .reviewDate{
-	display: flex;
-	justify-content: center;
+	width:100px;
 }
