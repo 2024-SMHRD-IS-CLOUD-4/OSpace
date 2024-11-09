@@ -50,7 +50,7 @@
 				</ul>
 			</div>
 		</div>
-		<div id="mainItem01">
+		<div id="mainItem02">
 			<div class="itemTitle">
 				<h5 class="subItemTitle">new</h5>
 				<h1 class="mainItemTitle">최근 등록 순</h1>

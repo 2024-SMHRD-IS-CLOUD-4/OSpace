@@ -197,7 +197,9 @@ body{
     display: inline-block;
     overflow: hidden;
     width: 1920px;
-    background-color: #FDFDFD;
+    height: 860px;
+}#mainItem02:last-child{
+    background:#f9f9f9;
 }
 .itemTitle{
     width: 1100px;
