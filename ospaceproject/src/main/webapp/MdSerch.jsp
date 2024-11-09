@@ -86,9 +86,11 @@
         };
 }
     </script>
-    
+    <script>
+    let r = 0, g = 0, b = 0;
+</script>
 <script>
-		let r = 0, g = 0, b = 0;
+
         const fileInput = document.getElementById('fileInput');
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
@@ -167,7 +169,7 @@
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height); // 원본 이미지를 다시 그림
                 ctx.strokeStyle = 'red';
-                ctx.lineWidth = 2;
+                ctx.lineWidth = 1;
                 ctx.strokeRect(startX, startY, e.offsetX - startX, e.offsetY - startY);
             }
         });
@@ -176,6 +178,11 @@
         canvas.addEventListener('mouseup', (e) => {
             if (isDragging) {
                 isDragging = false;
+                
+             // RGB 값을 계산하기 전에 초기화
+                r = 0; 
+                g = 0; 
+                b = 0;
 
                 // 드래그 끝 좌표와 크기 계산
                 let width = e.offsetX - startX;
@@ -193,7 +200,13 @@
 
                 // canvas 경계 내에서만 처리
                 if (startX + width <= canvas.width && startY + height <= canvas.height) {
-                    const imageData = ctx.getImageData(startX, startY, width, height);
+                    
+                	// 원본 이미지를 다시 그려서 빨간색 테두리를 제거
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                	
+                    // 선택 영역의 이미지 데이터 가져오기
+                	const imageData = ctx.getImageData(startX, startY, width, height);
                     const data = imageData.data;
                     const numPixels = data.length / 4;
 
