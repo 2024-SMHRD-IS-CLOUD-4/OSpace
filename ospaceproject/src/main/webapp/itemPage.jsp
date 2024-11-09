@@ -50,7 +50,7 @@
         <div class="contentBox">
             <div id="itemBoxT">
                 <div id="itemBoxImg">
-                    <img id="img" src="<%=p.getProd_img()%>">
+                    <img id="img" src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
                 </div>
                 <div id="itemBoxTitle">
                     <p class="itemBoxCartegory">카테고리 > <%=category %></p>
@@ -174,7 +174,7 @@
                 %>
                     <a href="ReviewPage.jsp?prod_id=<%=p.getProd_id()%>"><li>
                         <div class="itemBoxReviewleft">
-                            <img src="#">
+                            <img src="<%=request.getContextPath()%>/upload/<%=r.getReview_img()%>">
                         </div>
                         <div class="itemBoxReviewRight">
                             <p>
@@ -189,7 +189,7 @@
                             </div>
                         </div>
                     </li></a>
-                    <%} %>
+                    <%}%>
                 </ul>
                 <div class="itemBoxReviewPageNum">1   2  3   4   > </div>
             </div>
@@ -199,6 +199,6 @@
     	<nav id="loginMD">
 			<%@ include file="MdLogin.jsp"%>
 		</nav>
-	
+	<%@ include file="HeaderSub.jsp"%>
 </body>
 </html>

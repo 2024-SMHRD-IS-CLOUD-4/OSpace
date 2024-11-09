@@ -88,4 +88,31 @@ public class ProductsDAO {
 		session.close();
 		return result;
 	}
+	public List<Products> getCategoryProducts(String category_name){
+		SqlSession session = factory.openSession(true);
+		int category_id = 0;
+		switch(category_name) {
+		case "의자":
+			category_id = 1;
+			break;
+		case "책상":
+			category_id = 2;
+			break;
+		case "침대":
+			category_id = 3;
+			break;
+		case "수납장":
+			category_id = 4;
+			break;
+		case "커튼":
+			category_id = 5;
+			break;
+		case "벽지":
+			category_id = 6;
+			break;
+		}
+		List<Products> result = session.selectList("ProductMapper.getCategoryProducts",category_id);
+		session.close();
+		return result;
+	}
 }

@@ -48,7 +48,6 @@
 				<%
 						ReviewsDAO r_dao = new ReviewsDAO();
 						List<Reviews> r_lst = r_dao.getMyReview(user.getId());
-						System.out.println(r_lst.size());
 				%>
 				<div class="line"></div>
 				<div id="myPageRightContents">

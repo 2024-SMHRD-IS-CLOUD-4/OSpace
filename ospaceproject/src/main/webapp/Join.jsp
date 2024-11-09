@@ -15,7 +15,7 @@
 			<div class="joinTitle">
 				<h1 class="mainItemTitle">회원가입</h1>  
 			</div>
-			<form action="JoinController">
+			<form action="JoinController" method="post" id="form1">
 				<table  class="joinBox">
 					<tr>
 						<td class="joinBoxTitle">가입유형</td>
@@ -29,8 +29,8 @@
 						<td class="joinBoxContents">
 							<input type="text" name="id" placeholder="아이디를 입력해주세요.">
 							<button type="button" id="idCheckBtn">중복확인</button>
-							<span id="idCheckResult"></span>
 						</td>
+						<td><span id="idCheckResult"></span></td>
 					</tr>
 					<tr>
 						<td class="joinBoxTitle">비밀번호 입력</td>
@@ -41,8 +41,8 @@
 					<tr>
 						<td class="joinBoxTitle">비밀번호 재입력<span id="pwCheck"></span></td>
 						<td class="joinBoxContents">
-							<input type="password" name="pwCheck" placeholder="비밀번호를 다시 한번 입력해주세요.">
-						</td>
+							<input type="password" name="pwCheck" placeholder="비밀번호를 다시 한번 입력해주세요."></td>
+							<td><span id="pwCheckResult"></span></td>
 					</tr>
 					<tr>
 						<td class="joinBoxTitle">닉네임 입력</td>
@@ -77,14 +77,7 @@
 		</div>
 		
 	</div>
-	<%@ include file="Footer.jsp"%>
-	<nav id="loginMD">
-		<%@ include file="MdLogin.jsp"%>
-	</nav>
-	<nav id="serchMD">
-		<%@ include file="MdSerch.jsp"%>
-	</nav>
-	<%@ include file="HeaderSub.jsp"%>
+	<%@ include file = "Footer.jsp" %>
 	<!-- 회원가입 실패 시 모달창 -->
 	<!--  <div id="joinFailBg">
         <div id="joinFail">
@@ -114,20 +107,27 @@
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script type="text/javascript">
+		let idCheckResult = false;
+		let pwCheckResult = false;
+		
+		
 		$("#idCheckBtn").on("click", ()=>{
-			let id = $('[name="id"]').val();
-			
+		let id = $('[name="id"]').val();
+			if(id.length<4){
+				alert("ID를 4자리 이상 입력하세요.")
+				return false;
+			}
 			$.ajax({
 				url : "IdCheckController", 
 				type : "get", 
 				data : {"id":id},
 				success : (data)=>{
-					console.log(data);
-					
 					if(data==0){
 						$("#idCheckResult").text("사용 가능 아이디");
+						idCheckResult = true;
 					}else{
 						$("#idCheckResult").text("사용 불가 아이디");
+						idCheckResult = false;
 					}
 				},
 				error : () => {
@@ -135,13 +135,52 @@
 				}
 			})
 		})
-		$()=>{
-			let pw =$('[name="pw"]').val();
-			let pwCheck
-		}
+		$("[name='pwCheck']").on('keyup',()=>{
+			let pw =$("[name='pw']").val();
+			let pwCheck=$("[name='pwCheck']").val();
+			if(pw==pwCheck){
+				$("#pwCheckResult").text("");
+				pwCheckResult = true;
+			}else{
+				$("#pwCheckResult").text("비밀번호와 일치하지않습니다.");
+				pwCheckResult = false;
+			}
+		})
+		$(document).ready(()=>{
+			$('#form1').submit((event)=>{
+			let u_type = $("[name='u_type']").val();
+			let name = $("[name='name']").val();
+			let addr = $("[name='addr']").val();
+			let phone = $("[name='phone']").val();
+				
+				if(u_type===''){
+					alert('유형을 확인해주세요.')
+					return false;
+				}
+				if(!idCheckResult){
+					alert('ID 중복을 확인해주세요.')
+					return false;
+				}
+				if(!pwCheckResult){
+					alert('비밀번호를 확인해주세요.')
+					return false;
+				}
+				if(name===null){
+					alert('닉네임을 입력하세요.')
+					return false;
+				}
+				if(addr===''){
+					alert('주소를 입력하세요.')
+					return false;
+				}
+				if(phone===''){
+					alert('전화번호를 입력하세요.')
+					return false;
+				}
+				$(document).unbind('submit').submit();
+			})
+		})
 		</script>
-
-
-
+		<%@ include file="HeaderSub.jsp"%>
 </body>
 </html>
