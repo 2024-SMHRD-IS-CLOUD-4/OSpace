@@ -29,7 +29,7 @@
                             <div id="myPageContainer">
                                 <div>
                                     <div class="reviewtableContainer">
-                                    <form action="">
+                                    <form action="ReviewWriteController">
                                         <table class="reviewTable">
 
                                             <tr class="tr">
@@ -94,13 +94,13 @@
                                                 </td>
                                             </tr>
                                         </table>
-                                        </form>
                                     </div>
                                 </div>
                             </div>
                             <div class="buttonContainer">
                                 <button class="AllBtn" type="submit">저장하기</button>
-                                <button class="AllBtn" type="submit">리뷰확인하기</button>
+                                        </form>
+                                <a href="Mypage_reviewsList.jsp"><button class="AllBtn" type="submit">리뷰확인하기</button></a>
                             </div>
                         </div>
                 </div>

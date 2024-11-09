@@ -14,8 +14,8 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.model.Reviews;
 import com.smhrd.model.ReviewsDAO;
 
-@WebServlet("/ReviewController")
-public class ReviewController extends HttpServlet {
+@WebServlet("/ReviewWriteController")
+public class ReviewWriteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
