@@ -80,7 +80,10 @@
 	    
 	</script>
 <script>
-		let r = 0, g = 0, b = 0;
+    let r = 0, g = 0, b = 0;
+</script>
+<script>
+
         const fileInput = document.getElementById('fileInput');
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
@@ -191,12 +194,12 @@
                 // canvas 경계 내에서만 처리
                 if (startX + width <= canvas.width && startY + height <= canvas.height) {
                     
-                	// 원본 이미지를 다시 그려서 빨간색 테두리를 제거
+                   // 원본 이미지를 다시 그려서 빨간색 테두리를 제거
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                	
+                   
                     // 선택 영역의 이미지 데이터 가져오기
-                	const imageData = ctx.getImageData(startX, startY, width, height);
+                   const imageData = ctx.getImageData(startX, startY, width, height);
                     const data = imageData.data;
                     const numPixels = data.length / 4;
 
