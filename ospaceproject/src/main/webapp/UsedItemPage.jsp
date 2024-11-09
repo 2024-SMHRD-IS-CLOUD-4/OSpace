@@ -28,7 +28,7 @@
 		<div class="contentBox">
 			<div id="itemBoxT">
 				<div id="itemBoxImg">
-					<img src="<%=request.getContextPath()%>/used/<%=u.getUsed_img()%>"
+					<img src="<%=request.getContextPath()%>/upload/<%=u.getUsed_img()%>"
 						alt="상품 이미지">
 				</div>
 				<div id="itemBoxTitle">
