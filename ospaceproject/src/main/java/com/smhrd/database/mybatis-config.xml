@@ -24,6 +24,5 @@
     <mapper resource="com/smhrd/database/ReviewMapper.xml"/>
     <mapper resource="com/smhrd/database/UsedProductMapper.xml"/>
     <mapper resource="com/smhrd/database/CategoryMapper.xml"/>
-    <mapper resource="com/smhrd/database/ReservedMapper.xml"/>
   </mappers>
 </configuration>
