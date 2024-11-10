@@ -25,4 +25,10 @@ public class ReservedDAO {
         return result;
 	}
 	
+	public int insertReserved(Reserved rs) {
+		SqlSession sqlSession = factory.openSession(true);
+        int result = sqlSession.insert("ReservedMapper.getMyReserved",rs);
+        sqlSession.close();
+        return result;
+	}
 }

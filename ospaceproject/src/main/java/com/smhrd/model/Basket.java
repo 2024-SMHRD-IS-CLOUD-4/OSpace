@@ -6,12 +6,14 @@ public class Basket {
 	int prod_id;
 	String id;
 	String createdAt;
-	public Basket(int basket_id, int prod_id, String id, String createdAt) {
+	String prod_color;
+	public Basket(int basket_id, int prod_id, String id, String createdAt, String prod_color) {
 		super();
 		this.basket_id = basket_id;
 		this.prod_id = prod_id;
 		this.id = id;
 		this.createdAt = createdAt;
+		this.prod_color = prod_color;
 	}
 	public int getBasket_id() {
 		return basket_id;
@@ -25,4 +27,8 @@ public class Basket {
 	public String getCreatedAt() {
 		return createdAt;
 	}
+	public String getProd_color() {
+		return prod_color;
+	}
+	
 }

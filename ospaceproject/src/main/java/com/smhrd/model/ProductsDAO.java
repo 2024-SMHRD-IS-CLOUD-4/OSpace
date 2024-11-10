@@ -40,12 +40,7 @@ public class ProductsDAO {
 		session.close();
 		return result;
 	}
-	public int insertBasket(Products p) {
-		SqlSession sqlSession = factory.openSession(true);
-		int result = sqlSession.insert("ProductMapper.insertBasket", p);
-		sqlSession.close();
-		return result;
-	}
+	
 	public List<Basket> getBasket(){
 		SqlSession session = factory.openSession(true);
 		List<Basket> result = session.selectList("ProductMapper.getBasket");

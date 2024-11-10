@@ -24,7 +24,7 @@ public class LoginController extends HttpServlet {
 		
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-
+		String hi = request.getParameter("hihi");
 		User loginUser = new User(id, pw);
 		UserDAO dao = new UserDAO();
 		User result = dao.login(loginUser);
@@ -34,7 +34,7 @@ public class LoginController extends HttpServlet {
 		} else {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", result);
-			if(referer.contains("Join.jsp")){
+			if(hi.equals("123")){
 				response.sendRedirect("Main.jsp");
 			}else {
 				response.sendRedirect(referer);

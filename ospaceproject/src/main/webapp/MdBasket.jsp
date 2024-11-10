@@ -36,7 +36,6 @@
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script>
-		let user_true = '<%= session.getAttribute("user") %>';
         const basketOpen = () => {
             document.getElementById("basketMD").style.display = "block";
             document.body.style.overflow = 'hidden';
