@@ -122,13 +122,14 @@
     let price = parseInt(<%=p.getProd_price()%>);
 	let total_price = 0;
 	let op_choice = document.getElementById('op_choice');
-	let options = document.getElementById("total_op");
-    op_choice.addEventListener("change",()=>{
+	let options = document.getElementsByName("total_op");
+	$("#op_choice").on("change",()=>{
     	if(user_exist==='null'){
     		mdOpen();
     	}
-   		options.value += op_choice.value+",";
-   		console.log(options.value);
+    	for(let i = 0;i<options.length;i++){
+    		options[i].value += ($('#op_choice').val()+",");
+    	}
     	document.getElementById("op_result").innerHTML +=("<li>옵션 : "+$("#op_choice").val())
 		total_price += price;
 		document.getElementById("total_price").innerText=total_price+'원';
