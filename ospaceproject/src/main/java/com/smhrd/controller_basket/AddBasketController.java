@@ -32,8 +32,8 @@ public class AddBasketController extends HttpServlet {
 		Basket b = new Basket(0, prod_id, id, "",color); 
 		b_dao.insertBasket(b);
 		}
-		
-    	response.sendRedirect("Mypage_Basket.jsp");
+		String referer = request.getHeader("Referer");
+    	response.sendRedirect(referer+"&hi=123");
 	   
 	}
 }

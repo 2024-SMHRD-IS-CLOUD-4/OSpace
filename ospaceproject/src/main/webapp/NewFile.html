@@ -1,38 +1,59 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
 </head>
 <body>
-	<div>
-		<div id="header">
-			<a href="main.html"><img src=""></a>
-			<div>
-				<button> <img src="#">|<span>검색하기</span> </button>
-				<ul>
-					<li>카테고리</li>
-					<li>리뷰보기</li>
-					<li>중고그래</li>
-				</ul>
-				<ul>
-					<li>로그인</li>
-					<li><a href="#">고객센터</a></li>
-				</ul>
-			</div>
 
-		</div>
-		<div id="body">
-			<div id="mainBanner">
-				<div id="btnRight"></div>
-			</div>
-			<div id="mainCategory"></div>
-			<div id="mainItem01"></div>
-			<div id="mainItem02"></div>
-		</div>
-		<div id="footer">
-			<a href="#">고객센터</a>
-		</div>
-	</div>
+            <div id="mdBox">
+                <div><button id="closeBtn">X</button></div>
+                <div class="">
+	                <form action="LoginController" method="post" id="form1">
+	                    <div class="loginBoxFaleText">
+	                        <h1>장바구니에<br>상품을 담았습니다.</h1>
+	                        <p>계속 쇼핑하시겠습니까?<br>장바구니로 이동하시겠습니까?</p>
+	                    </div>
+	                    <div class="loginBtn">
+	                        <span>
+	                            <a href="Mypage_Basket.jsp">
+	                                <button type="button" class="AllBtn">장바구니가기</button>
+	                            </a>
+	                        </span>
+	                        <span>
+	                                <button type="button" id="mdBasketClose" class="AllBtn" id="mdBasketClose">계속 쇼핑하기</button>
+	                        </span>
+	                    </div>
+	                </form>
+                </div>
+        </div>
+    <script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script>
+        const basketOpen = () => {
+            document.getElementById("basketMD").style.display = "block";
+            document.body.style.overflow = 'hidden';
+            
+        }
+       	const basketClose = () => {
+       		document.getElementById("basketMD").style.display = "none";
+       		document.body.style.removeProperty('overflow');
+       	}
+        document.getElementById("closeBtn").addEventListener("click", basketClose);
+        document.getElementById("mdBasketClose").addEventListener("click", basketClose);
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const hi = urlParams.get('hi');
+        
+        if(hi==='123'){
+        	basketOpen();
+        }
+    </script>
 </body>
-</html>
+</html> 

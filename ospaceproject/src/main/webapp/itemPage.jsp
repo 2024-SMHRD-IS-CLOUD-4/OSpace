@@ -94,9 +94,11 @@
                         	<input type="hidden" name="total_op"  id="total_op" value="">
                         	<button type="submit" id="submit" class="AllBtn">장바구니 담기</button>
                         </form>
+                        
                         <% if(user!=null){ %>
 							<button id="paymentButton">결제하기</button>
 						<%} %>
+						
 	<script src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>				
 						
 	<script src="assets/js/jquery.min.js"></script>
@@ -236,9 +238,6 @@
 	</nav>
 	<nav id="basketMD">
 		<%@ include file="MdBasket.jsp"%>
-	</nav>
-	<nav id="reservedMD">
-		<%@ include file="MdReserved.jsp"%>
 	</nav>
 	<%@ include file="HeaderSub.jsp"%>
 </body>

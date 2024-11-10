@@ -24,7 +24,7 @@
 	                            </a>
 	                        </span>
 	                        <span>
-	                                <button type="button" class="AllBtn" id="mdBasketClose">계속 쇼핑하기</button>
+	                                <button type="button" id="mdBasketClose" class="AllBtn" id="mdBasketClose">계속 쇼핑하기</button>
 	                        </span>
 	                    </div>
 	                </form>
@@ -45,16 +45,15 @@
        		document.getElementById("basketMD").style.display = "none";
        		document.body.style.removeProperty('overflow');
        	}
-       	if(user_true==='null'){
-        	document.getElementById("headLoginBtn").addEventListener("click", basketOpen);
-        }
-       	const mdClose = () => {
-	   		document.getElementById("loginMD").style.display = "none";
-			document.body.style.overflow = 'auto';
-	   	}
-       	document.getElementById("submit").addEventListener("click", basketOpen);
         document.getElementById("closeBtn").addEventListener("click", basketClose);
         document.getElementById("mdBasketClose").addEventListener("click", basketClose);
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const hi = urlParams.get('hi');
+        
+        if(hi==='123'){
+        	basketOpen();
+        }
     </script>
 </body>
 </html> 
