@@ -550,3 +550,28 @@
 .boardDate:not(:first-child){
     font-size:10px;
 }
+
+/*주문리스트 페이지*/
+#orderBox{
+	display:inline-block;
+	width:100%;
+	}
+#orderBox > li{
+	display:inline-block;
+	width:100%;
+	padding:10px 0px;
+
+}
+#orderBox >li>p{
+    display: inline-block;
+    margin: 0;
+    margin-left:7px;
+}
+#orderBox >li>p:last-child{
+    display: list-item;}
+.orderPN{
+	width:45%;
+}
+#orderS{
+	padding:5px;
+}
