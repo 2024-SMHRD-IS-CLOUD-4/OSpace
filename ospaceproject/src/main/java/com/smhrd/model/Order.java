@@ -4,32 +4,33 @@ public class Order {
 
 	int orderId;
 	String id;
-	int totalAmount;
+	String prod_ids;
 	int payAmount;
 	String payMethod;
 	int paidAmount;
 	String orderedAt;
 	String orderStatus;
-	public Order(int orderId, String id, int totalAmount, int payAmount, String payMethod, int paidAmount,
+	public Order(int orderId, String id, String prod_ids, int payAmount, String payMethod, int paidAmount,
 			String orderedAt, String orderStatus) {
 		super();
 		this.orderId = orderId;
 		this.id = id;
-		this.totalAmount = totalAmount;
+		this.prod_ids = prod_ids;
 		this.payAmount = payAmount;
 		this.payMethod = payMethod;
 		this.paidAmount = paidAmount;
 		this.orderedAt = orderedAt;
 		this.orderStatus = orderStatus;
 	}
+	
 	public int getOrderId() {
 		return orderId;
 	}
 	public String getId() {
 		return id;
 	}
-	public int getTotalAmount() {
-		return totalAmount;
+	public String getProd_ids() {
+		return prod_ids;
 	}
 	public int getPayAmount() {
 		return payAmount;
@@ -46,5 +47,7 @@ public class Order {
 	public String getOrderStatus() {
 		return orderStatus;
 	}
+	
+	
 	
 }

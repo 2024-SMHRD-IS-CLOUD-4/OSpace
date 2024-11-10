@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.Products"%>
+<%@page import="com.smhrd.model.ProductsDAO"%>
 <%@ page import="com.smhrd.model.Order"%>
 <%@ page import="com.smhrd.model.OrdersDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -16,6 +18,11 @@
 
 <body>
 	<%@ include file="Header.jsp"%>
+	<% 
+		OrdersDAO o_dao = new OrdersDAO();
+		List<Order> o_lst = o_dao.getMyOrders(user.getId());
+		ProductsDAO p_dao = new ProductsDAO();
+	%>
 	<div id="body">
 		<div id="MyPageBox">
 			<%@ include file="MyPageLeft.jsp"%>
@@ -23,45 +30,48 @@
 				<h2>주문(결제)내역</h2>
 				<div id="myPageContainer">
 					<ul id="orderBox">
+					<% for(Order o : o_lst){
+						String a = o.getProd_ids();
+						String [] arr = a.split("/");
+						int [] prod_ids = new int [arr.length];
+						for(int i=0;i<arr.length;i++){
+							System.out.println(arr[i]);
+							prod_ids[i] = Integer.parseInt(arr[i]);
+						}
+					%>
 						<li>
-							<p><input type="checkbox"></p>
-							<p>주문ID</p>
-							<p class="orderPN">상품명</p>
-							<p>주문수량</p>
-							<p>결제금액</p>
-							<p>2022-10-30</p>
+							<p><input type="checkbox" name="check" value="<%=o.getOrderId()%>"></p>
+							<p><%=o.getOrderId()%></p>
+							<p class="orderPN">
+							<%for(int prod_id : prod_ids){ 
+								Products p = p_dao.getSingleProduct(prod_id);
+							%>
+							<span>#<%=p.getProd_name()%> </span> 
+							<%} %>
+							</p>
+							<p><%=o.getPayAmount() %></p>
+							<p><%=o.getPaidAmount() %></p>
+							<p><%=o.getOrderedAt() %></p>
 							<p id="orderS">주문</p>
 							<p class="boardContentArrow">▽</p>
 							<p class="boardContent">
-								<img src="">
-								<span>금액 : 00,000원</span><br>
-								<span>옵션 : 옵션명 개수</span><br>
-								<span>받으실 주소 : 광주광역시 남구</span><br>
-								<span>연락처 : 010-000-0000</span><br>
+							<%for(int prod_id : prod_ids){ 
+								Products p = p_dao.getSingleProduct(prod_id);
+							%>
+								<img src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
+								<span>금액 : <%=p.getProd_price() %>원</span><br>
+								<span>옵션 : <%=p.getProd_color() %></span><br>
+							<%} %>
+								<span>받으실 주소 : <%=user.getAddr() %></span><br>
+								<span>연락처 :<%=user.getPhone() %></span><br>
 							</p>
 						</li>
-						<li>
-							<p><input type="checkbox"></p>
-							<p>주문ID</p>
-							<p class="orderPN">상품명</p>
-							<p>주문수량</p>
-							<p>결제금액</p>
-							<p>2022-10-30</p>
-							<p id="orderS">주문</p>
-							<p class="boardContentArrow">▽</p>
-							<p class="boardContent">
-								<img src="">
-								<span>금액 : 00,000원</span><br>
-								<span>옵션 : 옵션명 개수</span><br>
-								<span>받으실 주소 : 광주광역시 남구</span><br>
-								<span>연락처 : 010-000-0000</span><br>
-							</p>
-						</li>
+						<%} %>
 					</ul>
 				</div>
 				<div class="buttonContainer">
-					<form action="DeleteReviewController" class="fromBlock">
-						<input type="hidden" id="" name="" value="">
+					<form action="DeleteOrderController" class="fromBlock">
+						<input type="hidden" id="delete_order" name="delete_order" value="">
 						<button class="AllBtn" type="submit">주문 취소 신청</button>
 					</form>
 				</div>
@@ -80,9 +90,7 @@
 		  const checks = document.getElementsByName("check");
 		  for(let i = 0;i<checks.length;i++){
 			  	checks[i].addEventListener("click",()=>{
-				document.getElementById("result1").value += (checks[i].value+",");
-				document.getElementById("result2").value += (checks[i].value+",");
-			  	console.log(document.getElementById("result1").value);
+				document.getElementById("delete_order").value += (checks[i].value+",");
 			  })
 		  }
 	</script>
