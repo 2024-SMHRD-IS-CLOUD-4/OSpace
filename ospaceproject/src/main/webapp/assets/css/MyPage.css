@@ -574,4 +574,17 @@
 }
 #orderS{
 	padding:5px;
+	color:grean;
+	font-size: 800;
+}
+/*결제세부*/
+#orderC{
+	width:100%;
+}
+#orderC span{
+	float: right;
+}
+#orderC th, td{
+	height:30px;
+	margin-bottom:20px;
 }

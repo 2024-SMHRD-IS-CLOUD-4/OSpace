@@ -20,9 +20,26 @@
 		<div id="MyPageBox">
 			<%@ include file="MyPageLeft.jsp"%>
 			<div id="myPageRight">
-				<h2>주문리스트</h2>
+				<h2>주문(결제)내역</h2>
 				<div id="myPageContainer">
 					<ul id="orderBox">
+						<li>
+							<p><input type="checkbox"></p>
+							<p>주문ID</p>
+							<p class="orderPN">상품명</p>
+							<p>주문수량</p>
+							<p>결제금액</p>
+							<p>2022-10-30</p>
+							<p id="orderS">주문</p>
+							<p class="boardContentArrow">▽</p>
+							<p class="boardContent">
+								<img src="">
+								<span>금액 : 00,000원</span><br>
+								<span>옵션 : 옵션명 개수</span><br>
+								<span>받으실 주소 : 광주광역시 남구</span><br>
+								<span>연락처 : 010-000-0000</span><br>
+							</p>
+						</li>
 						<li>
 							<p><input type="checkbox"></p>
 							<p>주문ID</p>
