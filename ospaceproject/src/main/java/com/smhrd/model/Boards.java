@@ -20,7 +20,7 @@ public class Boards {
 	int b_views;
 	String id;
 	String b_content;
-	public Boards(int b_id, String b_title, String b_file, String created_at, int b_views, String id,
+	/*public Boards(int b_id, String b_title, String b_file, String created_at, int b_views, String id,
 			String b_content) {
 		super();
 		this.b_id = b_id;
@@ -30,7 +30,7 @@ public class Boards {
 		this.b_views = b_views;
 		this.id = id;
 		this.b_content = b_content;
-	}
+	}*/
 	
 	public int getB_id() {
 		return b_id;

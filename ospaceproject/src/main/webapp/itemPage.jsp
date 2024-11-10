@@ -105,7 +105,7 @@
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
    <script type="text/javascript">
-    
+
 	let user_exist = '<%= session.getAttribute("user") %>';
 	
 	$(document).ready(()=>{
@@ -191,7 +191,7 @@
             </div>
             <div id="itemBoxContant">
                 <!--상품 상세페이지 출력되는 부분-->
-                <h1>상세페이지</h1>
+                <%=p.getProd_desc() %>
             </div>
             <div id="itemBoxReview">
                 <h4>리뷰</h4>
@@ -200,7 +200,9 @@
                 	for(Reviews r : r_lst){ 
                 	String [] tags = r.getReview_tag().split(",");
                 %>
-                    <a href="ReviewPage.jsp?prod_id=<%=p.getProd_id()%>"><li>
+                    
+                    <li>
+                    <a href="ReviewPage.jsp?prod_id=<%=p.getProd_id()%>">
                         <div class="itemBoxReviewleft">
                             <img src="<%=request.getContextPath()%>/upload/<%=r.getReview_img()%>">
                         </div>
@@ -216,10 +218,11 @@
                                 <p><%=r.getCreated_at() %></p>
                             </div>
                         </div>
-                    </li></a>
+                        </a>
+                    </li>
+                    
                     <%}%>
                 </ul>
-                <div class="itemBoxReviewPageNum">1   2  3   4   > </div>
             </div>
         </div>
     </div>
