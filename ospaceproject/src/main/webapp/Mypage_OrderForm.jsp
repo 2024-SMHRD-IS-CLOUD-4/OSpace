@@ -64,54 +64,5 @@
 		<%@ include file="MdSerch.jsp"%>
 	</nav>
 	<%@ include file="HeaderSub.jsp"%>
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script type="text/javascript">
-    let pwCheckResult = true;
-    $("#pwCheck").on('keyup',()=>{
-		let pw =$("[name='pw']").val();
-		let pwCheck=$("#pwCheck").val();
-		if(pw==pwCheck){
-			$("#pwCheckResult").text("")
-			pwCheckResult = true;
-		}else{
-			$("#pwCheckResult").text("비밀번호와 일치하지않습니다.")
-			pwCheckResult = false;
-		}
-	})
-	$(document).ready(()=>{
-			$('#update').submit((event)=>{
-				
-				let pw = $("[name='pw']").val();
-				let name = $("[name='name']").val();
-				let addr = $("[name='addr']").val();
-				let phone = $("[name='phone']").val();
-				if(!pwCheckResult){
-					alert('비밀번호를 확인해주세요.')
-					return false;
-				}
-				if(pw===''){
-					alert('비밀번호를 입력하세요.')
-					return false;
-				}
-				if(name===''){
-					alert('닉네임을 입력하세요.')
-					return false;
-				}
-				if(addr===''){
-					alert('주소를 입력하세요.')
-					return false;
-				}
-				if(phone===''){
-					alert('전화번호를 입력하세요.')
-					return false;
-				}
-				$(document).unbind('submit').submit();
-			})
-		})
-		</script>
 </body>
 </html>
