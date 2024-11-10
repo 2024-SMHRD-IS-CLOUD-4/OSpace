@@ -133,45 +133,6 @@
 		<%@ include file="MdSerch.jsp"%>
 	</nav>
 	<%@ include file="HeaderSub.jsp"%>
-	<%
-		String u_type = user.getU_type();
-	%>
-	<script>
-    	let userType = "<%=userType%>";
-    	const sellers = document.getElementsByClassName("seller");
-    	const members = document.getElementsByClassName("member");
-    	const managers = document.getElementsByClassName("manager");
-    	if(userType==="일반회원"){
-    		for(let i = 0;i<sellers.length;i++){
-    			sellers[i].style.display="none"
-    		}
-    		for(let i = 0;i<members.length;i++){
-    			members[i].style.display="block"
-    		}
-    		for(let i = 0;i<managers.length;i++){
-    			managers[i].style.display="none"
-    		}
-    	}else if(userType==="판매자회원"){
-    		for(let i = 0;i<sellers.length;i++){
-    			sellers[i].style.display="block"
-    		}
-    		for(let i = 0;i<members.length;i++){
-    			members[i].style.display="none"
-    		}
-    		for(let i = 0;i<managers.length;i++){
-    			managers[i].style.display="none"
-    		}
-    	}else{
-    		for(let i = 0;i<sellers.length;i++){
-    			sellers[i].style.display="none"
-    		}
-    		for(let i = 0;i<members.length;i++){
-    			members[i].style.display="none"
-    		}
-    		for(let i = 0;i<managers.length;i++){
-    			managers[i].style.display="block"
-    		}
-    	}
-    </script>
+	
 </body>
 </html>

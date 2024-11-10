@@ -1,24 +1,20 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-* {
-		margin: 0px;
-		padding: 0px;
-        text-decoration : none;
-        color:#333333;
-        font-family: "Inter", sans-serif;
-        font-optical-sizing: auto;
-        font-style: normal;
-        box-sizing: border-box;
-	}
 button, input{
     cursor: pointer;
 }
-
+#form1{
+	margin-bottom:60px;
+}
 .joinBox{
     width:570px;
     text-align: left;
-    margin: 53px auto 0px auto;
+    margin: 53px auto 60px auto;
+}
+.joinBox tr{
+	display:block;
+	margin:20px 0px;
 }
 .joinTitle{
     
@@ -28,7 +24,7 @@ button, input{
     width:170px;
     font-size: 14pt;
 }
-.joinBoxContents{
+.joinBoxContents {
     width: 400px;
     height: 50px;
     font-size: 14pt;
@@ -71,7 +67,7 @@ button, input{
 }
 #submitBox{
 	width:200px;
-    margin:0px auto;
+    margin:0 auto;
 }
 .submit{
     width:200px;

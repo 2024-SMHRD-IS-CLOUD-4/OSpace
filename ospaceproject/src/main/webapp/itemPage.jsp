@@ -50,14 +50,14 @@
         <div class="contentBox">
             <div id="itemBoxT">
                 <div id="itemBoxImg">
-                    <img id="img" src="<%=p.getProd_img()%>">
+                    <img id="img" src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
                 </div>
                 <div id="itemBoxTitle">
                     <p class="itemBoxCartegory">카테고리 > <%=category %></p>
                     <h1 id="prod_name" ><%= p.getProd_name()%></h1>
                     <p id="prod_price" class="itemBoxTitlePrise"><%=p.getProd_price()%>원</p>
                     <p class="itemBoxSubTitle">
-                        <span class="itemT"><%=p.getProd_id()%></span><span>chare-0001</span>
+                        <span class="itemT">상품번호</span><span><%=p.getProd_id()%></span>
                     </p>
                     <p class="itemBoxSubTitle">
                         <span class="itemT">판매자</span><span><%=u.getName() %></span>
@@ -99,8 +99,11 @@
                         </form>
                         <form action="BasketController" method="post" id="form11">
                         	<input type="hidden" name="prod_id" value="<%=p.getProd_id()%>">
-                        	<input type="submit" id="submit" value="장바구니 담기">
+                        	<button type="submit" id="submit" class="AllBtn">장바구니 담기</button>
                         </form>
+                        <% if(user!=null){ %>
+							<button id="paymentButton">결제하기</button>
+						<%} %>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -112,8 +115,7 @@
 		$('#form10').submit((event)=>{
 			
 		    let user_exist = '<%= session.getAttribute("user") %>';
-			console.log(user_exist);
-			if(user_exist==null){
+			if(user_exist==='null'){
 				mdOpen();
 				return false;
 			}
@@ -122,7 +124,7 @@
 	})
 	 $(document).ready(()=>{
 		$('#form11').submit((event)=>{
-			if(user_exist==null){
+			if(user_exist==='null'){
 				mdOpen();
 				return false;
 			}
@@ -132,7 +134,7 @@
 	})
     </script>
                         
-	<button id="paymentButton">결제하기</button>
+	
     <script src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
     <script>
         // IMP 객체 초기화
@@ -164,7 +166,7 @@
             </div>
             <div id="itemBoxContant">
                 <!--상품 상세페이지 출력되는 부분-->
-                <h1>상세페이지</h1>
+                <%=p.getProd_desc() %>
             </div>
             <div id="itemBoxReview">
                 <h4>리뷰</h4>
@@ -175,7 +177,7 @@
                 %>
                     <a href="ReviewPage.jsp?prod_id=<%=p.getProd_id()%>"><li>
                         <div class="itemBoxReviewleft">
-                            <img src="#">
+                            <img src="<%=request.getContextPath()%>/upload/<%=r.getReview_img()%>">
                         </div>
                         <div class="itemBoxReviewRight">
                             <p>
@@ -190,16 +192,22 @@
                             </div>
                         </div>
                     </li></a>
-                    <%} %>
+                    <%}%>
                 </ul>
-                <div class="itemBoxReviewPageNum">1   2  3   4   > </div>
+                <!-- <div class="itemBoxReviewPageNum">1   2  3   4   > </div> -->
             </div>
         </div>
     </div>
-        <%@ include file = "Footer.jsp" %>
-    	<nav id="loginMD">
-			<%@ include file="MdLogin.jsp"%>
-		</nav>
-	
+	<%@ include file="Footer.jsp"%>
+	<nav id="loginMD">
+		<%@ include file="MdLogin.jsp"%>
+	</nav>
+	<nav id="serchMD">
+		<%@ include file="MdSerch.jsp"%>
+	</nav>
+	<nav id="basketMD">
+		<%@ include file="MdBasket.jsp"%>
+	</nav>
+	<%@ include file="HeaderSub.jsp"%>
 </body>
 </html>

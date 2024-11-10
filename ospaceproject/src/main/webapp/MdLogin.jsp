@@ -15,7 +15,7 @@
                 	<div class="loginBoxLogo">
                     	<img src="https://drive.google.com/thumbnail?id=1BCKohuhG1uxkzJv36GL2I-cOYC_zLOoD">
                 	</div>
-                	<form action="LoginController" method="post" id="form1">
+                	<form action="LoginController" method="post" id="form0">
                     	<div class="loginBox">
                         	<div class="loginBoxRow">
                             	<div class="loginBoxIdPw">
@@ -80,7 +80,7 @@
 	<script src="assets/js/util.js"></script>
     <script>
     $(document).ready(()=>{
-		$('#form1').submit((event)=>{
+		$('#form0').submit((event)=>{
 			let id = $('#id').val();
 			let pw = $('#pw').val();
 			console.log(id);
@@ -98,14 +98,21 @@
 		})
 	})
 	</script>
+	
 	<script>
+	let user_true = '<%= session.getAttribute("user") %>';
         const mdOpen = () => {
             document.getElementById("loginMD").style.display = "block";
+            document.body.style.overflow = 'hidden';
+            
         }
        	const mdClose = () => {
        		document.getElementById("loginMD").style.display = "none";
+       		document.body.style.removeProperty('overflow');
        	}
-        document.getElementById("headLoginBtn").addEventListener("click", mdOpen);
+       	if(user_true==='null'){
+        	document.getElementById("headLoginBtn").addEventListener("click", mdOpen);
+        }
         document.getElementById("closeBtn").addEventListener("click", mdClose);
     </script>
 </body>

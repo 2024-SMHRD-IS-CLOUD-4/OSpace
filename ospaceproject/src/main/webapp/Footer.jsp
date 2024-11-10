@@ -10,7 +10,7 @@
 <body>
 	<footer id="footer">
         <div>
-            <a href="#">고객센터 문의글작성하기</a>
+            <a href="BoardsList.jsp">고객센터 문의글작성하기</a>
         </div>
     </footer>
 

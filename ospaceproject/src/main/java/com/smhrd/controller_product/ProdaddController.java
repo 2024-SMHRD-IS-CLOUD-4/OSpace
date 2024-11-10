@@ -57,5 +57,4 @@ public class ProdaddController extends HttpServlet {
 	    	response.sendRedirect("ProductList.jsp");
 	    }
 	}
-
 }

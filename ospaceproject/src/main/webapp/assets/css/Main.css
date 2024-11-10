@@ -18,6 +18,7 @@ li{
 body{
 	width:100%;
     height: 100%;
+    overflow-x: hidden;
 }
 #header{
 	width: 1200px;
@@ -186,16 +187,20 @@ body{
     height: 72px;
     margin-top: 14px;
 }
+
 #mainItem01{
     display: inline-block;
     overflow: hidden;
     width: 1920px;
+    min-height:860px;
 }
 #mainItem02{
     display: inline-block;
     overflow: hidden;
     width: 1920px;
-    background-color: #FDFDFD;
+    height: 860px;
+}#mainItem02:last-child{
+    background:#f9f9f9;
 }
 .itemTitle{
     width: 1100px;
@@ -211,9 +216,9 @@ body{
     font-weight: normal;
 }
 .itemBox{
+	display:inline-block;
     width: 1100px;
-    height: 875px;
-    margin: 70px auto 0px auto;
+    margin: 70px auto 60px auto;
 }
 .itemBox li{
     width:267px;
@@ -295,4 +300,152 @@ body{
 .SubCategoryBox span:hover{
     font-weight: 800;
     cursor: pointer;
+}
+/*검색 모달창*/
+#serchMD{
+    display: none;
+}
+#basketMD{
+    display: none;	
+}
+#serchBox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:80%;
+    max-width: 1200px;
+    height: 650px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    background: #ffffff;
+}
+#serchBoxMain{
+    display: block;
+}
+#serchBoxSub{
+    display: block;
+}
+.cartegoryChoise{
+	margin:0px;
+}
+.serchBox{
+    width: 80%;
+    max-width: 850;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: #fdfdfd;
+    margin: 0px auto 0px auto;
+}
+#serchText{
+    width:70%;
+    max-width: 900px;
+    height:36px;
+    font-size: 12pt;
+    border: none;
+}
+#serchSubmit{
+    float: right;
+    width: 80px;
+    height:30px;
+    line-height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: #fff;
+    margin-top: 4px;
+    margin-right: 10px;
+}
+#serchSubmit:hover{
+    background-color: #ddd;
+}
+.serchBox input:focus{
+    outline: none;
+}
+#serchBox p{
+    margin-top:50px;
+    font-size: 14pt;
+    font-weight: 500;
+}
+#imgSerchBox{
+    display: inline-block;
+    width: 330px;
+    height: fit-content;
+    vertical-align: middle;
+    margin-top: 80px;
+}
+#imgSerchBox img{
+    float: left;
+    width:80px;
+    height: 75px;
+    border: 1px solid #ddd;
+    margin-right: 50px;
+}
+.imgFileUplode {
+    width: 195px;
+    height: 60px;
+    margin-top:8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        font-weight: 800;
+        border: 2px solid #655A50;
+    }
+  }
+  
+  #imgFileUplode {
+    display: none;
+  }
+  #serchcloseBtn{
+    float: right;
+    font-size: 18pt;
+    border: none;
+    background-color: #fff;
+}
+/*이미지 등록 후 모달창*/
+#serchBoxSubChoise{
+    display: inline-block;
+    position: relative;
+    width: 80%;
+    max-width: 850px;
+    height: fit-content;
+    vertical-align: middle;
+}
+#serchBoxSubChoise img{
+    float: left;
+    width:300px;
+    height: 300px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+#serchBoxSubChoise > div{
+    display: inline-block;
+    text-align: left;
+}
+#serchBoxSubChoise > div >p{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+#imgColor{
+    width: 200px;
+    height: 100px;
+    border:1px solid #ddd;
+}
+#serchBoxSubCheck{
+    margin-bottom: 20px;
+}
+#serchBoxSubCheck >p{
+    margin-top: 20px;
+}
+.colorChoise{
+    width:10px;
+    height: 10px;
 }

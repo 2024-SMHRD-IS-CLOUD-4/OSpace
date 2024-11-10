@@ -20,7 +20,6 @@
 	<%
 		ProductsDAO p_dao = new ProductsDAO();
 		List<Products> p_lst = p_dao.orderByDate();
-		
 		Used_ProductsDAO u_dao = new Used_ProductsDAO();
 		List<Used_Products> u_lst = u_dao.orderByDate();
 		String[] category = {"의자", "책상", "침대", "수납장", "커튼", "벽지"};
@@ -51,7 +50,7 @@
 				</ul>
 			</div>
 		</div>
-		<div id="mainItem01">
+		<div id="mainItem02">
 			<div class="itemTitle">
 				<h5 class="subItemTitle">new</h5>
 				<h1 class="mainItemTitle">최근 등록 순</h1>
@@ -66,7 +65,7 @@
 						<div class="itemSmallBox">
 							<a href="itemPage.jsp?prod_id=<%=p.getProd_id()%>">
 								<div class="itemSmallBoxImg">
-									<img src="<%=p.getProd_img()%>">
+									<img src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
 								</div>
 								<div class="itemSmallBoxText">
 									<p class="itmSellerID"><%=p.getId()%></p>
@@ -99,7 +98,7 @@
 						<div class="itemSmallBox">
 							<a href="#">
 								<div class="itemSmallBoxImg">
-									<img src="#">
+									<img src="<%=request.getContextPath()%>/upload/<%=u.getUsed_img()%>">
 								</div>
 								<div class="itemSmallBoxText">
 									<p class="itmSellerID"><%=u.getId()%></p>
@@ -115,8 +114,8 @@
 					}
 					%>
 				</ul>
-			</div>
-		</div>
+			</div> 
+		</div> 
 	</div>
 	<%@ include file="Footer.jsp"%>
 	<nav id="loginMD">
@@ -125,6 +124,6 @@
 	<nav id="serchMD">
 		<%@ include file="MdSerch.jsp"%>
 	</nav>
-	
+	<%@ include file="HeaderSub.jsp"%>
 </body>
 </html>

@@ -15,6 +15,7 @@
 		<div id="MyPageBox">
 			<%@ include file="MyPageLeft.jsp"%>
 			<div id="myPageRight">
+				<form action="UpdateController" method="post" id="update">
 				<h2>회원정보수정</h2>
 				<div id="myPageContainer">
                                 <div>
@@ -25,33 +26,39 @@
                                         <table class="MemberTable">
                                             <tr class="tr">
                                                 <td class="td">아이디</td>
-                                                <td class="MemtableColumns"><input class="Memtableinputno"
-                                                        placeholder="로그인된 ID 노출(변경불가)"></td>
+                                                <td class="MemtableColumns"><span><%=user.getId()%></span></td>
                                             </tr>
 
                                             <tr class="tr">
                                                 <td class="td">비밀번호</td>
-                                                <td class="MemtableColumns"><input class="Memtableinput"
-                                                        placeholder="로그인한 사용자의 비밀번호 입력되어있음"></td>
+                                                <td class="MemtableColumns"><input type="password" class="Memtableinput"
+                                                       name="pw" value="<%=user.getPw()%>"></td>
                                             </tr>
-
+                                            
+											<tr class="tr">
+                                                <td class="td">비밀번호 확인</td>
+                                                <td class="MemtableColumns"><input type="password" class="Memtableinput"
+                                                       id="pwCheck" placeholder="비밀번호 확인"></td>
+                                                <td><span id="pwCheckResult"></span></td>
+                                            </tr>
+                                            
                                             <tr class="tr">
                                                 <td class="td">이름</td>
-                                                <td class="MemtableColumns"><input class="Memtableinput"
-                                                        placeholder="로그인한 사용자 이름 입력">
+                                                <td class="MemtableColumns"><input type="text" class="Memtableinput"
+                                                       name="name" value="<%=user.getName()%>">
                                                 </td>
                                             </tr>
 
                                             <tr class="tr">
                                                 <td class="td">주소</td>
-                                                <td class="MemtableColumns"><input class="Memtableinput"
-                                                        placeholder="로그인한 사용자의 주소 자동 입력되었음"></td>
+                                                <td class="MemtableColumns"><input type="text" class="Memtableinput"
+                                                        name="addr" value="<%=user.getAddr()%>"></td>
                                             </tr>
 
                                             <tr class="tr">
                                                 <td class="td">연락처</td>
 									<td class="MemtableColumns">
-										<input class="Memtableinput" placeholder="로그인한 사용자의 연락처 자동 입력되었음">
+										<input class="Memtableinput" type="text" name="phone" value="<%=user.getPhone()%>">
 									</td>
 								</tr>
 							</table>
@@ -59,8 +66,13 @@
 					</div>
 				</div>
 				<div class="buttonContainer">
-					<button class="AllBtn" type="submit">저장하기</button>
-					<button class="AllBtn" type="submit">회원탈퇴</button>
+					<input type="hidden" name="id" value=<%=user.getId() %>>
+					<input class="AllBtn" type="submit" value="저장하기">
+					</form>
+					<form action="DeleteController" class="fromBlock">
+						<input type="hidden" name="id" value=<%=user.getId() %>>
+						<input class="AllBtn" type="submit" value="회원탈퇴">
+				  	</form>
 				</div>
 			</div>
 		</div>
@@ -73,5 +85,54 @@
 		<%@ include file="MdSerch.jsp"%>
 	</nav>
 	<%@ include file="HeaderSub.jsp"%>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+    <script type="text/javascript">
+    let pwCheckResult = true;
+    $("#pwCheck").on('keyup',()=>{
+		let pw =$("[name='pw']").val();
+		let pwCheck=$("#pwCheck").val();
+		if(pw==pwCheck){
+			$("#pwCheckResult").text("")
+			pwCheckResult = true;
+		}else{
+			$("#pwCheckResult").text("비밀번호와 일치하지않습니다.")
+			pwCheckResult = false;
+		}
+	})
+	$(document).ready(()=>{
+			$('#update').submit((event)=>{
+				
+				let pw = $("[name='pw']").val();
+				let name = $("[name='name']").val();
+				let addr = $("[name='addr']").val();
+				let phone = $("[name='phone']").val();
+				if(!pwCheckResult){
+					alert('비밀번호를 확인해주세요.')
+					return false;
+				}
+				if(pw===''){
+					alert('비밀번호를 입력하세요.')
+					return false;
+				}
+				if(name===''){
+					alert('닉네임을 입력하세요.')
+					return false;
+				}
+				if(addr===''){
+					alert('주소를 입력하세요.')
+					return false;
+				}
+				if(phone===''){
+					alert('전화번호를 입력하세요.')
+					return false;
+				}
+				$(document).unbind('submit').submit();
+			})
+		})
+		</script>
 </body>
 </html>

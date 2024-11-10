@@ -32,15 +32,15 @@
     background-color: #000; 
     margin: 60px 0px 40px 0px ;
  }
-.myPageLeftNav ul li{
-    float: left;
+.myPageLeftNav > ul > li{
+    position: relative;
     width: 194px;
-    height: 42px;
-    line-height: 42px;
+    min-height: 42px;
+    line-height:42px;
     padding-left: 20px;
     text-align: left;
 }
-.myPageLeftNav ul li:hover{
+.myPageLeftNav > ul > li:hover{
     background-color: #F8F8F8;
     cursor: pointer;
 }
@@ -139,11 +139,12 @@
     height: 56px;
     align-content: center;
     font-size: 10pt;
+    overflow:hidden;
 }
 .manager .ContentsImg{
     margin-left: 10px;
 }
-.manager .ContentsText{
+.manager  .ContentsText{
     width:130px;
 }
 .ContentsTextLeft{
@@ -285,15 +286,6 @@
  	padding: 5px;
  	border: none;
  }
- #Category {
-    background-color: #f8f9fa; /* 배경색 설정 */
-    padding: 5px 5px; /* 패딩 추가 */
-    border: 1px solid #e0e0e0; /* 테두리 추가 */
-    border-radius: 5px; /* 모서리 둥글게 설정 */
-    margin: 20px 0; /* 위아래 마진 추가 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
-}
-
 #nava ul {
     list-style: none; /* 기본 리스트 스타일 제거 */
     padding: 0; /* 패딩 제거 */
@@ -407,6 +399,8 @@
     display: inline-block;
     position: relative;
     width: 900px;
+    height:590px;
+    overflow-y:scroll;
     border-top: 1px solid #555;
     border-bottom: 1px solid #555;
     padding: 20px ;
@@ -417,6 +411,9 @@
 .buttonContainer{
 	text-align: center;
     margin-bottom: 60px;
+}
+.fromBlock{
+	display:inline-block;
 }
 .buttonContainer > button:not(:last-child){
     margin-right: 20px;
@@ -501,60 +498,64 @@
 /* 마이페이지 리뷰리스트 CSS */
 .reviewCheckBox{
 	width: 50px;
-	transform: scale(2);
-	position: relative;
-	margin-bottom: 100px;
+}
+.reviewCheckBox > input{
+	margin-bottom:100px;
 }
 .reviewImg{
 	width: 130px;
-	height: 130px;
-	background-color : #fff;
-	background-image: url('default-image.png');
-	background-position: center;
-	border: 1px solid #dddd;
+}
+.reviewImg > img{
+	width: 130px;
+	height:130px;
 }
 .reviewSetupTable{
 	width: 100%;
 }
 .reviewSetupTable td{
 	padding: 5px;
+    border-bottom: 1px solid #F1F1F1;
+}
+.reviewNameTextBox{
+	width:100%;
 }
 .reviewName{
-	  font-weight: bold;
+	font-weight: bold;
     font-size: 25px;
-    margin: 0; /* 상하좌우 여백 없애기 */
-    padding: 0; /* 상하좌우 여백 없애기 */
-    vertical-align: top; /* td 내에서 위로 정렬 */
-    display: inline-block; /* 인라인 블록으로 설정 */
+    margin-bottom: 50px;
 }
 .reviewText {
 	font-weight:600;
     font-size: 15px;
-    padding-bottom: 0px;
-    margin-bottom: 30px;
-    display: inline-block; /* 인라인 블록으로 설정 */
-    vertical-align: top; /* 상단 정렬 */
+    text-align:right;
 }
 .reviewStar {
     font-size: 30px;
-    cursor: pointer;
     display: flex;
 	justify-content: center;
 }
-
-.star {
-    color: #ccc; /* 기본 색상 */
-}
-
-.star:hover,
-.star.selected {
-    color: gold; /* 선택된 별 색상 */
-}
 .reviewDate{
+<<<<<<< HEAD
 	display: flex;
 	justify-content: center;
 }
 .reviewPageBtn{
 	display: flex;
 	justify-content: center;
+=======
+	width:100px;
+}
+.mypageProductNum{
+    width:100px;
+}
+.mypageProductimg{
+    width: 100px;
+}
+.mypageProductimg img{
+    width: 100px;
+    height: 100px;
+}
+.boardDate:not(:first-child){
+    font-size:10px;
+>>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-CLOUD-4/OSpace
 }

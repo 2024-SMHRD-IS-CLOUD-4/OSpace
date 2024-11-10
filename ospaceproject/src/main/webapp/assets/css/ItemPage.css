@@ -149,6 +149,9 @@
     right:0;
     bottom: 20px;
 }
+#priceBoxSelect form{
+	display:inline-block;
+}
 #priceBoxSelect button{
     appearance: none;
     width: 168px;
@@ -178,7 +181,6 @@
     display: block;
     padding: 40px 0px;
     margin: 60px 0px;
-    background-color: #ddd;
 }
 #itemBoxReview{
     position: relative;
@@ -197,6 +199,8 @@
 #itemBoxReview ul{
     position: relative;
     display: inline-block;
+    max-height:300px;
+    overflow-y: scroll;
     width: 100%;
 }
 #itemBoxReview li{

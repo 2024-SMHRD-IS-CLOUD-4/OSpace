@@ -8,40 +8,63 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/Board.css" type="text/css" />
 </head>
 <body>
-
+	<%@ include file="Header.jsp"%>
 	<%
 		BoardsDAO dao = new BoardsDAO();
-		List<Boards> BoardsList = dao.getboard();
+		List<Boards> BoardsList = dao.getAllBoard();
 	%>
-	
-	<h2>게시글 리스트</h2>
-	
-	 <table border="1">
-        <tr>
-            <th>상품 이미지</th>
-            <th>사용자 아이디</th>
-            <th>게시글 제목</th>
-            <th>게시글 내용</th>
-            <th>조회수</th>
-            <th>등록 날짜</th>
-        </tr>
-        <%
-        	for(Boards board : BoardsList){ // 변수명 수정
-        %>
-            <tr>
-            	<td><img src="<%=request.getContextPath()%>/upload/<%=board.getB_file()%>" alt="상품 이미지" width="100"></td>
-                <td><%= board.getId() %></td>
-                <td><%= board.getB_title() %></td>
-                <td><%= board.getB_content() %></td>
-                <td><%= board.getB_views() %></td>
-                <td><%= board.getCreated_at() %></td>
-            </tr>
-		<%
-        	}
-		%>
-    </table>
-	
+	<div id="body">
+        <div id="mainItem01">
+            <div class="itemTitle">
+                <h1 class="mainItemTitle">고객센터(게시글)</h1>
+            </div>
+            <div class="itemBox">
+                <div id="boardBox">
+                    <ul>
+                        <li>
+                            <p class="boardCheckbox"></p>
+                            <p class="boardNum">no</p>
+                            <p class="boardTitle">제목</p>
+                            <p class="boardName">작성자</p>
+                            <p class="boardDate">작성일</p>
+                            <p class="boardView">조회</p>
+                            <p class="boardContentArrow"></p>
+                            <p class="boardContentA"></p>
+                        </li>
+                        <%
+        					for(Boards board : BoardsList){ // 변수명 수정
+        				%>
+        				<li>
+                            <p class="boardCheckbox"><input type="checkbox"></p>
+                            <p class="boardNum"><%= board.getB_id() %></p>
+                            <p class="boardTitle"><%= board.getB_title() %></p>
+                            <p class="boardName"><%= board.getId() %></p>
+                            <p class="boardDate"><%= board.getCreated_at() %></p>
+                            <p class="boardView"><%= board.getB_views() %></p>
+                            <p class="boardContentArrow">▽</p>
+                            <p class="boardContent"><%= board.getB_content() %></p>
+                        </li>
+                        <%
+				        	}
+						%>
+                    </ul>
+                </div>
+                <a href="Boardsform.jsp"><button type="button" class="AllBtn">게시글 작성하기</button></a>
+            </div>
+        </div>
+    </div>
+	<%@ include file="Footer.jsp"%>
+	<nav id="loginMD">
+		<%@ include file="MdLogin.jsp"%>
+	</nav>
+	<nav id="serchMD">
+		<%@ include file="MdSerch.jsp"%>
+	</nav>
+	<%@ include file="HeaderSub.jsp"%>
 </body>
 </html>

@@ -1,0 +1,72 @@
+@charset "UTF-8";
+#boardBox{
+    width:100%;
+    height: 500px;
+    overflow-y: scroll;
+    margin-bottom: 60px;
+}
+#boardBox > ul{
+    display: inline-block;
+    width:100%;
+}
+#boardBox ul li{
+    width:100%;
+    vertical-align: center;
+    line-height: 50px;
+}
+#boardBox ul li:first-child{
+    border-bottom:1px solid #ddd;
+}
+#boardBox ul li p{
+    display: inline-block;
+    margin: 0;
+}
+#boardBox ul li p:last-child{
+    display: list-item;
+}
+#boardBox {
+    width:100%;
+}
+.boardCheckbox{
+    width:3%;
+    height:50px;
+}
+.boardNum{
+    width:10%;
+}
+.boardTitle{
+    width:50%;
+    text-align: left;
+    padding-left: 10px;
+}
+.boardName{
+    width:10%;
+}
+.boardDate{
+    width:10%;
+}
+.boardDate:not(:first-child){
+    font-size:10px;
+}
+.boardView{
+    width:5%;
+}
+.boardContentArrow{
+   width: 5%;
+}
+.boardContent{
+    overflow: hidden;
+    width: 100%;
+    height: 0px;
+    transition: 0.3s;
+}
+.boardContentArrow:hover+.boardContent{
+    height: 100px;
+    background-color: #f5f5f5;
+    overflow-y: scroll;
+}
+.boardContent:hover{
+    height: 100px;
+    background-color: #f3f3f3;
+    overflow-y: scroll;
+}

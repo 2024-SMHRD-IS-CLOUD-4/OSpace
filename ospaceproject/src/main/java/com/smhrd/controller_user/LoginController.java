@@ -28,12 +28,17 @@ public class LoginController extends HttpServlet {
 		User loginUser = new User(id, pw);
 		UserDAO dao = new UserDAO();
 		User result = dao.login(loginUser);
+		System.out.println(referer);
 		if (result == null) {
 			response.sendRedirect("LoginFail.html");
 		} else {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", result);
-			response.sendRedirect(referer);
+			if(referer.contains("Join.jsp")){
+				response.sendRedirect("Main.jsp");
+			}else {
+				response.sendRedirect(referer);
+			}
 		}
 	}
 }

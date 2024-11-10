@@ -7,127 +7,79 @@
 	<title>MdSerch</title>
 	<link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
-<style>
-#serchMD{
-    display: none;
-}
-#serchBox{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width:80%;
-    max-width: 1200px;
-    height: 650px;
-    overflow: hidden;
-    text-align: center;
-    padding: 20px;
-    background: #ffffff;
-}
-.serchBox{
-    width: 80%;
-    max-width: 850;
-    height: 40px;
-    line-height: 40px;
-    border: 1px solid #655A50;
-    border-radius: 20px;
-    background-color: #fdfdfd;
-    margin: 140px auto 0 auto;
-}
-.serchBox input{
-    width:85%;
-    max-width: 760px;
-    height:36px;
-    font-size: 12pt;
-    border: none;
-}
-.serchBox input:focus{
-    outline: none;
-}
-#serchBox p{
-    margin-top:65px;
-    font-size: 14pt;
-    font-weight: 500;
-}
-#imgSerchBox{
-    display: inline-block;
-    width: 330px;
-    height: fit-content;
-    vertical-align: middle;
-    margin-top: 80px;
-}
-#imgSerchBox img{
-    float: left;
-    width:80px;
-    height: 75px;
-    border: 1px solid #ddd;
-    margin-right: 50px;
-}
-.imgFileUplode {
-    width: 195px;
-    height: 60px;
-    margin-top:8px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &:hover {
-        font-weight: 800;
-        border: 2px solid #655A50;
-    }
-  }
-  
-  #imgFileUplode {
-    display: none;
-  }
-  #serchcloseBtn{
-    float: right;
-    font-size: 18pt;
-    border: none;
-    background-color: #fff;
-}
-</style>
-
 </head>
-	
 <body>
+<div id="mdBg">
 
-        <div id="mdBg">
-            <div id="serchBox">
+           <div id="serchBox">
                 <div><button id="serchcloseBtn">X</button></div>
-                <div class="serchBox">
-                    <img class="btnImg" src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
-                    |
-                    <input type="text" placeholder="검색어를 입력해주세요">
+                <div id="serchBoxMain">
+					<form action="TextSeachController">
+	                	<p class="cartegoryChoise"><span><input type="radio" name="type" value="common" checked="checked">일반상품</span><span><input type="radio" name="type" value="used">중고상품</span><span><input type="radio" name="type" value="review">리뷰</span></p>
+	                    <div class="serchBox">
+	                        <img class="btnImg"
+	                            src="https://drive.google.com/thumbnail?id=1YGwz5ldBnuBScDpA2O9QqLA8hFngQqr3">
+	                        |
+	                        <input id="serchText" name="searchText" type="text" onkeyup="enterkey()" placeholder="검색어를 입력해주세요">
+	                        <input id="serchSubmit" type="submit" value="검색하기">
+	                    </div>
+					</form>
+	
+	
+	                <div id="imgSerchBox">
+	                    <canvas id="canvas"></canvas>
+	                    <label for="fileInput">
+	                        <a href="MdSerchImg.jsp"><span class="imgFileUplode">이미지 등록하기</span></a>
+	                    </label>
+	                    <input type="button" id="fileInput">
+	                </div>
                 </div>
+                <!-- 이미지 삽입 후 나오는 페이지 
+                <div id="serchBoxSub">
+                    <div id="serchBoxSubChoise">
 
-                <p>또는</p>
-                <p>이미지 파일을 등록해 원하는 색상으로 검색해 보세요!</p>
-
-                <div id="imgSerchBox">
-                    <img src="">
-                    <label for="imgFileUplode">
-                        <div class="imgFileUplode">이미지 등록하기</div>
-                    </label>
-                    <input type="file" accept=".png,.jpg,.jpeg,.gif " id="imgFileUplode">
-                </div>
+                        <div class="serchBoxSubChoiseRight">
+                            <p>추출한 색상</p>
+                            <div id="imgColor">
+								<canvas id="canvas" width="70" height="70" style="max-width: 70px; max-height: 70px;"></canvas>
+							    <div id="colorOutput">
+							        <span id="colorText"></span>
+							        <div id="colorPreview"></div>
+							    </div>
+                            </div>
+                            <p id="colorText">추출한 색상 RGB 결과값</p>
+                        </div>
+                    </div>
+                    <div id="serchBoxSubCheck">
+                         <p>
+                            <span>카테고리 선택 : </span>
+                            <select name="" id="">
+                                <option value="">카테고리 전체</option>
+                                <option value="의자">의자</option>
+                                <option value="커튼">커튼</option>
+                            </select>
+                        </p>
+                    </div>
+                    <button type="submit" class="AllBtn">검색하기</button>
+                </div>-->
+                
             </div>
-        </div>
-    <script>
-        const serchOpen = () => {
-            document.getElementById("serchMD").style.display = "block";
-        }
-        const serchClose = () => {
-            document.getElementById("serchMD").style.display = "none";
-            
-        }
-
-        document.getElementById("serch").addEventListener("click", serchOpen)
-        document.getElementById("serchcloseBtn").addEventListener("click", serchClose)
-    </script>
+</div>
+	<script>
+		
+	    const serchOpen = () => {
+	        document.getElementById("serchMD").style.display = "block";
+	        document.body.style.overflow = 'hidden';
+	    }
+	    const serchClose = () => {
+	        document.getElementById("serchMD").style.display = "none";
+	        document.body.style.removeProperty('overflow');
+	        
+	    }
+	
+	    document.getElementById("serch").addEventListener("click", serchOpen)
+	    document.getElementById("serchcloseBtn").addEventListener("click", serchClose)
+	    
+	</script>
 </body>
 </html>
