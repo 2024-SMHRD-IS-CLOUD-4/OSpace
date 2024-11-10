@@ -113,12 +113,14 @@
 	
 	<script>
 	let user_true = '<%= session.getAttribute("user") %>';
-        const mdOpen = () => {
-            document.getElementById("loginMD").style.display = "block";
-        }
-       	const mdClose = () => {
-       		document.getElementById("loginMD").style.display = "none";
-       	}
+		const mdOpen = () => {
+	        document.getElementById("loginMD").style.display = "block";
+			document.body.style.overflow="hidden"
+	    }
+	   	const mdClose = () => {
+	   		document.getElementById("loginMD").style.display = "none";
+			document.body.style.overflow = 'auto';
+	   	}
        	if(user_true==='null'){
         	document.getElementById("headLoginBtn").addEventListener("click", mdOpen);
         }
