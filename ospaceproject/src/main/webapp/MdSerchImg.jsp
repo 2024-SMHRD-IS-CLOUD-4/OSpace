@@ -14,7 +14,7 @@
                 <div id="serchBoxMain">
 	
 	                <div id="imgSerchBox">
-	                    <canvas id="canvas"></canvas>
+	                    <canvas id="canvas"></canvas> 
 	                    <label for="fileInput">
 	                        <span class="imgFileUplode">이미지 등록하기</span>
 	                    </label>

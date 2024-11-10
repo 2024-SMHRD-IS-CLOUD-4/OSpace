@@ -8,8 +8,8 @@
 	</select>
 	
 	<!-- 찜하기 -->
-	<insert id="insertReserved" parameterType="com.smhrd.model.Products">
-        INSERT INTO RESERVEDS VALUES (default, #{prod_id}, #{id}, default)
+	<insert id="insertReserved" parameterType="com.smhrd.model.Reserved">
+        INSERT INTO RESERVEDS VALUES (default,#{prod_id},#{id},default,#{prod_color})
     </insert>
 	
 	<!-- 찜 조회 -->
