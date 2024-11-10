@@ -237,6 +237,9 @@
 	<nav id="basketMD">
 		<%@ include file="MdBasket.jsp"%>
 	</nav>
+	<nav id="reservedMD">
+		<%@ include file="MdReserved.jsp"%>
+	</nav>
 	<%@ include file="HeaderSub.jsp"%>
 </body>
 </html>
