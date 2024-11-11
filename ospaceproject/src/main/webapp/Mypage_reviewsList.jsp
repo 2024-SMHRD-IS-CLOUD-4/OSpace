@@ -93,16 +93,6 @@
                                 
                                 
                             </div>
-                             
-                                <div class="reviewPageBtn">
-                                	<button class="pageBtn"> ◁ </button>
-                                	<span>1</span>
-                                	<span>2</span>
-                                	<span>3</span>
-                                	<span>4</span>
-                                	<span>5</span>
-                                	<button class="pageBtn"> ▷ </button>
-                                </div>
                             
                             <div class="buttonContainer">
                            	<a href="Mypage_reviews.jsp"><button class="AllBtn" type="submit">작성하기</button></a>
