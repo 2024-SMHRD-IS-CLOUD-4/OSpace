@@ -494,9 +494,15 @@
 .productAdd option{
     padding-left: 20px;
 }
-#present_img{
+#usedProductImg img{
+	display:block;
 	width: 100px;
-	height: 100px;
+	max-height: 100px;
+}
+#usedProductImg{
+	display: inline-block;
+	max-height: 100px;
+	overflow:hidden;
 }
 
 /* 마이페이지 리뷰리스트 CSS */

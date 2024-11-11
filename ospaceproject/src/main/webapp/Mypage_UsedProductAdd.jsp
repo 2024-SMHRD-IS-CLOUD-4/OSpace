@@ -51,7 +51,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td Id="usedProductImg">
                                     <img src="<%=request.getContextPath()%>/upload/" alt="대표이미지" id="present_img">
                                 </td>
                             </tr>
