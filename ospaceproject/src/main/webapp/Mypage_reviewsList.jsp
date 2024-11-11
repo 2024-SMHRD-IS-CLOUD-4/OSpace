@@ -10,11 +10,7 @@
 	<link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
 	<link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
 	<link rel="stylesheet" href="assets/css/MyPage.css" type="text/css" />
-</head>
-
-<<<<<<< HEAD
-    </head>
-
+  </head>
     <body>
         <%@ include file="Header.jsp" %>
             <div id="body">
@@ -22,23 +18,21 @@
                     <%@ include file="MyPageLeft.jsp" %>
 
                         <div id="myPageRight">
-                            <h2>상품등록하기</h2>
+                            <h2>내가 작성한 리뷰목록</h2>
                             <div id="myPageContainer">
                                 <div>
                                     <table class="reviewSetupTable">
-                                        <tr class="tr">
-                                            <td class="td" rowspan="2">
-                                                <input class="reviewCheckBox" type="checkbox" />
+                                        <tr>
+                                            <td class="reviewCheckBox" rowspan="2">
+                                                <input type="checkbox" />
                                             </td>
-                                            <td class="td" rowspan="2">
-                                                <p>
-                                                    <img class="reviewImg">
-                                                </p>
+                                            <td class="reviewImg" rowspan="2">
+                                                    <img src="#">
                                             </td>
-                                            <td class="td">
+                                            <td>
                                                 <p class="reviewName">#상품명1 #상품명2 #상품명3</p>
                                             </td>
-                                            <td class="td">
+                                            <td>
                                                 <p class="reviewStar">
                                                 <div class="reviewStar">
                                                     <span class="star" data-value="1">&#9733;</span>
@@ -52,10 +46,10 @@
                                         </tr>
 
                                         <tr>
-                                            <td class="td">
+                                            <td>
                                                 <p class="reviewText">먹튀했어... 잡아바자ㅏㅏㅏ속상합니다</p>
                                             </td>
-                                            <td class="td">
+                                            <td>
                                                 <p class="reviewDate"> 날짜</p>
                                             </td>
                                         </tr>
@@ -63,18 +57,16 @@
                                     
                                     <table class="reviewSetupTable">
                                         <tr class="tr">
-                                            <td class="td" rowspan="2">
-                                                <input class="reviewCheckBox" type="checkbox" />
+                                            <td class="reviewCheckBox" rowspan="2">
+                                                <input type="checkbox" />
                                             </td>
-                                            <td class="td" rowspan="2">
-                                                <p>
-                                                    <img class="reviewImg">
-                                                </p>
+                                            <td class="reviewImg" rowspan="2">
+                                                    <img src="#">
                                             </td>
-                                            <td class="td">
+                                            <td>
                                                 <p class="reviewName">#상품명1 #상품명2 #상품명3</p>
                                             </td>
-                                            <td class="td">
+                                            <td>
                                                 <p class="reviewStar">
                                                 <div class="reviewStar">
                                                     <span class="star" data-value="1">&#9733;</span>
@@ -88,64 +80,14 @@
                                         </tr>
 
                                         <tr>
-                                            <td class="td">
+                                            <td>
                                                 <p class="reviewText">먹튀했어... 잡아바자ㅏㅏㅏ속상합니다</p>
                                             </td>
-                                            <td class="td">
+                                            <td>
                                                 <p class="reviewDate"> 날짜</p>
                                             </td>
                                         </tr>
                                     </table>
-=======
-	<%@ include file="Header.jsp" %>
-<body>
-<%
-	ReviewsDAO r_dao = new ReviewsDAO();
-	List<Reviews> r_lst = r_dao.getMyReview(user.getId());
-%>
-	<div id="body">
-		<div id="MyPageBox">
-			<%@ include file="MyPageLeft.jsp" %>
-			<div id="myPageRight">
-				<h2>리뷰 리스트</h2>
-					<div id="myPageContainer">
-						<div>
-							<table class="reviewSetupTable">
-							<% for(Reviews r : r_lst){ %>
-								<tr class="tr">
-									<td rowspan="2">
-										<input class="reviewCheckBox" name="check" type="checkbox" value="<%=r.getReview_id() %>" />
-									</td>
-									<td rowspan="2">
-										<p>
-											<img class="reviewImg" src="#">
-										</p>
-									</td>
-									<td>
-										<p class="reviewName">
-										<% String tags[] = r.getReview_tag().split(","); 
-										for(String tag : tags){%>
-											<%=tag %>
-										<%} %>
-										</p>
-									</td>
-									<td>
-										<p class="reviewStar">
-												&#9733;&#9733;&#9733;&#9733;&#9733;
-										</p>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<p class="reviewText"><%=r.getReview_content() %></p>
-									</td>
-									<td class="reviewDate">
-										<p><%=r.getCreated_at() %></p>
-									</td>
-								</tr>
-								<%} %>
-							</table>
->>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-CLOUD-4/OSpace
                                 </div>
                                 
                                 
