@@ -72,7 +72,7 @@
 				</div>
 				<div class="buttonContainer">
 					<button type="button" id="paymentBnt" class="AllBtn">구매하기</button>
-				<form action="DeleteBasketController">
+				<form action="DeleteBasketController" class="fromBlock">
 					<input type="hidden" name="delete_lst" id="delete_lst" value="">
 					<button type="submit"  class="AllBtn">삭제하기</button>
 				</form>

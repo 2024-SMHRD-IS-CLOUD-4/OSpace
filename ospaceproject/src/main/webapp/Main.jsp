@@ -41,7 +41,7 @@
 					<li>
 						<a href="ItemSearch.jsp?title=카테고리&subTitle=<%=c%>">
 							<div class="mainCategoryImg">
-								<img src="image/cartegoryImg.png">
+								<img src="image/<%=c%>.png">
 							</div>
 							<p><%=c%></p>
 						</a>
