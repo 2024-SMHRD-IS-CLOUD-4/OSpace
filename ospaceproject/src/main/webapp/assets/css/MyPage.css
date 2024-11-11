@@ -689,5 +689,5 @@
 	border: 1px solid #d3d3d3;
 }
 .Productstate.option-blue {
-	color: blue; /* 판매완료일 때 파란색으로 글씨색 변경 */
+	color: blue;
 }
