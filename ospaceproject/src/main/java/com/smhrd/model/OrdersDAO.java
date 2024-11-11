@@ -25,4 +25,11 @@ public class OrdersDAO {
 	    return result;
 	}
 	
+	public int insertOrder(Order order){
+		SqlSession session = factory.openSession(true);
+		int result = session.insert("OrderMapper.deleteOrder",order);
+		session.close();
+	    return result;
+	}
+	
 }

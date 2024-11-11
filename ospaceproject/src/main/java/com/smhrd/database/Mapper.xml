@@ -14,7 +14,7 @@
 	
 	<!-- 리뷰 검색 -->
 	<select id="searchReviews" resultType="com.smhrd.model.Reviews">
-		SELECT * FROM REVIEWS WHERE WHERE ID LIKE #{like_text} OR REVIEW_TITLE LIKE #{like_text}
+		SELECT * FROM REVIEWS WHERE ID LIKE #{like_text} OR REVIEW_TITLE LIKE #{like_text} OR REVIEW_CONTENT LIKE #{like_text} OR REVIEW_TAG LIKE #{like_text}
 	</select>
 	
 </mapper>

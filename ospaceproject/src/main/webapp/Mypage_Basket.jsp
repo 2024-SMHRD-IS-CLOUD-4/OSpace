@@ -46,6 +46,7 @@
 							<tr>
 								<td class="reviewCheckBox">
 									<input name="check" type="checkbox" value="<%=b.getBasket_id()%>" />
+									<input type="hidden" name="prod_id" value="<%=p.getProd_id()%>">
 								</td>
 								<td class="mypageProductimg">
 									<img src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">

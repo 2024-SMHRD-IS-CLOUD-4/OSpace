@@ -23,31 +23,23 @@ public class UsedController extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 
-		ServletContext context = request.getServletContext();
-		String uploadpath = context.getRealPath("upload");
+		String id = request.getParameter("id");
+		String used_title = request.getParameter("used_title");
+		String used_content = request.getParameter("used_content");
+		int used_price = Integer.parseInt(request.getParameter("used_price"));
+		String used_location = request.getParameter("used_location");
+		String used_img = request.getParameter("used_img");
 
-		int maxSize = 5 * 1024 * 1024;
-
-		MultipartRequest multi = new MultipartRequest(request, uploadpath, maxSize, "UTF-8",
-				new DefaultFileRenamePolicy());
-
-		String id = multi.getParameter("id");
-		String used_title = multi.getParameter("used_title");
-		String used_content = multi.getParameter("used_content");
-		int used_price = Integer.parseInt(multi.getParameter("used_price"));
-		String used_location = multi.getParameter("used_location");
-		String used_img = multi.getFilesystemName("used_img");
-
-		Used_Products usedproduct = new Used_Products(0, id, used_title, used_price, used_location, 0, used_img, null,
+		Used_Products used_product = new Used_Products(0, id, used_title, used_price, used_location, 0, used_img, null,
 				'n', used_content);
 
 		Used_ProductsDAO dao = new Used_ProductsDAO();
-		int result = dao.insert(usedproduct);
+		int result = dao.insert(used_product);
 
 		if (result > 0) {
 			response.sendRedirect("Used_ProductsList.jsp");
 		} else {
-			response.sendRedirect("UsedAdd.jsp");
+			response.sendRedirect("Mypage_UsedProductAdd.jsp");
 		}
 
 	}

@@ -27,8 +27,16 @@ public class ReservedDAO {
 	
 	public int insertReserved(Reserved rs) {
 		SqlSession sqlSession = factory.openSession(true);
-        int result = sqlSession.insert("ReservedMapper.getMyReserved",rs);
+        int result = sqlSession.insert("ReservedMapper.insertReserved",rs);
         sqlSession.close();
         return result;
 	}
+	
+	public int deleteReserved(int reserved_id) {
+		SqlSession sqlSession = factory.openSession(true);
+        int result = sqlSession.delete("ReservedMapper.deleteReserved",reserved_id);
+        sqlSession.close();
+        return result;
+	}
+	
 }

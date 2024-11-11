@@ -9,12 +9,17 @@
 	
 	<!-- 찜하기 -->
 	<insert id="insertReserved" parameterType="com.smhrd.model.Reserved">
-        INSERT INTO RESERVEDS VALUES (default,#{prod_id},#{id},default,#{prod_color})
+        INSERT INTO RESERVEDS(PROD_ID,ID,PROD_COLOR) VALUES (#{prod_id},#{id},#{prod_color})
     </insert>
 	
 	<!-- 찜 조회 -->
 	<select id="getMyReserved" resultType="com.smhrd.model.Reserved">
         SELECT * FROM RESERVEDS WHERE ID = #{id}
     </select>
+	
+	<!-- 찜 삭제 -->
+	<delete id="deleteReserved">
+		DELETE FROM RESERVEDS WHERE RESERVED_ID = #{reserved_id}
+	</delete>
 	
 </mapper>

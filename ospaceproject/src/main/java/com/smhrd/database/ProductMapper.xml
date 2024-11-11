@@ -60,5 +60,9 @@
             AND TO_NUMBER(SUBSTR(PROD_COLOR, INSTR(PROD_COLOR, ',') + 1, INSTR(PROD_COLOR, ',', 1, 2) - INSTR(PROD_COLOR, ',') - 1)) BETWEEN #{g} - #{tolerance} AND #{g} + #{tolerance}
             AND TO_NUMBER(SUBSTR(PROD_COLOR, INSTR(PROD_COLOR, ',', 1, 2) + 1)) BETWEEN #{b} - #{tolerance} AND #{b} + #{tolerance}
     </select>
+
+	<select id="getProdColor" resultType="com.smhrd.model.ProductColors">
+		SELECT * FROM PRODUCT_COLORS WHERE PROD_ID = #{prod_id}
+	</select>	
 	
 </mapper>

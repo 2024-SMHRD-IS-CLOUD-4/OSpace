@@ -90,7 +90,8 @@
 		  const checks = document.getElementsByName("check");
 		  for(let i = 0;i<checks.length;i++){
 			  	checks[i].addEventListener("click",()=>{
-				document.getElementById("delete_order").value += (checks[i].value+",");
+					document.getElementById("delete_order").value += (checks[i].value+",");
+					console.log(document.getElementById("delete_order").value);
 			  })
 		  }
 	</script>
