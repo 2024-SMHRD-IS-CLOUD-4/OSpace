@@ -194,7 +194,8 @@
             </div>
             <div id="itemBoxContant">
                 <!--상품 상세페이지 출력되는 부분-->
-                <%=p.getProd_desc() %>
+                <img src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
+                <p><%=p.getProd_desc() %></p>
             </div>
             <div id="itemBoxReview">
                 <h4>리뷰</h4>
@@ -215,7 +216,9 @@
                             <span>#<%=tag%></span>
                             <%} %>
                             </p>
-                            <div><%=r.getReview_content()%></div>
+                            <div>
+                            <p><%=r.getReview_content()%></p>
+                            </div>
                             <div class="itemBoxReviewRightR">
                                 <p><%=r.getId() %></p>
                                 <p><%=r.getCreated_at() %></p>
