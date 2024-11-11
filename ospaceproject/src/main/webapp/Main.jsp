@@ -32,7 +32,6 @@
 			<div id="btnLeft">
 				<img src="image/btnLeft.png">
 			</div>
-			<div id="btnChangePage"></div>
 		</div>
 		<div id="mainCategory">
 			<div id="mainCategoryCon">

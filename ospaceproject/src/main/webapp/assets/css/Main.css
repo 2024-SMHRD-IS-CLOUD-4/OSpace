@@ -125,18 +125,24 @@ body{
 }
 #mainBanner{
     display: inline-block;
+    position:relative;
     overflow: hidden;
     width: 1920px;
     height: 500px;
     line-height: 500px;
     margin: 0px auto;
-    border:1px solid;
 }
 #btnRight{
-    float: right;
+    position:absolute;
+    top:0;
+    right:200px;
+    margin-left:50px;
 }
 #btnLeft{
-    float: left;
+    position:absolute;
+    top:0;
+    left:200px;
+    margin-right:50px;
 }
 #btnRight img{
     width: 15px;
@@ -146,14 +152,6 @@ body{
     width: 15px;
     height: 30px;
 }
-#btnChangePage{
-    width: 182px;
-    height: 15px;
-    margin: 460px auto 0px auto;
-    background-color: #dddddd;
-    border-radius: 20px;
-}
-
 #mainCategory{
     display: block;
     overflow: hidden;
