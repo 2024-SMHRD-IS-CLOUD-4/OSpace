@@ -566,7 +566,7 @@
 .boardDate:not(:first-child){
     font-size:10px;
 }
-<<<<<<< HEAD
+
 /* assets/css/MyPage.css 파일에 추가 */
 .secondList {
     width: 100%; /* 전체 너비 */
@@ -600,15 +600,7 @@
 	margin: 0;
 	padding-left: 0;	
 }
-.sceondlistPageBtn{
-	border: 1px solid black;
-	text-align: center;
-	margin-top: 1px;
-	margin-bottom: 1px;
-}
-.sceondlistPageBtn span{
-	margin: 0 3px;
-}
+
 .secondstate{
 	width: 100px;
 	font-size: 14px;
@@ -618,7 +610,7 @@
 }
 .secondstate.option-blue {
 	color: blue; /* 판매완료일 때 파란색으로 글씨색 변경 */
-=======
+}
 
 /*주문리스트 페이지*/
 #orderBox{
@@ -643,7 +635,7 @@
 }
 #orderS{
 	padding:5px;
-	color:grean;
+	color:green;
 	font-size: 800;
 }
 /*결제세부*/
@@ -656,5 +648,4 @@
 #orderC th,td{
 	height:30px;
 	margin-bottom:20px;
->>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-CLOUD-4/OSpace
 }
