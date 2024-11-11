@@ -26,17 +26,17 @@
                                 <div>
                                     <div>
                                     	<table class="baskettable">
-                                    		<tr class="tr">
-                                    			<td class="td" rowspan="2">
+                                    		<tr>
+                                    			<td rowspan="2">
                                     				<input class="basketCheckbox" type="checkbox">
                                     			</td>
-                                    			<td class="td" rowspan="2">
+                                    			<td rowspan="2">
                                     				<img class="basketImg">
                                     			</td>
-                                    			<td class="td">
+                                    			<td>
                                     				<p class="baskName">000001</p>
                                     			</td>
-                                    			<td class="td" rowspan="2">
+                                    			<td rowspan="2">
                                    				  <div class="baskcolorContainer">
                                     				 <div class="baskcolorBox"></div>
                                     				 <div class="baskcolname">빨간색</div>
@@ -45,7 +45,7 @@
                                     				<p>50,000원</p>
                                     			</td>	
                                     		</tr>
-                                    		<tr class="tr">
+                                    		<tr>
                                     			<td class="td">
                                     				<p class="basktext">가나다라바상aaaaaaaa</p>
                                     			</td>

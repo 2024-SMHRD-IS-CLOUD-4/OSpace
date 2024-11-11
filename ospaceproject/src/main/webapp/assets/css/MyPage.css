@@ -535,14 +535,12 @@
 	justify-content: center;
 }
 .reviewDate{
-<<<<<<< HEAD
 	display: flex;
 	justify-content: center;
 }
 .reviewPageBtn{
 	display: flex;
 	justify-content: center;
-=======
 	width:100px;
 }
 .mypageProductNum{
@@ -557,5 +555,56 @@
 }
 .boardDate:not(:first-child){
     font-size:10px;
->>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-CLOUD-4/OSpace
+}
+/* assets/css/MyPage.css 파일에 추가 */
+.secondList {
+    width: 100%; /* 전체 너비 */
+    border: 1px solid black; /* 테이블 테두리 */
+    border-collapse: collapse; /* 테두리 병합 */
+}
+
+.secondList tr, .secondList td {
+    border: 1px solid black; /* 행 및 셀 테두리 */
+    padding: 8px; /* 셀 안쪽 여백 */
+    text-align: center; /* 중앙 정렬 */
+}
+
+.secondimg {
+    width: 130px;
+	height: 130px;
+	background-color : #fff;
+	border: 1px solid #dddd;
+}
+.secondcheckbox{
+	width: 50px;
+	transform: scale(2);
+}
+.secondNum{
+	text-align: left;
+	margin: 0;
+	padding-left: 0;
+}
+.secondtopic{
+	text-align: left;
+	margin: 0;
+	padding-left: 0;	
+}
+.sceondlistPageBtn{
+	border: 1px solid black;
+	text-align: center;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+.sceondlistPageBtn span{
+	margin: 0 3px;
+}
+.secondstate{
+	width: 100px;
+	font-size: 14px;
+	text-align: center;
+	color: #008000;
+	border: 1px solid #d3d3d3;
+}
+.secondstate.option-blue {
+	color: blue; /* 판매완료일 때 파란색으로 글씨색 변경 */
 }
