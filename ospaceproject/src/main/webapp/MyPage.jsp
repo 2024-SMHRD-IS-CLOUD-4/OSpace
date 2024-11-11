@@ -77,7 +77,7 @@
 								<li class="ContentsBox">
 									<a href="itemPage.jsp?prod_id=<%=p.getProd_id()%>">
 										<div class="ContentsImg">
-											<img src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
+											<img src="upload/<%=p.getProd_img()%>">
 										</div>
 										<div class="ContentsText">
 											<%=p.getProd_name() %><br>
@@ -110,7 +110,7 @@
 								<li class="ContentsBox">
 									<a href="">
 										<div class="ContentsImg">
-											<img src="<%=r_lst.get(i).getReview_img()%>">
+											<img src="upload/<%=r_lst.get(i).getReview_img()%>">
 										</div>
 										<div class="ContentsText">
 											<p><%=r_lst.get(i).getReview_title()%></p>
