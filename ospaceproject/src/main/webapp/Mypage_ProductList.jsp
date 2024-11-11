@@ -16,19 +16,19 @@
                 <div id="MyPageBox">
                     <%@ include file="MyPageLeft.jsp" %>
                         <div id="myPageRight">
-                            <h2>등록상품 리스트_중고</h2>
+                            <h2>등록상품 리스트</h2>
 
                             <div id="myPageContainer">
-                                <table class="secondList">
+                                <table class="ProductList">
                                     <tr>
                                         <td rowspan="2">
-                                            <input class="secondcheckbox" type="checkbox">
+                                            <input class="Productcheckbox" type="checkbox">
                                         </td>
                                         <td rowspan="2">
-                                            <img class="secondimg">
+                                            <img class="Productimg">
                                         </td>
                                         <td>
-                                            <p class="secondNum">00001</p>
+                                            <p class="ProductNum">00001</p>
                                         </td>
                                         <td rowspan="2">
                                             <p>50,000</p>
@@ -37,7 +37,7 @@
                                             <p>2024.10.23</p>
                                         </td>
                                         <td rowspan="2">
-                                            <select class="secondstate">
+                                            <select class="Productstate">
                                                 <option>판매중</option>
                                                 <option>판매완료</option>
                                             </select>
@@ -45,20 +45,20 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <p class="secondtopic">가나다라마바사아자차</p>
+                                            <p class="Producttopic">가나다라마바사아자차</p>
                                         </td>
                                     </tr>
                                 </table>
-                                <table class="secondList">
+                               	<table class="ProductList">
                                     <tr>
                                         <td rowspan="2">
-                                            <input class="secondcheckbox" type="checkbox">
+                                            <input class="Productcheckbox" type="checkbox">
                                         </td>
                                         <td rowspan="2">
-                                            <img class="secondimg">
+                                            <img class="Productimg">
                                         </td>
                                         <td>
-                                            <p class="secondNum">00001</p>
+                                            <p class="ProductNum">00001</p>
                                         </td>
                                         <td rowspan="2">
                                             <p>50,000</p>
@@ -67,7 +67,7 @@
                                             <p>2024.10.23</p>
                                         </td>
                                         <td rowspan="2">
-                                            <select class="secondstate">
+                                            <select class="Productstate">
                                                 <option>판매중</option>
                                                 <option>판매완료</option>
                                             </select>
@@ -75,20 +75,20 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <p class="secondtopic">가나다라마바사아자차</p>
+                                            <p class="Producttopic">가나다라마바사아자차</p>
                                         </td>
                                     </tr>
                                 </table>
-                                <table class="secondList">
+                                <table class="ProductList">
                                     <tr>
                                         <td rowspan="2">
-                                            <input class="secondcheckbox" type="checkbox">
+                                            <input class="Productcheckbox" type="checkbox">
                                         </td>
                                         <td rowspan="2">
-                                            <img class="secondimg">
+                                            <img class="Productimg">
                                         </td>
                                         <td>
-                                            <p class="secondNum">00001</p>
+                                            <p class="ProductNum">00001</p>
                                         </td>
                                         <td rowspan="2">
                                             <p>50,000</p>
@@ -97,7 +97,7 @@
                                             <p>2024.10.23</p>
                                         </td>
                                         <td rowspan="2">
-                                            <select class="secondstate">
+                                            <select class="Productstate">
                                                 <option>판매중</option>
                                                 <option>판매완료</option>
                                             </select>
@@ -105,7 +105,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <p class="secondtopic">가나다라마바사아자차</p>
+                                            <p class="Producttopic">가나다라마바사아자차</p>
                                         </td>
                                     </tr>
                                 </table>
@@ -139,7 +139,7 @@
     <script>
         // 페이지 로드 후 select 요소에 이벤트 리스너 추가
         document.addEventListener("DOMContentLoaded", function () {
-    const selectElements = document.querySelectorAll(".secondstate");
+    const selectElements = document.querySelectorAll(".Productstate");
 
     // 모든 Productstate select 요소에 대해 반복
     selectElements.forEach(function(selectElement) {
