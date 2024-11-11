@@ -3,23 +3,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>MdSerch</title>
-	<link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
+   <meta charset="UTF-8">
+   <title>MdSerch</title>
+   <link rel="stylesheet" href="assets/css/Main.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
 </head>
 <body>
         <%@ include file="Header.jsp" %>
            <div id="body">
                 <div id="serchBoxMain">
-	
-	                <div id="imgSerchBox">
-	                    <canvas id="canvas"></canvas> 
-	                    <label for="fileInput">
-	                        <span class="imgFileUplode">이미지 등록하기</span>
-	                    </label>
-	                    <!-- <a href="MdSerchImg.jsp"></a> --><input type="file" accept="image/*" id="fileInput">
-	                </div>
+   
+                   <div id="imgSerchBox">
+                       <canvas id="canvas"></canvas>
+                       <label for="fileInput">
+                           <span class="imgFileUplode">이미지 등록하기</span>
+                       </label>
+                       <!-- <a href="MdSerchImg.jsp"></a> --><input type="file" accept="image/*" id="fileInput">
+                   </div>
                 </div>
                 <div id="serchBoxSub">
                     <div id="serchBoxSubChoise">
@@ -27,13 +27,12 @@
                         <div class="serchBoxSubChoiseRight">
                             <p>추출한 색상</p>
                             <div id="imgColor">
-								<canvas id="canvas" width="70" height="70" style="max-width: 70px; max-height: 70px;"></canvas>
-							    <div id="colorOutput">
-							        <span id="colorText"></span>
-							        <div id="colorPreview"></div>
-							    </div>
+                        <canvas id="canvas2" width="70" height="70" style="max-width: 70px; max-height: 70px;"></canvas>
+                         <div id="colorOutput">
+                             <span id="colorText"></span>
+                             <div id="colorPreview"></div>
+                         </div>
                             </div>
-                            <p id="colorText">추출한 색상 RGB 결과값</p>
                         </div>
                     </div>
                     <!--<div id="serchBoxSubCheck">
@@ -46,9 +45,30 @@
                             </select>
                         </p>
                     </div>
-					-->
-                    <button type="submit" class="AllBtn">검색하기</button>
-                </div>
+               -->
+                    <form action="searchByColor" method="post">
+                   <input type="hidden" name="r" id="rValue">
+                   <input type="hidden" name="g" id="gValue">
+                   <input type="hidden" name="b" id="bValue">
+                   <input type="hidden" name="tolerance" value="10"> <!-- 오차 범위 기본값 설정 -->
+                   <button type="submit" class="AllBtn">검색하기</button>
+               </form>
+               
+               <script type="text/javascript">
+                   // RGB 값을 가져와 숨겨진 필드에 설정하는 코드
+                   document.querySelector('.AllBtn').addEventListener('click', () => {
+                       const rgbText = document.getElementById('colorText').innerText;
+                       const rgbValues = rgbText.match(/\d+/g); // RGB 값만 추출
+               
+                       if (rgbValues && rgbValues.length === 3) {
+                           document.getElementById('rValue').value = rgbValues[0];
+                           document.getElementById('gValue').value = rgbValues[1];
+                           document.getElementById('bValue').value = rgbValues[2];
+                       } else {
+                           alert('RGB 값을 추출할 수 없습니다.');
+                       }
+                   });
+               </script>
                 
             </div>
             <%@ include file="Footer.jsp" %>
@@ -67,6 +87,8 @@
         const fileInput = document.getElementById('fileInput');
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
+        const canvas2 = document.getElementById('canvas2');
+        const ctx2 = canvas2.getContext('2d');
         const colorText = document.getElementById('colorText');
         const colorPreview = document.getElementById('colorPreview');
         const MAX_WIDTH = 330;
@@ -193,8 +215,12 @@
                     g = Math.floor(g / numPixels);
                     b = Math.floor(b / numPixels);
 
-                    colorText.innerText = `Average Color (RGB): (${r}, ${g}, ${b})`;
-                    colorPreview.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                    colorText.innerText = 'Average Color (RGB): (' + r + ', ' + g + ', ' + b + ')';
+                    colorPreview.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+
+                    // canvas2에 색상 표시
+                    ctx2.fillStyle = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+                    ctx2.fillRect(0, 0, canvas2.width, canvas2.height);
 
                     console.log(r);
                     console.log(g);

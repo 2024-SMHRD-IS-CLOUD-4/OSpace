@@ -51,8 +51,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <img src="#" alt="대표이미지">
+                                <td Id="usedProductImg">
+                                    <img src="<%=request.getContextPath()%>/upload/" alt="대표이미지" id="present_img">
                                 </td>
                             </tr>
                             <tr>
@@ -82,10 +82,19 @@
                 <div class="buttonContainer">
                     <button class="AllBtn" type="submit">저장하기</button>
                 </div>
-                    </form>
+                </form>
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+    const inputFile = document.getElementById('used_img');
+    inputFile.addEventListener('change',()=>{
+	    const file = inputFile.files[0];
+		console.log(file);
+		console.log(file.name);
+		document.getElementById('present_img').src += file.name;
+	})
+	</script>
 	<%@ include file="Footer.jsp"%>
 	<nav id="loginMD">
 		<%@ include file="MdLogin.jsp"%>

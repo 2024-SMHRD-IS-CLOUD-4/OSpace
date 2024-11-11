@@ -494,6 +494,16 @@
 .productAdd option{
     padding-left: 20px;
 }
+#usedProductImg img{
+	display:block;
+	width: 100px;
+	max-height: 100px;
+}
+#usedProductImg{
+	display: inline-block;
+	height: 100px;
+	overflow:hidden;
+}
 
 /* 마이페이지 리뷰리스트 CSS */
 .reviewCheckBox{
@@ -556,6 +566,7 @@
 .boardDate:not(:first-child){
     font-size:10px;
 }
+<<<<<<< HEAD
 /* assets/css/MyPage.css 파일에 추가 */
 .secondList {
     width: 100%; /* 전체 너비 */
@@ -607,4 +618,43 @@
 }
 .secondstate.option-blue {
 	color: blue; /* 판매완료일 때 파란색으로 글씨색 변경 */
+=======
+
+/*주문리스트 페이지*/
+#orderBox{
+	display:inline-block;
+	width:100%;
+	}
+#orderBox > li{
+	display:inline-block;
+	width:100%;
+	padding:10px 0px;
+
+}
+#orderBox >li>p{
+    display: inline-block;
+    margin: 0;
+    margin-left:7px;
+}
+#orderBox >li>p:last-child{
+    display: list-item;}
+.orderPN{
+	width:45%;
+}
+#orderS{
+	padding:5px;
+	color:grean;
+	font-size: 800;
+}
+/*결제세부*/
+#orderC{
+	width:100%;
+}
+#orderC span{
+	float: right;
+}
+#orderC th,td{
+	height:30px;
+	margin-bottom:20px;
+>>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-CLOUD-4/OSpace
 }

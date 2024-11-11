@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/Join.css" type="text/css" />
 </head>
 <body>
+
         <div id="mdBg">
             <div id="mdBox">
                 <div><button id="closeBtn">X</button></div>
@@ -16,6 +17,7 @@
                     	<img src="https://drive.google.com/thumbnail?id=1BCKohuhG1uxkzJv36GL2I-cOYC_zLOoD">
                 	</div>
                 	<form action="LoginController" method="post" id="form0">
+                		<input type="hidden" value=""  name="hihi" id="hihi">
                     	<div class="loginBox">
                         	<div class="loginBoxRow">
                             	<div class="loginBoxIdPw">
@@ -78,7 +80,17 @@
 	<script src="assets/js/jquery.scrollex.min.js"></script>
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
+	<%
+	String hihi = null;
+	if(request.getParameter("hihi")!=null){
+		hihi = request.getParameter("hihi");
+	}
+%>	
     <script>
+    let hihi = '<%=hihi%>'
+    if(hihi!=='null'){
+    	document.getElementById('hihi').value = "123";
+    }
     $(document).ready(()=>{
 		$('#form0').submit((event)=>{
 			let id = $('#id').val();
@@ -101,15 +113,14 @@
 	
 	<script>
 	let user_true = '<%= session.getAttribute("user") %>';
-        const mdOpen = () => {
-            document.getElementById("loginMD").style.display = "block";
-            document.body.style.overflow = 'hidden';
-            
-        }
-       	const mdClose = () => {
-       		document.getElementById("loginMD").style.display = "none";
-       		document.body.style.removeProperty('overflow');
-       	}
+		const mdOpen = () => {
+	        document.getElementById("loginMD").style.display = "block";
+			document.body.style.overflow="hidden"
+	    }
+	   	const mdClose = () => {
+	   		document.getElementById("loginMD").style.display = "none";
+			document.body.style.overflow = 'auto';
+	   	}
        	if(user_true==='null'){
         	document.getElementById("headLoginBtn").addEventListener("click", mdOpen);
         }

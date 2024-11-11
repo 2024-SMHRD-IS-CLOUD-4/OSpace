@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.model.Products"%>
 <%@page import="com.smhrd.model.ReservedDAO"%>
 <%@page import="com.smhrd.model.Reserved"%>

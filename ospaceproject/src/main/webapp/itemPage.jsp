@@ -64,10 +64,10 @@
                     </p>
                     <p class="itemBoxSubTitle">
                         <span class="itemT">옵션선택</span>
-                        <select>
+                        <select id="op_choice">
                             <option>색상을 선택해주세요.</option>
-                            <option>검은색</option>
-                            <option>빨간색</option>
+                            <option value="검은색">검은색</option>
+                            <option value="빨간색">빨간색</option>
                         </select>
                     </p>
                 </div>
@@ -77,40 +77,66 @@
                     <div id="optionBox">
                         <span>선택상품</span>
                         <div id="optionBoxScroll">
-                            <ul>
-                                <li>
-                                    옵션 : 빨간색 <span><input type="text" value="1">개</span>
-                                </li>
-                                <li>
-                                    옵션 : 노란색 <span><input type="text" value="1">개</span>
-                                </li>
-                                <li>
-                                    옵션 : 노란색 <span><input type="text" value="1">개</span>
-                                </li>
+                            <ul id="op_result">
                             </ul>
                         </div>
                     </div>
-                    <div id="priceBox">
-                        총 금액<span></span>
+                    <div id="priceBox">		
+                        총 금액<span id="total_price"></span>
                     </div>
                     <div id="priceBoxSelect">
                     	<form action="ReservedController" method="post" id="form10">
+                    		<input type="hidden" name="total_op"  id="total_op" value="">
                         	<button id="checkBox" name="prod_id" value="<%=p.getProd_id()%>"><div class="checkBox"></div>찜하기</button>
                         </form>
-                        <form action="BasketController" method="post" id="form11">
+                        <form action="AddBasketController" method="post" id="form11">
                         	<input type="hidden" name="prod_id" value="<%=p.getProd_id()%>">
+                        	<input type="hidden" name="total_op"  id="total_op" value="">
                         	<button type="submit" id="submit" class="AllBtn">장바구니 담기</button>
                         </form>
+                        
                         <% if(user!=null){ %>
 							<button id="paymentButton">결제하기</button>
 						<%} %>
+						
+	<script src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>				
+						
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
-    <script type="text/javascript">
+   <script type="text/javascript">
+
 	let user_exist = '<%= session.getAttribute("user") %>';
+	
+	$(document).ready(()=>{
+		$('#form10').submit((event)=>{
+		    let user_exist = '<%= session.getAttribute("user") %>';
+			if(user_exist==='null'){
+				mdOpen();
+				return false;
+			}
+			$(document).unbind('submit').submit();
+		})
+	})
+	
+    let price = parseInt(<%=p.getProd_price()%>);
+	let total_price = 0;
+	let op_choice = document.getElementById('op_choice');
+	let options = document.getElementsByName("total_op");
+	$("#op_choice").on("change",()=>{
+    	if(user_exist==='null'){
+    		mdOpen();
+    	}
+    	for(let i = 0;i<options.length;i++){
+    		options[i].value += ($('#op_choice').val()+",");
+    	}
+    	document.getElementById("op_result").innerHTML +=("<li>옵션 : "+$("#op_choice").val())
+		total_price += price;
+		document.getElementById("total_price").innerText=total_price+'원';
+	})
+    
     $(document).ready(()=>{
 		$('#form10').submit((event)=>{
 			
@@ -132,14 +158,15 @@
 			$(document).unbind('submit').submit();
 		})
 	})
-    </script>
+    
                         
 	
-    <script src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
-    <script>
+    
+    
         // IMP 객체 초기화
         IMP.init('imp16585716'); // 본인의 "고객사 식별코드"로 변경
 
+        if(user_exist!=='null'){
         document.getElementById('paymentButton').addEventListener('click', function () {
             IMP.request_pay({
                 pg: 'html5_inicis', // 결제 대행사 (예: KG이니시스)
@@ -160,13 +187,15 @@
                 }
             });
         });
+        }
     </script>
                     </div>
                 </div>
             </div>
             <div id="itemBoxContant">
                 <!--상품 상세페이지 출력되는 부분-->
-                <%=p.getProd_desc() %>
+                <img src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
+                <p><%=p.getProd_desc() %></p>
             </div>
             <div id="itemBoxReview">
                 <h4>리뷰</h4>
@@ -175,7 +204,9 @@
                 	for(Reviews r : r_lst){ 
                 	String [] tags = r.getReview_tag().split(",");
                 %>
-                    <a href="ReviewPage.jsp?prod_id=<%=p.getProd_id()%>"><li>
+                    
+                    <li>
+                    <a href="ReviewPage.jsp?prod_id=<%=p.getProd_id()%>">
                         <div class="itemBoxReviewleft">
                             <img src="<%=request.getContextPath()%>/upload/<%=r.getReview_img()%>">
                         </div>
@@ -185,24 +216,27 @@
                             <span>#<%=tag%></span>
                             <%} %>
                             </p>
-                            <div><%=r.getReview_content()%></div>
+                            <div>
+                            <p><%=r.getReview_content()%></p>
+                            </div>
                             <div class="itemBoxReviewRightR">
                                 <p><%=r.getId() %></p>
                                 <p><%=r.getCreated_at() %></p>
                             </div>
                         </div>
-                    </li></a>
+                        </a>
+                    </li>
+                    
                     <%}%>
                 </ul>
-                <!-- <div class="itemBoxReviewPageNum">1   2  3   4   > </div> -->
             </div>
         </div>
     </div>
-	<%@ include file="Footer.jsp"%>
-	<nav id="loginMD">
-		<%@ include file="MdLogin.jsp"%>
-	</nav>
-	<nav id="serchMD">
+        <%@ include file = "Footer.jsp" %>
+    	<nav id="loginMD">
+			<%@ include file="MdLogin.jsp"%>
+		</nav>
+		<nav id="serchMD">
 		<%@ include file="MdSerch.jsp"%>
 	</nav>
 	<nav id="basketMD">
