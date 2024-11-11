@@ -26,7 +26,7 @@
 	%>
 	<div id="body">
 		<div id="mainBanner">
-			<img src="image/slidImg01.png">
+			<img class="slideImg" src="image/slidImg01.png">
 			<div id="btnRight">
 				<img src="image/btnRight.png">
 			</div>
