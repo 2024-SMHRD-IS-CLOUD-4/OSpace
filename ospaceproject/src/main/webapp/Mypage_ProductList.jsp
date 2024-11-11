@@ -105,13 +105,15 @@
                             </div>
                             <div class="buttonContainer">
                     <form action="">
-                    <input type="hidden" name="">
+                    <input type="hidden" name="result" value="">
                     <button class="AllBtn" type="submit">저장하기</button>
                     </form>
                     <form action="">
+                    <input type="hidden" name="result" value="">
                     <button class="AllBtn" type="submit">수정하기</button>
                     </form>
                     <form action="">
+                    <input type="hidden" name="result" value="">
                     <button class="AllBtn" type="submit">상품삭제</button>
                     </form>
                 </div>
@@ -131,6 +133,9 @@
     </html>
 	
 <script type="text/javascript">
+	document.getElementsByName('check')
+
+
         // 페이지 로드 후 select 요소에 이벤트 리스너 추가
         document.addEventListener("DOMContentLoaded", function () {
     const selectElements = document.querySelectorAll(".Productstate");
