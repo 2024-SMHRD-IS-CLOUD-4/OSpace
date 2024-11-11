@@ -66,7 +66,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <img src="#" alt="대표이미지">
+                                    <img id="img" src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>" alt="대표이미지">
                                 </td>
                             </tr>
                             <tr>
@@ -108,8 +108,6 @@
                             <tr>
                                 <td>
                                     <ul>
-                                        <li>선택한 사이즈를 표기하기 <span>X</span></li>
-                                        <li>선택한 사이즈를 표기하기 <span>X</span></li>
                                     </ul>
                                 </td>
                             </tr>
@@ -123,14 +121,17 @@
                     </form>
                 </div>
                 <div class="buttonContainer">
-                <form action="">
+                <form action="Mypage_ProductAdd.jsp">
                     <button class="AllBtn" type="submit">등록하기</button>
                 </form>
-                    <a href="#"><button class="AllBtn">상품리스트보기</button></a>
+                    <a href="Mypage_ProductAdd.jsp"><button class="AllBtn">상품리스트보기</button></a>
                 </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+    	document.getElementById('img').addEventListner('')
+    </script>
 	<%@ include file="Footer.jsp"%>
 	<nav id="loginMD">
 		<%@ include file="MdLogin.jsp"%>

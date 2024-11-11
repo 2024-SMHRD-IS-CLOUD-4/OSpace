@@ -133,9 +133,12 @@
     </html>
 	
 <script type="text/javascript">
-	document.getElementsByName('check')
-
-
+	let checks = document.getElementsByName('check');
+	let result = document.getElementsByName('result');
+	for(let i;i<checks.length;i++){
+		result[i].value += check[i].value+",";
+	}
+	
         // 페이지 로드 후 select 요소에 이벤트 리스너 추가
         document.addEventListener("DOMContentLoaded", function () {
     const selectElements = document.querySelectorAll(".Productstate");

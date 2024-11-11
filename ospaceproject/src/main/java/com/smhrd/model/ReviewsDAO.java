@@ -48,6 +48,14 @@ public class ReviewsDAO {
 		session.close();
 	    return result;
 	}
+	
+	public Reviews getMyProductReview(int review_id){
+		SqlSession session = factory.openSession(true);
+		Reviews result = session.selectOne("ReviewMapper.getMyProductReview",review_id);
+		session.close();
+	    return result;
+	}
+	
 	public int updateReview(Reviews r) {
 		SqlSession session = factory.openSession(true);
 		int result = session.update("ReviewMapper.updateReview",r);

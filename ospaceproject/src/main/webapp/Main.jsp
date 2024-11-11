@@ -96,7 +96,7 @@
 				%>
 					<li>
 						<div class="itemSmallBox">
-							<a href="#">
+							<a href="UsedItemPage.jsp">
 								<div class="itemSmallBoxImg">
 									<img src="<%=request.getContextPath()%>/upload/<%=u.getUsed_img()%>">
 								</div>

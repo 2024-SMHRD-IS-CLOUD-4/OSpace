@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.Reviews"%>
+<%@page import="com.smhrd.model.ReviewsDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,32 +13,38 @@
 </head>
 <body>
     <%@ include file = "Header.jsp" %>
+    <%
+    	int review_id = Integer.parseInt(request.getParameter("review_id"));
+    	ReviewsDAO r_dao = new ReviewsDAO();
+    	Reviews r = r_dao.getMyProductReview(review_id);
+    %>
 	<div id="body">
         <div class="contentBox">
             <div id="itemBoxT">
                 <div id="itemBoxImg">
-                    <img src="#">
+                    <img src="<%=request.getContextPath()%>/upload/<%=r.getReview_img()%>">
                 </div>
+                
                 <div id="itemBoxTitle">
                     <h1>리뷰제목</h1>
                     <div class="itemBoxStar">
-                        <span class="itemT">상품명</span>
+                        <span class="itemT"><%=r.getReview_title() %></span>
                         <div class="itemC">
-                            <p><span>chare-0001</span><span class="starCheck">★★★★★</span></p>
-                            <p><span>chare-0001</span><span class="starCheck">★★★★★</span></p>
+                            <p><span><%=r.getProd_id() %></span><span class="starCheck">★★★★★</span></p>
                         </div>
                     </div>
                     <p class="itemBoxSubTitle">
-                        <span class="itemT">작성자</span><span>작성자 ID</span>
+                        <span class="itemT"><%=user.getName() %></span><span><%=user.getId() %></span>
                     </p>
                     <p class="itemBoxSubTitle">
-                        <span class="itemT">등록일</span><span>2024-10-29</span>
+                        <span class="itemT">등록일</span><span><%=r.getCreated_at() %></span>
                     </p>
                 </div>
             </div>
             <div id="itemBoxContant">
                 <!--상품 상세페이지 출력되는 부분-->
                 <h1>리뷰내용</h1>
+               <%= r.getReview_content() %>
             </div>
         </div>
     </div>

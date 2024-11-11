@@ -95,9 +95,13 @@
 		<%@ include file="MdSerch.jsp"%>
 	</nav>
 	<%@ include file="HeaderSub.jsp"%>
+	<% String bye = request.getParameter("bye"); %>
 	<script src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>	
 	<script type="text/javascript">
-	
+	let bye = '<%=bye%>';
+	if(bye==='123'){
+		openIMP();
+	}
 	
 	let checks = document.getElementsByName('check');
 	let basket_lst1 = document.getElementById('basket_lst1');
@@ -111,9 +115,9 @@
 	}
 	
 	 // IMP 객체 초기화
-    IMP.init('imp16585716'); // 본인의 "고객사 식별코드"로 변경
 
-    document.getElementById('paymentBnt').addEventListener('click', function () {
+     function openIMP() {
+	    IMP.init('imp16585716'); // 본인의 "고객사 식별코드"로 변경
         IMP.request_pay({
             pg: 'html5_inicis', // 결제 대행사 (예: KG이니시스)
             pay_method: 'card', // 결제 수단 (예: 카드 결제)
@@ -132,7 +136,7 @@
                 alert('결제에 실패하였습니다. 오류 내용: ' + rsp.error_msg);
             }
         });
-    });
+    };
 	</script>
 </body>
 </html>

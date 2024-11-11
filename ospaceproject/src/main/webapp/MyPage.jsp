@@ -108,7 +108,7 @@
 									if (r_lst.size()>=i+1) {
 								%>
 								<li class="ContentsBox">
-									<a href="">
+									<a href="ReviewPage.jsp?review_id=<%=r_lst.get(i).getReview_id()%>">
 										<div class="ContentsImg">
 											<img src="<%=r_lst.get(i).getReview_img()%>">
 										</div>

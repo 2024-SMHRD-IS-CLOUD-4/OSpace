@@ -40,5 +40,9 @@
 	<update id="updateReview" parameterType="com.smhrd.model.Products">
 		update reviews set 
 	</update>
+	
+	<select id="getMyProductReview" resultType="com.smhrd.model.Reviews">
+		SELECT * FROM REVIEWS WHERE REVIEW_ID = #{review_id}
+	</select>
 
 </mapper>

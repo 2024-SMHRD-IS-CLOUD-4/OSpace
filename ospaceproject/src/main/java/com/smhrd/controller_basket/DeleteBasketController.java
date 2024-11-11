@@ -19,7 +19,7 @@ public class DeleteBasketController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("utf-8");
-		String delete_lst = request.getParameter("delete_lst");
+		String delete_lst = request.getParameter("basket_lst");
 		String [] arr = delete_lst.split(","); 
 		int [] baskets = new int [arr.length]; 
 		for(int i=0;i<arr.length;i++) {

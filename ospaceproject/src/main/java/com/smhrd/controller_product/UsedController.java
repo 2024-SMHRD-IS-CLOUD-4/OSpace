@@ -37,7 +37,7 @@ public class UsedController extends HttpServlet {
 		int result = dao.insert(used_product);
 
 		if (result > 0) {
-			response.sendRedirect("Used_ProductsList.jsp");
+			response.sendRedirect("Mypage_ProductList.jsp");
 		} else {
 			response.sendRedirect("Mypage_UsedProductAdd.jsp");
 		}

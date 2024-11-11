@@ -57,6 +57,6 @@ public class AddOrderController extends HttpServlet {
 			od_dao.insertOrderDetail(od);
 			b_dao.deleteBasket(basket_id);
 		}
-		response.sendRedirect("Mypage_Basket.jsp");
+		response.sendRedirect("Mypage_Basket.jsp?bye=123");
 	}
 }

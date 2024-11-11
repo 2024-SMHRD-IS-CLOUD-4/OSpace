@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.Reviews"%>
 <%@page import="com.smhrd.model.ReviewsDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <!DOCTYPE html>
@@ -22,7 +23,7 @@
 							review_id = Integer.parseInt(request.getParameter("result"));
 						}
 						ReviewsDAO r_dao = new ReviewsDAO();
-						r_dao.getProductReview(review_id);					
+						Reviews r = r_dao.getMyProductReview(review_id);				
 					%>
                         <div id="myPageRight">
                             <h2>리뷰작성하기</h2>

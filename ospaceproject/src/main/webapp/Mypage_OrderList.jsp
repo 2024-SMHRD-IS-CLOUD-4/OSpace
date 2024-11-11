@@ -51,7 +51,7 @@
 							<%} %>
 							</span> 
 							</p>
-							<p><%=o.getPay_amount() %></p>
+							<p><%=o.getPay_amount()%>개</p>
 							<p><%=o.getPaid_amount() %></p>
 							<p><%=o.getOrdered_at() %></p>
 							<p id="orderS">주문</p>
