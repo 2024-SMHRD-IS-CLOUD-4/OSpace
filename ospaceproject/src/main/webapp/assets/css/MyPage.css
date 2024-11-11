@@ -506,6 +506,12 @@
 }
 
 /* 마이페이지 리뷰리스트 CSS */
+.reviewSetupTable{
+	width: 100%;
+}
+.reviewSetupTable td{
+	padding: 5px;
+}
 .reviewCheckBox{
 	width: 50px;
 }
@@ -518,13 +524,6 @@
 .reviewImg > img{
 	width: 130px;
 	height:130px;
-}
-.reviewSetupTable{
-	width: 100%;
-}
-.reviewSetupTable td{
-	padding: 5px;
-    border-bottom: 1px solid #F1F1F1;
 }
 .reviewNameTextBox{
 	width:100%;
