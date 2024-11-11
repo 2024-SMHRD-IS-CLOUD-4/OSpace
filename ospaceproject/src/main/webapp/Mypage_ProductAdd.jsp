@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.Category"%>
+<%@page import="com.smhrd.model.CategoryDAO"%>
 <%@ page import="com.smhrd.model.Reviews"%>
 <%@ page import="java.util.List"%>
 <%@ page import="com.smhrd.model.ReviewsDAO"%>
@@ -18,6 +20,10 @@
 	<div id="body">
         <div id="MyPageBox">
             <%@ include file="MyPageLeft.jsp"%>
+            <% 
+            	CategoryDAO cat_dao = new CategoryDAO();
+            	List<Category>cats = cat_dao.getAllCategory();
+            %>
             <div id="myPageRight">
                 <h2>
                     상품등록하기
@@ -39,9 +45,9 @@
                                 <th>카테고리</th>
                                 <td><select id="category_id" name="category_id" required>
                                         <option value="">카테고리를 선택하세요</option>
-                                        <option value="1">카테고리 1</option>
-                                        <option value="2">카테고리 2</option>
-                                        <!-- 추가 카테고리 옵션 필요 시 여기에 추가 -->
+                                <% for(Category cat : cats) {%>
+                                        <option value="<%=cat.getCategory_id()%>"><%=cat.getCategory_name() %></option>
+                                <%} %>
                                     </select>
                                 </td>
                             </tr>
@@ -70,7 +76,7 @@
                                         required>
                                 </td>
                             </tr>
-                            <tr>
+                            <!--  <tr>
                                 <th rowspan="2">사이즈옵션</th>
                                 <td>
                                     <select name="prod_op" id="prod_op">
@@ -87,7 +93,7 @@
                                         <li>선택한 사이즈를 표기하기 <span>X</span></li>
                                     </ul>
                                 </td>
-                            </tr>
+                            </tr>-->
                             <tr>
                                 <th rowspan="2">색상옵션</th>
                                 <td>
@@ -117,10 +123,10 @@
                     </form>
                 </div>
                 <div class="buttonContainer">
+                <form action="">
                     <button class="AllBtn" type="submit">등록하기</button>
-                    <a href="#">
-                        <button class="AllBtn" type="submit">상품리스트보기</button>
-                    </a>
+                </form>
+                    <a href="#"><button class="AllBtn">상품리스트보기</button></a>
                 </div>
             </div>
         </div>

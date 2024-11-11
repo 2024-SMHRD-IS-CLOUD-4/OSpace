@@ -494,6 +494,10 @@
 .productAdd option{
     padding-left: 20px;
 }
+#present_img{
+	width: 100px;
+	height: 100px;
+}
 
 /* 마이페이지 리뷰리스트 CSS */
 .reviewCheckBox{

@@ -48,7 +48,7 @@
 									<input name="check" type="checkbox" value="<%=b.getBasket_id()%>" />
 								</td>
 								<td class="mypageProductimg">
-									<img src="#">
+									<img src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
 								</td>
 								<td class="mypageProductNum">
 									<%=p.getProd_id()%>
