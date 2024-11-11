@@ -29,6 +29,8 @@ public class ProductsDAO {
 		session.close();
 		return result;
 	}
+	
+	
 	public int update(Products p) {
 		SqlSession session = factory.openSession(true);
 		int result = session.update("ProductMapper.updateProduct",p);

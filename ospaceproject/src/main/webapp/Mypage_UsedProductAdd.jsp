@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.Category"%>
+<%@page import="com.smhrd.model.CategoryDAO"%>
 <%@ page import="com.smhrd.model.Reviews"%>
 <%@ page import="java.util.List"%>
 <%@ page import="com.smhrd.model.ReviewsDAO"%>
@@ -15,19 +17,31 @@
 </head>
 <body>
 	<%@ include file="Header.jsp"%>
+	 <% 
+            	CategoryDAO cat_dao = new CategoryDAO();
+            	List<Category>cats = cat_dao.getAllCategory();
+            %>
 	<div id="body">
         <div id="MyPageBox">
             <%@ include file="MyPageLeft.jsp"%>
             <div id="myPageRight">
-                <h2>
-                    중고상품등록하기
-                </h2>
+            <% if(user.getU_type().equals("일반회원")){ %>
+                <h2>중고상품등록하기</h2>
+                <form action="UsedController" method="post">
+            <%}else if(user.getU_type().equals("판매자회원")){ %>
+            	<h2>상품등록하기</h2>
+            	<form action="ProdaddController" method="post">
+            <%} %>
                 <div id="myPageContainer">
-                    <form action="UsedController" method="post">
                         <table class="productAdd">
                             <tr>
+                            <% if(user.getU_type().equals("일반회원")){ %>
                                 <th>중고상품 ID</th>
                                 <td>중고상품 ID는 등록 완료 시 자동 부여됩니다.</td>
+         					<%}else if(user.getU_type().equals("판매자회원")){ %>
+                                <th>상품 ID</th>
+                                <td>상품 ID는 등록 완료 시 자동 부여됩니다.</td>
+            				<%} %>
                             </tr>
                             <tr>
                                 <th>판매자 ID</th>
@@ -62,6 +76,29 @@
                                         required>
                                 </td>
                             </tr>
+                            <%if(user.getU_type().equals("판매자회원")){ %>
+                            <tr>
+                                <th>카테고리</th>
+                                <td><select id="category_id" name="category_id" required>
+                                        <option value="">카테고리를 선택하세요</option>
+                                <% for(Category cat : cats) {%>
+                                        <option value="<%=cat.getCategory_id()%>"><%=cat.getCategory_name() %></option>
+                                <%} %>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th rowspan="2">색상옵션</th>
+                                <td>
+                                    <select name="prod_color" id="prod_color">
+                                        <option value="Red">빨간색</option>
+                                        <option value="lite-woody">밝은 우디</option>
+                                        <option value="yellow">노란색</option>
+                                        <option value="black">검은색</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <%} %>
                             <tr>
                                 <th>내용</th>
                                 <td>
@@ -69,6 +106,7 @@
                                         required></textarea>
                                 </td>
                             </tr>
+                            <%if(user.getU_type().equals("일반회원")){ %>
                             <tr>
                                 <th>지역</th>
                                 <td>
@@ -76,13 +114,20 @@
                                         required>
                                 </td>
                             </tr>
+                            <%} %>
                         </table>
                 
                 </div>
                 <div class="buttonContainer">
-                    <button class="AllBtn" type="submit">저장하기</button>
+                <%if(user.getU_type().equals("일반회원")){ %>
+                <button class="AllBtn" type="submit">저장하기</button>
                 </div>
                 </form>
+                <%}else{ %>
+                <button class="AllBtn" type="submit">등록하기</button>
+                </div>
+                </form>
+                <%} %>
             </div>
         </div>
     </div>

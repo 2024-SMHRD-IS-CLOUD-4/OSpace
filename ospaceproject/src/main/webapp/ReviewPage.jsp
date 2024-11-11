@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <p class="itemBoxSubTitle">
-                        <span class="itemT"><%=user.getName() %></span><span><%=user.getId() %></span>
+                        <span class="itemT">작성자</span><span><%=r.getId() %></span>
                     </p>
                     <p class="itemBoxSubTitle">
                         <span class="itemT">등록일</span><span><%=r.getCreated_at() %></span>

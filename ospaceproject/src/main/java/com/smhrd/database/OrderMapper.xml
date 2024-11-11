@@ -12,9 +12,12 @@
 		DELETE * FROM ORDERS WHERE ORDER_ID = #{order_id}
 	</delete>
 	
-	<insert id="insertOrder" parameterType="com.smhrd.model.Order" useGeneratedKeys="true" keyProperty="order_id" keyColumn="order_id">
+	<insert id="insertOrder" parameterType="com.smhrd.model.Order">
+	<selectKey keyProperty="order_id" order="BEFORE" resultType="java.lang.Integer">
+    	SELECT orders_seq.NEXTVAL AS order_id FROM dual
+  	</selectKey>
 		INSERT INTO ORDERS VALUES 
-		(orders_seq.NEXTVAL,#{id},#{pay_amount},#{pay_method},#{paid_amount},default,#{order_status})
+		(#{order_id},#{id},#{pay_amount},#{pay_method},#{paid_amount},default,#{order_status})
 	</insert>
 	
 	<insert id="insertOrderDetail" parameterType="com.smhrd.model.OrderDetail">
@@ -24,6 +27,10 @@
 	
 	<select id="getMyOrderDetails" resultType="com.smhrd.model.OrderDetail">
 		SELECT * FROM ORDER_DETAILS WHERE ORDER_ID = #{order_id}
+	</select>
+	
+	<select id="getOrderDetails" resultType="com.smhrd.model.OrderDetail">
+		SELECT * FROM ORDER_DETAILS WHERE color_id = #{color_id}
 	</select>
 	
 </mapper>

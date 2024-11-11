@@ -61,12 +61,12 @@
                             <tr>
                                 <th rowspan="2">대표이미지</th>
                                 <td>
-                                    <input type="file" id="prod_img" name="prod_img" required>
+                                    <input type="file" id="fileinputReview" name="prod_img" required>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <img id="img" src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>" alt="대표이미지">
+                                    <img id=present_img src="<%=request.getContextPath()%>/upload/">
                                 </td>
                             </tr>
                             <tr>
@@ -130,7 +130,11 @@
         </div>
     </div>
     <script type="text/javascript">
-    	document.getElementById('img').addEventListner('')
+    const inputFile = document.getElementById('fileinputReview');
+    inputFile.addEventListener('change',()=>{
+	    const file = inputFile.files[0];
+		document.getElementById('present_img').src += file.name;
+	})
     </script>
 	<%@ include file="Footer.jsp"%>
 	<nav id="loginMD">

@@ -125,7 +125,7 @@
 					%>
 					<li>
 						<div class="itemSmallBox">
-							<a href="ReviewPage.jsp?prod_id=<%=r.getProd_id()%>">
+							<a href="ReviewPage.jsp?review_id=<%=r.getReview_id()%>">
 								<div class="itemSmallBoxImg">
 									<img
 										src="<%=request.getContextPath()%>/upload/<%=r.getReview_img()%>">
@@ -177,7 +177,7 @@
 					%>
 					<li>
 						<div class="itemSmallBox">
-							<a href="UsedItemPage.jsp?prod_id=<%=u.getUsed_id()%>">
+							<a href="UsedItemPage.jsp?used_id=<%=u.getUsed_id()%>">
 								<div class="itemSmallBoxImg">
 									<img
 										src="<%=request.getContextPath()%>/upload/<%=u.getUsed_img()%>">

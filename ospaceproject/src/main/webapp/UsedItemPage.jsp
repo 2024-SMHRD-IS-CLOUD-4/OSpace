@@ -18,9 +18,9 @@
 <body>
 	<%@ include file="Header.jsp"%>
 	<%
-	int prod_id = Integer.parseInt(request.getParameter("prod_id"));
+	int used_id = Integer.parseInt(request.getParameter("used_id"));
 	Used_ProductsDAO dao = new Used_ProductsDAO();
-	Used_Products u = dao.getu_single_prod(prod_id);
+	Used_Products u = dao.getu_single_prod(used_id);
 	UsedCommentDAO uc_dao = new UsedCommentDAO();
 	List<UsedComment> uc_lst = uc_dao.getAllComments(u.getUsed_id());
 	%>

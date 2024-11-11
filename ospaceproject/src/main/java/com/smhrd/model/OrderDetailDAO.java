@@ -25,4 +25,11 @@ public class OrderDetailDAO {
 	    return result;
 	}
 	
+	public List<OrderDetail> getOrderDetails(String color_id){
+		SqlSession session = factory.openSession(true);
+		List<OrderDetail> result = session.selectList("OrderMapper.getOrderDetails",color_id);
+		session.close();
+	    return result;
+	}
+	
 }

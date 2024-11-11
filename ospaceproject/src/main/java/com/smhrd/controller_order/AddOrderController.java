@@ -49,12 +49,12 @@ public class AddOrderController extends HttpServlet {
 		Order order = new Order(0, id, pay_amount, "카드", paid_amount, null, "결제완료");
 		OrdersDAO o_dao = new OrdersDAO();
 		int order_id = o_dao.insertOrder(order);
-
+		System.out.println(order_id);
 		// orderDetail 삽입
 		for (int basket_id : basket_ids) {
 			Basket b = b_dao.getBasket(basket_id);
 			OrderDetail od = new OrderDetail(0, order_id, b.getProd_color(), null);
-			od_dao.insertOrderDetail(od);
+			int result = od_dao.insertOrderDetail(od);
 			b_dao.deleteBasket(basket_id);
 		}
 		response.sendRedirect("Mypage_Basket.jsp?bye=123");

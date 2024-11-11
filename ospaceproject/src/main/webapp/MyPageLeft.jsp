@@ -23,7 +23,7 @@
                         <li class="seller">
                             상품관리
                                 <p class="subNav"><a href="Mypage_ProductList.jsp">상품리스트보기</a></p>
-                                <p class="subNav"><a href="Mypage_ProductAdd.jsp">상품등록하기</a></p>
+                                <p class="subNav"><a href="Mypage_UsedProductAdd.jsp">상품등록하기</a></p>
                         </li>
                         <li class="seller"><a href="Mypage_OrderList.jsp">주문관리</a></li>
                         <li class="seller"><a href="Mypage_MemberModify.jsp">회원정보수정</a></li>
