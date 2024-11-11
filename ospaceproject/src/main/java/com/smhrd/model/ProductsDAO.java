@@ -5,6 +5,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import com.smhrd.database.SqlSessionManager;
 
 import java.util.List;
+import java.util.Map;
 
 public class ProductsDAO {
 
@@ -109,5 +110,16 @@ public class ProductsDAO {
 		List<Products> result = session.selectList("ProductMapper.getCategoryProducts",category_id);
 		session.close();
 		return result;
+	}
+	
+	public List<Products> searchProductsByColor(int r, int g, int b, int tolerance) {
+	       SqlSession session = factory.openSession(true);
+	       try {
+	           List<Products> result = session.selectList("ProductMapper.searchProductsByColor", 
+	               Map.of("r", r, "g", g, "b", b, "tolerance", tolerance));
+	           return result;
+	       } finally {
+	           session.close();
+	       }
 	}
 }

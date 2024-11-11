@@ -53,4 +53,12 @@
 		UPDATE PRODUCTS SET prod_views = prod_views + 1 WHERE prod_id = #{prod_id}
 	</update>
 	
+	<select id="searchProductsByColor" resultType="com.smhrd.model.Products">
+        SELECT * FROM PRODUCTS
+        WHERE 
+            TO_NUMBER(SUBSTR(PROD_COLOR, 1, INSTR(PROD_COLOR, ',') - 1)) BETWEEN #{r} - #{tolerance} AND #{r} + #{tolerance}
+            AND TO_NUMBER(SUBSTR(PROD_COLOR, INSTR(PROD_COLOR, ',') + 1, INSTR(PROD_COLOR, ',', 1, 2) - INSTR(PROD_COLOR, ',') - 1)) BETWEEN #{g} - #{tolerance} AND #{g} + #{tolerance}
+            AND TO_NUMBER(SUBSTR(PROD_COLOR, INSTR(PROD_COLOR, ',', 1, 2) + 1)) BETWEEN #{b} - #{tolerance} AND #{b} + #{tolerance}
+    </select>
+	
 </mapper>
