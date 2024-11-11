@@ -80,7 +80,7 @@ public class ProductsDAO {
 	}
 	public List<Products> getMyProducts(String id){
 		SqlSession session = factory.openSession(true);
-		List<Products> result = session.selectList("ProductMapper.getMyProducts");
+		List<Products> result = session.selectList("ProductMapper.getMyProducts",id);
 		session.close();
 		return result;
 	}

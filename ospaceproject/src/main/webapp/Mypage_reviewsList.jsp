@@ -33,7 +33,7 @@
 									</td>
 									<td rowspan="2">
 										<p>
-											<img class="reviewImg" src="#">
+											<img class="reviewImg" src="<%=request.getContextPath()%>/upload/<%=r.getReview_img()%>">
 										</p>
 									</td>
 									<td>

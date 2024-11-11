@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="BasketMapper">
 
-	<!-- 장바구니 조회 -->
+	<!-- 내 장바구니 조회 -->
 	<select id="getMyBasket" resultType="com.smhrd.model.Basket">
 		SELECT * FROM BASKETS WHERE ID = #{id}
 	</select>
@@ -16,4 +16,10 @@
 	<delete id="deleteBasket">
 		DELETE FROM BASKETS WHERE BASKET_ID = #{basket_id}
 	</delete>
+	
+	<!-- 장바구니 조회 -->
+	<select id="getBasket" resultType="com.smhrd.model.Basket">
+		SELECT * FROM BASKETS WHERE BASKET_ID = #{basket_id}
+	</select>
+	
 </mapper>

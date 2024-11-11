@@ -1,3 +1,7 @@
+<%@page import="com.smhrd.model.Products"%>
+<%@page import="com.smhrd.model.ProductsDAO"%>
+<%@page import="com.smhrd.model.Used_Products"%>
+<%@page import="com.smhrd.model.Used_ProductsDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <!DOCTYPE html>
     <html>
@@ -16,28 +20,34 @@
                 <div id="MyPageBox">
                     <%@ include file="MyPageLeft.jsp" %>
                         <div id="myPageRight">
+                        <%
+                        if(user.getU_type().equals("판매자회원")){ 
+                        ProductsDAO p_dao = new ProductsDAO();
+                        String id = user.getId();
+                        List<Products> p_lst = p_dao.getMyProducts(id);
+                        %>
                             <h2>등록상품 리스트</h2>
-
                             <div id="myPageContainer">
                                 <table class="ProductList">
+							<%for(Products p : p_lst){ %>
                                     <tr>
                                         <td rowspan="2">
-                                            <input class="Productcheckbox" type="checkbox">
+                                            <input class="Productcheckbox" type="checkbox" name="check">
                                         </td>
                                         <td rowspan="2">
-                                            <img class="Productimg">
+                                            <img class="Productimg" src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
                                         </td>
                                         <td>
-                                            <p class="ProductNum">00001</p>
+                                            <p class="ProductNum"><%=p.getProd_id() %></p>
                                         </td>
                                         <td rowspan="2">
-                                            <p>50,000</p>
+                                            <p><%=p.getProd_price() %>원</p>
                                         </td>
                                         <td rowspan="2">
-                                            <p>2024.10.23</p>
+                                            <p><%=p.getCreatedAt() %></p>
                                         </td>
                                         <td rowspan="2">
-                                            <select class="Productstate">
+                                            <select class="Productstate" id="sold_state">
                                                 <option>판매중</option>
                                                 <option>판매완료</option>
                                             </select>
@@ -45,76 +55,65 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <p class="Producttopic">가나다라마바사아자차</p>
+                                            <p class="Producttopic"><%=p.getProd_name() %></p>
                                         </td>
                                     </tr>
-                                </table>
-                               	<table class="ProductList">
-                                    <tr>
-                                        <td rowspan="2">
-                                            <input class="Productcheckbox" type="checkbox">
-                                        </td>
-                                        <td rowspan="2">
-                                            <img class="Productimg">
-                                        </td>
-                                        <td>
-                                            <p class="ProductNum">00001</p>
-                                        </td>
-                                        <td rowspan="2">
-                                            <p>50,000</p>
-                                        </td>
-                                        <td rowspan="2">
-                                            <p>2024.10.23</p>
-                                        </td>
-                                        <td rowspan="2">
-                                            <select class="Productstate">
-                                                <option>판매중</option>
-                                                <option>판매완료</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="Producttopic">가나다라마바사아자차</p>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <table class="ProductList">
-                                    <tr>
-                                        <td rowspan="2">
-                                            <input class="Productcheckbox" type="checkbox">
-                                        </td>
-                                        <td rowspan="2">
-                                            <img class="Productimg">
-                                        </td>
-                                        <td>
-                                            <p class="ProductNum">00001</p>
-                                        </td>
-                                        <td rowspan="2">
-                                            <p>50,000</p>
-                                        </td>
-                                        <td rowspan="2">
-                                            <p>2024.10.23</p>
-                                        </td>
-                                        <td rowspan="2">
-                                            <select class="Productstate">
-                                                <option>판매중</option>
-                                                <option>판매완료</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="Producttopic">가나다라마바사아자차</p>
-                                        </td>
-                                    </tr>
+							<%}%>
                                 </table>
                             </div>
-
+							<% }else if(user.getU_type().equals("일반회원")){ %>
+							<h2>등록 중고 상품 리스트</h2>
+							<% 
+								Used_ProductsDAO up_dao = new Used_ProductsDAO();
+								List<Used_Products> up_lst = up_dao.getMyU_prod(user.getId());%>
+								
+							
+                            <div id="myPageContainer">
+                                <table class="ProductList">
+                                <% for(Used_Products up : up_lst){%>
+                                    <tr>
+                                        <td rowspan="2">
+                                            <input class="Productcheckbox" type="checkbox" name="check">
+                                        </td>
+                                        <td rowspan="2">
+                                            <img class="Productimg" src="<%=request.getContextPath()%>/upload/<%=up.getUsed_img()%>">
+                                        </td>
+                                        <td>
+                                            <p class="ProductNum"><%=up.getUsed_id() %></p>
+                                        </td>
+                                        <td rowspan="2">
+                                            <p><%=up.getUsed_price() %>원</p>
+                                        </td>
+                                        <td rowspan="2">
+                                            <p><%=up.getCreated_at() %></p>
+                                        </td>
+                                        <td rowspan="2">
+                                            <select class="Productstate" id="sold_state">
+                                                <option>판매중</option>
+                                                <option>판매완료</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="Producttopic"><%=up.getUsed_title() %></p>
+                                        </td>
+                                    </tr>
+							<%}
+								} %>
+                                </table>
+                            </div>
                             <div class="buttonContainer">
+                    <form action="">
+                    <input type="hidden" name="">
                     <button class="AllBtn" type="submit">저장하기</button>
+                    </form>
+                    <form action="">
                     <button class="AllBtn" type="submit">수정하기</button>
+                    </form>
+                    <form action="">
                     <button class="AllBtn" type="submit">상품삭제</button>
+                    </form>
                 </div>
                         </div>
                 </div>
@@ -128,12 +127,10 @@
                     <%@ include file="MdSerch.jsp" %>
                 </nav>
                 <%@ include file="HeaderSub.jsp" %>
-
     </body>
-
     </html>
-
-    <script>
+	
+<script type="text/javascript">
         // 페이지 로드 후 select 요소에 이벤트 리스너 추가
         document.addEventListener("DOMContentLoaded", function () {
     const selectElements = document.querySelectorAll(".Productstate");
@@ -149,4 +146,4 @@
         });
     });
 });
-    </script>
+</script>

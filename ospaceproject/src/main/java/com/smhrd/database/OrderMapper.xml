@@ -12,6 +12,18 @@
 		DELETE * FROM ORDERS WHERE ORDER_ID = #{order_id}
 	</delete>
 	
+	<insert id="insertOrder" parameterType="com.smhrd.model.Order" useGeneratedKeys="true" keyProperty="order_id" keyColumn="order_id">
+		INSERT INTO ORDERS VALUES 
+		(orders_seq.NEXTVAL,#{id},#{pay_amount},#{pay_method},#{paid_amount},default,#{order_status})
+	</insert>
 	
+	<insert id="insertOrderDetail" parameterType="com.smhrd.model.OrderDetail">
+		INSERT INTO ORDER_DETAILS VALUES
+		(default,#{order_id},#{color_id},default)
+	</insert>
+	
+	<select id="getMyOrderDetails" resultType="com.smhrd.model.OrderDetail">
+		SELECT * FROM ORDER_DETAILS WHERE ORDER_ID = #{order_id}
+	</select>
 	
 </mapper>

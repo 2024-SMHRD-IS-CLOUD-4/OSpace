@@ -18,6 +18,7 @@ public class Products {
      	String createdAt;
      	String prod_op;
      	String prod_desc;
+     	
 		public Products(int prod_id, String id, int category_id, String prod_name, String prod_img, int prod_price,
 				String prod_color, int prod_views, String createdAt, String prod_op, String prod_desc) {
 			super();

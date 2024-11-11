@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.ProductColors"%>
+<%@page import="com.smhrd.model.ProductColorDAO"%>
 <%@page import="com.smhrd.model.Products"%>
 <%@page import="com.smhrd.model.ProductsDAO"%>
 <%@page import="com.smhrd.model.BasketDAO"%>
@@ -28,10 +30,12 @@
 				<h2>장바구니</h2>
 				<div id="myPageContainer">
 					<div>
+					
 						<table class="reviewSetupTable">
 						<% for(Basket b :b_lst){ 
-							System.out.println("asd");
 							Products p =p_dao.getSingleProduct(b.getProd_id());
+							ProductColorDAO pc_dao = new ProductColorDAO();
+							List<ProductColors> pc_lst = pc_dao.getProdColor(p.getProd_id());
 						%>
 							<tr>
 								<td class="reviewCheckBox">
@@ -46,7 +50,6 @@
 							<tr>
 								<td class="reviewCheckBox">
 									<input name="check" type="checkbox" value="<%=b.getBasket_id()%>" />
-									<input type="hidden" name="prod_id" value="<%=p.getProd_id()%>">
 								</td>
 								<td class="mypageProductimg">
 									<img src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
@@ -67,14 +70,17 @@
 									<%=b.getCreatedAt() %>
 								</td>
 							</tr>
-							<%} %>
+							<%}%>
 						</table>
 					</div>
 				</div>
 				<div class="buttonContainer">
-					<button type="button" id="paymentBnt" class="AllBtn">구매하기</button>
-				<form action="DeleteBasketController" class="fromBlock">
-					<input type="hidden" name="delete_lst" id="delete_lst" value="">
+				<form action="AddOrderController">
+					<input type="hidden" name="basket_lst" id="basket_lst1" value="">
+					<button type="submit" id="paymentBnt" class="AllBtn">구매하기</button>
+				</form>
+				<form action="DeleteBasketController">
+					<input type="hidden" name="basket_lst" id="basket_lst2" value="">
 					<button type="submit"  class="AllBtn">삭제하기</button>
 				</form>
 				</div>
@@ -92,11 +98,15 @@
 	<script src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>	
 	<script type="text/javascript">
 	
+	
 	let checks = document.getElementsByName('check');
-	let delete_lst = document.getElementById('delete_lst');
+	let basket_lst1 = document.getElementById('basket_lst1');
+	let basket_lst2 = document.getElementById('basket_lst2');
 	for(let i =0;i<checks.length;i++){
 		checks[i].addEventListener('click',()=>{
-			delete_lst.value += checks[i].value+",";
+			basket_lst1.value += checks[i].value+",";
+			basket_lst2.value += checks[i].value+",";
+			console.log(basket_lst1.value);
 	})
 	}
 	

@@ -2,52 +2,45 @@ package com.smhrd.model;
 
 public class Order {
 
-	int orderId;
+	int order_id;
 	String id;
-	String prod_ids;
-	int payAmount;
-	String payMethod;
-	int paidAmount;
-	String orderedAt;
-	String orderStatus;
-	public Order(int orderId, String id, String prod_ids, int payAmount, String payMethod, int paidAmount,
-			String orderedAt, String orderStatus) {
+	int pay_amount;
+	String pay_method;
+	int paid_amount;
+	String ordered_at;
+	String order_status;
+	public Order(int order_id, String id, int pay_amount, String pay_method, int paid_amount, String ordered_at,
+			String order_status) {
 		super();
-		this.orderId = orderId;
+		this.order_id = order_id;
 		this.id = id;
-		this.prod_ids = prod_ids;
-		this.payAmount = payAmount;
-		this.payMethod = payMethod;
-		this.paidAmount = paidAmount;
-		this.orderedAt = orderedAt;
-		this.orderStatus = orderStatus;
+		this.pay_amount = pay_amount;
+		this.pay_method = pay_method;
+		this.paid_amount = paid_amount;
+		this.ordered_at = ordered_at;
+		this.order_status = order_status;
 	}
-	
-	public int getOrderId() {
-		return orderId;
+	public int getOrder_id() {
+		return order_id;
 	}
 	public String getId() {
 		return id;
 	}
-	public String getProd_ids() {
-		return prod_ids;
+	public int getPay_amount() {
+		return pay_amount;
 	}
-	public int getPayAmount() {
-		return payAmount;
+	public String getPay_method() {
+		return pay_method;
 	}
-	public String getPayMethod() {
-		return payMethod;
+	public int getPaid_amount() {
+		return paid_amount;
 	}
-	public int getPaidAmount() {
-		return paidAmount;
+	public String getOrdered_at() {
+		return ordered_at;
 	}
-	public String getOrderedAt() {
-		return orderedAt;
+	public String getOrder_status() {
+		return order_status;
 	}
-	public String getOrderStatus() {
-		return orderStatus;
-	}
-	
-	
+
 	
 }

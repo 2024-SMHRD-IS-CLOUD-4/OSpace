@@ -65,4 +65,12 @@
 		SELECT * FROM PRODUCT_COLORS WHERE PROD_ID = #{prod_id}
 	</select>	
 	
+	<select id="getProd_id" resultType="int">
+		SELECT PROD_ID FROM PRODUCT_COLORS WHERE COLOR_ID = #{color_id}
+	</select>	
+	
+	<select id="getMyProducts" resultType="com.smhrd.model.Products">
+		SELECT * FROM PRODUCTS WHERE ID = #{id}
+	</select>	
+	
 </mapper>

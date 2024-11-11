@@ -65,7 +65,6 @@
 		for(let i=0;i<checks.length;i++){
 			checks[i].addEventListener('click',()=>{
 				delete_reserved.value += checks[i].value+",";
-				console.log(delete_reserved.value);
 			})
 		}
 	</script>

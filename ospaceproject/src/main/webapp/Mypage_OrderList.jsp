@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.model.ProductColorDAO"%>
+<%@page import="com.smhrd.model.OrderDetail"%>
+<%@page import="com.smhrd.model.OrderDetailDAO"%>
 <%@page import="com.smhrd.model.Products"%>
 <%@page import="com.smhrd.model.ProductsDAO"%>
 <%@ page import="com.smhrd.model.Order"%>
@@ -22,6 +25,8 @@
 		OrdersDAO o_dao = new OrdersDAO();
 		List<Order> o_lst = o_dao.getMyOrders(user.getId());
 		ProductsDAO p_dao = new ProductsDAO();
+		OrderDetailDAO od_dao = new OrderDetailDAO();
+		ProductColorDAO pc_dao = new ProductColorDAO();
 	%>
 	<div id="body">
 		<div id="MyPageBox">
@@ -31,36 +36,34 @@
 				<div id="myPageContainer">
 					<ul id="orderBox">
 					<% for(Order o : o_lst){
-						String a = o.getProd_ids();
-						String [] arr = a.split("/");
-						int [] prod_ids = new int [arr.length];
-						for(int i=0;i<arr.length;i++){
-							System.out.println(arr[i]);
-							prod_ids[i] = Integer.parseInt(arr[i]);
-						}
+						List<OrderDetail> od_lst = od_dao.getMyOrderDetails(o.getOrder_id());
 					%>
 						<li>
-							<p><input type="checkbox" name="check" value="<%=o.getOrderId()%>"></p>
-							<p><%=o.getOrderId()%></p>
+							<p><input type="checkbox" name="check" value="<%=o.getOrder_id()%>"></p>
+							<p><%=o.getOrder_id()%></p>
 							<p class="orderPN">
-							<%for(int prod_id : prod_ids){ 
-								Products p = p_dao.getSingleProduct(prod_id);
-							%>
-							<span>#<%=p.getProd_name()%> </span> 
+							
+							<span>
+							<%for(OrderDetail od : od_lst){ 
+							int prod_id = pc_dao.getProd_id(od.getColor_id());
+							Products p = p_dao.getSingleProduct(prod_id);%>
+							#<%=p.getProd_name()%> 
 							<%} %>
+							</span> 
 							</p>
-							<p><%=o.getPayAmount() %></p>
-							<p><%=o.getPaidAmount() %></p>
-							<p><%=o.getOrderedAt() %></p>
+							<p><%=o.getPay_amount() %></p>
+							<p><%=o.getPaid_amount() %></p>
+							<p><%=o.getOrdered_at() %></p>
 							<p id="orderS">주문</p>
 							<p class="boardContentArrow">▽</p>
 							<p class="boardContent">
-							<%for(int prod_id : prod_ids){ 
+							<%for(OrderDetail od : od_lst){ 
+								int prod_id = pc_dao.getProd_id(od.getColor_id());
 								Products p = p_dao.getSingleProduct(prod_id);
 							%>
 								<img src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
 								<span>금액 : <%=p.getProd_price() %>원</span><br>
-								<span>옵션 : <%=p.getProd_color() %></span><br>
+								<span>옵션 : <%=od.getColor_id() %></span><br>
 							<%} %>
 								<span>받으실 주소 : <%=user.getAddr() %></span><br>
 								<span>연락처 :<%=user.getPhone() %></span><br>

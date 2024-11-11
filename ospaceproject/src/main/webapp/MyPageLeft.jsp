@@ -22,14 +22,14 @@
                     <ul>
                         <li class="seller">
                             상품관리
-                                <p class="subNav">상품리스트보기</p>
+                                <p class="subNav"><a href="Mypage_ProductList.jsp">상품리스트보기</a></p>
                                 <p class="subNav"><a href="Mypage_ProductAdd.jsp">상품등록하기</a></p>
                         </li>
                         <li class="seller">주문관리</li>
                         <li class="seller"><a href="Mypage_MemberModify.jsp">회원정보수정</a></li>
                         <li class="member"><a href="Mypage_MemberModify.jsp">회원정보수정</a></li>
                         <li class="member">
-                        	<a href="Mypage_reviewsList.jsp">내가 쓴 리뷰 보기</a>
+                        	<a href="Mypage_ProductList.jsp">내가 쓴 리뷰 보기</a>
                         	<p class="subNav"><a href="Mypage_reviewsList.jsp">내가 쓴 리뷰 보기</a></p>
                         	<p class="subNav"><a href="Mypage_reviews.jsp">리뷰등록하기</a></p>
                         </li>
@@ -38,7 +38,7 @@
                         </li>
                         <li class="member">
                             <a href="#">중고상품</a>
-                                <p class="subNav"><a href="#">중고상품 리스트보기</a></p>
+                                <p class="subNav"><a href="Mypage_ProductList.jsp">중고상품 리스트보기</a></p>
                                 <p class="subNav"><a href="Mypage_UsedProductAdd.jsp">중고상품등록하기</a></p>
                         </li>
                         <li class="member"><a href="Mypage_Basket.jsp">장바구니</a></li>

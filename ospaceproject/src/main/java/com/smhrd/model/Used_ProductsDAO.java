@@ -24,6 +24,13 @@ public class Used_ProductsDAO {
 	    session.close();
 	    return result;
 	}
+	
+	public List<Used_Products> getMyU_prod(String id) {
+	    SqlSession session = factory.openSession(true);
+	    List<Used_Products> result = session.selectList("UsedProductMapper.getMyU_prod",id);
+	    session.close();
+	    return result;
+	}
 
 	public Used_Products getu_single_prod(int used_id) {
 	    SqlSession session = factory.openSession(true);

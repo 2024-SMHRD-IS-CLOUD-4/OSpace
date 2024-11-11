@@ -31,4 +31,11 @@ public class BasketDAO {
 		sqlSession.close();
 		return result;
 	}
+	
+	public Basket getBasket(int basket_id){
+		SqlSession sqlSession = factory.openSession(true);
+		Basket result = sqlSession.selectOne("BasketMapper.getBasket",basket_id);
+        sqlSession.close();
+        return result;
+	}
 }

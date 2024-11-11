@@ -33,4 +33,9 @@
     SELECT * FROM USED_COMMENTS WHERE super_used_cmt_id=#{used_cmt_id}
 	</select>
 	
+	<!-- 내 중고 상품 조회 -->	
+	<select id="getMyU_prod" resultType="com.smhrd.model.Used_Products">
+    SELECT * FROM Used_Products WHERE ID = #{id}
+	</select>
+	
 </mapper>

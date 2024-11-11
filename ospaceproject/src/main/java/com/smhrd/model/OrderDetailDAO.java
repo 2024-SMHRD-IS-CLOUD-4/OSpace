@@ -7,21 +7,22 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.smhrd.database.SqlSessionManager;
 
-public class ProductColorDAO {
+public class OrderDetailDAO {
 
 	SqlSessionFactory factory = SqlSessionManager.getSqlSessionFactory();
 
-	public List<ProductColors> getProdColor(int prod_id){
+	public int insertOrderDetail(OrderDetail od){
 		SqlSession session = factory.openSession(true);
-		List<ProductColors> result = session.selectList("ProductMapper.getProdColor",prod_id);
+		int result = session.insert("OrderMapper.insertOrderDetail",od);
 		session.close();
 	    return result;
 	}
 	
-	public int getProd_id(String color_id) {
+	public List<OrderDetail> getMyOrderDetails(int order_id){
 		SqlSession session = factory.openSession(true);
-		int result = session.selectOne("ProductMapper.getProd_id",color_id);
+		List<OrderDetail> result = session.selectList("OrderMapper.getMyOrderDetails",order_id);
 		session.close();
 	    return result;
 	}
+	
 }
