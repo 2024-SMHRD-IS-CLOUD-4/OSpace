@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.ProductColors"%>
+<%@page import="com.smhrd.model.ProductColorDAO"%>
 <%@page import="com.smhrd.model.Reviews"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.ReviewsDAO"%>
@@ -66,8 +68,14 @@
                         <span class="itemT">옵션선택</span>
                         <select id="op_choice">
                             <option>색상을 선택해주세요.</option>
-                            <option value="검은색">검은색</option>
-                            <option value="빨간색">빨간색</option>
+                            <%
+								ProductColorDAO pc_dao = new ProductColorDAO();
+                            	List<ProductColors> pc_lst = pc_dao.getProdColor(prod_id);
+                            	for(ProductColors pc : pc_lst){
+                            		String [] arr = pc.getColor_id().split("-");
+                            %>
+                            <option value="<%=pc.getColor_id()%>"><%=arr[1] %></option>
+                            <%} %>
                         </select>
                     </p>
                 </div>
@@ -97,6 +105,7 @@
                         
                         <% if(user!=null){ %>
 							<button id="paymentButton">결제하기</button>
+							
 						<%} %>
 						
 	<script src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>				
@@ -187,6 +196,11 @@
                 }
             });
         });
+        
+        $.ajax({
+        	url : 
+        })
+        
         }
     </script>
                     </div>

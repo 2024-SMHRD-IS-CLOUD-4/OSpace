@@ -41,8 +41,7 @@
                                                 <td class="td">리뷰상품</td>
                                                 <td class="reviewtableColumns">
                                                     <label class="fileLabel" for="fileinputReview">상품찾기</label>
-                                                    <input type="file" id="fileinputReview" class="fileinputReview"
-                                                        onchange="displayFileName()">
+                                                    <input type="file" id="fileinputReview" class="fileinputReview">
                                                     <div class="previewContainer1" id="previewContainer1"></div>
                                                 </td>
                                             </tr>
@@ -50,10 +49,7 @@
                                             <tr class="tr">
                                                 <td class="td">이미지</td>
                                                 <td class="reviewtableColumns">
-                                                    <label class="fileLabel" for="fileinputImg">파일찾기</label>
-                                                    <input type="file" id="fileinputImg" class="fileinputImg"
-                                                        onchange="addPreviewImage()">
-                                                    <div class="previewContainer" id="previewContainer"></div>
+                                                   	<img id="present_img" src="<%=request.getContextPath()%>/upload/">
                                                 </td>
                                             </tr>
 
@@ -116,63 +112,11 @@
                 <%@ include file="HeaderSub.jsp" %>
 
                     <script>
-                        // 상품찾기
-                        function displayFiles() {
-                            const fileInput = document.getElementById('fileinputReview');
-                            const previewContainer = document.getElementById('previewContainer1');
-                            const files = Array.from(fileInput.files); // 선택된 파일들 배열로 가져옴
-
-                            files.forEach(file => {
-                                const fileContainer = document.createElement('div'); // 개별 파일을 담을 컨테이너
-
-                                // 파일 이름 표시
-                                const fileNameElement = document.createElement('span');
-                                fileNameElement.className = 'fileName';
-                                fileNameElement.textContent = file.name;
-
-                                // 이미지 미리보기
-                                if (file.type.startsWith('image/')) { // 이미지 파일인지 확인
-                                    const reader = new FileReader();
-                                    reader.onload = function (e) {
-                                        const img = document.createElement('img');
-                                        img.src = e.target.result;
-                                        fileContainer.appendChild(img); // 파일 컨테이너에 이미지 추가
-                                    };
-                                    reader.readAsDataURL(file);
-                                }
-
-                                fileContainer.appendChild(fileNameElement); // 파일 이름 추가
-                                previewContainer.appendChild(fileContainer); // 미리보기 컨테이너에 파일 컨테이너 추가
-                            });
-
-                            // 선택된 파일 초기화하여 여러 번 추가 가능하게 함
-                            fileInput.value = '';
-                        }
-
-
-
-                        // 이미지
-                        function addPreviewImage() {
-                            const previewContainer = document.getElementById('previewContainer');
-                            const fileInput = document.getElementById('fileinputImg');
-                            const file = fileInput.files[0]; // 최근 선택한 파일만 가져옴
-
-                            if (file) {
-                                const reader = new FileReader();
-                                reader.onload = function (e) {
-                                    const img = document.createElement('img');
-                                    img.src = e.target.result;
-                                    img.style.width = '100px';
-                                    img.style.height = '100px';
-                                    img.style.margin = '5px';
-                                    previewContainer.appendChild(img);
-                                };
-                                reader.readAsDataURL(file);
-
-                                // 선택된 파일 초기화하여 여러 번 추가 가능하게 함
-                                fileInput.value = '';
-                            }
-                        }
+                    const inputFile = document.getElementById('fileinputReview');
+                    inputFile.addEventListener('change',()=>{
+                	    const file = inputFile.files[0];
+                		document.getElementById('present_img').src += file.name;
+                	})
 
                         // 별 점수 업데이트 함수
                         function updateStars() {

@@ -34,29 +34,41 @@
 					%>
 						<tr >
 							<td>
-								<input class="reviewCheckBox" type="checkbox" />
+								<input class="reviewCheckBox" type="checkbox" name="check" value="<%=rs.getReserved_id()%>"/>
 							</td>
 							<td>
 								<p>
-									<img class="reviewImg" src="#">
+									<img class="reviewImg" src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
 								</p>
 							</td>
 							<td >
 								<p class="reviewName"><%=p.getProd_name() %></p>
-								<p class="reviewText"><%=p.getProd_price() %></p>
+								<p class="reviewText">가격 : <%=p.getProd_price() %>원</p>
 							</td>
 							<td>
-								<p class="reviewDate"><%=p.getCategory_id() %></p>
+								<p class="reviewDate">상품Id : <%=p.getCategory_id() %></p>
 							</td>
 						</tr>
 						<%} %>
 					</table>
-				
-				
 				</div>
+				<form action="DeleteReservedController" class="fromBlock">
+						<input type="hidden" id="delete_reserved" name="delete_reserved" value="">
+						<button class="AllBtn" type="submit">찜 삭제</button>
+					</form>
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		let checks = document.getElementsByName("check");
+		let delete_reserved = document.getElementById('delete_reserved');
+		for(let i=0;i<checks.length;i++){
+			checks[i].addEventListener('click',()=>{
+				delete_reserved.value += checks[i].value+",";
+				console.log(delete_reserved.value);
+			})
+		}
+	</script>
 	<%@ include file="Footer.jsp"%>
 	<nav id="loginMD">
 		<%@ include file="MdLogin.jsp"%>

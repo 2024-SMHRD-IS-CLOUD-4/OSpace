@@ -23,7 +23,7 @@
                     중고상품등록하기
                 </h2>
                 <div id="myPageContainer">
-                    <form action="UsedController" method="post" enctype="multipart/form-data">
+                    <form action="UsedController" method="post">
                         <table class="productAdd">
                             <tr>
                                 <th>중고상품 ID</th>
@@ -90,8 +90,6 @@
     const inputFile = document.getElementById('used_img');
     inputFile.addEventListener('change',()=>{
 	    const file = inputFile.files[0];
-		console.log(file);
-		console.log(file.name);
 		document.getElementById('present_img').src += file.name;
 	})
 	</script>
