@@ -26,7 +26,7 @@
                 </div>
                 
                 <div id="itemBoxTitle">
-                    <h1>리뷰제목</h1>
+                    <h1><%=r.getReview_title() %></h1>
                     <div class="itemBoxStar">
                         <span class="itemT"><%=r.getReview_title() %></span>
                         <div class="itemC">

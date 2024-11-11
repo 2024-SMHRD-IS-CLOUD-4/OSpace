@@ -210,7 +210,7 @@
                 %>
                     
                     <li>
-                    <a href="ReviewPage.jsp?prod_id=<%=p.getProd_id()%>">
+                    <a href="ReviewPage.jsp?review_id=<%=r.getReview_id()%>">
                         <div class="itemBoxReviewleft">
                             <img src="<%=request.getContextPath()%>/upload/<%=r.getReview_img()%>">
                         </div>
