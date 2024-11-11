@@ -111,14 +111,11 @@
                                 </table>
                             </div>
 
-                            <div class="buttonContainer">
-                                <a href="Mypage_reviews.jsp"><button class="AllBtn" type="submit">작성하기</button></a>
-
-                                <form action="DeleteReviewController" class="fromBlock">
-                                    <input type="hidden" id="result2" name="result" value="">
-                                    <button class="AllBtn" type="submit">삭제하기</button>
-                                </form>
-                            </div>
+                         <div class="buttonContainer">
+                    <button class="AllBtn" type="submit">저장하기</button>
+                    <button class="AllBtn" type="submit">수정하기</button>
+                    <button class="AllBtn" type="submit">게시글삭제</button>
+                </div>
                         </div>
                 </div>
             </div>
