@@ -32,7 +32,7 @@
 							<%for(Products p : p_lst){ %>
                                     <tr>
                                         <td rowspan="2">
-                                            <input class="Productcheckbox" type="checkbox" name="check">
+                                            <input class="Productcheckbox" type="checkbox" name="check" value=<%=p.getProd_id() %>>
                                         </td>
                                         <td rowspan="2">
                                             <img class="Productimg" src="<%=request.getContextPath()%>/upload/<%=p.getProd_img()%>">
@@ -45,12 +45,6 @@
                                         </td>
                                         <td rowspan="2">
                                             <p><%=p.getCreatedAt() %></p>
-                                        </td>
-                                        <td rowspan="2">
-                                            <select class="Productstate" id="sold_state">
-                                                <option>판매중</option>
-                                                <option>판매완료</option>
-                                            </select>
                                         </td>
                                     </tr>
                                     <tr>
@@ -73,7 +67,7 @@
                                 <% for(Used_Products up : up_lst){%>
                                     <tr>
                                         <td rowspan="2">
-                                            <input class="Productcheckbox" type="checkbox" name="check">
+                                            <input class="Productcheckbox" type="checkbox" name="check" value="<%=up.getUsed_id()%>">
                                         </td>
                                         <td rowspan="2">
                                             <img class="Productimg" src="<%=request.getContextPath()%>/upload/<%=up.getUsed_img()%>">
@@ -88,7 +82,7 @@
                                             <p><%=up.getCreated_at() %></p>
                                         </td>
                                         <td rowspan="2">
-                                            <select class="Productstate" id="sold_state">
+                                            <select class="Productstate" id="sold_state" name="sold_state">
                                                 <option>판매중</option>
                                                 <option>판매완료</option>
                                             </select>
@@ -108,14 +102,18 @@
                     <input type="hidden" name="result" value="">
                     <button class="AllBtn" type="submit">저장하기</button>
                     </form>
-                    <form action="">
-                    <input type="hidden" name="result" value="">
-                    <button class="AllBtn" type="submit">수정하기</button>
-                    </form>
-                    <form action="">
+                    <%if(user.getU_type().equals("일반회원")){ %>
+                    <form action="DeleteUsedController">
                     <input type="hidden" name="result" value="">
                     <button class="AllBtn" type="submit">상품삭제</button>
                     </form>
+                    <%}else{%>
+                    	<form action="DeleteProduct">
+                    <input type="hidden" name="result" value="">
+                    <button class="AllBtn" type="submit">상품삭제</button>
+                    </form>
+                    	
+                    <% }%>
                 </div>
                         </div>
                 </div>
@@ -135,8 +133,13 @@
 <script type="text/javascript">
 	let checks = document.getElementsByName('check');
 	let result = document.getElementsByName('result');
-	for(let i;i<checks.length;i++){
-		result[i].value += check[i].value+",";
+	for(let i=0;i<checks.length;i++){
+		checks[i].addEventListener('click',()=>{
+			for(let j=0;j<result.length;j++){
+				result[j].value += checks[i].value+",";
+				console.log(result[j].value);
+			}
+		})
 	}
 	
         // 페이지 로드 후 select 요소에 이벤트 리스너 추가

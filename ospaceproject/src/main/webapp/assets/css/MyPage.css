@@ -438,17 +438,14 @@
 .productAdd{
     border-collapse: separate;
     border-spacing: 0 40px;
+    width:100%;
 }
-.productAdd tr{
-    width: 600px;
-}
-#myPageContainer th{
-    vertical-align: top;
-    width: 160px;
+.productAddTh{
+	width: 20% !important;
+	border:1px solid; 
 }
 .productAdd td{
-    display: inline-block;
-    width: 700px;
+    width: 80%;
     padding: 0px 10px;
 }
 .productAdd input{

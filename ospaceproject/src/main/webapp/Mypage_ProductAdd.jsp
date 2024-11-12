@@ -32,17 +32,17 @@
                     <form action="ProdaddController" method="post" enctype="multipart/form-data">
                         <table class="productAdd">
                             <tr>
-                                <th>상품 ID</th>
+                                <th class="productAddTh">상품 ID</th>
                                 <td>상품 ID는 등록 완료 시 자동 부여됩니다.</td>
                             </tr>
                             <tr>
-                                <th>판매자</th>
+                                <th class="productAddTh">판매자</th>
                                 <td>
                                     <%=userName%>
                                 </td>
                             </tr>
                             <tr>
-                                <th>카테고리</th>
+                                <th class="productAddTh">카테고리</th>
                                 <td><select id="category_id" name="category_id" required>
                                         <option value="">카테고리를 선택하세요</option>
                                 <% for(Category cat : cats) {%>
@@ -52,14 +52,14 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th>상품명</th>
+                                <th class="productAddTh">상품명</th>
                                 <td>
                                     <input type="text" id="prod_name" name="prod_name" placeholder="상품명을 입력하세요."
                                         required>
                                 </td>
                             </tr>
                             <tr>
-                                <th rowspan="2">대표이미지</th>
+                                <th rowspan="2"  class="productAddTh">대표이미지</th>
                                 <td>
                                     <input type="file" id="fileinputReview" name="prod_img" required>
                                 </td>
@@ -70,32 +70,14 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th>가격</th>
+                                <th class="productAddTh">가격</th>
                                 <td>
                                     <input type="text" id="prod_price" name="prod_price" placeholder="상품 가격을 입력하세요."
                                         required>
                                 </td>
                             </tr>
-                            <!--  <tr>
-                                <th rowspan="2">사이즈옵션</th>
-                                <td>
-                                    <select name="prod_op" id="prod_op">
-                                        <option value="s"> S</option>
-                                        <option value="m"> M</option>
-                                        <option value="l"> L</option>
-                                    </select>
-                                </td>
-                            </tr>
                             <tr>
-                                <td>
-                                    <ul>
-                                        <li>선택한 사이즈를 표기하기 <span>X</span></li>
-                                        <li>선택한 사이즈를 표기하기 <span>X</span></li>
-                                    </ul>
-                                </td>
-                            </tr>-->
-                            <tr>
-                                <th rowspan="2">색상옵션</th>
+                                <th rowspan="2" >색상옵션</th>
                                 <td>
                                     <select name="prod_color" id="prod_color">
                                         <option value="Red">빨간색</option>

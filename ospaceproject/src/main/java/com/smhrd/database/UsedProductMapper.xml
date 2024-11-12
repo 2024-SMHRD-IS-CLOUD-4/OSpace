@@ -38,4 +38,14 @@
     SELECT * FROM Used_Products WHERE ID = #{id}
 	</select>
 	
+	<!-- 내 중고 상품 조회 -->	
+	<delete id="deleteUsed">
+	DELETE FROM USED_PRODUCTS WHERE USED_ID = #{used_id}
+	</delete>
+	
+	<!-- 판매 상태 업데이트 -->
+	<update id="updateUsed">
+	 	UPDATE USED_PRODUCTS SET IS_SOLD=#{sold_state}
+	</update>
+	
 </mapper>

@@ -54,7 +54,7 @@
                             <tr>
                                 <th>상품명</th>
                                 <td>
-                                    <input type="text" id="used_title" name="used_title" placeholder="상품명을 입력하세요."
+                                    <input type="text" id="uesd_title" name="used_title" placeholder="상품명을 입력하세요."
                                         required>
                                 </td>
                             </tr>

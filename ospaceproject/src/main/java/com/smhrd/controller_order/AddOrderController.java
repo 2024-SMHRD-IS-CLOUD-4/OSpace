@@ -50,7 +50,6 @@ public class AddOrderController extends HttpServlet {
 		OrdersDAO o_dao = new OrdersDAO();
 		int order_id = o_dao.insertOrder(order);
 		System.out.println(order_id);
-		// orderDetail 삽입
 		for (int basket_id : basket_ids) {
 			Basket b = b_dao.getBasket(basket_id);
 			OrderDetail od = new OrderDetail(0, order_id, b.getProd_color(), null);

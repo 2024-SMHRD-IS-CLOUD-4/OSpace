@@ -299,11 +299,7 @@
 	String u_type = user.getU_type();
 	%>
 	<script>
-    	let userType = "<%=userType%>
-		";
-		const sellers = document.getElementsByClassName("seller");
-		const members = document.getElementsByClassName("member");
-		const managers = document.getElementsByClassName("manager");
+	console.log(userType);
 		if (userType === "일반회원") {
 			for (let i = 0; i < sellers.length; i++) {
 				sellers[i].style.display = "none"

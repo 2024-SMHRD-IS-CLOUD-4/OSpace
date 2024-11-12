@@ -17,6 +17,13 @@ public class Used_ProductsDAO {
 		sqlSession.close();
 		return result;
 	}
+	
+	public int updateUsed(char sold_state) {
+		SqlSession sqlSession = factory.openSession(true);
+		int result = sqlSession.update("UsedProductMapper.updateUsed", sold_state);
+		sqlSession.close();
+		return result;
+	}
 
 	public List<Used_Products> getu_prod() {
 	    SqlSession session = factory.openSession(true);
@@ -50,4 +57,12 @@ public class Used_ProductsDAO {
 	    session.close();
 	    return result;
 	}
+	
+	public int deleteUsed(int used_id) {
+		SqlSession sqlSession = factory.openSession(true);
+		int result = sqlSession.delete("UsedProductMapper.deleteUsed", used_id);
+		sqlSession.close();
+		return result;
+	}
+	
 }

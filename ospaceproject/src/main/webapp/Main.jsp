@@ -103,7 +103,7 @@
 								<div class="itemSmallBoxText">
 									<p class="itmSellerID"><%=u.getId()%></p>
 									<p class="itemName"><%=u.getUsed_title()%></p>
-									<p class="itemPrice"><%=u.getUsed_price()%></p>
+									<p class="itemPrice"><%=u.getUsed_price()%>원</p>
 								</div>
 							</a>
 						</div>

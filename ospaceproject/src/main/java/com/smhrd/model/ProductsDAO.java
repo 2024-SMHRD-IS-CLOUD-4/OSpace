@@ -12,7 +12,7 @@ public class ProductsDAO {
 	SqlSessionFactory factory = SqlSessionManager.getSqlSessionFactory();
 
 	public int insert(Products m) {
-		SqlSession sqlSession = factory.openSession(true); // auto commit true
+		SqlSession sqlSession = factory.openSession(true); 
 		int result = sqlSession.insert("ProductMapper.prodInsert", m);
 		sqlSession.close();
 		return result;

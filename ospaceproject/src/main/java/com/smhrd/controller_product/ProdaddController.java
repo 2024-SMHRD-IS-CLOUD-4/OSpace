@@ -25,36 +25,22 @@ public class ProdaddController extends HttpServlet {
 		// 한글 인코딩
 		request.setCharacterEncoding("UTF-8");
 				
-		// 파일의 절대 경로 설정 (저장 경로)
-		ServletContext context = request.getServletContext();
-		String uploadpath = context.getRealPath("upload");
-				
-		// 파일의 사이즈
-		int maxSize = 5*1024*1024; // -> 5MB
-				
-		// cos -> MultipartRequest
-		// (request, 파일저장경로, 파일 최대 크기, 인코딩 타입, 파일이름 생성규칙 - 이름이 중복되었을 때 처리)
-		MultipartRequest multi = new MultipartRequest(request, uploadpath, maxSize, "UTF-8", new DefaultFileRenamePolicy());
+		String id = request.getParameter("id");
+		int category_id = Integer.parseInt(request.getParameter("category_id"));
 		
-		
-		String id = multi.getParameter("id");
-		int category_id = Integer.parseInt(multi.getParameter("category_id"));
-		
-	    String prod_name = multi.getParameter("prod_name");
-	    String prod_img = multi.getFilesystemName("prod_img");
+	    String prod_name = request.getParameter("used_title");
+	    String prod_img = request.getParameter("used_img");
 	    
-	    int prod_price = Integer.parseInt(multi.getParameter("prod_price"));
+	    int prod_price = Integer.parseInt(request.getParameter("used_price"));
 	    
-	    String prod_color = multi.getParameter("prod_color");
-	    String prod_op = multi.getParameter("prod_op");
-	    String prod_desc = multi.getParameter("prod_desc");
+	    String prod_color = request.getParameter("prod_color");
+	    String prod_desc = request.getParameter("used_content");
 	    
-	    Products m = new Products(1, id, category_id, prod_name, prod_img, prod_price, prod_color,0,null, prod_op,prod_desc);
+	    Products m = new Products(0, id, category_id, prod_name, prod_img, prod_price, prod_color,0,null,"옵션",prod_desc);
 	    ProductsDAO dao = new ProductsDAO();
 	    int result = dao.insert(m);
-	    
 	    if(result >0) {
-	    	response.sendRedirect("ProductList.jsp");
+	    	response.sendRedirect("Mypage_ProductList.jsp");
 	    }
 	}
 }

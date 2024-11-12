@@ -32,7 +32,7 @@
                                     <div class="reviewtableContainer">
                                     <form action="ReviewWriteController">
                                         <table class="reviewTable">
-
+											<input type="hidden" name="">
                                             <tr class="tr">
                                                 <td class="td">작성자</td>
                                                 <td class="reviewtableColumns"><%=user.getName() %></td>
@@ -42,7 +42,7 @@
                                                 <td class="td">리뷰상품</td>
                                                 <td class="reviewtableColumns">
                                                     <label class="fileLabel" for="fileinputReview">상품찾기</label>
-                                                    <input type="file" id="fileinputReview" class="fileinputReview">
+                                                    <input type="file" name="review_img" id="fileinputReview" class="fileinputReview">
                                                     <div class="previewContainer1" id="previewContainer1"></div>
                                                 </td>
                                             </tr>
@@ -57,7 +57,7 @@
                                             <tr class="tr">
                                                 <td class="td">리뷰내용</td>
                                                 <td class="reviewtableColumns">
-                                                    <textarea id="reviewTextBox" class="reviewTextbox"
+                                                    <textarea id="reviewTextBox" name="review_content" class="reviewTextbox"
                                                         placeholder="리뷰 내용을 입력하세요..."></textarea>
                                                 </td>
                                             </tr>
@@ -65,7 +65,7 @@
                                                 <td class="td">상품평점</td>
                                                 <td class="reviewtableColumns">
                                                     <div>
-                                                        <select class="gpa" onchange="updateStars()">
+                                                        <select class="gpa" name="ratings" onchange="updateStars()">
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
                                                             <option value="3">3</option>

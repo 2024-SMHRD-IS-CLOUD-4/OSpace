@@ -4,8 +4,8 @@
 	
 	<!-- 상품 등록 기능 -->
 	<insert id="prodInsert" parameterType="com.smhrd.model.Products">
-        INSERT INTO PRODUCTS (PROD_ID, ID, CATEGORY_ID, PROD_NAME, PROD_IMG, PROD_PRICE, PROD_COLOR, PROD_OP, PROD_DESC)
-        VALUES (#{prod_id}, #{id}, #{category_id}, #{prod_name}, #{prod_img}, #{prod_price}, #{prod_color}, #{prod_op}, #{prod_desc})
+        INSERT INTO PRODUCTS (PROD_ID, ID, CATEGORY_ID, PROD_NAME, PROD_IMG, PROD_PRICE, PROD_COLOR, PROD_DESC)
+        VALUES (#{prod_id}, #{id}, #{category_id}, #{prod_name}, #{prod_img}, #{prod_price}, #{prod_color}, #{prod_desc})
     </insert>
 	
 	<!-- 상품 전체 조회 -->
