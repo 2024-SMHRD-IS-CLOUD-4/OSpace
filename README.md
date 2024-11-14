@@ -134,7 +134,7 @@
 ![image](https://github.com/user-attachments/assets/44f0c60a-adbb-4a58-a671-b526835c38d5)
 <br>
 
-### 🖥 메인 화면
+### 🖥 상세페이지
 * 일반제품
 ![image](https://github.com/user-attachments/assets/92e44974-02cb-4360-ac71-833bf125ca7a)
 * 리뷰
@@ -143,7 +143,7 @@
 ![image](https://github.com/user-attachments/assets/d654fef6-4ed0-420d-ac3a-9a717c9a1a9d)
 <br>
 
-### 🖥 메인 화면
+### 🖥 마이페이지
 1) 일반회원
 ![image](https://github.com/user-attachments/assets/ec461c0d-2c16-4b14-9c82-bf2677d020f7)
 - 회원 정보 수정
