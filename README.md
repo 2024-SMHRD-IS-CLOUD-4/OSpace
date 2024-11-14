@@ -3,8 +3,9 @@
 <br>
 
 ## 🙋‍♀️ 서비스 소개
-* ㅁㄴㅇ
-* ㅂㅈㄷ
+* 색상 기반 검색 기능을 이용해 직관적인 검색 서비스 제공
+* 중고 거래 서비스 제공
+* 강화된 리뷰 기능으로 커뮤니티 공간 제공
 
 <br>
 
@@ -173,11 +174,17 @@
 <br>
 
 ## 🥊 트러블슈팅
-
+### 문제1
+![image](https://github.com/user-attachments/assets/b03ac78f-5ea0-4eb1-8644-ecefc2a81c65)
+### 문제2 
+![image](https://github.com/user-attachments/assets/b3a9626f-efde-4d83-92a0-f5cd7f41c2bd)
+<br>
 <br>
 
 ## 👨‍👩‍👧‍👦 팀원역할
-
+![image](https://github.com/user-attachments/assets/1e337355-a770-434f-8394-e1b8172099e2)
+<br>
 <br>
 
 ## 📚 참고문헌 및 출처
+![image](https://github.com/user-attachments/assets/d1740c2e-36d8-4084-b821-30dbabc8db30)
