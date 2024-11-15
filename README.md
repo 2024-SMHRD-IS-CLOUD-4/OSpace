@@ -70,6 +70,19 @@
             <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"/>
         </td>
     </tr>
+    <tr>
+        <td>디자인</td>
+        <td>
+            <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white"/>
+            <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+        </td>
+    </tr>
+    <tr>
+        <td>API</td>
+        <td>
+            <img src="https://github.com/user-attachments/assets/6b92ffad-ea5c-460c-bedb-61f130bce991"/>
+        </td>
+    </tr>
 </table>
 <br>
 
